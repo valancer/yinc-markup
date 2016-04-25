@@ -240,7 +240,7 @@ The `retina-sprites` mixin generates a CSS rule and media query for retina group
       @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
         .company-item .badges .deductions {
           background-image: url(/assets/images/sprites@2x.png);
-          background-size: 130px 98px; } }
+          background-size: 130px 129px; } }
     .company-item .badges .lead {
       background-image: url(/assets/images/sprites.png);
       background-position: -49px -34px;
@@ -249,7 +249,7 @@ The `retina-sprites` mixin generates a CSS rule and media query for retina group
       @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
         .company-item .badges .lead {
           background-image: url(/assets/images/sprites@2x.png);
-          background-size: 130px 98px; } }
+          background-size: 130px 129px; } }
   .company-item .progress {
     display: block;
     position: absolute;
@@ -277,13 +277,13 @@ The `retina-sprites` mixin generates a CSS rule and media query for retina group
         top: -5px;
         right: -8px;
         background-image: url(/assets/images/sprites.png);
-        background-position: 0px -83px;
+        background-position: 0px -114px;
         width: 17px;
         height: 15px; }
         @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
           .company-item .progress p[data-value]:after {
             background-image: url(/assets/images/sprites@2x.png);
-            background-size: 130px 98px; } }
+            background-size: 130px 129px; } }
   .company-item progress[value] {
     position: relative;
     -webkit-appearance: none;
@@ -342,7 +342,9 @@ The `retina-sprites` mixin generates a CSS rule and media query for retina group
   border-bottom: 1px solid #fff; }
 
 .company {
-  /* 회사 정보 삳단 */ }
+  /* 회사 정보 삳단 */
+  /* 회사 정보 탭 */
+  /* 개별 탭 내용 */ }
   .company .company-info {
     display: block;
     box-sizing: border-box;
@@ -390,7 +392,7 @@ The `retina-sprites` mixin generates a CSS rule and media query for retina group
         @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
           .company .company-info .inner .btn-play {
             background-image: url(/assets/images/sprites@2x.png);
-            background-size: 130px 98px; } }
+            background-size: 130px 129px; } }
       .company .company-info .inner .badges {
         position: absolute;
         top: 15px;
@@ -406,7 +408,7 @@ The `retina-sprites` mixin generates a CSS rule and media query for retina group
           @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
             .company .company-info .inner .badges .btn-deductions {
               background-image: url(/assets/images/sprites@2x.png);
-              background-size: 130px 98px; } }
+              background-size: 130px 129px; } }
         .company .company-info .inner .badges .icon-lead {
           display: inline-block;
           text-indent: -9999px;
@@ -417,7 +419,7 @@ The `retina-sprites` mixin generates a CSS rule and media query for retina group
           @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
             .company .company-info .inner .badges .icon-lead {
               background-image: url(/assets/images/sprites@2x.png);
-              background-size: 130px 98px; } }
+              background-size: 130px 129px; } }
       .company .company-info .inner .btn-favorite {
         display: block;
         position: absolute;
@@ -431,7 +433,7 @@ The `retina-sprites` mixin generates a CSS rule and media query for retina group
         @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
           .company .company-info .inner .btn-favorite {
             background-image: url(/assets/images/sprites@2x.png);
-            background-size: 130px 98px; } }
+            background-size: 130px 129px; } }
         .company .company-info .inner .btn-favorite[data-state=selected] {
           background-image: url(/assets/images/sprites.png);
           background-position: -86px 0px;
@@ -440,7 +442,7 @@ The `retina-sprites` mixin generates a CSS rule and media query for retina group
           @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
             .company .company-info .inner .btn-favorite[data-state=selected] {
               background-image: url(/assets/images/sprites@2x.png);
-              background-size: 130px 98px; } }
+              background-size: 130px 129px; } }
   .company .tabs {
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -472,5 +474,119 @@ The `retina-sprites` mixin generates a CSS rule and media query for retina group
           background-color: #fde832; }
       .company .tabs > a + a {
         border-left: 1px solid #dedede; }
-  .company .tab-contents.summary > header {
-    background-color: #f4f4f4; }
+  .company .tab-contents {
+    /* 요약 탭 */ }
+    .company .tab-contents.summary > header {
+      display: block;
+      box-sizing: border-box;
+      overflow: hidden;
+      padding: 20px 6.944444444444% 0 6.944444444444%;
+      height: 160px;
+      background-color: #f4f4f4; }
+      .company .tab-contents.summary > header .progress {
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        position: relative;
+        float: left;
+        margin: 7px;
+        height: 105px;
+        width: 105px;
+        text-align: center;
+        border-radius: 105px;
+        background-color: #fff;
+        -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-justify-content: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-align-items: center;
+            -ms-flex-align: center;
+                align-items: center; }
+        .company .tab-contents.summary > header .progress:before {
+          content: '';
+          display: none;
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          border-radius: 105px; }
+        .company .tab-contents.summary > header .progress[data-state=success]:before {
+          display: block;
+          background-color: rgba(124, 175, 215, 0.4); }
+        .company .tab-contents.summary > header .progress[data-state=success] .title {
+          display: block;
+          margin-left: -29.5px;
+          background-image: url(/assets/images/sprites.png);
+          background-position: 0px -83px;
+          width: 59px;
+          height: 26px; }
+          @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+            .company .tab-contents.summary > header .progress[data-state=success] .title {
+              background-image: url(/assets/images/sprites@2x.png);
+              background-size: 130px 129px; } }
+        .company .tab-contents.summary > header .progress[data-state=close]:before {
+          display: block;
+          background-color: rgba(139, 139, 139, 0.4); }
+        .company .tab-contents.summary > header .progress[data-state=close] .title {
+          display: block;
+          margin-left: -29.5px;
+          background-image: url(/assets/images/sprites.png);
+          background-position: -64px -83px;
+          width: 59px;
+          height: 26px; }
+          @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+            .company .tab-contents.summary > header .progress[data-state=close] .title {
+              background-image: url(/assets/images/sprites@2x.png);
+              background-size: 130px 129px; } }
+        .company .tab-contents.summary > header .progress .title {
+          display: none;
+          position: absolute;
+          top: -2px;
+          left: 50%;
+          font-size: 0.750rem;
+          font-weight: 700;
+          color: #fff; }
+        .company .tab-contents.summary > header .progress .value {
+          display: block;
+          font-size: 1.000rem;
+          font-weight: bold;
+          color: #000; }
+          .company .tab-contents.summary > header .progress .value em {
+            font-size: 1.625rem; }
+        .company .tab-contents.summary > header .progress .participation {
+          margin-top: 5px;
+          font-size: 0.750rem;
+          font-weight: 300;
+          color: #888; }
+          .company .tab-contents.summary > header .progress .participation em {
+            font-weight: 700;
+            color: #000; }
+      .company .tab-contents.summary > header .summary-info {
+        overflow: hidden;
+        float: right;
+        width: 51.935483870968%; }
+        .company .tab-contents.summary > header .summary-info > li {
+          float: left;
+          margin-top: 7px;
+          width: 50%; }
+          .company .tab-contents.summary > header .summary-info > li:nth-child(even) {
+            text-align: right; }
+          .company .tab-contents.summary > header .summary-info > li .title {
+            font-size: 0.625rem;
+            font-weight: 300;
+            color: #888; }
+          .company .tab-contents.summary > header .summary-info > li .content {
+            font-size: 1.000rem;
+            font-weight: 300;
+            color: #888; }
+            .company .tab-contents.summary > header .summary-info > li .content time {
+              color: #ac7f5e; }
+            .company .tab-contents.summary > header .summary-info > li .content strong {
+              font-weight: 700;
+              color: #000; }
+            .company .tab-contents.summary > header .summary-info > li .content sub {
+              font-size: 0.625rem;
+              vertical-align: middle; }

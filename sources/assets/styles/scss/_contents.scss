@@ -76,6 +76,8 @@
 		}
 	}
 
+
+	/* 회사 정보 탭 */
 	.tabs { display: flex;
 		> a { display: block; position: relative; flex: 1; height: 43px; font-size: 0.750rem; font-weight: 400; color: #969696; text-align: center; line-height: 43px; border-bottom: 1px solid #dedede;
 			&[data-state=selected] { font-weight: 500; color: #000;
@@ -87,11 +89,48 @@
 	}
 
 
-
+	/* 개별 탭 내용 */
 	.tab-contents {
-		&.summary {
-			> header { background-color: #f4f4f4;
 
+		/* 요약 탭 */
+		&.summary {
+			> header { display: block; box-sizing: border-box; overflow: hidden; padding: 20px 6.944444444444% 0 6.944444444444%; height: 160px; background-color: #f4f4f4;
+				.progress { display: flex; position: relative; float: left; margin: 7px; height: 105px; width: 105px; text-align: center; border-radius: 105px; background-color: #fff;
+					flex-direction: column; justify-content: center; align-items: center; 
+
+					&:before { content: ''; display: none; position: absolute; top: 0; right: 0; bottom: 0; left: 0; border-radius: 105px; }
+
+					&[data-state=success] {
+						&:before { display: block; background-color: rgba(124, 175, 215, 0.4); }
+						.title { display: block; margin-left: -$s-bg-flag01-width/2; @include retina-sprite($s-bg-flag01-group); }
+					}
+					&[data-state=close] {
+						&:before { display: block; background-color: rgba(139, 139, 139, 0.4); }
+						.title { display: block; margin-left: -$s-bg-flag02-width/2; @include retina-sprite($s-bg-flag02-group); }
+					}
+
+					.title { display: none; position: absolute; top: -2px; left: 50%; font-size: 0.750rem; font-weight: 700; color: #fff; }
+					.value { display: block; font-size: 1.000rem; font-weight: bold; color: #000;
+						em { font-size: 1.625rem; }
+					}
+					.participation { margin-top: 5px; font-size: 0.750rem; font-weight: 300; color: #888;
+						em { font-weight: 700; color: #000; }
+					}
+				}
+
+				.summary-info { overflow: hidden; float: right; width: 51.935483870968%;
+					> li { float: left; margin-top: 7px; width: 50%;
+						&:nth-child(odd) { }
+						&:nth-child(even) { text-align: right; }
+
+						.title { font-size: 0.625rem; font-weight: 300; color: #888; }
+						.content { font-size: 1.000rem; font-weight: 300; color: #888;
+							time { color: #ac7f5e; }
+							strong { font-weight: 700; color: #000; }
+							sub { font-size: 0.625rem; vertical-align: middle; }
+						}
+					}
+				}
 			}
 		}
 
