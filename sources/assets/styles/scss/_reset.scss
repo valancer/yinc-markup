@@ -1,0 +1,41 @@
+/* Common Style */
+* { margin: 0; padding: 0; }
+/* set html5 elements to block */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, address, cite, code, del, dfn, em, font, img, ins, q, s, samp, strike, strong, sub, sup, dl, dt, dd, ol, ul, li, fieldset, form, label, legend { border: 0 none; }
+body { position: relative; margin: 0; padding: 0; font-size: 100%; line-height: 1.3em; font-family: $font-base-stack;
+	text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+header, h1 { font-size: 100%; }
+// html, body { height: 100%; }
+caption,legend { position: absolute; top: -9999px; left: -9999px; width:0; height: 0; font-size: 0; overflow: hidden; visibility: hidden; }
+caption { display: none; }
+img { border: none; vertical-align: top; width: 100%; }
+select, input { vertical-align: top; }
+hr { display: none; border: 0 none; }
+ol, ul, ul li{ list-style: none; }
+em { font-style: normal; }
+menu li { list-style: none; }
+address { display: inline; font-style: normal; }
+button { appearance: none; cursor: pointer; border: 0px; background-color: transparent; }
+table {border-collapse:collapse;border-spacing:0;}
+input, textarea, keygen, select, button { font-family: $font-base-stack; }
+strong { font-weight: normal; }
+dfn { font-style: normal; }
+
+/* link Style */
+a:link, a:visited, a:active, a:focus { text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.hidden { display: none !important; }
+.visible-hidden { visibility: hidden !important; }
+.clear { clear: both; }
+.txt-center { text-align: center !important; }
+.o-hidden { overflow: hidden !important; }
+
+/* forms */
+fieldset { appearance: none; }
+input[type=submit] { appearance: none; cursor: pointer; border: 0px; }

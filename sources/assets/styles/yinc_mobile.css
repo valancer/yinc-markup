@@ -1,0 +1,476 @@
+@charset "UTF-8";
+@import url(notosanskr.css);
+/**
+ * variable
+ */
+/* Common Style */
+* {
+  margin: 0;
+  padding: 0; }
+
+/* set html5 elements to block */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, address, cite, code, del, dfn, em, font, img, ins, q, s, samp, strike, strong, sub, sup, dl, dt, dd, ol, ul, li, fieldset, form, label, legend {
+  border: 0 none; }
+
+body {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  line-height: 1.3em;
+  font-family: "Noto Sans Korean", sans-serif;
+  -ms-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%; }
+
+header, h1 {
+  font-size: 100%; }
+
+caption, legend {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+  width: 0;
+  height: 0;
+  font-size: 0;
+  overflow: hidden;
+  visibility: hidden; }
+
+caption {
+  display: none; }
+
+img {
+  border: none;
+  vertical-align: top;
+  width: 100%; }
+
+select, input {
+  vertical-align: top; }
+
+hr {
+  display: none;
+  border: 0 none; }
+
+ol, ul, ul li {
+  list-style: none; }
+
+em {
+  font-style: normal; }
+
+menu li {
+  list-style: none; }
+
+address {
+  display: inline;
+  font-style: normal; }
+
+button {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  cursor: pointer;
+  border: 0px;
+  background-color: transparent; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+input, textarea, keygen, select, button {
+  font-family: "Noto Sans Korean", sans-serif; }
+
+strong {
+  font-weight: normal; }
+
+dfn {
+  font-style: normal; }
+
+/* link Style */
+a:link, a:visited, a:active, a:focus {
+  text-decoration: none; }
+
+a:hover {
+  text-decoration: underline; }
+
+.hidden {
+  display: none !important; }
+
+.visible-hidden {
+  visibility: hidden !important; }
+
+.clear {
+  clear: both; }
+
+.txt-center {
+  text-align: center !important; }
+
+.o-hidden {
+  overflow: hidden !important; }
+
+/* forms */
+fieldset {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none; }
+
+input[type=submit] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  cursor: pointer;
+  border: 0px; }
+
+/*
+SCSS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: $icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+$icon-home: x y offset_x offset_y width height total_width total_height image_path;
+
+At the bottom of this section, we provide information about the spritesheet itself
+$spritesheet: width height image $spritesheet-sprites;
+*/
+/*
+These "retina group" variables are mappings for the naming and pairing of normal and retina sprites.
+
+The list formatted variables are intended for mixins like `retina-sprite` and `retina-sprites`.
+*/
+/*
+The provided mixins are intended to be used with the array-like variables
+
+.icon-home {
+  @include sprite-width($icon-home);
+}
+
+.icon-email {
+  @include sprite($icon-email);
+}
+*/
+/*
+The `retina-sprite` mixin sets up rules and a media query for a sprite/retina sprite.
+  It should be used with a "retina group" variable.
+
+The media query is from CSS Tricks: https://css-tricks.com/snippets/css/retina-display-media-query/
+
+$icon-home-group: ('icon-home', $icon-home, $icon-home-2x, );
+
+.icon-home {
+  @include retina-sprite($icon-home-group);
+}
+*/
+/*
+The `sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of SCSS
+
+@include sprites($spritesheet-sprites);
+*/
+/*
+The `retina-sprites` mixin generates a CSS rule and media query for retina groups
+  This yields the same output as CSS retina template but can be overridden in SCSS
+
+@include retina-sprites($retina-groups);
+*/
+/**
+ * z-index
+**/
+/**
+ * import
+ */
+/* 투자 회사 */
+.company-item {
+  display: block;
+  overflow: hidden;
+  position: relative;
+  box-sizing: border-box;
+  padding: 27px 6.944444444444% 0 6.944444444444%;
+  height: 232px;
+  background-position: center center;
+  background-size: cover; }
+  .company-item:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    background-color: rgba(0, 0, 0, 0.1); }
+  .company-item:hover {
+    text-decoration: none; }
+  .company-item time {
+    display: block;
+    position: relative;
+    z-index: 1;
+    font-size: 0.750rem;
+    font-weight: 700;
+    color: #ffe500;
+    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3); }
+  .company-item .title {
+    display: block;
+    position: relative;
+    z-index: 1;
+    margin-top: 5px;
+    font-size: 1.188rem;
+    font-weight: 500;
+    color: #fff;
+    text-decoration: none;
+    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3); }
+  .company-item .badges {
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    margin-top: 8px; }
+    .company-item .badges > span {
+      display: block;
+      float: left;
+      margin-right: 5px;
+      text-indent: -9999px; }
+    .company-item .badges .deductions {
+      background-image: url(/assets/images/sprites.png);
+      background-position: -86px -49px;
+      width: 26px;
+      height: 26px; }
+      @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+        .company-item .badges .deductions {
+          background-image: url(/assets/images/sprites@2x.png);
+          background-size: 130px 98px; } }
+    .company-item .badges .lead {
+      background-image: url(/assets/images/sprites.png);
+      background-position: -49px -34px;
+      width: 26px;
+      height: 26px; }
+      @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+        .company-item .badges .lead {
+          background-image: url(/assets/images/sprites@2x.png);
+          background-size: 130px 98px; } }
+  .company-item .progress {
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: 25px;
+    left: 0;
+    padding: 0 6.944444444444%; }
+    .company-item .progress p[data-value] {
+      display: block;
+      position: relative;
+      font-size: 0.688rem;
+      font-weight: 700;
+      color: #ffe500;
+      text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3); }
+      .company-item .progress p[data-value]:before {
+        content: attr(data-value) "%";
+        display: block;
+        position: absolute;
+        top: -8px;
+        right: 10px; }
+      .company-item .progress p[data-value]:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: -5px;
+        right: -8px;
+        background-image: url(/assets/images/sprites.png);
+        background-position: 0px -83px;
+        width: 17px;
+        height: 15px; }
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+          .company-item .progress p[data-value]:after {
+            background-image: url(/assets/images/sprites@2x.png);
+            background-size: 130px 98px; } }
+  .company-item progress[value] {
+    position: relative;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    height: 4px;
+    width: 100%;
+    border: none;
+    background-color: transparent; }
+    .company-item progress[value]::-moz-progress-bar {
+      background-color: transparent; }
+    .company-item progress[value]::-webkit-progress-bar {
+      background-color: transparent; }
+    .company-item progress[value]::-webkit-progress-value {
+      background-color: #fde832; }
+    .company-item progress[value] .progress-bar {
+      height: 4px;
+      width: 100%;
+      background-color: transparent; }
+      .company-item progress[value] .progress-bar > span {
+        display: block;
+        background-color: #fde832; }
+  .company-item .add-info {
+    display: block;
+    box-sizing: border-box;
+    position: absolute;
+    right: 0;
+    bottom: -100%;
+    left: 0;
+    padding: 11px 6.944444444444% 0 6.944444444444%;
+    height: 70px;
+    background-color: rgba(0, 0, 0, 0.45); }
+    .company-item .add-info .current {
+      float: left; }
+    .company-item .add-info .goal {
+      float: right;
+      text-align: right; }
+    .company-item .add-info span {
+      display: block;
+      font-size: 0.750rem;
+      font-weight: 300;
+      color: #fff; }
+    .company-item .add-info strong {
+      display: block;
+      margin-top: 5px;
+      font-size: 1.125rem;
+      font-weight: 300;
+      color: #fff; }
+      .company-item .add-info strong em {
+        font-weight: 700; }
+    .company-item .add-info.is-opened {
+      bottom: 0; }
+
+/* 투자 목록 */
+.list-company > li {
+  border-bottom: 1px solid #fff; }
+
+.company {
+  /* 회사 정보 삳단 */ }
+  .company .company-info {
+    display: block;
+    box-sizing: border-box;
+    position: relative;
+    padding-top: 50px;
+    height: 232px;
+    background-position: center center;
+    background-size: cover; }
+    .company .company-info .inner {
+      display: block;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 1;
+      height: 146px;
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.5); }
+      .company .company-info .inner .thumb {
+        display: block;
+        margin: -34px auto 0 auto;
+        height: 67px;
+        width: 67px;
+        border: 3px solid #fff;
+        border-radius: 67px;
+        background-color: #fff; }
+      .company .company-info .inner .title {
+        margin-top: 11px;
+        font-size: 0.938rem;
+        font-weight: 500;
+        color: #fff; }
+      .company .company-info .inner .desc {
+        margin-top: 4px;
+        font-size: 0.750rem;
+        font-weight: 400;
+        color: #bdbdbd; }
+      .company .company-info .inner .btn-play {
+        display: block;
+        margin: 12px auto 0 auto;
+        text-indent: -9999px;
+        background-image: url(/assets/images/sprites.png);
+        background-position: 0px 0px;
+        width: 81px;
+        height: 29px; }
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+          .company .company-info .inner .btn-play {
+            background-image: url(/assets/images/sprites@2x.png);
+            background-size: 130px 98px; } }
+      .company .company-info .inner .badges {
+        position: absolute;
+        top: 15px;
+        left: 4.444444444444%; }
+        .company .company-info .inner .badges .btn-deductions {
+          display: inline-block;
+          margin-right: 1px;
+          text-indent: -9999px;
+          background-image: url(/assets/images/sprites.png);
+          background-position: -86px -49px;
+          width: 26px;
+          height: 26px; }
+          @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+            .company .company-info .inner .badges .btn-deductions {
+              background-image: url(/assets/images/sprites@2x.png);
+              background-size: 130px 98px; } }
+        .company .company-info .inner .badges .icon-lead {
+          display: inline-block;
+          text-indent: -9999px;
+          background-image: url(/assets/images/sprites.png);
+          background-position: -49px -34px;
+          width: 26px;
+          height: 26px; }
+          @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+            .company .company-info .inner .badges .icon-lead {
+              background-image: url(/assets/images/sprites@2x.png);
+              background-size: 130px 98px; } }
+      .company .company-info .inner .btn-favorite {
+        display: block;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        text-indent: -9999px;
+        background-image: url(/assets/images/sprites.png);
+        background-position: 0px -34px;
+        width: 44px;
+        height: 44px; }
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+          .company .company-info .inner .btn-favorite {
+            background-image: url(/assets/images/sprites@2x.png);
+            background-size: 130px 98px; } }
+        .company .company-info .inner .btn-favorite[data-state=selected] {
+          background-image: url(/assets/images/sprites.png);
+          background-position: -86px 0px;
+          width: 44px;
+          height: 44px; }
+          @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+            .company .company-info .inner .btn-favorite[data-state=selected] {
+              background-image: url(/assets/images/sprites@2x.png);
+              background-size: 130px 98px; } }
+  .company .tabs {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex; }
+    .company .tabs > a {
+      display: block;
+      position: relative;
+      -webkit-flex: 1;
+          -ms-flex: 1;
+              flex: 1;
+      height: 43px;
+      font-size: 0.750rem;
+      font-weight: 400;
+      color: #969696;
+      text-align: center;
+      line-height: 43px;
+      border-bottom: 1px solid #dedede; }
+      .company .tabs > a[data-state=selected] {
+        font-weight: 500;
+        color: #000; }
+        .company .tabs > a[data-state=selected]:after {
+          content: '';
+          display: block;
+          position: absolute;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          height: 3px;
+          background-color: #fde832; }
+      .company .tabs > a + a {
+        border-left: 1px solid #dedede; }
+  .company .tab-contents.summary > header {
+    background-color: #f4f4f4; }
