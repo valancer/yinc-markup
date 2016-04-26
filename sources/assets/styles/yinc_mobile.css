@@ -234,22 +234,22 @@ The `retina-sprites` mixin generates a CSS rule and media query for retina group
       text-indent: -9999px; }
     .company-item .badges .deductions {
       background-image: url(/assets/images/sprites.png);
-      background-position: -86px -49px;
+      background-position: -135px -31px;
       width: 26px;
       height: 26px; }
       @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
         .company-item .badges .deductions {
           background-image: url(/assets/images/sprites@2x.png);
-          background-size: 130px 129px; } }
+          background-size: 194px 123px; } }
     .company-item .badges .lead {
       background-image: url(/assets/images/sprites.png);
-      background-position: -49px -34px;
+      background-position: -166px -31px;
       width: 26px;
       height: 26px; }
       @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
         .company-item .badges .lead {
           background-image: url(/assets/images/sprites@2x.png);
-          background-size: 130px 129px; } }
+          background-size: 194px 123px; } }
   .company-item .progress {
     display: block;
     position: absolute;
@@ -277,13 +277,13 @@ The `retina-sprites` mixin generates a CSS rule and media query for retina group
         top: -5px;
         right: -8px;
         background-image: url(/assets/images/sprites.png);
-        background-position: 0px -114px;
+        background-position: -135px -84px;
         width: 17px;
         height: 15px; }
         @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
           .company-item .progress p[data-value]:after {
             background-image: url(/assets/images/sprites@2x.png);
-            background-size: 130px 129px; } }
+            background-size: 194px 123px; } }
   .company-item progress[value] {
     position: relative;
     -webkit-appearance: none;
@@ -392,7 +392,7 @@ The `retina-sprites` mixin generates a CSS rule and media query for retina group
         @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
           .company .company-info .inner .btn-play {
             background-image: url(/assets/images/sprites@2x.png);
-            background-size: 130px 129px; } }
+            background-size: 194px 123px; } }
       .company .company-info .inner .badges {
         position: absolute;
         top: 15px;
@@ -402,24 +402,24 @@ The `retina-sprites` mixin generates a CSS rule and media query for retina group
           margin-right: 1px;
           text-indent: -9999px;
           background-image: url(/assets/images/sprites.png);
-          background-position: -86px -49px;
+          background-position: -135px -31px;
           width: 26px;
           height: 26px; }
           @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
             .company .company-info .inner .badges .btn-deductions {
               background-image: url(/assets/images/sprites@2x.png);
-              background-size: 130px 129px; } }
+              background-size: 194px 123px; } }
         .company .company-info .inner .badges .icon-lead {
           display: inline-block;
           text-indent: -9999px;
           background-image: url(/assets/images/sprites.png);
-          background-position: -49px -34px;
+          background-position: -166px -31px;
           width: 26px;
           height: 26px; }
           @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
             .company .company-info .inner .badges .icon-lead {
               background-image: url(/assets/images/sprites@2x.png);
-              background-size: 130px 129px; } }
+              background-size: 194px 123px; } }
       .company .company-info .inner .btn-favorite {
         display: block;
         position: absolute;
@@ -433,7 +433,7 @@ The `retina-sprites` mixin generates a CSS rule and media query for retina group
         @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
           .company .company-info .inner .btn-favorite {
             background-image: url(/assets/images/sprites@2x.png);
-            background-size: 130px 129px; } }
+            background-size: 194px 123px; } }
         .company .company-info .inner .btn-favorite[data-state=selected] {
           background-image: url(/assets/images/sprites.png);
           background-position: -86px 0px;
@@ -442,11 +442,16 @@ The `retina-sprites` mixin generates a CSS rule and media query for retina group
           @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
             .company .company-info .inner .btn-favorite[data-state=selected] {
               background-image: url(/assets/images/sprites@2x.png);
-              background-size: 130px 129px; } }
+              background-size: 194px 123px; } }
   .company .tabs {
     display: -webkit-flex;
     display: -ms-flexbox;
-    display: flex; }
+    display: flex;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 44px;
+    z-index: 900;
+    background-color: #fff; }
     .company .tabs > a {
       display: block;
       position: relative;
@@ -474,8 +479,186 @@ The `retina-sprites` mixin generates a CSS rule and media query for retina group
           background-color: #fde832; }
       .company .tabs > a + a {
         border-left: 1px solid #dedede; }
+    .company .tabs.fixed {
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0; }
   .company .tab-contents {
-    /* 요약 탭 */ }
+    /* 테이블 뷰 형태 */
+    /* 요약 탭 */
+    /* 상세정보 탭 */ }
+    .company .tab-contents .header-table-view {
+      padding: 0 6.944444444444%;
+      height: 30px;
+      font-size: 0.688rem;
+      font-weight: 300;
+      color: #888;
+      line-height: 30px;
+      border-top: 1px solid #dedede;
+      background-color: #f1f1f1; }
+    .company .tab-contents .list-table-view {
+      width: 100%; }
+      .company .tab-contents .list-table-view > li {
+        overflow: hidden;
+        padding: 0 6.944444444444%;
+        height: 40px;
+        border-top: 1px solid #dedede;
+        /* normal */
+        /* link */ }
+        .company .tab-contents .list-table-view > li .title {
+          float: left;
+          font-size: 0.688rem;
+          font-weight: 300;
+          color: #888;
+          line-height: 40px; }
+        .company .tab-contents .list-table-view > li .content {
+          float: right;
+          font-size: 0.813rem;
+          font-weight: 300;
+          color: #888;
+          line-height: 40px; }
+          .company .tab-contents .list-table-view > li .content .em {
+            font-weight: 700;
+            color: #000; }
+          .company .tab-contents .list-table-view > li .content .ci {
+            height: 40px;
+            width: auto; }
+        .company .tab-contents .list-table-view > li a {
+          display: block;
+          position: relative;
+          height: 100%; }
+          .company .tab-contents .list-table-view > li a:after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 50%;
+            right: 0px;
+            margin-top: -7px;
+            background-image: url(/assets/images/sprites.png);
+            background-position: -183px -62px;
+            width: 8px;
+            height: 14px; }
+            @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+              .company .tab-contents .list-table-view > li a:after {
+                background-image: url(/assets/images/sprites@2x.png);
+                background-size: 194px 123px; } }
+          .company .tab-contents .list-table-view > li a .title {
+            font-size: 0.813rem;
+            font-weight: 300;
+            color: #010101; }
+      .company .tab-contents .list-table-view .btn-info {
+        display: inline-block;
+        margin-top: -2px;
+        text-indent: -9999px;
+        vertical-align: middle;
+        background-image: url(/assets/images/sprites.png);
+        background-position: 0px -83px;
+        width: 40px;
+        height: 40px; }
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+          .company .tab-contents .list-table-view .btn-info {
+            background-image: url(/assets/images/sprites@2x.png);
+            background-size: 194px 123px; } }
+    .company .tab-contents .tab-section .info-title {
+      display: block;
+      height: 90px;
+      font-size: 0.875rem;
+      font-weight: 400;
+      color: #fff;
+      text-align: center;
+      line-height: 90px; }
+      .company .tab-contents .tab-section .info-title:after {
+        content: '';
+        display: inline-block;
+        margin-top: -2px;
+        margin-left: 5px;
+        vertical-align: middle; }
+      .company .tab-contents .tab-section .info-title.company {
+        background: url("/assets/images/bg_info_title01.jpg") center center no-repeat;
+        background-size: cover; }
+        .company .tab-contents .tab-section .info-title.company:after {
+          background-image: url(/assets/images/sprites.png);
+          background-position: -135px -104px;
+          width: 15px;
+          height: 14px; }
+          @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+            .company .tab-contents .tab-section .info-title.company:after {
+              background-image: url(/assets/images/sprites@2x.png);
+              background-size: 194px 123px; } }
+        @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+          .company .tab-contents .tab-section .info-title.company {
+            background-image: url("/assets/images/bg_info_title01@2x.jpg"); } }
+      .company .tab-contents .tab-section .info-title.executives {
+        background: url("/assets/images/bg_info_title02.jpg") center center no-repeat;
+        background-size: cover; }
+        .company .tab-contents .tab-section .info-title.executives:after {
+          background-image: url(/assets/images/sprites.png);
+          background-position: -157px -84px;
+          width: 19px;
+          height: 12px; }
+          @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+            .company .tab-contents .tab-section .info-title.executives:after {
+              background-image: url(/assets/images/sprites@2x.png);
+              background-size: 194px 123px; } }
+        @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+          .company .tab-contents .tab-section .info-title.executives {
+            background-image: url("/assets/images/bg_info_title02@2x.jpg"); } }
+    .company .tab-contents .tab-section .check-options {
+      padding: 10px 0 0 0;
+      background-color: #f4f4f4; }
+      .company .tab-contents .tab-section .check-options .options-title {
+        padding: 0 6.944444444444%;
+        font-size: 0.688rem;
+        font-weight: 300;
+        color: #888; }
+      .company .tab-contents .tab-section .check-options .list-checks {
+        overflow: hidden;
+        padding: 0 6.944444444444% 25px 6.944444444444%; }
+        .company .tab-contents .tab-section .check-options .list-checks > li {
+          float: left; }
+        .company .tab-contents .tab-section .check-options .list-checks .item-checks {
+          display: block;
+          box-sizing: border-box;
+          position: relative;
+          margin: 13px 11px 0 0;
+          padding: 13px 10px 0 14px;
+          height: 84px;
+          width: 69px;
+          font-size: 0.750rem;
+          font-weight: 300;
+          color: #000;
+          line-height: 16px;
+          text-decoration: none;
+          word-break: keep-all;
+          border-radius: 2px;
+          background-color: #fff;
+          box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2); }
+          .company .tab-contents .tab-section .check-options .list-checks .item-checks:before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: -6px;
+            left: 11px;
+            background-image: url(/assets/images/sprites.png);
+            background-position: -135px -84px;
+            width: 17px;
+            height: 15px; }
+            @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+              .company .tab-contents .tab-section .check-options .list-checks .item-checks:before {
+                background-image: url(/assets/images/sprites@2x.png);
+                background-size: 194px 123px; } }
+      .company .tab-contents .tab-section .check-options.scroll .inner {
+        overflow: scroll; }
+      .company .tab-contents .tab-section .check-options.scroll .list-checks {
+        width: 600px; }
+        .company .tab-contents .tab-section .check-options.scroll .list-checks .item-checks {
+          display: block;
+          padding-bottom: 13px;
+          min-height: 94px;
+          height: auto;
+          min-width: 185px;
+          max-width: 185px; }
     .company .tab-contents.summary > header {
       display: block;
       box-sizing: border-box;
@@ -520,13 +703,13 @@ The `retina-sprites` mixin generates a CSS rule and media query for retina group
           display: block;
           margin-left: -29.5px;
           background-image: url(/assets/images/sprites.png);
-          background-position: 0px -83px;
+          background-position: -45px -83px;
           width: 59px;
           height: 26px; }
           @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
             .company .tab-contents.summary > header .progress[data-state=success] .title {
               background-image: url(/assets/images/sprites@2x.png);
-              background-size: 130px 129px; } }
+              background-size: 194px 123px; } }
         .company .tab-contents.summary > header .progress[data-state=close]:before {
           display: block;
           background-color: rgba(139, 139, 139, 0.4); }
@@ -534,18 +717,19 @@ The `retina-sprites` mixin generates a CSS rule and media query for retina group
           display: block;
           margin-left: -29.5px;
           background-image: url(/assets/images/sprites.png);
-          background-position: -64px -83px;
+          background-position: -135px 0px;
           width: 59px;
           height: 26px; }
           @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
             .company .tab-contents.summary > header .progress[data-state=close] .title {
               background-image: url(/assets/images/sprites@2x.png);
-              background-size: 130px 129px; } }
+              background-size: 194px 123px; } }
         .company .tab-contents.summary > header .progress .title {
           display: none;
           position: absolute;
-          top: -2px;
+          top: -8px;
           left: 50%;
+          z-index: 1;
           font-size: 0.750rem;
           font-weight: 700;
           color: #fff; }
@@ -564,6 +748,36 @@ The `retina-sprites` mixin generates a CSS rule and media query for retina group
           .company .tab-contents.summary > header .progress .participation em {
             font-weight: 700;
             color: #000; }
+        .company .tab-contents.summary > header .progress .circle {
+          position: absolute;
+          top: -7px;
+          left: -7px;
+          z-index: 0;
+          height: 119px;
+          width: 119px; }
+@-webkit-keyframes svg-load {
+  0% {
+    stroke-dashoffset: 0; } }
+@keyframes svg-load {
+  0% {
+    stroke-dashoffset: 0; } }
+          .company .tab-contents.summary > header .progress .circle svg {
+            height: 119px;
+            width: 119px; }
+            .company .tab-contents.summary > header .progress .circle svg:nth-child(2) {
+              position: absolute;
+              top: 0;
+              left: 0;
+              -webkit-transform: rotate(-90deg);
+                      transform: rotate(-90deg); }
+            .company .tab-contents.summary > header .progress .circle svg:nth-child(2) path {
+              fill: none;
+              stroke-width: 7;
+              stroke-dasharray: 629;
+              stroke: #f4f4f4;
+              opacity: 1;
+              -webkit-animation: svg-load 1s;
+                      animation: svg-load 1s; }
       .company .tab-contents.summary > header .summary-info {
         overflow: hidden;
         float: right;
@@ -590,3 +804,126 @@ The `retina-sprites` mixin generates a CSS rule and media query for retina group
             .company .tab-contents.summary > header .summary-info > li .content sub {
               font-size: 0.625rem;
               vertical-align: middle; }
+
+.is-hidden {
+  display: none; }
+
+/* 투자하기 */
+.shortcut-invest {
+  display: block;
+  position: fixed;
+  bottom: 16px;
+  right: 16px; }
+  .shortcut-invest .btn-invest {
+    display: block;
+    position: relative;
+    height: 57px;
+    width: 57px;
+    text-indent: -9999px;
+    border-radius: 57px;
+    box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.25), inset 1px 1px 0 0 rgba(255, 255, 255, 0.55);
+    background-color: #494949; }
+    .shortcut-invest .btn-invest:before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: -7.5px;
+      margin-left: -8.5px;
+      background-image: url(/assets/images/sprites.png);
+      background-position: -135px -62px;
+      width: 19px;
+      height: 17px; }
+      @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+        .shortcut-invest .btn-invest:before {
+          background-image: url(/assets/images/sprites@2x.png);
+          background-size: 194px 123px; } }
+    .shortcut-invest .btn-invest:after {
+      content: attr(data-title);
+      display: block;
+      box-sizing: border-box;
+      position: absolute;
+      top: 0;
+      left: 26px;
+      z-index: -1;
+      padding-left: 16px;
+      height: 57px;
+      width: 0px;
+      font-size: 0.813rem;
+      font-weight: 400;
+      color: #fff;
+      line-height: 57px;
+      text-indent: 0px;
+      border-radius: 57px 0 0 57px;
+      background-color: rgba(73, 73, 73, 0.9);
+      -webkit-animation-duration: 3s;
+              animation-duration: 3s;
+      -webkit-animation-name: invet-txt;
+              animation-name: invet-txt;
+      -webkit-animation-fill-mode: both;
+              animation-fill-mode: both;
+      -webkit-animation-delay: 1s;
+              animation-delay: 1s; }
+    .shortcut-invest .btn-invest[data-state=exit]:before {
+      content: '  ';
+      margin-top: -7.5px;
+      margin-left: -8.5px;
+      background-image: url(/assets/images/sprites.png);
+      background-position: -159px -62px;
+      width: 19px;
+      height: 17px; }
+      @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+        .shortcut-invest .btn-invest[data-state=exit]:before {
+          background-image: url(/assets/images/sprites@2x.png);
+          background-size: 194px 123px; } }
+  .shortcut-invest span.btn-invest {
+    opacity: 0.7; }
+    .shortcut-invest span.btn-invest:before {
+      content: ' ';
+      margin-top: -7.5px;
+      margin-left: -8.5px;
+      background-image: url(/assets/images/sprites.png);
+      background-position: -159px -62px;
+      width: 19px;
+      height: 17px; }
+      @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+        .shortcut-invest span.btn-invest:before {
+          background-image: url(/assets/images/sprites@2x.png);
+          background-size: 194px 123px; } }
+
+@-webkit-keyframes invet-txt {
+  0% {
+    left: 26px;
+    width: 0px;
+    opacity: 0; }
+  10% {
+    left: -74px;
+    width: 104px;
+    opacity: 1; }
+  90% {
+    left: -74px;
+    width: 104px;
+    opacity: 1; }
+  100% {
+    left: 26px;
+    width: 0px;
+    opacity: 0; } }
+
+@keyframes invet-txt {
+  0% {
+    left: 26px;
+    width: 0px;
+    opacity: 0; }
+  10% {
+    left: -74px;
+    width: 104px;
+    opacity: 1; }
+  90% {
+    left: -74px;
+    width: 104px;
+    opacity: 1; }
+  100% {
+    left: 26px;
+    width: 0px;
+    opacity: 0; } }

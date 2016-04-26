@@ -12,25 +12,7 @@ include "head.html"
 	<main>
 		<article class="contents company">
 			
-			<header class="company-info" style="background-image: url('/assets/images/@temp/bg_company01.jpg');">
-				
-				<div class="inner">
-					<a href="#" class="thumb"><img src="" alt=""></a>
-					<h1 class="title">(주)아우름플래닛</h1>
-					<p class="desc">
-						인터넷을 위한 하이라이터, LINER
-					</p>
-					<a href="#" class="btn-play">동영상 플레이</a>
-
-					<p class="badges">
-						<button type="button" class="btn-deductions">소득공제</button>
-						<span class="icon-lead">리드투자자</span>
-					</p>
-					<button type="button" data-state="selected" class="btn-favorite">관심기업</button>
-				</div>
-			</header>
-
-
+			include "company_header.html"
 
 			<!-- 회사 정보 탭 -->
 			<p class="tabs">
@@ -49,6 +31,22 @@ include "head.html"
 
 						<strong class="value"><em>87.2</em>%</strong>
 						<p class="participation">현재 <em>48</em>명</p>
+
+						<div class="circle">
+							<svg viewBox="-10 -10 220 220">
+								<g fill="none" stroke-width="7" transform="translate(100,100)">
+									<path d="M 0,-100 A 100,100 0 0,1 86.6,-50" stroke="#fde832" />
+									<path d="M 86.6,-50 A 100,100 0 0,1 86.6,50" stroke="#fde832" />
+									<path d="M 86.6,50 A 100,100 0 0,1 0,100" stroke="#fde832" />
+									<path d="M 0,100 A 100,100 0 0,1 -86.6,50" stroke="#fde832" />
+									<path d="M -86.6,50 A 100,100 0 0,1 -86.6,-50" stroke="#fde832" />
+									<path d="M -86.6,-50 A 100,100 0 0,1 0,-100" stroke="#fde832" />
+								</g>
+							</svg>
+							<svg viewBox="-10 -10 220 220">
+								<path d="M200,100 C200,44.771525 155.228475,0 100,0 C44.771525,0 0,44.771525 0,100 C0,155.228475 44.771525,200 100,200 C155.228475,200 200,155.228475 200,100 Z" stroke-dashoffset="548"></path>
+							</svg>
+						</div>
 					</div>
 
 					<ul class="summary-info">
@@ -80,36 +78,41 @@ include "head.html"
 				</header>
 
 
-				<section>
-					<h2>요약정보</h2>
+				<section class="tab-section">
+					<h2 class="is-hidden">요약정보</h2>
 
-					<ul class="list-summary-info">
+					<ul class="list-table-view">
 						<li>
 							<span class="title">기간</span>
 
 							<p class="content">
-								<time>2016.1.3</time>
-								~
-								<time>2.26</time>
+								<span class="em">
+									<time datetime="">2016.1.3</time>
+									~
+									<time datetime="">2.26</time>
+								</span>
 							</p>
 						</li>
 						<li>
 							<span class="title">목표 금액</span>
 							
-							<p class="content"><em>3</em>억 <em>3000</em>만원</p>
+							<p class="content"><em class="em">3</em>억 <em class="em">3000</em>만원</p>
 						</li>
 						<li>
 							<span class="title">증권발행 기업가치</span>
 							
-							<p class="content"><em>26</em>억 <em>4000</em>만원</p>
+							<p class="content"><em class="em">26</em>억 <em class="em">4000</em>만원</p>
 						</li>
 						<li>
 							<span class="title">지분율</span>
 							
-							<p class="content"><em>12.5</em>%</p>
+							<p class="content"><em class="em">12.5</em>%</p>
 						</li>
 						<li>
-							<span class="title">증권 종류</span>
+							<span class="title">
+								증권 종류
+								<button type="button" class="btn-info">증권종류 도움말 보기</button>
+							</span>
 							
 							<p class="content">상환전환우선주</p>
 						</li>
@@ -117,32 +120,35 @@ include "head.html"
 							<span class="title">리드투자자</span>
 							
 							<p class="content">
-								<img src="https://www.yinc.kr/images/Lead_Ci_001_Detail.png" alt="MAGELLAN">
+								<img src="https://www.yinc.kr/images/Lead_Ci_001_Detail.png" alt="MAGELLAN" class="ci">
 							</p>
 						</li>
 					</ul>
 
-					<div class="invet-point">
-						<h2>투자 포인트</h2>
 
-						<ul>
-							<li>
-								<p>2012년 연세대학교 재학시절부터 4년간 함께 해 온 핵심인력 구성</p>
-							</li>
-							<li>
-								<p>별다른 해외 영업/마케팅 없이 해외 사용자의 비율 94%, 재방문율(Retention Rate) 50%이상 유지</p>
-							</li>
-							<li>
-								<p>LINER는 국내외 유일한 웹 하이라이터 도구로, 인터넷의 정보를 체계적으로 정리/색인(indexing) 할 수 있는 서비스</p>
-							</li>
-						</ul>
+					<div class="check-options scroll">
+						<h2 class="options-title">투자 포인트</h2>
+
+						<div class="inner">
+							<ul class="list-checks">
+								<li>
+									<p class="item-checks">2012년 연세대학교 재학시절부터 4년간 함께 해 온 핵심인력 구성</p>
+								</li>
+								<li>
+									<p class="item-checks">별다른 해외 영업/마케팅 없이 해외 사용자의 비율 94%, 재방문율(Retention Rate) 50%이상 유지</p>
+								</li>
+								<li>
+									<p class="item-checks">LINER는 국내외 유일한 웹 하이라이터 도구로, 인터넷의 정보를 체계적으로 정리/색인(indexing) 할 수 있는 서비스</p>
+								</li>
+							</ul>
+						</div>
 					</div>
 				</section>
 
 
 				<!-- 회사소개 -->
-				<section>
-					<h2>회사소개</h2>
+				<section class="tab-section">
+					<h2 class="info-title company">회사소개</h2>
 
 					<p>
 						<img src="https://yinc.kr/data/uploads/1/50/40986891a31e2351b4f182ee263e4c41.png" alt="회사 소개">
@@ -151,8 +157,8 @@ include "head.html"
 
 
 				<!-- 임직원 소개 -->
-				<section>
-					<h2>임직원 소개</h2>
+				<section class="tab-section">
+					<h2 class="info-title executives">임직원 소개</h2>
 
 					<p>
 						<img src="https://yinc.kr/data/uploads/1/50/b80e905be58fedfe68994b6eed7597d8.png" alt="임직원 소개">
@@ -160,6 +166,11 @@ include "head.html"
 				</section>
 
 			</section>
+
+
+			<!-- 투자하기 버튼 -->
+			include "btn_invest.html"
+
 
 		</article>
 	</main>

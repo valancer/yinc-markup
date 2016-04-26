@@ -1,0 +1,119 @@
+include "head.html"
+	<script>
+	$(window.document).ready(function(){
+	});
+	</script>
+
+	<!-- 상단 영역 -->
+	include "header.html"
+
+
+	<!-- 본문 영역 -->
+	<main>
+		<article class="contents company">
+			
+			include "company_header.html"
+
+
+			<!-- 회사 정보 탭 -->
+			<p class="tabs">
+				<a href="#">요약</a>
+				<a href="#" data-state="selected">상세정보</a>
+				<a href="#">커뮤니케이션</a>
+			</p>
+
+
+			<!-- 회사 정보 탭 - 상세정보 -->
+			<section class="tab-contents detail">
+				
+				<section class="tab-section">
+					<h2 class="header-table-view">투자정보</h2>
+
+					<ul class="list-table-view">
+						<li>
+							<a href="#">
+								<span class="title">발행증권정보</span>
+							</a>
+						</li>
+					</ul>
+
+					<h2 class="header-table-view">기업정보</h2>
+					<ul class="list-table-view">
+						<li>
+							<a href="#">
+								<span class="title">회사소개</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<span class="title">임직원소개</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<span class="title">사업계획</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<span class="title">재무현황</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<span class="title">리스크</span>
+							</a>
+						</li>
+					</ul>
+
+
+					<div class="check-options">
+						<h2 class="options-title">관련문서</h2>
+
+						<div class="inner">
+							<ul class="list-checks">
+								<li>
+									<a href="#" class="item-checks">
+										<p>정관</p>
+									</a>
+								</li>
+								<li>
+									<a href="#" class="item-checks">
+										<p>등기부 등본</p>
+									</a>
+								</li>
+								<li>
+									<a href="#" class="item-checks">
+										<p>사업자 등록증</p>
+									</a>
+								</li>
+								<li>
+									<a href="#" class="item-checks">
+										<p>재무 상태표</p>
+									</a>
+								</li>
+								<li>
+									<a href="#" class="item-checks">
+										<p>증권발행 주요사항</p>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+
+
+			</section>
+
+
+			<!-- 투자하기 버튼 -->
+			include "btn_invest.html"
+
+		</article>
+	</main>
+
+	<!-- 하단 영역 -->
+	include "footer.html"
+
+</body>
+</html>
