@@ -13,13 +13,73 @@
 
 
 
-var navigationHeight = 44;
+var navigationHeight = 0;
 $(document).ready(function (e) {
 	Company.init();
+	CompanyList.init();
 });
 
 
-/* Company */
+/* Company List */
+var CompanyList = (function ($) {
+	var scope,
+		$listContainer,
+		$oldVisible,
+		init = function () {
+			$listContainer = $('.list-company');
+			$items = $listContainer.find('.company-item');
+			$oldVisible = null;
+
+			initLayout();
+			initEvent();
+		};//end init
+
+	function initLayout() {
+		_updateSubInfo();
+	}
+
+	function initEvent() {
+		$(window).on('scroll', function(e) {
+			_updateSubInfo();
+		});
+	}
+
+	function _updateSubInfo() {
+		var $visible = _elementVisible();
+		if( !$visible.hasClass('is-opened') ) {
+			$visible.addClass('is-opened');
+			if( $oldVisible !== null ) {
+				$oldVisible.removeClass('is-opened');
+			}
+		}
+		$oldVisible = $visible;
+	}
+
+	function _elementVisible() {
+		var $visible;
+		$items.each(function() {
+			if( $(this).visible(false, false, 'vertical') ) {
+				$visible = $(this);
+				return false;
+			}
+		});
+
+		return $visible;
+	}
+
+	return {
+		init: function () {
+			scope = this;
+
+			init();
+		}
+	};
+}(jQuery));
+
+
+
+
+/* Company info */
 var Company = (function ($) {
 	var scope,
 		$companyContainer,
@@ -40,9 +100,8 @@ var Company = (function ($) {
 	}
 
 	function initEvent() {
-		$(window).on('scroll', function(e) { 
+		$(window).on('scroll', function(e) {
 			if( $('body').hasClass('safari') ) {
-				console.log('safari');
 				return;
 			}
 
@@ -50,9 +109,9 @@ var Company = (function ($) {
 			var headerHeight = $companyHeader.outerHeight();
 			
 			console.log('scrollTop : ' + scrollTop + ', headerHeight : ' + headerHeight);
-			if( scrollTop >= headerHeight ) {
+			if( scrollTop > headerHeight ) {
 				$tabs.addClass("fixed");
-				$tabContents.css('marginTop', navigationHeight);
+				$tabContents.css('marginTop', $tabs.outerHeight());
 			} else {
 				$tabs.removeClass("fixed");
 				$tabContents.css('marginTop', 0);

@@ -315,7 +315,13 @@ The `retina-sprites` mixin generates a CSS rule and media query for retina group
     left: 0;
     padding: 11px 6.944444444444% 0 6.944444444444%;
     height: 70px;
-    background-color: rgba(0, 0, 0, 0.45); }
+    background-color: rgba(0, 0, 0, 0.45);
+    -webkit-animation-duration: 0.5s;
+            animation-duration: 0.5s;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+    -webkit-animation-name: slideDown;
+            animation-name: slideDown; }
     .company-item .add-info .current {
       float: left; }
     .company-item .add-info .goal {
@@ -334,8 +340,12 @@ The `retina-sprites` mixin generates a CSS rule and media query for retina group
       color: #fff; }
       .company-item .add-info strong em {
         font-weight: 700; }
-    .company-item .add-info.is-opened {
-      bottom: 0; }
+  .company-item.is-opened .add-info {
+    bottom: 0;
+    -webkit-animation-duration: 0.5s;
+            animation-duration: 0.5s;
+    -webkit-animation-name: slideUp;
+            animation-name: slideUp; }
 
 /* 투자 목록 */
 .list-company > li {
@@ -449,7 +459,7 @@ The `retina-sprites` mixin generates a CSS rule and media query for retina group
     display: flex;
     position: -webkit-sticky;
     position: sticky;
-    top: 44px;
+    top: 0px;
     z-index: 900;
     background-color: #fff; }
     .company .tabs > a {
@@ -821,7 +831,7 @@ The `retina-sprites` mixin generates a CSS rule and media query for retina group
     width: 57px;
     text-indent: -9999px;
     border-radius: 57px;
-    box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.25), inset 1px 1px 0 0 rgba(255, 255, 255, 0.55);
+    box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.25), inset 0px 1px 0 0 rgba(255, 255, 255, 0.55);
     background-color: #494949; }
     .shortcut-invest .btn-invest:before {
       content: '';
@@ -892,6 +902,8 @@ The `retina-sprites` mixin generates a CSS rule and media query for retina group
           background-image: url(/assets/images/sprites@2x.png);
           background-size: 194px 123px; } }
 
+/* keyframes */
+/* 투자하기 버튼 */
 @-webkit-keyframes invet-txt {
   0% {
     left: 26px;
@@ -909,7 +921,6 @@ The `retina-sprites` mixin generates a CSS rule and media query for retina group
     left: 26px;
     width: 0px;
     opacity: 0; } }
-
 @keyframes invet-txt {
   0% {
     left: 26px;
@@ -927,3 +938,38 @@ The `retina-sprites` mixin generates a CSS rule and media query for retina group
     left: 26px;
     width: 0px;
     opacity: 0; } }
+/* 슬라이드 up/down */
+@-webkit-keyframes slideUp {
+  from {
+    -webkit-transform: translate3d(0, 100%, 0);
+            transform: translate3d(0, 100%, 0);
+    opacity: 0; }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+    opacity: 1; } }
+@keyframes slideUp {
+  from {
+    -webkit-transform: translate3d(0, 100%, 0);
+            transform: translate3d(0, 100%, 0);
+    opacity: 0; }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+    opacity: 1; } }
+@-webkit-keyframes slideDown {
+  from {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+    visibility: visible; }
+  to {
+    -webkit-transform: translate3d(0, -100%, 0);
+            transform: translate3d(0, -100%, 0); } }
+@keyframes slideDown {
+  from {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+    visibility: visible; }
+  to {
+    -webkit-transform: translate3d(0, -100%, 0);
+            transform: translate3d(0, -100%, 0); } }

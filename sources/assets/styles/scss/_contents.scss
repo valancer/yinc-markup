@@ -33,6 +33,10 @@
 
 
 	.add-info { display: block; box-sizing: border-box; position: absolute; right: 0; bottom: -100%; left: 0; padding: 11px 6.944444444444% 0 6.944444444444%; height: 70px; background-color: rgba(0, 0, 0, 0.45);
+		animation-duration: 0.5s;
+		animation-fill-mode: both;
+		animation-name: slideDown;
+
 		.current { float: left; }
 		.goal { float: right; text-align: right; }
 
@@ -41,7 +45,10 @@
 			em { font-weight: 700; }
 		}
 
-		&.is-opened { bottom: 0; }
+	}
+
+	&.is-opened {
+		.add-info { bottom: 0; animation-duration: 0.5s; animation-name: slideUp; }
 	}
 }
 
@@ -81,7 +88,7 @@
 
 
 	/* 회사 정보 탭 */
-	.tabs { display: flex; position: sticky; top: 44px; z-index: z("modaless"); background-color: #fff; 
+	.tabs { display: flex; position: sticky; top: 0px; z-index: z("modaless"); background-color: #fff; 
 		> a { display: block; position: relative; flex: 1; height: 43px; font-size: 0.750rem; font-weight: 400; color: #969696; text-align: center; line-height: 43px; border-bottom: 1px solid #dedede;
 			&[data-state=selected] { font-weight: 500; color: #000;
 				&:after { content: ''; display: block; position: absolute; right: 0; bottom: 0; left: 0; height: 3px; background-color: #fde832; }

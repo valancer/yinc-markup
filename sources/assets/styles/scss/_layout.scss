@@ -3,7 +3,7 @@
 
 /* 투자하기 */
 .shortcut-invest { display: block; position: fixed; bottom: 16px; right: 16px;
-	.btn-invest { display: block; position: relative; height: 57px; width: 57px; text-indent: -9999px; border-radius: 57px; box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.25), inset 1px 1px 0 0 rgba(255, 255, 255, 0.55); background-color: #494949;
+	.btn-invest { display: block; position: relative; height: 57px; width: 57px; text-indent: -9999px; border-radius: 57px; box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.25), inset 0px 1px 0 0 rgba(255, 255, 255, 0.55); background-color: #494949;
 		&:before { content: ''; display: block; position: absolute; top: 50%; left: 50%; margin-top: -$s-icon-yinc-02-height/2+1; margin-left: -$s-icon-yinc-02-width/2+1; @include retina-sprite($s-icon-yinc-02-group); }
 		&:after { content: attr(data-title); display: block; box-sizing: border-box; position: absolute; top: 0; left: 26px; z-index: z("default")-2; padding-left: 16px; height: 57px; width: 0px; font-size: 0.813rem; font-weight: 400; color: #fff; line-height: 57px; text-indent: 0px; border-radius: 57px 0 0 57px; background-color: rgba(73, 73, 73, 0.9);
 			animation-duration: 3s;
@@ -21,6 +21,9 @@
 	}
 }
 
+
+/* keyframes */
+/* 투자하기 버튼 */
 @keyframes invet-txt {
 	0% {
 		left: 26px;
@@ -44,5 +47,28 @@
 		left: 26px;
 		width: 0px;
 		opacity: 0;
+	}
+}
+
+
+/* 슬라이드 up/down */
+@keyframes slideUp {
+	from {
+		transform: translate3d(0, 100%, 0);
+		opacity: 0;
+	}
+	to {
+		transform: translate3d(0, 0, 0);
+		opacity: 1;
+	}
+}
+
+@keyframes slideDown {
+	from {
+		transform: translate3d(0, 0, 0);
+		visibility: visible;
+	}
+	to {
+		transform: translate3d(0, -100%, 0);
 	}
 }
