@@ -54,11 +54,11 @@
 /* 슬라이드 up/down */
 @keyframes slideUp {
 	from {
-		transform: translate3d(0, 100%, 0);
+		transform: translateY(100%);
 		opacity: 0;
 	}
 	to {
-		transform: translate3d(0, 0, 0);
+		transform: translateY(0);
 		opacity: 1;
 	}
 }

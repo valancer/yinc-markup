@@ -1,7 +1,10 @@
 
 /* 투자 회사 */
 .company-item { display: block; overflow: hidden; position: relative; box-sizing: border-box; padding: 27px 6.944444444444% 0 6.944444444444%; height: 232px; background-position: center center; background-size: cover;
-	&:before { content: ''; display: block; position: absolute; top: 0; right: 0; bottom: 0; left: 0; z-index: z("default") - 1; background-color: rgba(0, 0, 0, 0.1); }
+	&:before { content: ''; display: block; position: absolute; right: 0; bottom: 0; left: 0; height: 75px; background: url('/assets/images/bg_list_gradation.png') left bottom repeat-x;
+		@include retina { background-image: url('/assets/images/bg_list_gradation@2x.png'); background-size: auto 75px; }
+	}
+	&:after { content: ''; display: block; position: absolute; top: 0; right: 0; bottom: 0; left: 0; background-color: rgba(0, 0, 0, 0.1); }
 
 	&:hover { text-decoration: none; }
 
@@ -32,10 +35,9 @@
 	}
 
 
-	.add-info { display: block; box-sizing: border-box; position: absolute; right: 0; bottom: -100%; left: 0; padding: 11px 6.944444444444% 0 6.944444444444%; height: 70px; background-color: rgba(0, 0, 0, 0.45);
-		animation-duration: 0.5s;
+	.add-info { display: block; box-sizing: border-box; position: absolute; right: 0; bottom: -100%; left: 0; z-index: z("default"); padding: 11px 6.944444444444% 0 6.944444444444%; height: 70px; background-color: rgba(0, 0, 0, 0.45);
+		animation: slideDown 0.7s ease-in-out;
 		animation-fill-mode: both;
-		animation-name: slideDown;
 
 		.current { float: left; }
 		.goal { float: right; text-align: right; }
@@ -48,7 +50,7 @@
 	}
 
 	&.is-opened {
-		.add-info { bottom: 0; animation-duration: 0.5s; animation-name: slideUp; }
+		.add-info { bottom: 0; animation-name: slideUp; }
 	}
 }
 
@@ -168,7 +170,7 @@
 		/* 요약 탭 */
 		&.summary {
 			> header { display: block; box-sizing: border-box; overflow: hidden; padding: 20px 6.944444444444% 0 6.944444444444%; height: 160px; background-color: #f4f4f4;
-				.progress { display: flex; position: relative; float: left; margin: 7px; height: 105px; width: 105px; text-align: center; border-radius: 105px; background-color: #fff;
+				.progress { display: flex; position: relative; float: left; margin: 7px; padding-top: 10px; height: 95px; width: 105px; text-align: center; border-radius: 105px; background-color: #fff;
 					flex-direction: column; justify-content: center; align-items: center; 
 
 					&:before { content: ''; display: none; position: absolute; top: 0; right: 0; bottom: 0; left: 0; border-radius: 105px; }
@@ -183,7 +185,7 @@
 					}
 
 					.title { display: none; position: absolute; top: -8px; left: 50%; z-index: z("default"); font-size: 0.750rem; font-weight: 700; color: #fff; }
-					.value { display: block; font-size: 1.000rem; font-weight: bold; color: #000;
+					.value { display: block; font-family: $font-sub-stack; font-size: 1.000rem; font-weight: 700; color: #000;
 						em { font-size: 1.625rem; }
 					}
 					.participation { margin-top: 5px; font-size: 0.750rem; font-weight: 300; color: #888;

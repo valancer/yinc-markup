@@ -196,11 +196,23 @@ The `retina-sprites` mixin generates a CSS rule and media query for retina group
     content: '';
     display: block;
     position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 75px;
+    background: url("/assets/images/bg_list_gradation.png") left bottom repeat-x; }
+    @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+      .company-item:before {
+        background-image: url("/assets/images/bg_list_gradation@2x.png");
+        background-size: auto 75px; } }
+  .company-item:after {
+    content: '';
+    display: block;
+    position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    z-index: 0;
     background-color: rgba(0, 0, 0, 0.1); }
   .company-item:hover {
     text-decoration: none; }
@@ -313,15 +325,14 @@ The `retina-sprites` mixin generates a CSS rule and media query for retina group
     right: 0;
     bottom: -100%;
     left: 0;
+    z-index: 1;
     padding: 11px 6.944444444444% 0 6.944444444444%;
     height: 70px;
     background-color: rgba(0, 0, 0, 0.45);
-    -webkit-animation-duration: 0.5s;
-            animation-duration: 0.5s;
+    -webkit-animation: slideDown 0.7s ease-in-out;
+            animation: slideDown 0.7s ease-in-out;
     -webkit-animation-fill-mode: both;
-            animation-fill-mode: both;
-    -webkit-animation-name: slideDown;
-            animation-name: slideDown; }
+            animation-fill-mode: both; }
     .company-item .add-info .current {
       float: left; }
     .company-item .add-info .goal {
@@ -342,8 +353,6 @@ The `retina-sprites` mixin generates a CSS rule and media query for retina group
         font-weight: 700; }
   .company-item.is-opened .add-info {
     bottom: 0;
-    -webkit-animation-duration: 0.5s;
-            animation-duration: 0.5s;
     -webkit-animation-name: slideUp;
             animation-name: slideUp; }
 
@@ -683,7 +692,8 @@ The `retina-sprites` mixin generates a CSS rule and media query for retina group
         position: relative;
         float: left;
         margin: 7px;
-        height: 105px;
+        padding-top: 10px;
+        height: 95px;
         width: 105px;
         text-align: center;
         border-radius: 105px;
@@ -745,8 +755,9 @@ The `retina-sprites` mixin generates a CSS rule and media query for retina group
           color: #fff; }
         .company .tab-contents.summary > header .progress .value {
           display: block;
+          font-family: "Roboto", "Noto Sans Korean", sans-serif;
           font-size: 1.000rem;
-          font-weight: bold;
+          font-weight: 700;
           color: #000; }
           .company .tab-contents.summary > header .progress .value em {
             font-size: 1.625rem; }
@@ -941,21 +952,21 @@ The `retina-sprites` mixin generates a CSS rule and media query for retina group
 /* 슬라이드 up/down */
 @-webkit-keyframes slideUp {
   from {
-    -webkit-transform: translate3d(0, 100%, 0);
-            transform: translate3d(0, 100%, 0);
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
     opacity: 0; }
   to {
-    -webkit-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0);
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
     opacity: 1; } }
 @keyframes slideUp {
   from {
-    -webkit-transform: translate3d(0, 100%, 0);
-            transform: translate3d(0, 100%, 0);
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
     opacity: 0; }
   to {
-    -webkit-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0);
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
     opacity: 1; } }
 @-webkit-keyframes slideDown {
   from {

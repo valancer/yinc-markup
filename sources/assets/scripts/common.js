@@ -46,6 +46,7 @@ var CompanyList = (function ($) {
 
 	function _updateSubInfo() {
 		var $visible = _elementVisible();
+		if( $visible === undefined ) return;
 		if( !$visible.hasClass('is-opened') ) {
 			$visible.addClass('is-opened');
 			if( $oldVisible !== null ) {
@@ -86,17 +87,20 @@ var Company = (function ($) {
 		$companyHeader,
 		$tabs,
 		$tabContents,
+		$checkpoint,
 		init = function () {
 			$companyContainer = $('.contents.company');
 			$companyHeader = $companyContainer.find('> .company-info');
 			$tabs = $companyContainer.find('.tabs');
 			$tabContents = $companyContainer.find('.tab-contents');
+			$checkpoint = $companyContainer.find('.list-checks .item-checks');
 
 			initLayout();
 			initEvent();
 		};//end init
 
 	function initLayout() {
+		$checkpoint.height(_calcMaxHeight($checkpoint));
 	}
 
 	function initEvent() {
@@ -117,6 +121,12 @@ var Company = (function ($) {
 				$tabContents.css('marginTop', 0);
 			}
 		});
+	}
+
+	function _calcMaxHeight($elements) {
+		return Math.max.apply(null, $elements.map(function (){
+			return $(this).height();
+		}).get());
 	}
 
 	return {
