@@ -72,7 +72,10 @@
 	/* 회사 정보 삳단 */
 	.company-info { display: block; box-sizing: border-box; position: relative; padding-top: 50px; height: 232px; background-position: center center; background-size: cover;
 		.inner { display: block; position: absolute; right: 0; bottom: 0; left: 0; z-index: z("default"); height: 146px; text-align: center; background-color: rgba(0, 0, 0, 0.5);
-			.thumb { display: block; margin: -34px auto 0 auto; height: 67px; width: 67px; border: 3px solid #fff; border-radius: 67px; background-color: #fff; }
+			.thumb { display: block; overflow: hidden; margin: -34px auto 0 auto; height: 67px; width: 67px; text-align: center; border: 3px solid #fff; border-radius: 67px; background-color: #fff;
+				&:before { content: ''; display: inline-block; height: 100%;  vertical-align: middle; }
+				img { display: inline-block; vertical-align: middle; line-height: 67px; }
+			}
 
 			.title { margin-top: 11px; font-size: 0.938rem; font-weight: 500; color: #fff; }
 			.desc { margin-top: 4px; font-size: 0.750rem; font-weight: 400; color: #bdbdbd; }

@@ -16,157 +16,242 @@ include "head.html"
 
 			<!-- 회사 정보 탭 -->
 			<p class="tabs">
-				<a href="#" data-state="selected">요약</a>
-				<a href="#">상세정보</a>
-				<a href="#">커뮤니케이션</a>
+				<a href="#0" data-state="selected">요약</a>
+				<a href="#1">상세정보</a>
+				<a href="#2">커뮤니케이션</a>
 			</p>
 
+			<div class="slider-container">
+				<!-- 회사 정보 탭 - 요약 -->
+				<section class="tab-contents summary">
+					
+					<header>
+						<div data-state="success" class="progress">
+							<span class="title">모집성공</span>
 
-			<!-- 회사 정보 탭 - 요약 -->
-			<section class="tab-contents summary">
-				
-				<header>
-					<div data-state="success" class="progress">
-						<span class="title">모집성공</span>
+							<strong class="value"><em>87.2</em>%</strong>
+							<p class="participation">현재 <em>48</em>명</p>
 
-						<strong class="value"><em>87.2</em>%</strong>
-						<p class="participation">현재 <em>48</em>명</p>
-
-						<div class="circle">
-							<svg viewBox="-10 -10 220 220">
-								<g fill="none" stroke-width="7" transform="translate(100,100)">
-									<path d="M 0,-100 A 100,100 0 0,1 86.6,-50" stroke="#fde832" />
-									<path d="M 86.6,-50 A 100,100 0 0,1 86.6,50" stroke="#fde832" />
-									<path d="M 86.6,50 A 100,100 0 0,1 0,100" stroke="#fde832" />
-									<path d="M 0,100 A 100,100 0 0,1 -86.6,50" stroke="#fde832" />
-									<path d="M -86.6,50 A 100,100 0 0,1 -86.6,-50" stroke="#fde832" />
-									<path d="M -86.6,-50 A 100,100 0 0,1 0,-100" stroke="#fde832" />
-								</g>
-							</svg>
-							<svg viewBox="-10 -10 220 220">
-								<path d="M200,100 C200,44.771525 155.228475,0 100,0 C44.771525,0 0,44.771525 0,100 C0,155.228475 44.771525,200 100,200 C155.228475,200 200,155.228475 200,100 Z" stroke-dashoffset="548"></path>
-							</svg>
+							<div class="circle">
+								<svg viewBox="-10 -10 220 220">
+									<g fill="none" stroke-width="7" transform="translate(100,100)">
+										<path d="M 0,-100 A 100,100 0 0,1 86.6,-50" stroke="#fde832" />
+										<path d="M 86.6,-50 A 100,100 0 0,1 86.6,50" stroke="#fde832" />
+										<path d="M 86.6,50 A 100,100 0 0,1 0,100" stroke="#fde832" />
+										<path d="M 0,100 A 100,100 0 0,1 -86.6,50" stroke="#fde832" />
+										<path d="M -86.6,50 A 100,100 0 0,1 -86.6,-50" stroke="#fde832" />
+										<path d="M -86.6,-50 A 100,100 0 0,1 0,-100" stroke="#fde832" />
+									</g>
+								</svg>
+								<svg viewBox="-10 -10 220 220">
+									<path d="M200,100 C200,44.771525 155.228475,0 100,0 C44.771525,0 0,44.771525 0,100 C0,155.228475 44.771525,200 100,200 C155.228475,200 200,155.228475 200,100 Z" stroke-dashoffset="548"></path>
+								</svg>
+							</div>
 						</div>
-					</div>
 
-					<ul class="summary-info">
-						<li>
-							<span class="title">목표 6288만원</span>
-							<p class="content">
-								<strong>6176</strong>만원
-							</p>
-						</li>
-						<li>
-							<span class="title">남은 기간</span>
-							<p class="content">
-								<strong><time datetime="">D-24일</time></strong>
-							</p>
-						</li>
-						<li>
-							<span class="title">주당 모집가격</span>
-							<p class="content">
-								<strong>2.5</strong>만원
-							</p>
-						</li>
-						<li>
-							<span class="title">청약 단위</span>
-							<p class="content">
-								<sub>최소</sub> <strong>10</strong>주
-							</p>
-						</li>
-					</ul>	
-				</header>
+						<ul class="summary-info">
+							<li>
+								<span class="title">목표 6288만원</span>
+								<p class="content">
+									<strong>6176</strong>만원
+								</p>
+							</li>
+							<li>
+								<span class="title">남은 기간</span>
+								<p class="content">
+									<strong><time datetime="">D-24일</time></strong>
+								</p>
+							</li>
+							<li>
+								<span class="title">주당 모집가격</span>
+								<p class="content">
+									<strong>2.5</strong>만원
+								</p>
+							</li>
+							<li>
+								<span class="title">청약 단위</span>
+								<p class="content">
+									<sub>최소</sub> <strong>10</strong>주
+								</p>
+							</li>
+						</ul>	
+					</header>
 
 
-				<section class="tab-section">
-					<h2 class="is-hidden">요약정보</h2>
+					<section class="tab-section">
+						<h2 class="is-hidden">요약정보</h2>
 
-					<ul class="list-table-view">
-						<li>
-							<span class="title">기간</span>
+						<ul class="list-table-view">
+							<li>
+								<span class="title">기간</span>
 
-							<p class="content">
-								<span class="em">
-									<time datetime="">2016.1.3</time>
-									~
-									<time datetime="">2.26</time>
+								<p class="content">
+									<span class="em">
+										<time datetime="">2016.1.3</time>
+										~
+										<time datetime="">2.26</time>
+									</span>
+								</p>
+							</li>
+							<li>
+								<span class="title">목표 금액</span>
+								
+								<p class="content"><em class="em">3</em>억 <em class="em">3000</em>만원</p>
+							</li>
+							<li>
+								<span class="title">증권발행 기업가치</span>
+								
+								<p class="content"><em class="em">26</em>억 <em class="em">4000</em>만원</p>
+							</li>
+							<li>
+								<span class="title">지분율</span>
+								
+								<p class="content"><em class="em">12.5</em>%</p>
+							</li>
+							<li>
+								<span class="title">
+									증권 종류
+									<button type="button" class="btn-info">증권종류 도움말 보기</button>
 								</span>
-							</p>
-						</li>
-						<li>
-							<span class="title">목표 금액</span>
-							
-							<p class="content"><em class="em">3</em>억 <em class="em">3000</em>만원</p>
-						</li>
-						<li>
-							<span class="title">증권발행 기업가치</span>
-							
-							<p class="content"><em class="em">26</em>억 <em class="em">4000</em>만원</p>
-						</li>
-						<li>
-							<span class="title">지분율</span>
-							
-							<p class="content"><em class="em">12.5</em>%</p>
-						</li>
-						<li>
-							<span class="title">
-								증권 종류
-								<button type="button" class="btn-info">증권종류 도움말 보기</button>
-							</span>
-							
-							<p class="content">상환전환우선주</p>
-						</li>
-						<li>
-							<span class="title">리드투자자</span>
-							
-							<p class="content">
-								<img src="https://www.yinc.kr/images/Lead_Ci_001_Detail.png" alt="MAGELLAN" class="ci">
-							</p>
-						</li>
-					</ul>
+								
+								<p class="content">상환전환우선주</p>
+							</li>
+							<li>
+								<span class="title">리드투자자</span>
+								
+								<p class="content">
+									<img src="https://www.yinc.kr/images/Lead_Ci_001_Detail.png" alt="MAGELLAN" class="ci">
+								</p>
+							</li>
+						</ul>
 
 
-					<div class="check-options scroll">
-						<h2 class="options-title">투자 포인트</h2>
+						<div class="check-options scroll">
+							<h2 class="options-title">투자 포인트</h2>
 
-						<div class="inner">
-							<ul class="list-checks">
-								<li>
-									<p class="item-checks">2012년 연세대학교 재학시절부터 4년간 함께 해 온 핵심인력 구성</p>
-								</li>
-								<li>
-									<p class="item-checks">별다른 해외 영업/마케팅 없이 해외 사용자의 비율 94%, 재방문율(Retention Rate) 50%이상 유지</p>
-								</li>
-								<li>
-									<p class="item-checks">LINER는 국내외 유일한 웹 하이라이터 도구로, 인터넷의 정보를 체계적으로 정리/색인(indexing) 할 수 있는 서비스</p>
-								</li>
-							</ul>
+							<div class="inner">
+								<ul class="list-checks">
+									<li>
+										<p class="item-checks">2012년 연세대학교 재학시절부터 4년간 함께 해 온 핵심인력 구성</p>
+									</li>
+									<li>
+										<p class="item-checks">별다른 해외 영업/마케팅 없이 해외 사용자의 비율 94%, 재방문율(Retention Rate) 50%이상 유지</p>
+									</li>
+									<li>
+										<p class="item-checks">LINER는 국내외 유일한 웹 하이라이터 도구로, 인터넷의 정보를 체계적으로 정리/색인(indexing) 할 수 있는 서비스</p>
+									</li>
+								</ul>
+							</div>
 						</div>
-					</div>
+					</section>
+
+
+					<!-- 회사소개 -->
+					<section class="tab-section">
+						<h2 class="info-title company">회사소개</h2>
+
+						<p>
+							<img src="https://yinc.kr/data/uploads/1/50/40986891a31e2351b4f182ee263e4c41.png" alt="회사 소개">
+						</p>
+					</section>
+
+
+					<!-- 임직원 소개 -->
+					<section class="tab-section">
+						<h2 class="info-title executives">임직원 소개</h2>
+
+						<p>
+							<img src="https://yinc.kr/data/uploads/1/50/b80e905be58fedfe68994b6eed7597d8.png" alt="임직원 소개">
+						</p>
+					</section>
 				</section>
 
+				<!-- 회사 정보 탭 - 상세정보 -->
+				<section class="tab-contents detail">
+					
+					<section class="tab-section">
+						<h2 class="header-table-view">투자정보</h2>
 
-				<!-- 회사소개 -->
-				<section class="tab-section">
-					<h2 class="info-title company">회사소개</h2>
+						<ul class="list-table-view">
+							<li>
+								<a href="#">
+									<span class="title">발행증권정보</span>
+								</a>
+							</li>
+						</ul>
 
-					<p>
-						<img src="https://yinc.kr/data/uploads/1/50/40986891a31e2351b4f182ee263e4c41.png" alt="회사 소개">
-					</p>
+						<h2 class="header-table-view">기업정보</h2>
+						<ul class="list-table-view">
+							<li>
+								<a href="#">
+									<span class="title">회사소개</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span class="title">임직원소개</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span class="title">사업계획</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span class="title">재무현황</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span class="title">리스크</span>
+								</a>
+							</li>
+						</ul>
+
+
+						<div class="check-options">
+							<h2 class="options-title">관련문서</h2>
+
+							<div class="inner">
+								<ul class="list-checks">
+									<li>
+										<a href="#" class="item-checks">
+											<p>정관</p>
+										</a>
+									</li>
+									<li>
+										<a href="#" class="item-checks">
+											<p>등기부 등본</p>
+										</a>
+									</li>
+									<li>
+										<a href="#" class="item-checks">
+											<p>사업자 등록증</p>
+										</a>
+									</li>
+									<li>
+										<a href="#" class="item-checks">
+											<p>재무 상태표</p>
+										</a>
+									</li>
+									<li>
+										<a href="#" class="item-checks">
+											<p>증권발행 주요사항</p>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</section>
 				</section>
 
-
-				<!-- 임직원 소개 -->
-				<section class="tab-section">
-					<h2 class="info-title executives">임직원 소개</h2>
-
-					<p>
-						<img src="https://yinc.kr/data/uploads/1/50/b80e905be58fedfe68994b6eed7597d8.png" alt="임직원 소개">
-					</p>
+				<!-- 회사 정보 탭 - 커뮤니케이션 -->
+				<section class="tab-contents communication">
+					커뮤니케이션
 				</section>
-
-			</section>
-
+			</div>
+			
 
 			<!-- 투자하기 버튼 -->
 			include "btn_invest.html"

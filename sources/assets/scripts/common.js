@@ -86,12 +86,15 @@ var Company = (function ($) {
 		$companyContainer,
 		$companyHeader,
 		$tabs,
+		$sliderContainer,
 		$tabContents,
 		$checkpoint,
 		init = function () {
 			$companyContainer = $('.contents.company');
 			$companyHeader = $companyContainer.find('> .company-info');
 			$tabs = $companyContainer.find('.tabs');
+			$tabItems = $tabs.find('> a');
+			$sliderContainer = $companyContainer.find('.slider-container');
 			$tabContents = $companyContainer.find('.tab-contents');
 			$checkpoint = $companyContainer.find('.list-checks .item-checks');
 
@@ -120,6 +123,32 @@ var Company = (function ($) {
 				$tabs.removeClass("fixed");
 				$tabContents.css('marginTop', 0);
 			}
+		});
+
+
+		/* tab slider */
+		$tabItems.on('click', function(e) {
+			e.preventDefault();
+
+			var target = parseInt($(this).attr("href").split("#")[1]);
+			$sliderContainer.slick("slickPause");
+			$sliderContainer.slick("slickGoTo", target);
+
+		});
+
+		$sliderContainer.on('afterChange', function(event, slick, currentSlide){
+			$tabItems.attr("data-state", "");
+			$tabItems.eq(currentSlide).attr("data-state", "selected");
+		});
+
+		$sliderContainer.slick({
+			infinite: true,
+			dots: false,
+			arrows: false,
+			adaptiveHeight: true,
+			slidesToShow: 1,
+			slidesToScroll: 1,
+			slide: '.tab-contents'
 		});
 	}
 
