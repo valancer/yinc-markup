@@ -12,12 +12,74 @@
 })();
 
 
+/* native linker */
+var NativeLinker = (function ($) {
+	var scope,
+		$linker,
+		init = function() {
+			$linker = $('[href]');
 
-var navigationHeight = 0;
+			initLayout();
+			initEvent();
+		};
+
+	function initLayout() {
+
+	}
+
+	function initEvent() {
+		$linker.on('click', function(e) {
+			e.preventDefault();
+
+			var $linker = $(this);
+			var action = $linker.data("navigation");
+			var url = $linker.attr("href");
+
+			_handleNavigation(action, url);
+		});
+	}
+
+	function _pushNavigation(url) {
+		var device = yincLS.getItem("device");
+
+		if( device == "ios" ) {
+			window.webkit.messageHandlers.pushNavigation.postMessage({url: url});
+		} else if( device == "android" ) {
+			window.android.pushNavigation({url: url});
+		} else {
+			window.location.href = url;
+		}
+	}
+
+	function _handleNavigation(action, url) {
+		console.log("action : " + action + ", url : " + url);
+		if( action == "push" ) {
+			_pushNavigation(url);
+		}
+	}
+
+	return {
+		init: function () {
+			scope = this;
+
+			init();
+		}
+	};
+}(jQuery));
+
+
+
 $(document).ready(function (e) {
-	Company.init();
 	CompanyList.init();
+	Company.init();
+	NativeLinker.init();
+
+	yincLS.init();
+	yincLS.setItem("navigationHeight", 44);
+	yincLS.setItem("device", null);
 });
+
+
 
 
 /* Company List */
@@ -83,12 +145,14 @@ var CompanyList = (function ($) {
 /* Company info */
 var Company = (function ($) {
 	var scope,
+		swipe,
 		$companyContainer,
 		$companyHeader,
 		$tabs,
 		$sliderContainer,
 		$tabContents,
-		$checkpoint,
+		$cpContainer,
+		$cpItems,
 		init = function () {
 			$companyContainer = $('.contents.company');
 			$companyHeader = $companyContainer.find('> .company-info');
@@ -96,28 +160,31 @@ var Company = (function ($) {
 			$tabItems = $tabs.find('> a');
 			$sliderContainer = $companyContainer.find('.slider-container');
 			$tabContents = $companyContainer.find('.tab-contents');
-			$checkpoint = $companyContainer.find('.list-checks .item-checks');
+			$cpContainer = $companyContainer.find('.scroll .list-checks');
+			$cpItems = $cpContainer.find('.item-checks');
 
+			if( $companyContainer.length <= 0 ) return;
 			initLayout();
 			initEvent();
 		};//end init
 
 	function initLayout() {
-		$checkpoint.height(_calcMaxHeight($checkpoint));
+		$cpItems.height(_calcMaxHeight($cpItems));
 	}
 
 	function initEvent() {
 		$(window).on('scroll', function(e) {
-			if( $('body').hasClass('safari') ) {
-				return;
-			}
+			// if( $('body').hasClass('safari') ) {
+			// 	return;
+			// }
 
-			var scrollTop = $(this).scrollTop() + navigationHeight;
+			var scrollTop = $(this).scrollTop() + parseInt(yincLS.getItem("navigationHeight"));
 			var headerHeight = $companyHeader.outerHeight();
 			
-			console.log('scrollTop : ' + scrollTop + ', headerHeight : ' + headerHeight);
+			// console.log('scrollTop : ' + scrollTop + ', headerHeight : ' + headerHeight);
 			if( scrollTop > headerHeight ) {
 				$tabs.addClass("fixed");
+				$tabs.css('top', parseInt(yincLS.getItem("navigationHeight")));
 				$tabContents.css('marginTop', $tabs.outerHeight());
 			} else {
 				$tabs.removeClass("fixed");
@@ -127,29 +194,53 @@ var Company = (function ($) {
 
 
 		/* tab slider */
+		swipe = Swipe($("#swipe").get(0), {
+			continuous: true,
+			callback: function(index, element) {
+				var target = $(element).attr("id");
+				swipe.updateHeight();
+			},
+			transitionEnd: function(index, element) {
+				var target = $(element).attr("id");
+				_updateTabLabel(index);
+			}
+		});
+
 		$tabItems.on('click', function(e) {
 			e.preventDefault();
 
-			var target = parseInt($(this).attr("href").split("#")[1]);
-			$sliderContainer.slick("slickPause");
-			$sliderContainer.slick("slickGoTo", target);
-
+			_slideToHash($(this).attr("href"));
 		});
 
-		$sliderContainer.on('afterChange', function(event, slick, currentSlide){
-			$tabItems.attr("data-state", "");
-			$tabItems.eq(currentSlide).attr("data-state", "selected");
-		});
-
-		$sliderContainer.slick({
-			infinite: true,
+		// check point slider
+		$cpContainer.slick({
+			infinite: false,
 			dots: false,
 			arrows: false,
-			adaptiveHeight: true,
 			slidesToShow: 1,
 			slidesToScroll: 1,
-			slide: '.tab-contents'
+			stopPropagation: true,
+			slide: 'li'
 		});
+
+		if( window.location.hash ) {
+			var hash = window.location.hash;
+			_slideToHash(hash);
+		} else {
+			_slideToHash("#summary");
+		}
+	}
+
+	function _updateTabLabel(index) {
+		$tabItems.attr("data-state", "");
+		$tabItems.eq(index).attr("data-state", "selected");
+	}
+
+	function _slideToHash(hash) {
+		var target = hash.split("#")[1];
+		var index = $('.tab-contents').index($('section[id="' + target + '"]'));
+		swipe.slide(index, 0);
+		_updateTabLabel(index);
 	}
 
 	function _calcMaxHeight($elements) {
@@ -169,5 +260,44 @@ var Company = (function ($) {
 
 
 
+
+
+/* yinc local storage */
+var yincLS = (function ($) {
+	var scope,
+		init = function() {
+			if (typeof(localStorage) == 'undefined' ) {
+				alert('당신의 브라우저는 HTML5 localStorage를 지원하지 않습니다. 브라우저를 업그레이드하세요.');
+			}
+		};
+
+	function _setItem(key, value) {
+		try {
+			localStorage.setItem(key, value);
+		} catch (e) {
+			if (e == QUOTA_EXCEEDED_ERR) {
+				alert('할당량 초과!'); // 할당량 초과로 인하여 데이터를 저장할 수 없음
+			}
+		}
+	}
+
+	function _getItem(key) {
+		return localStorage.getItem(key);
+	}
+
+	return {
+		init: function () {
+			scope = this;
+
+			init();
+		},
+		setItem: function(key, value) {
+			_setItem(key, value);
+		},
+		getItem: function(key) {
+			return _getItem(key);
+		}
+	};
+}(jQuery));
 
 

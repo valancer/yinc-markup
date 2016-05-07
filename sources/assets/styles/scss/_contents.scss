@@ -93,21 +93,26 @@
 
 
 	/* 회사 정보 탭 */
-	.tabs { display: flex; position: sticky; top: 0px; z-index: z("modaless"); background-color: #fff; 
+	.tabs { display: flex; position: sticky; top: 44px; z-index: z("modaless"); background-color: #fff; 
 		> a { display: block; position: relative; flex: 1; height: 43px; font-size: 0.750rem; font-weight: 400; color: #969696; text-align: center; line-height: 43px; border-bottom: 1px solid #dedede;
 			&[data-state=selected] { font-weight: 500; color: #000;
 				&:after { content: ''; display: block; position: absolute; right: 0; bottom: 0; left: 0; height: 3px; background-color: #fde832; }
 			}
 
 			+ a { border-left: 1px solid #dedede; }
+			&:hover { text-decoration: none; }
 		}
 
 		&.fixed { position: fixed; top: 0; right: 0; left: 0; }
 	}
 
 
+	.slider-container { overflow: hidden; position: relative; visibility: hidden;
+		.swipe-wrap { overflow: hidden; position: relative; }
+	}
+
 	/* 개별 탭 내용 */
-	.tab-contents {
+	.tab-contents { float: left; position: relative; min-height: 300px; width: 100%;
 
 		/* 테이블 뷰 형태 */
 		.header-table-view { padding: 0 6.944444444444%; height: 30px; font-size: 0.688rem; font-weight: 300; color: #888; line-height: 30px; border-top: 1px solid #dedede; background-color: #f1f1f1; }
@@ -153,7 +158,7 @@
 				.options-title { padding: 0 6.944444444444%; font-size: 0.688rem; font-weight: 300; color: #888; }
 
 				.list-checks { overflow: hidden; padding: 0 6.944444444444% 25px 6.944444444444%; 
-					> li { float: left; }
+					li { float: left; }
 					
 					.item-checks { display: block; box-sizing: border-box; position: relative; margin: 13px 11px 0 0; padding: 13px 10px 0 14px; height: 84px; width: 69px; font-size: 0.750rem; font-weight: 300; color: #000; line-height: 16px; text-decoration: none; word-break: keep-all; border-radius: 2px; background-color: #fff; box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2);
 						&:before { content: ''; display: block; position: absolute; top: -6px; left: 11px; @include retina-sprite($s-icon-yinc-group); }
@@ -161,9 +166,11 @@
 				}
 
 				&.scroll {
-					.inner { overflow: scroll; }
-					.list-checks { width: 600px;
-						.item-checks { display: block; padding-bottom: 13px; min-height: 94px; height: auto; min-width: 185px; max-width: 185px; }
+					.inner { }
+					.list-checks {
+						.slick-list { overflow: visible; }
+						li { box-sizing: border-box; padding-right: 30px; }
+						.item-checks { display: block; padding-bottom: 13px; min-height: 94px; height: auto; min-width: 185px; width: 100%; }
 					}
 				}
 			}
@@ -173,6 +180,9 @@
 		/* 요약 탭 */
 		&.summary {
 			> header { display: block; box-sizing: border-box; overflow: hidden; padding: 20px 6.944444444444% 0 6.944444444444%; height: 160px; background-color: #f4f4f4;
+				
+				@include mobile-small { padding-right: 3%; padding-left: 3%; }
+
 				.progress { display: flex; position: relative; float: left; margin: 7px; padding-top: 10px; height: 95px; width: 105px; text-align: center; border-radius: 105px; background-color: #fff;
 					flex-direction: column; justify-content: center; align-items: center; 
 
@@ -215,9 +225,12 @@
 					}
 				}
 
+
 				.summary-info { overflow: hidden; float: right; width: 51.935483870968%;
+					// @include mobile-small { width: 60%; }
+
 					> li { float: left; margin-top: 7px; width: 50%;
-						&:nth-child(odd) { }
+						&:nth-child(odd) { clear: both; }
 						&:nth-child(even) { text-align: right; }
 
 						.title { font-size: 0.625rem; font-weight: 300; color: #888; }

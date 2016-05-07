@@ -16,14 +16,17 @@ include "head.html"
 
 			<!-- 회사 정보 탭 -->
 			<p class="tabs">
-				<a href="#0" data-state="selected">요약</a>
-				<a href="#1">상세정보</a>
-				<a href="#2">커뮤니케이션</a>
+				<a href="#summary">요약</a>
+				<a href="#detail">상세정보</a>
+				<a href="#communication">커뮤니케이션</a>
 			</p>
 
-			<div class="slider-container">
+			<div id="swipe" class="slider-container">
+				<div class="swipe-wrap">
+
+
 				<!-- 회사 정보 탭 - 요약 -->
-				<section class="tab-contents summary">
+				<section id="summary" class="tab-contents summary">
 					
 					<header>
 						<div data-state="success" class="progress">
@@ -51,9 +54,9 @@ include "head.html"
 
 						<ul class="summary-info">
 							<li>
-								<span class="title">목표 6288만원</span>
+								<span class="title">목표 1억6288만원</span>
 								<p class="content">
-									<strong>6176</strong>만원
+									<strong>1</strong>억<strong>6176</strong>만원
 								</p>
 							</li>
 							<li>
@@ -167,7 +170,7 @@ include "head.html"
 				</section>
 
 				<!-- 회사 정보 탭 - 상세정보 -->
-				<section class="tab-contents detail">
+				<section id="detail" class="tab-contents detail">
 					
 					<section class="tab-section">
 						<h2 class="header-table-view">투자정보</h2>
@@ -247,9 +250,11 @@ include "head.html"
 				</section>
 
 				<!-- 회사 정보 탭 - 커뮤니케이션 -->
-				<section class="tab-contents communication">
+				<section id="communication" class="tab-contents communication">
 					커뮤니케이션
 				</section>
+
+				</div>
 			</div>
 			
 

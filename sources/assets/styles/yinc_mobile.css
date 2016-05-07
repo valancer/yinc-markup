@@ -180,6 +180,9 @@ The `retina-sprites` mixin generates a CSS rule and media query for retina group
  * z-index
 **/
 /**
+ * mixin
+**/
+/**
  * import
  */
 /* Slider */
@@ -549,7 +552,7 @@ The `retina-sprites` mixin generates a CSS rule and media query for retina group
     display: flex;
     position: -webkit-sticky;
     position: sticky;
-    top: 0px;
+    top: 44px;
     z-index: 900;
     background-color: #fff; }
     .company .tabs > a {
@@ -579,12 +582,25 @@ The `retina-sprites` mixin generates a CSS rule and media query for retina group
           background-color: #fde832; }
       .company .tabs > a + a {
         border-left: 1px solid #dedede; }
+      .company .tabs > a:hover {
+        text-decoration: none; }
     .company .tabs.fixed {
       position: fixed;
       top: 0;
       right: 0;
       left: 0; }
+  .company .slider-container {
+    overflow: hidden;
+    position: relative;
+    visibility: hidden; }
+    .company .slider-container .swipe-wrap {
+      overflow: hidden;
+      position: relative; }
   .company .tab-contents {
+    float: left;
+    position: relative;
+    min-height: 300px;
+    width: 100%;
     /* 테이블 뷰 형태 */
     /* 요약 탭 */
     /* 상세정보 탭 */ }
@@ -715,7 +731,7 @@ The `retina-sprites` mixin generates a CSS rule and media query for retina group
       .company .tab-contents .tab-section .check-options .list-checks {
         overflow: hidden;
         padding: 0 6.944444444444% 25px 6.944444444444%; }
-        .company .tab-contents .tab-section .check-options .list-checks > li {
+        .company .tab-contents .tab-section .check-options .list-checks li {
           float: left; }
         .company .tab-contents .tab-section .check-options .list-checks .item-checks {
           display: block;
@@ -748,17 +764,18 @@ The `retina-sprites` mixin generates a CSS rule and media query for retina group
               .company .tab-contents .tab-section .check-options .list-checks .item-checks:before {
                 background-image: url(/assets/images/sprites@2x.png);
                 background-size: 194px 123px; } }
-      .company .tab-contents .tab-section .check-options.scroll .inner {
-        overflow: scroll; }
-      .company .tab-contents .tab-section .check-options.scroll .list-checks {
-        width: 600px; }
-        .company .tab-contents .tab-section .check-options.scroll .list-checks .item-checks {
-          display: block;
-          padding-bottom: 13px;
-          min-height: 94px;
-          height: auto;
-          min-width: 185px;
-          max-width: 185px; }
+      .company .tab-contents .tab-section .check-options.scroll .list-checks .slick-list {
+        overflow: visible; }
+      .company .tab-contents .tab-section .check-options.scroll .list-checks li {
+        box-sizing: border-box;
+        padding-right: 30px; }
+      .company .tab-contents .tab-section .check-options.scroll .list-checks .item-checks {
+        display: block;
+        padding-bottom: 13px;
+        min-height: 94px;
+        height: auto;
+        min-width: 185px;
+        width: 100%; }
     .company .tab-contents.summary > header {
       display: block;
       box-sizing: border-box;
@@ -766,6 +783,10 @@ The `retina-sprites` mixin generates a CSS rule and media query for retina group
       padding: 20px 6.944444444444% 0 6.944444444444%;
       height: 160px;
       background-color: #f4f4f4; }
+      @media only screen and (max-width: 320px) {
+        .company .tab-contents.summary > header {
+          padding-right: 3%;
+          padding-left: 3%; } }
       .company .tab-contents.summary > header .progress {
         display: -webkit-flex;
         display: -ms-flexbox;
@@ -888,6 +909,8 @@ The `retina-sprites` mixin generates a CSS rule and media query for retina group
           float: left;
           margin-top: 7px;
           width: 50%; }
+          .company .tab-contents.summary > header .summary-info > li:nth-child(odd) {
+            clear: both; }
           .company .tab-contents.summary > header .summary-info > li:nth-child(even) {
             text-align: right; }
           .company .tab-contents.summary > header .summary-info > li .title {
