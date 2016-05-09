@@ -537,13 +537,13 @@ The `retina-sprites` mixin generates a CSS rule and media query for retina group
           .company .company-info .inner .btn-favorite {
             background-image: url(/assets/images/sprites@2x.png);
             background-size: 194px 123px; } }
-        .company .company-info .inner .btn-favorite[data-state=selected] {
+        .company .company-info .inner .btn-favorite[value=true] {
           background-image: url(/assets/images/sprites.png);
           background-position: -86px 0px;
           width: 44px;
           height: 44px; }
           @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-            .company .company-info .inner .btn-favorite[data-state=selected] {
+            .company .company-info .inner .btn-favorite[value=true] {
               background-image: url(/assets/images/sprites@2x.png);
               background-size: 194px 123px; } }
   .company .tabs {
@@ -617,6 +617,7 @@ The `retina-sprites` mixin generates a CSS rule and media query for retina group
       width: 100%; }
       .company .tab-contents .list-table-view > li {
         overflow: hidden;
+        position: relative;
         padding: 0 6.944444444444%;
         height: 40px;
         border-top: 1px solid #dedede;
@@ -642,14 +643,19 @@ The `retina-sprites` mixin generates a CSS rule and media query for retina group
             width: auto; }
         .company .tab-contents .list-table-view > li a {
           display: block;
-          position: relative;
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          padding: 0 6.944444444444%;
           height: 100%; }
           .company .tab-contents .list-table-view > li a:after {
             content: '';
             display: block;
             position: absolute;
             top: 50%;
-            right: 0px;
+            right: 6.944444444444%;
             margin-top: -7px;
             background-image: url(/assets/images/sprites.png);
             background-position: -183px -62px;
@@ -663,6 +669,8 @@ The `retina-sprites` mixin generates a CSS rule and media query for retina group
             font-size: 0.813rem;
             font-weight: 300;
             color: #010101; }
+          .company .tab-contents .list-table-view > li a:active, .company .tab-contents .list-table-view > li a:hover {
+            background-color: #fffacd; }
       .company .tab-contents .list-table-view .btn-info {
         display: inline-block;
         margin-top: -2px;
@@ -818,6 +826,8 @@ The `retina-sprites` mixin generates a CSS rule and media query for retina group
           bottom: 0;
           left: 0;
           border-radius: 105px; }
+        .company .tab-contents.summary > header .progress .title {
+          display: none; }
         .company .tab-contents.summary > header .progress[data-state=success]:before {
           display: block;
           background-color: rgba(124, 175, 215, 0.4); }
@@ -832,6 +842,8 @@ The `retina-sprites` mixin generates a CSS rule and media query for retina group
             .company .tab-contents.summary > header .progress[data-state=success] .title {
               background-image: url(/assets/images/sprites@2x.png);
               background-size: 194px 123px; } }
+          .company .tab-contents.summary > header .progress[data-state=success] .title:before {
+            content: '펀딩성공'; }
         .company .tab-contents.summary > header .progress[data-state=close]:before {
           display: block;
           background-color: rgba(139, 139, 139, 0.4); }
@@ -846,6 +858,8 @@ The `retina-sprites` mixin generates a CSS rule and media query for retina group
             .company .tab-contents.summary > header .progress[data-state=close] .title {
               background-image: url(/assets/images/sprites@2x.png);
               background-size: 194px 123px; } }
+          .company .tab-contents.summary > header .progress[data-state=close] .title:before {
+            content: '펀딩종료'; }
         .company .tab-contents.summary > header .progress .title {
           display: none;
           position: absolute;
@@ -899,8 +913,8 @@ The `retina-sprites` mixin generates a CSS rule and media query for retina group
               stroke-dasharray: 629;
               stroke: #f4f4f4;
               opacity: 1;
-              -webkit-animation: svg-load 1s;
-                      animation: svg-load 1s; }
+              -webkit-animation: svg-load 2s;
+                      animation: svg-load 2s; }
       .company .tab-contents.summary > header .summary-info {
         overflow: hidden;
         float: right;

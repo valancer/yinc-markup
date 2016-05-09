@@ -86,7 +86,7 @@
 				.icon-lead { display: inline-block; text-indent: -9999px; @include retina-sprite($s-icon-lead-group); }
 			}
 			.btn-favorite { display: block; position: absolute; top: 0px; right: 0px; text-indent: -9999px; @include retina-sprite($s-btn-favorite-group); 
-				&[data-state=selected] { @include retina-sprite($s-btn-favorite-selected-group); }
+				&[value=true] { @include retina-sprite($s-btn-favorite-selected-group); }
 			}
 		}
 	}
@@ -117,7 +117,7 @@
 		/* 테이블 뷰 형태 */
 		.header-table-view { padding: 0 6.944444444444%; height: 30px; font-size: 0.688rem; font-weight: 300; color: #888; line-height: 30px; border-top: 1px solid #dedede; background-color: #f1f1f1; }
 		.list-table-view { width: 100%;
-			> li { overflow: hidden; padding: 0 6.944444444444%; height: 40px; border-top: 1px solid #dedede;
+			> li { overflow: hidden; position: relative; padding: 0 6.944444444444%; height: 40px; border-top: 1px solid #dedede;
 
 				/* normal */
 				.title { float: left; font-size: 0.688rem; font-weight: 300; color: #888; line-height: 40px; }
@@ -127,10 +127,12 @@
 				}
 
 				/* link */
-				a { display: block; position: relative; height: 100%;
-					&:after { content: ''; display: block; position: absolute; top: 50%; right: 0px; margin-top: -$s-icon-arrow01-height/2; @include retina-sprite($s-icon-arrow01-group); }
+				a { display: block; position: absolute; top: 0; right: 0; bottom: 0; left: 0; padding: 0 6.944444444444%; height: 100%;
+					&:after { content: ''; display: block; position: absolute; top: 50%; right: 6.944444444444%; margin-top: -$s-icon-arrow01-height/2; @include retina-sprite($s-icon-arrow01-group); }
 					.title { font-size: 0.813rem; font-weight: 300; color: #010101; }
 
+					&:active,
+					&:hover { background-color: #fffacd; }
 				}
 			}
 
@@ -187,14 +189,19 @@
 					flex-direction: column; justify-content: center; align-items: center; 
 
 					&:before { content: ''; display: none; position: absolute; top: 0; right: 0; bottom: 0; left: 0; border-radius: 105px; }
+					.title { display: none; }
 
 					&[data-state=success] {
 						&:before { display: block; background-color: rgba(124, 175, 215, 0.4); }
-						.title { display: block; margin-left: -$s-bg-flag01-width/2; @include retina-sprite($s-bg-flag01-group); }
+						.title { display: block; margin-left: -$s-bg-flag01-width/2; @include retina-sprite($s-bg-flag01-group);
+							&:before { content: '펀딩성공'; }
+						}
 					}
 					&[data-state=close] {
 						&:before { display: block; background-color: rgba(139, 139, 139, 0.4); }
-						.title { display: block; margin-left: -$s-bg-flag02-width/2; @include retina-sprite($s-bg-flag02-group); }
+						.title { display: block; margin-left: -$s-bg-flag02-width/2; @include retina-sprite($s-bg-flag02-group);
+							&:before { content: '펀딩종료'; }
+						}
 					}
 
 					.title { display: none; position: absolute; top: -8px; left: 50%; z-index: z("default"); font-size: 0.750rem; font-weight: 700; color: #fff; }
@@ -219,7 +226,7 @@
 								stroke-dasharray: 629;
 								stroke: #f4f4f4;
 								opacity: 1;
-								animation: svg-load 1s;
+								animation: svg-load 2s;
 							}
 						}
 					}

@@ -16,8 +16,11 @@
 var NativeLinker = (function ($) {
 	var scope,
 		$linker,
+		_device,
 		init = function() {
-			$linker = $('[href]');
+			$linker = $('[data-navigation]');
+
+			_device = yincLS.getItem("device");
 
 			initLayout();
 			initEvent();
@@ -39,13 +42,22 @@ var NativeLinker = (function ($) {
 		});
 	}
 
-	function _pushNavigation(url) {
-		var device = yincLS.getItem("device");
 
-		if( device == "ios" ) {
+	function _pushNavigation(url) {
+		if( _device == "ios" ) {
 			window.webkit.messageHandlers.pushNavigation.postMessage({url: url});
-		} else if( device == "android" ) {
+		} else if( _device == "android" ) {
 			window.android.pushNavigation({url: url});
+		} else {
+			window.location.href = url;
+		}
+	}
+
+	function _presentModal(url) {
+		if( _device == "ios" ) {
+			window.webkit.messageHandlers.presentModal.postMessage({url: url});
+		} else if( _device == "android" ) {
+			window.android.presentModal({url: url});
 		} else {
 			window.location.href = url;
 		}
@@ -53,9 +65,43 @@ var NativeLinker = (function ($) {
 
 	function _handleNavigation(action, url) {
 		console.log("action : " + action + ", url : " + url);
-		if( action == "push" ) {
-			_pushNavigation(url);
+		switch(action) {
+			case "modal":
+				_presentModal(url);
+				break;
+			case "push":
+				_pushNavigation(url);
+				break;
+			default:
+				_pushNavigation(url);
 		}
+	}
+
+
+	// token request
+	function _handleRequestCredential() {
+		if( _device == "ios" ) {
+			window.webkit.messageHandlers.requestCredential.postMessage({callback: "NativeLinker.reloadWithCredential"});
+		} else if( _device == "android" ) {
+			window.android.requestCredential({callback: "NativeLinker.reloadWithCredential"}); 
+		}
+	}
+
+	// token response
+	function _handleReloadWithCredential(token) {
+		console.log("token reload : " + token);
+	}
+
+	function _handleRequestInitInfo() {
+		if( _device == "ios" ) {
+			window.webkit.messageHandlers.requestInitInfo.postMessage({callback: "NativeLinker.reloadWithInitInfo"});
+		} else if( _device == "android" ) {
+			window.android.requestInitInfo({callback: "NativeLinker.reloadWithInitInfo"}); 
+		}
+	}
+
+	function _handleReloadWithInitInfo(data) {
+		console.log("data reload : " + data);
 	}
 
 	return {
@@ -63,6 +109,18 @@ var NativeLinker = (function ($) {
 			scope = this;
 
 			init();
+		},
+		requestCredential: function() {
+			_handleRequestCredential();
+		},
+		reloadWithCredential: function() {
+			_handleReloadWithCredential();
+		},
+		requestInitInfo: function() {
+			_handleRequestInitInfo();
+		},
+		reloadWithInitInfo: function() {
+			_handleReloadWithInitInfo();
 		}
 	};
 }(jQuery));
@@ -77,6 +135,7 @@ $(document).ready(function (e) {
 	yincLS.init();
 	yincLS.setItem("navigationHeight", 44);
 	yincLS.setItem("device", null);
+
 });
 
 
@@ -174,9 +233,9 @@ var Company = (function ($) {
 
 	function initEvent() {
 		$(window).on('scroll', function(e) {
-			// if( $('body').hasClass('safari') ) {
-			// 	return;
-			// }
+			if( $('body').hasClass('safari') ) {
+				return;
+			}
 
 			var scrollTop = $(this).scrollTop() + parseInt(yincLS.getItem("navigationHeight"));
 			var headerHeight = $companyHeader.outerHeight();
