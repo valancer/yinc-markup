@@ -12,6 +12,53 @@
 })();
 
 
+
+/* local storage */
+(function(window) {
+  var items = {};
+
+  function MemoryStorage() {}
+
+  MemoryStorage.prototype.getItem = function(key) {
+    return items[key];
+  };
+
+  MemoryStorage.prototype.setItem = function(key, value) {
+    items[key] = value;
+  };
+
+  MemoryStorage.prototype.key = function(index) {
+    return Object.keys(items)[index];
+  };
+
+  MemoryStorage.prototype.get = function() {
+    return items;
+  };
+
+  Object.defineProperty(MemoryStorage.prototype, "length", {
+    get: function length() {
+        return Object.keys(items).length;
+    }
+  });
+
+  window.memoryStorage = new MemoryStorage();
+})(window);
+
+function getStorage(storage) {
+  var x = '__storage_test__';
+  try {
+    storage.setItem(x, x);
+    storage.removeItem(x);
+    return storage;
+  } catch (e) {
+    return getStorage.prototype.FALLBACK_STORAGE;
+  }
+}
+
+getStorage.prototype.FALLBACK_STORAGE = memoryStorage;
+
+
+
 /* native linker */
 var NativeLinker = (function ($) {
 	var scope,
@@ -128,14 +175,14 @@ var NativeLinker = (function ($) {
 
 
 $(document).ready(function (e) {
-	CompanyList.init();
-	Company.init();
-	NativeLinker.init();
-
 	yincLS.init();
 	yincLS.setItem("navigationHeight", 44);
 	yincLS.setItem("device", null);
 
+
+	CompanyList.init();
+	Company.init();
+	NativeLinker.init();
 });
 
 
@@ -320,28 +367,22 @@ var Company = (function ($) {
 
 
 
-
 /* yinc local storage */
 var yincLS = (function ($) {
 	var scope,
+		yinc,
+		storage,
 		init = function() {
-			if (typeof(localStorage) == 'undefined' ) {
-				alert('당신의 브라우저는 HTML5 localStorage를 지원하지 않습니다. 브라우저를 업그레이드하세요.');
-			}
+			yinc = {};
+			storage = getStorage(yinc);
 		};
 
 	function _setItem(key, value) {
-		try {
-			localStorage.setItem(key, value);
-		} catch (e) {
-			if (e == QUOTA_EXCEEDED_ERR) {
-				alert('할당량 초과!'); // 할당량 초과로 인하여 데이터를 저장할 수 없음
-			}
-		}
+		storage.setItem(key, value);
 	}
 
 	function _getItem(key) {
-		return localStorage.getItem(key);
+		return storage.getItem(key);
 	}
 
 	return {

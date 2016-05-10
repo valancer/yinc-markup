@@ -11,16 +11,23 @@ include "head.html"
 	<!-- 본문 영역 -->
 	<main>
 		<article class="contents">
-			<h1>전체 투자 리스트</h1>
+			<h1 class="hidden">펀딩 목록</h1>
+
+			<div class="none-list-company">
+				<p>진행중인 펀딩이 없습니다.</p>
+			</div>
 
 			<ul class="list-company">
 				<li>
 					<a href="#0" data-navigation="push" class="company-item" style="background-image: url('/assets/images/@temp/bg_company01.jpg');">
-						<time>D-오늘 09:30</time>
+						<span class="badge success">펀딩성공</span>
+
+						<time>17시 마감</time>
 						<strong class="title">인터넷을 위한 하이라이터 Liner</strong>
 						<p class="badges">
 							<span class="deductions">소득공제</span>
 						</p>
+						<button type="button" value="true" class="btn-favorite">관심 기업</button>
 
 						<div class="progress">
 							<p data-value="87.2" style="width: 87.2%"></p>
@@ -41,7 +48,7 @@ include "head.html"
 				</li>
 				<li>
 					<a href="#1" data-navigation="push" class="company-item" style="background-image: url('/assets/images/@temp/bg_company02.jpg');">
-						<time>D-오늘 09:30:57</time>
+						<time>D-24</time>
 						<strong class="title">인터넷을 위한 하이라이터 Liner</strong>
 						<p class="badges">
 							<span class="deductions">소득공제</span>
@@ -67,7 +74,7 @@ include "head.html"
 				</li>
 				<li>
 					<a href="#2" data-navigation="push" class="company-item" style="background-image: url('/assets/images/@temp/bg_company01.jpg');">
-						<time>D-오늘 09:30:57</time>
+						<time>펀딩 종료</time>
 						<strong class="title">인터넷을 위한 하이라이터 Liner</strong>
 						<p class="badges">
 							<span class="deductions">소득공제</span>
@@ -90,7 +97,6 @@ include "head.html"
 						</div>
 					</a>
 				</li>
-				
 			</ul>
 		</article>
 	</main>

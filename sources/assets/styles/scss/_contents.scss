@@ -8,12 +8,18 @@
 
 	&:hover { text-decoration: none; }
 
+	.badge { position: absolute; top: 0; right: 0; text-indent: -9999px;
+		&.success { display: block; @include retina-sprite($s-flag-success-group); }
+	}
 	time { display: block; position: relative; z-index: z("default"); font-size: 0.750rem; font-weight: 700; color: #ffe500; text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3); }
 	.title { display: block; position: relative; z-index: z("default"); margin-top: 5px; font-size: 1.188rem; font-weight: 500; color: #fff; text-decoration: none; text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3); }
 	.badges { overflow: hidden; position: relative; z-index: z("default"); margin-top: 8px;
 		> span { display: block; float: left; margin-right: 5px; text-indent: -9999px; }
 		.deductions { @include retina-sprite($s-icon-deductions-group); }
 		.lead { @include retina-sprite($s-icon-lead-group); }
+	}
+	.btn-favorite { display: block; position: absolute; top: 40px; right: 12px; z-index: z("default"); text-indent: -9999px;
+		&[value=true] { @include retina-sprite($s-btn-favorite-shadow-selected-group); }
 	}
 
 	.progress { display: block; position: absolute; right: 0; bottom: 25px; left: 0; padding: 0 6.944444444444%;
@@ -62,7 +68,19 @@
 	> li { border-bottom: 1px solid #fff; }
 }
 
+/* 목록 없음 */
+.none-list-company { display: flex; position: fixed; top: 0; right: 0; bottom: 0; left: 0; justify-content: center; align-items: center; font-size: 1.000rem; font-weight: 700;
+	> p { color: #d8d8d8; text-shadow: 1px 4px 6px #f4f4f4, 0 0 0 #000, 1px 4px 6px #f4f4f4;
+		&:before { content: ''; display: block; margin: 0 auto 24px auto; @include retina-sprite($s-icon-none-group); }
+	}
 
+	/* 관심기업 */
+	&.like {
+		> p {
+			&:before { @include retina-sprite($s-icon-none-like-group); }
+		}
+	}
+}
 
 
 
@@ -236,9 +254,9 @@
 				.summary-info { overflow: hidden; float: right; width: 51.935483870968%;
 					// @include mobile-small { width: 60%; }
 
-					> li { float: left; margin-top: 7px; width: 50%;
-						&:nth-child(odd) { clear: both; }
-						&:nth-child(even) { text-align: right; }
+					> li { float: left; margin-top: 7px;
+						&:nth-child(odd) { clear: both; width: 60% }
+						&:nth-child(even) { text-align: right; width: 40% }
 
 						.title { font-size: 0.625rem; font-weight: 300; color: #888; }
 						.content { font-size: 1.000rem; font-weight: 300; color: #888;

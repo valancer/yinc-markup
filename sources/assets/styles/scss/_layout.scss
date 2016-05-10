@@ -12,12 +12,12 @@
 			animation-delay: 1s;
 		}
 
-		&[data-state=exit] {
+		&[data-state=disabled] { opacity: 0.7;
+			&:before { content: ' '; margin-top: -$s-icon-yinc-03-height/2+1; margin-left: -$s-icon-yinc-03-width/2+1; @include retina-sprite($s-icon-yinc-03-group); }
+		}
+		&[data-state=close] { opacity: 1;
 			&:before { content: '  '; margin-top: -$s-icon-yinc-03-height/2+1; margin-left: -$s-icon-yinc-03-width/2+1; @include retina-sprite($s-icon-yinc-03-group); }
 		}
-	}
-	span.btn-invest { opacity: 0.7;
-		&:before { content: ' '; margin-top: -$s-icon-yinc-03-height/2+1; margin-left: -$s-icon-yinc-03-width/2+1; @include retina-sprite($s-icon-yinc-03-group); }
 	}
 }
 
