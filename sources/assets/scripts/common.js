@@ -43,11 +43,11 @@ var NativeLinker = (function ($) {
 	}
 
 
-	function _pushNavigation(url) {
+	function _openBrowser(url) {
 		if( _device == "ios" ) {
-			window.webkit.messageHandlers.pushNavigation.postMessage({url: url});
+			window.webkit.messageHandlers.presentModal.postMessage({url: url});
 		} else if( _device == "android" ) {
-			window.android.pushNavigation({url: url});
+			window.android.presentModal('{url: "' + url +'"}');
 		} else {
 			window.location.href = url;
 		}
@@ -57,15 +57,29 @@ var NativeLinker = (function ($) {
 		if( _device == "ios" ) {
 			window.webkit.messageHandlers.presentModal.postMessage({url: url});
 		} else if( _device == "android" ) {
-			window.android.presentModal({url: url});
+			window.android.presentModal('{url: "' + url +'"}');
 		} else {
 			window.location.href = url;
 		}
 	}
 
+	function _pushNavigation(url) {
+		if( _device == "ios" ) {
+			window.webkit.messageHandlers.pushNavigation.postMessage({url: url});
+		} else if( _device == "android" ) {
+			window.android.pushNavigation('{url: "' + url +'"}');
+		} else {
+			window.location.href = url;
+		}
+	}
+
+
 	function _handleNavigation(action, url) {
 		console.log("action : " + action + ", url : " + url);
 		switch(action) {
+			case "external":
+				_openBrowser(url);
+				break;
 			case "modal":
 				_presentModal(url);
 				break;
