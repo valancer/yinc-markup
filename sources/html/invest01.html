@@ -1,0 +1,116 @@
+include "head.html"
+	<script>
+	$(window.document).ready(function(){
+	});
+	</script>
+
+
+	<!-- 상단 영역 -->
+	include "header.html"
+
+
+	<!-- 본문 영역 -->
+	<main>
+		<article class="contents invest">
+			<h1 class="hidden">투자하기</h1>
+
+			<h2>청약신청</h2>
+			<ul class="progress-invest">
+				<li class="current"><span>청약신청</span></li>
+				<li><span>청약완료</span></li>
+				<li><span>입금하기</span></li>
+			</ul>
+
+			<section class="invest-content">
+				<h2 class="title"><span>(주)아우름플래닛 (주)아우름플래닛</span></h2>
+
+				<fieldset class="form-controls">
+					<legend>투자 신청 입력 폼</legend>
+
+					<p class="strong-write">
+						<label for="">투자 주수</label>
+						<input type="tel" id="" name="" placeholder="최소 10주 / 최대 1000주 가능">
+						<span class="validate-message" style="display: none;">
+							최대 10000주까지만 투자가 가능합니다.
+						</span>
+					</p>
+
+					<ul class="list-input">
+						<li class="week-write">
+							<label for="">주당 가격</label>
+							<p data-txt="원" class="with-txt">
+								<input type="text" id="" name="" value="20,000" readonly="readonly">
+							</p>
+						</li>
+						<li class="week-write">
+							<label for="">총 투자금액</label>
+							<p data-txt="원" class="with-txt">
+								<input type="text" id="" name="" value="0" readonly="readonly" class="bold">
+							</p>
+						</li>
+					</ul>
+					
+
+					<fieldset class="agreements">
+						<legend>약관 동의</legend>
+
+						<p class="all-agreements">
+							<input type="checkbox" id="all" name="all">
+							<label for="all">약관 전체 동의</label>
+						</p>
+						<ul class="list-check-agreement">
+							<li>
+								<input type="checkbox" id="agreement01" name="agreement">
+								<label for="agreement01">[필수] 인크 서비스 이용 약관</label>
+								<a href="#" data-navigation="push" class="btn-more">인크 서비스 이용 약관 더보기</a>
+							</li>
+							<li>
+								<input type="checkbox" id="agreement02" name="agreement">
+								<label for="agreement02">[필수] 위험고지서</label>
+								<a href="#" data-navigation="push" class="btn-more">위험고지서 더보기</a>
+							</li>
+							<li>
+								<input type="checkbox" id="agreement03" name="agreement">
+								<label for="agreement03">[필수] 특약사항</label>
+								<a href="#" data-navigation="push" class="btn-more">특약사항 더보기</a>
+							</li>
+						</ul>
+					</fieldset>
+
+
+					<fieldset class="enterprise">
+						<legend>기업 관계자 여부</legend>
+
+						<p class="check-enterprise">
+							<input type="checkbox" id="enterprise" name="enterprise">
+							<label for="enterprise">기업 관계자 여부</label>
+							<a href="#" class="btn-toggle">기업 관계자 여부 더보기</a>
+						</p>
+						<div class="more-enterprise">
+							<div class="checkbox">
+								<input type="checkbox" id="relation" name="enterprise">
+								<label for="relation">발행인 관계자/인수자</label>
+							</div>
+
+							<p>
+								ex. 발행인 관계자/연고자란 발행인의 최대주주, 임원, 우리사주조합원, 계열회사 및 그 임원, 발기인, 발행인의 주주(모집/매출 실적이 없는 경우)를 의미합니다. 발행인 관계자/연고자는 투자한도제한이 없으며, 해당여부는 개별 연락을 통해 확인 및 진행됩니다.<br>
+								<strong>기업의 관계자일 경우 체크해주세요.</strong>
+							</p>
+						</div>
+						
+
+					</fieldset>
+
+
+					<input type="submit" id="" name="" data-state="disabled" class="btn-submit" value="신청하기">
+				</fieldset>
+			</section>
+				
+		</article>
+	</main>
+
+	<!-- 하단 영역 -->
+	include "footer.html"
+
+</body>
+</html>

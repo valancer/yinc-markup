@@ -13,6 +13,23 @@
 
 
 
+/* get parameter */
+function $_GET(param) {
+	var vars = {};
+	window.location.href.replace( location.hash, '' ).replace( 
+		/[?&]+([^=&]+)=?([^&]*)?/gi, // regexp
+		function( m, key, value ) { // callback
+			vars[key] = value !== undefined ? value : '';
+		}
+	);
+
+	if ( param ) {
+		return vars[param] ? vars[param] : null;	
+	}
+	return vars;
+}
+
+
 /* local storage */
 (function(window) {
   var items = {};
@@ -74,7 +91,9 @@ var NativeLinker = (function ($) {
 		};
 
 	function initLayout() {
-
+		// 초기 데이터 요청
+		_handleRequestInitInfo();
+		_handleRequestCredential();
 	}
 
 	function initEvent() {
@@ -162,6 +181,7 @@ var NativeLinker = (function ($) {
 	}
 
 	function _handleReloadWithInitInfo(data) {
+		alert(data);
 		console.log("data reload : " + data);
 	}
 
@@ -180,8 +200,8 @@ var NativeLinker = (function ($) {
 		requestInitInfo: function() {
 			_handleRequestInitInfo();
 		},
-		reloadWithInitInfo: function() {
-			_handleReloadWithInitInfo();
+		reloadWithInitInfo: function(data) {
+			_handleReloadWithInitInfo(data);
 		}
 	};
 }(jQuery));

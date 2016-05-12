@@ -30,6 +30,8 @@ dfn { font-style: normal; }
 a:link, a:visited, a:active, a:focus { text-decoration: none; }
 a:hover { text-decoration: underline; }
 
+
+.bold { font-weight: 700 !important; }
 .hidden { display: none !important; }
 .visible-hidden { visibility: hidden !important; }
 .clear { clear: both; }
@@ -38,4 +40,20 @@ a:hover { text-decoration: underline; }
 
 /* forms */
 fieldset { appearance: none; }
-input[type=submit] { appearance: none; cursor: pointer; border: 0px; }
+input[type=text],
+input[type=tel],
+input[type=number],
+input[type=submit] { appearance: none; cursor: pointer; border: 0px; border-radius: 0px; }
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  font-size: 0.938rem; font-weight: 300; color: #bbb;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  font-size: 0.938rem; font-weight: 300; color: #bbb;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  font-size: 0.938rem; font-weight: 300; color: #bbb;
+}
+:-moz-placeholder { /* Firefox 18- */
+  font-size: 0.938rem; font-weight: 300; color: #bbb;
+}
