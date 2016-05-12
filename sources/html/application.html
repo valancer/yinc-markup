@@ -12,14 +12,19 @@ include "head.html"
 	<!-- 본문 영역 -->
 	<main>
 		<article class="contents invest">
-			<h1 class="hidden">투자하기</h1>
+			<header class="navigation-bar">
+				<button type="button" class="btn-close">닫기</button>
 
-			<h2>청약신청</h2>
-			<ul class="progress-invest">
-				<li class="current"><span>청약신청</span></li>
-				<li><span>청약완료</span></li>
-				<li><span>입금하기</span></li>
-			</ul>
+				<h1>투자하기</h1>
+
+				<h2>청약신청</h2>
+				<ul class="progress-invest">
+					<li class="current"><span>청약신청</span></li>
+					<li><span>청약완료</span></li>
+					<li><span>입금하기</span></li>
+				</ul>
+			</header>
+
 
 			<section class="invest-content">
 				<h2 class="title"><span>(주)아우름플래닛 (주)아우름플래닛</span></h2>
@@ -51,6 +56,7 @@ include "head.html"
 					</ul>
 					
 
+					<!-- 약관 동의 -->
 					<fieldset class="agreements">
 						<legend>약관 동의</legend>
 
@@ -78,17 +84,18 @@ include "head.html"
 					</fieldset>
 
 
+					<!-- 기업 관계자 여부 -->
 					<fieldset class="enterprise">
 						<legend>기업 관계자 여부</legend>
 
 						<p class="check-enterprise">
-							<input type="checkbox" id="enterprise" name="enterprise">
+							<input type="checkbox" id="enterprise" name="enterprise" class="enterprise">
 							<label for="enterprise">기업 관계자 여부</label>
-							<a href="#" class="btn-toggle">기업 관계자 여부 더보기</a>
+							<button type="button" class="btn-toggle-enterprise">기업 관계자 여부 더보기</button>
 						</p>
 						<div class="more-enterprise">
 							<div class="checkbox">
-								<input type="checkbox" id="relation" name="enterprise">
+								<input type="checkbox" id="relation" name="relation" class="relation">
 								<label for="relation">발행인 관계자/인수자</label>
 							</div>
 

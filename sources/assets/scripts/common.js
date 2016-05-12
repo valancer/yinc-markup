@@ -30,6 +30,7 @@ function $_GET(param) {
 }
 
 
+
 /* local storage */
 (function(window) {
   var items = {};
@@ -103,8 +104,9 @@ var NativeLinker = (function ($) {
 			var $linker = $(this);
 			var action = $linker.data("navigation");
 			var url = $linker.attr("href");
+			var title = $linker.data("native-title");
 
-			_handleNavigation(action, url);
+			_handleNavigation(action, url, title);
 		});
 	}
 
@@ -119,41 +121,67 @@ var NativeLinker = (function ($) {
 		}
 	}
 
-	function _presentModal(url) {
+	function _presentModal(url, title) {
 		if( _device == "ios" ) {
-			window.webkit.messageHandlers.presentModal.postMessage({url: url});
+			window.webkit.messageHandlers.presentModal.postMessage({url: url, title: title});
 		} else if( _device == "android" ) {
-			window.android.presentModal('{url: "' + url +'"}');
+			window.android.presentModal('{url: "' + url +'", title: ' + title + '}');
 		} else {
 			window.location.href = url;
 		}
 	}
 
-	function _pushNavigation(url) {
+	function _dismissModal() {
 		if( _device == "ios" ) {
-			window.webkit.messageHandlers.pushNavigation.postMessage({url: url});
+			window.webkit.messageHandlers.dismissModal.postMessage();
 		} else if( _device == "android" ) {
-			window.android.pushNavigation('{url: "' + url +'"}');
+			window.android.dismissModal();
+		}
+	}
+
+	function _pushNavigation(url, title) {
+		if( _device == "ios" ) {
+			window.webkit.messageHandlers.pushNavigation.postMessage({url: url, title: title});
+		} else if( _device == "android" ) {
+			window.android.pushNavigation('{url: "' + url +'", title: ' + title + '}');
 		} else {
 			window.location.href = url;
 		}
 	}
 
+	function _popNavigation() {
+		if( _device == "ios" ) {
+			window.webkit.messageHandlers.popNavigation.postMessage();
+		} else if( _device == "android" ) {
+			window.android.popNavigation();
+		}
+	}
 
-	function _handleNavigation(action, url) {
-		console.log("action : " + action + ", url : " + url);
+
+	function _handleNavigation(action, url, title) {
+		console.log("action : " + action + ", url : " + url + ", title : " + title);
 		switch(action) {
 			case "external":
+				// 디폴트 브라우져로 이동
 				_openBrowser(url);
 				break;
 			case "modal":
-				_presentModal(url);
+				// present modal view controller
+				_presentModal(url, title);
+				break;
+			case "close":
+				_dismissModal();
+				break;
+			case "pop":
+				// pop view controller
+				_popNavigation();
 				break;
 			case "push":
-				_pushNavigation(url);
+				// push view controller
+				_pushNavigation(url, title);
 				break;
 			default:
-				_pushNavigation(url);
+				_pushNavigation(url, title);
 		}
 	}
 
@@ -208,15 +236,16 @@ var NativeLinker = (function ($) {
 
 
 
+
 $(document).ready(function (e) {
 	yincLS.init();
 	yincLS.setItem("navigationHeight", 44);
-	yincLS.setItem("device", null);
 
 
 	CompanyList.init();
 	Company.init();
 	NativeLinker.init();
+	Invest.init();
 });
 
 
@@ -430,6 +459,73 @@ var yincLS = (function ($) {
 		},
 		getItem: function(key) {
 			return _getItem(key);
+		}
+	};
+}(jQuery));
+
+
+
+/* Invest */
+var Invest = (function ($) {
+	var scope,
+		$container,
+		$checkAllAgreement,
+		$checkEnterprise,
+		$checkRelation,
+		$btnToggleEnterprise,
+		$moreEnterprise,
+		init = function() {
+			$container = $('.contents.invest');
+
+			$checkAllAgreement = $container.find('#all');
+			$checkAgreements = $container.find('input[name=agreement]');
+
+			// 기업 관계자 여부
+			$checkEnterprise = $container.find('#enterprise');
+			$checkRelation = $container.find('#relation');
+			$btnToggleEnterprise = $container.find('.btn-toggle-enterprise');
+			$moreEnterprise = $container.find('.more-enterprise');
+
+			initLayout();
+			initEvent();
+		};
+
+	function initLayout() {
+	}
+
+	function initEvent() {
+		$checkAllAgreement.on('click', function(e) {
+			$checkAgreements.prop("checked", $(this).is(":checked"));
+		});
+
+		$checkEnterprise.on('click', function(e) {
+			if( $(this).is(":checked") ) {
+				_toggleMoreEnterprise(true);
+			}
+
+			$checkRelation.prop("checked", $(this).is(":checked"));
+		});
+
+		$btnToggleEnterprise.on('click', function(e) {
+			_toggleMoreEnterprise(!$(this).hasClass("isOpened"));
+		});
+	}
+
+	function _toggleMoreEnterprise(isOpen) {
+		if( isOpen ) {
+			$btnToggleEnterprise.addClass("isOpened");
+			$moreEnterprise.show();
+		} else {
+			$btnToggleEnterprise.removeClass("isOpened");
+			$moreEnterprise.hide();
+		}
+	}
+
+	return {
+		init: function () {
+			scope = this;
+
+			init();
 		}
 	};
 }(jQuery));

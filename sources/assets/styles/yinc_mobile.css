@@ -337,7 +337,7 @@ body {
       @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
         .company-item .badge.success {
           background-image: url(/assets/images/sprites@2x.png);
-          background-size: 211px 208px; } }
+          background-size: 231px 210px; } }
   .company-item time {
     display: block;
     position: relative;
@@ -374,16 +374,16 @@ body {
       @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
         .company-item .badges .deductions {
           background-image: url(/assets/images/sprites@2x.png);
-          background-size: 211px 208px; } }
+          background-size: 231px 210px; } }
     .company-item .badges .lead {
       background-image: url(/assets/images/sprites.png);
-      background-position: -113px -144px;
+      background-position: -156px -144px;
       width: 26px;
       height: 26px; }
       @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
         .company-item .badges .lead {
           background-image: url(/assets/images/sprites@2x.png);
-          background-size: 211px 208px; } }
+          background-size: 231px 210px; } }
   .company-item .btn-favorite {
     display: block;
     position: absolute;
@@ -393,13 +393,13 @@ body {
     text-indent: -9999px; }
     .company-item .btn-favorite[value=true] {
       background-image: url(/assets/images/sprites.png);
-      background-position: -167px -49px;
+      background-position: 0px -144px;
       width: 44px;
       height: 44px; }
       @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
         .company-item .btn-favorite[value=true] {
           background-image: url(/assets/images/sprites@2x.png);
-          background-size: 211px 208px; } }
+          background-size: 231px 210px; } }
   .company-item .progress {
     display: block;
     position: absolute;
@@ -427,13 +427,13 @@ body {
         top: -5px;
         right: -8px;
         background-image: url(/assets/images/sprites.png);
-        background-position: -192px -144px;
+        background-position: -24px -193px;
         width: 17px;
         height: 15px; }
         @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
           .company-item .progress p[data-value]:after {
             background-image: url(/assets/images/sprites@2x.png);
-            background-size: 211px 208px; } }
+            background-size: 231px 210px; } }
   .company-item progress[value] {
     position: relative;
     -webkit-appearance: none;
@@ -532,7 +532,7 @@ body {
       @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
         .none-list-company > p:before {
           background-image: url(/assets/images/sprites@2x.png);
-          background-size: 211px 208px; } }
+          background-size: 231px 210px; } }
   .none-list-company.like > p:before {
     background-image: url(/assets/images/sprites.png);
     background-position: -85px 0px;
@@ -541,7 +541,7 @@ body {
     @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
       .none-list-company.like > p:before {
         background-image: url(/assets/images/sprites@2x.png);
-        background-size: 211px 208px; } }
+        background-size: 231px 210px; } }
 
 /* 기업 상세 */
 .contents.company {
@@ -606,7 +606,7 @@ body {
         @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
           .contents.company .company-info .inner .btn-play {
             background-image: url(/assets/images/sprites@2x.png);
-            background-size: 211px 208px; } }
+            background-size: 231px 210px; } }
       .contents.company .company-info .inner .badges {
         position: absolute;
         top: 15px;
@@ -622,18 +622,18 @@ body {
           @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
             .contents.company .company-info .inner .badges .btn-deductions {
               background-image: url(/assets/images/sprites@2x.png);
-              background-size: 211px 208px; } }
+              background-size: 231px 210px; } }
         .contents.company .company-info .inner .badges .icon-lead {
           display: inline-block;
           text-indent: -9999px;
           background-image: url(/assets/images/sprites.png);
-          background-position: -113px -144px;
+          background-position: -156px -144px;
           width: 26px;
           height: 26px; }
           @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
             .contents.company .company-info .inner .badges .icon-lead {
               background-image: url(/assets/images/sprites@2x.png);
-              background-size: 211px 208px; } }
+              background-size: 231px 210px; } }
       .contents.company .company-info .inner .btn-favorite {
         display: block;
         position: absolute;
@@ -641,22 +641,22 @@ body {
         right: 0px;
         text-indent: -9999px;
         background-image: url(/assets/images/sprites.png);
-        background-position: 0px -144px;
+        background-position: -167px 0px;
         width: 44px;
         height: 44px; }
         @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
           .contents.company .company-info .inner .btn-favorite {
             background-image: url(/assets/images/sprites@2x.png);
-            background-size: 211px 208px; } }
+            background-size: 231px 210px; } }
         .contents.company .company-info .inner .btn-favorite[value=true] {
           background-image: url(/assets/images/sprites.png);
-          background-position: -167px 0px;
+          background-position: -167px -49px;
           width: 44px;
           height: 44px; }
           @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
             .contents.company .company-info .inner .btn-favorite[value=true] {
               background-image: url(/assets/images/sprites@2x.png);
-              background-size: 211px 208px; } }
+              background-size: 231px 210px; } }
   .contents.company .tabs {
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -769,13 +769,13 @@ body {
             right: 6.944444444444%;
             margin-top: -7px;
             background-image: url(/assets/images/sprites.png);
-            background-position: -59px -193px;
+            background-position: -216px -125px;
             width: 8px;
             height: 14px; }
             @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
               .contents.company .tab-contents .list-table-view > li a:after {
                 background-image: url(/assets/images/sprites@2x.png);
-                background-size: 211px 208px; } }
+                background-size: 231px 210px; } }
           .contents.company .tab-contents .list-table-view > li a .title {
             font-size: 0.813rem;
             font-weight: 300;
@@ -794,7 +794,7 @@ body {
         @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
           .contents.company .tab-contents .list-table-view .btn-info {
             background-image: url(/assets/images/sprites@2x.png);
-            background-size: 211px 208px; } }
+            background-size: 231px 210px; } }
     .contents.company .tab-contents .tab-section .info-title {
       display: block;
       height: 90px;
@@ -814,13 +814,13 @@ body {
         background-size: cover; }
         .contents.company .tab-contents .tab-section .info-title.company:after {
           background-image: url(/assets/images/sprites.png);
-          background-position: -20px -193px;
+          background-position: -216px -40px;
           width: 15px;
           height: 14px; }
           @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
             .contents.company .tab-contents .tab-section .info-title.company:after {
               background-image: url(/assets/images/sprites@2x.png);
-              background-size: 211px 208px; } }
+              background-size: 231px 210px; } }
         @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
           .contents.company .tab-contents .tab-section .info-title.company {
             background-image: url("/assets/images/bg_info_title01@2x.jpg"); } }
@@ -829,13 +829,13 @@ body {
         background-size: cover; }
         .contents.company .tab-contents .tab-section .info-title.executives:after {
           background-image: url(/assets/images/sprites.png);
-          background-position: -141px -175px;
+          background-position: -138px -193px;
           width: 19px;
           height: 12px; }
           @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
             .contents.company .tab-contents .tab-section .info-title.executives:after {
               background-image: url(/assets/images/sprites@2x.png);
-              background-size: 211px 208px; } }
+              background-size: 231px 210px; } }
         @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
           .contents.company .tab-contents .tab-section .info-title.executives {
             background-image: url("/assets/images/bg_info_title02@2x.jpg"); } }
@@ -876,13 +876,13 @@ body {
             top: -6px;
             left: 11px;
             background-image: url(/assets/images/sprites.png);
-            background-position: -192px -144px;
+            background-position: -24px -193px;
             width: 17px;
             height: 15px; }
             @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
               .contents.company .tab-contents .tab-section .check-options .list-checks .item-checks:before {
                 background-image: url(/assets/images/sprites@2x.png);
-                background-size: 211px 208px; } }
+                background-size: 231px 210px; } }
       .contents.company .tab-contents .tab-section .check-options.scroll .list-checks .slick-list {
         overflow: visible; }
       .contents.company .tab-contents .tab-section .check-options.scroll .list-checks li {
@@ -952,7 +952,7 @@ body {
           @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
             .contents.company .tab-contents.summary > header .progress[data-state=success] .title {
               background-image: url(/assets/images/sprites@2x.png);
-              background-size: 211px 208px; } }
+              background-size: 231px 210px; } }
           .contents.company .tab-contents.summary > header .progress[data-state=success] .title:before {
             content: '펀딩성공'; }
         .contents.company .tab-contents.summary > header .progress[data-state=close]:before {
@@ -962,13 +962,13 @@ body {
           display: block;
           margin-left: -29.5px;
           background-image: url(/assets/images/sprites.png);
-          background-position: -49px -144px;
+          background-position: -92px -144px;
           width: 59px;
           height: 26px; }
           @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
             .contents.company .tab-contents.summary > header .progress[data-state=close] .title {
               background-image: url(/assets/images/sprites@2x.png);
-              background-size: 211px 208px; } }
+              background-size: 231px 210px; } }
           .contents.company .tab-contents.summary > header .progress[data-state=close] .title:before {
             content: '펀딩종료'; }
         .contents.company .tab-contents.summary > header .progress .title {
@@ -1133,63 +1133,136 @@ body {
       margin-top: -2px;
       vertical-align: middle;
       background-image: url(/assets/images/sprites.png);
-      background-position: 0px -193px;
+      background-position: -216px -20px;
       width: 15px;
       height: 15px; }
       @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
         .form-controls .validate-message:before {
           background-image: url(/assets/images/sprites@2x.png);
-          background-size: 211px 208px; } }
+          background-size: 231px 210px; } }
 
 /* 투자하기 */
 .contents.invest {
+  /* 네비게이션 바 */
   /* */ }
-  .contents.invest > h2 {
-    display: none; }
-  .contents.invest .progress-invest {
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    box-sizing: border-box;
-    padding: 0 6.944444444444%;
-    width: 100%;
+  .contents.invest .navigation-bar {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 900;
+    height: 106px;
     background-color: #494949; }
-    .contents.invest .progress-invest > li {
+    .contents.invest .navigation-bar > .btn-close {
       display: block;
-      position: relative;
-      -webkit-flex: 1;
-          -ms-flex: 1;
-              flex: 1;
-      padding: 5px 5% 17px 5%; }
-      .contents.invest .progress-invest > li > span {
-        display: block;
-        position: relative;
-        z-index: 1;
-        width: 100%;
-        font-size: 0.759rem;
-        color: #6c6c6c;
-        line-height: 27px;
-        text-align: center;
-        border: 1px solid #6c6c6c;
-        border-radius: 27px;
-        background-color: #494949; }
-      .contents.invest .progress-invest > li:last-child:before {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 55px;
+      width: 55px;
+      text-indent: -9999px; }
+      .contents.invest .navigation-bar > .btn-close:before {
         content: '';
         display: block;
         position: absolute;
-        top: 19px;
-        left: -150%;
-        z-index: 0;
-        height: 1px;
-        width: 200%;
-        background-color: #6c6c6c; }
-      .contents.invest .progress-invest > li.current > span {
-        color: #fff;
-        border: 1px solid #acacac; }
+        top: 50%;
+        left: 50%;
+        margin-top: -7px;
+        margin-left: -7px;
+        background-image: url(/assets/images/sprites.png);
+        background-position: -216px -78px;
+        width: 14px;
+        height: 14px; }
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+          .contents.invest .navigation-bar > .btn-close:before {
+            background-image: url(/assets/images/sprites@2x.png);
+            background-size: 231px 210px; } }
+    .contents.invest .navigation-bar > h1 {
+      display: block;
+      font-size: 1.125rem;
+      font-weight: 400;
+      color: #fff;
+      text-align: center;
+      line-height: 55px; }
+      .contents.invest .navigation-bar > h1:before {
+        content: '';
+        display: inline-block;
+        margin: -4px 6px 0 0;
+        vertical-align: middle;
+        background-image: url(/assets/images/sprites.png);
+        background-position: 0px -193px;
+        width: 19px;
+        height: 17px; }
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+          .contents.invest .navigation-bar > h1:before {
+            background-image: url(/assets/images/sprites@2x.png);
+            background-size: 231px 210px; } }
+    .contents.invest .navigation-bar > h2 {
+      display: none; }
+    .contents.invest .navigation-bar .progress-invest {
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      box-sizing: border-box;
+      padding: 0 6.944444444444%;
+      width: 100%;
+      background-color: #494949; }
+      .contents.invest .navigation-bar .progress-invest > li {
+        display: block;
+        position: relative;
+        -webkit-flex: 1;
+            -ms-flex: 1;
+                flex: 1;
+        padding: 5px 5% 17px 5%; }
+        .contents.invest .navigation-bar .progress-invest > li > span {
+          display: block;
+          position: relative;
+          z-index: 1;
+          width: 100%;
+          font-size: 0.759rem;
+          color: #6c6c6c;
+          line-height: 27px;
+          text-align: center;
+          border: 1px solid #6c6c6c;
+          border-radius: 27px;
+          background-color: #494949; }
+        .contents.invest .navigation-bar .progress-invest > li:last-child:before {
+          content: '';
+          display: block;
+          position: absolute;
+          top: 19px;
+          left: -150%;
+          z-index: 0;
+          height: 1px;
+          width: 200%;
+          background-color: #6c6c6c; }
+        .contents.invest .navigation-bar .progress-invest > li.current > span {
+          color: #fff;
+          border: 1px solid #acacac; }
+        .contents.invest .navigation-bar .progress-invest > li.confirm:before {
+          content: '';
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 50%;
+          z-index: 2;
+          margin-left: -5px;
+          background-image: url(/assets/images/sprites.png);
+          background-position: -115px -193px;
+          width: 18px;
+          height: 13px; }
+          @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+            .contents.invest .navigation-bar .progress-invest > li.confirm:before {
+              background-image: url(/assets/images/sprites@2x.png);
+              background-size: 231px 210px; } }
   .contents.invest .invest-content {
+    margin-top: 106px;
     padding: 24px 6.944444444444% 24px 6.944444444444%;
     /* 약관 동의 */
-    /* 기업 관계자 여부 */ }
+    /* 기업 관계자 여부 */
+    /* 결과 메시지 */
+    /* 청약신청 정보 */ }
     .contents.invest .invest-content > .title {
       position: relative;
       text-align: center; }
@@ -1236,13 +1309,13 @@ body {
           left: 20px;
           margin-top: -6.5px;
           background-image: url(/assets/images/sprites.png);
-          background-position: -95px -175px;
+          background-position: -92px -193px;
           width: 18px;
           height: 13px; }
           @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
             .contents.invest .invest-content .agreements .all-agreements input[type=checkbox] {
               background-image: url(/assets/images/sprites@2x.png);
-              background-size: 211px 208px; } }
+              background-size: 231px 210px; } }
           .contents.invest .invest-content .agreements .all-agreements input[type=checkbox] + label {
             display: block;
             box-sizing: border-box;
@@ -1256,14 +1329,14 @@ body {
             background-color: #ffde00; }
           .contents.invest .invest-content .agreements .all-agreements input[type=checkbox]:checked {
             background-image: url(/assets/images/sprites.png);
-            background-position: -118px -175px;
+            background-position: -115px -193px;
             width: 18px;
             height: 13px;
             background-color: transparent; }
             @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
               .contents.invest .invest-content .agreements .all-agreements input[type=checkbox]:checked {
                 background-image: url(/assets/images/sprites@2x.png);
-                background-size: 211px 208px; } }
+                background-size: 231px 210px; } }
             .contents.invest .invest-content .agreements .all-agreements input[type=checkbox]:checked + label {
               color: #ffde00;
               border: 1px solid #494949;
@@ -1282,13 +1355,13 @@ body {
             left: 0px;
             margin-top: -4.5px;
             background-image: url(/assets/images/sprites.png);
-            background-position: -183px -175px;
+            background-position: -216px -111px;
             width: 13px;
             height: 9px; }
             @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
               .contents.invest .invest-content .agreements .list-check-agreement > li input[type=checkbox] {
                 background-image: url(/assets/images/sprites@2x.png);
-                background-size: 211px 208px; } }
+                background-size: 231px 210px; } }
             .contents.invest .invest-content .agreements .list-check-agreement > li input[type=checkbox] + label {
               display: block;
               float: left;
@@ -1301,14 +1374,14 @@ body {
               line-height: 26px; }
             .contents.invest .invest-content .agreements .list-check-agreement > li input[type=checkbox]:checked {
               background-image: url(/assets/images/sprites.png);
-              background-position: -165px -175px;
+              background-position: -216px -97px;
               width: 13px;
               height: 9px;
               background-color: transparent; }
               @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
                 .contents.invest .invest-content .agreements .list-check-agreement > li input[type=checkbox]:checked {
                   background-image: url(/assets/images/sprites@2x.png);
-                  background-size: 211px 208px; } }
+                  background-size: 231px 210px; } }
               .contents.invest .invest-content .agreements .list-check-agreement > li input[type=checkbox]:checked + label {
                 color: #000; }
           .contents.invest .invest-content .agreements .list-check-agreement > li .btn-more {
@@ -1319,13 +1392,13 @@ body {
             margin-top: -7px;
             text-indent: -9999px;
             background-image: url(/assets/images/sprites.png);
-            background-position: -40px -193px;
+            background-position: -216px -59px;
             width: 14px;
             height: 14px; }
             @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
               .contents.invest .invest-content .agreements .list-check-agreement > li .btn-more {
                 background-image: url(/assets/images/sprites@2x.png);
-                background-size: 211px 208px; } }
+                background-size: 231px 210px; } }
     .contents.invest .invest-content .enterprise {
       margin-top: 25px; }
       .contents.invest .invest-content .enterprise .check-enterprise {
@@ -1337,13 +1410,13 @@ body {
           left: 20px;
           margin-top: -6.5px;
           background-image: url(/assets/images/sprites.png);
-          background-position: -72px -175px;
+          background-position: -69px -193px;
           width: 18px;
           height: 13px; }
           @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
             .contents.invest .invest-content .enterprise .check-enterprise input[type=checkbox] {
               background-image: url(/assets/images/sprites@2x.png);
-              background-size: 211px 208px; } }
+              background-size: 231px 210px; } }
           .contents.invest .invest-content .enterprise .check-enterprise input[type=checkbox] + label {
             display: block;
             box-sizing: border-box;
@@ -1357,15 +1430,15 @@ body {
             background-color: #f4f4f4; }
           .contents.invest .invest-content .enterprise .check-enterprise input[type=checkbox]:checked {
             background-image: url(/assets/images/sprites.png);
-            background-position: -49px -175px;
+            background-position: -46px -193px;
             width: 18px;
             height: 13px;
             background-color: transparent; }
             @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
               .contents.invest .invest-content .enterprise .check-enterprise input[type=checkbox]:checked {
                 background-image: url(/assets/images/sprites@2x.png);
-                background-size: 211px 208px; } }
-        .contents.invest .invest-content .enterprise .check-enterprise .btn-toggle {
+                background-size: 231px 210px; } }
+        .contents.invest .invest-content .enterprise .check-enterprise .btn-toggle-enterprise {
           display: block;
           position: absolute;
           top: 50%;
@@ -1374,7 +1447,7 @@ body {
           height: 40px;
           width: 40px;
           text-indent: -9999px; }
-          .contents.invest .invest-content .enterprise .check-enterprise .btn-toggle:before {
+          .contents.invest .invest-content .enterprise .check-enterprise .btn-toggle-enterprise:before {
             content: '';
             display: block;
             position: absolute;
@@ -1383,14 +1456,24 @@ body {
             margin-top: -2.5px;
             margin-left: -4.5px;
             background-image: url(/assets/images/sprites.png);
-            background-position: -72px -193px;
+            background-position: -216px -154px;
             width: 9px;
             height: 5px; }
             @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-              .contents.invest .invest-content .enterprise .check-enterprise .btn-toggle:before {
+              .contents.invest .invest-content .enterprise .check-enterprise .btn-toggle-enterprise:before {
                 background-image: url(/assets/images/sprites@2x.png);
-                background-size: 211px 208px; } }
+                background-size: 231px 210px; } }
+          .contents.invest .invest-content .enterprise .check-enterprise .btn-toggle-enterprise.isOpened:before {
+            background-image: url(/assets/images/sprites.png);
+            background-position: -216px -144px;
+            width: 9px;
+            height: 5px; }
+            @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+              .contents.invest .invest-content .enterprise .check-enterprise .btn-toggle-enterprise.isOpened:before {
+                background-image: url(/assets/images/sprites@2x.png);
+                background-size: 231px 210px; } }
       .contents.invest .invest-content .enterprise .more-enterprise {
+        display: none;
         padding: 12px 22px 17px 25px;
         border: 1px solid #dedede;
         border-top: 0px; }
@@ -1404,13 +1487,13 @@ body {
             left: 0px;
             margin-top: -4.5px;
             background-image: url(/assets/images/sprites.png);
-            background-position: -183px -175px;
+            background-position: -216px -111px;
             width: 13px;
             height: 9px; }
             @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
               .contents.invest .invest-content .enterprise .more-enterprise .checkbox input[type=checkbox] {
                 background-image: url(/assets/images/sprites@2x.png);
-                background-size: 211px 208px; } }
+                background-size: 231px 210px; } }
             .contents.invest .invest-content .enterprise .more-enterprise .checkbox input[type=checkbox] + label {
               display: block;
               box-sizing: border-box;
@@ -1422,14 +1505,14 @@ body {
               line-height: 26px; }
             .contents.invest .invest-content .enterprise .more-enterprise .checkbox input[type=checkbox]:checked {
               background-image: url(/assets/images/sprites.png);
-              background-position: -165px -175px;
+              background-position: -216px -97px;
               width: 13px;
               height: 9px;
               background-color: transparent; }
               @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
                 .contents.invest .invest-content .enterprise .more-enterprise .checkbox input[type=checkbox]:checked {
                   background-image: url(/assets/images/sprites@2x.png);
-                  background-size: 211px 208px; } }
+                  background-size: 231px 210px; } }
               .contents.invest .invest-content .enterprise .more-enterprise .checkbox input[type=checkbox]:checked + label {
                 color: #000; }
         .contents.invest .invest-content .enterprise .more-enterprise p {
@@ -1441,6 +1524,29 @@ body {
           .contents.invest .invest-content .enterprise .more-enterprise p strong {
             font-weight: 400;
             color: #fcca00; }
+    .contents.invest .invest-content .warning {
+      clear: both;
+      display: block;
+      position: relative;
+      padding-left: 21px;
+      font-size: 0.750rem;
+      font-weight: 400;
+      color: #bbb;
+      line-height: 1.063rem; }
+      .contents.invest .invest-content .warning:before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 2px;
+        left: 0;
+        background-image: url(/assets/images/sprites.png);
+        background-position: -216px 0px;
+        width: 15px;
+        height: 15px; }
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+          .contents.invest .invest-content .warning:before {
+            background-image: url(/assets/images/sprites@2x.png);
+            background-size: 231px 210px; } }
     .contents.invest .invest-content .btn-submit {
       display: block;
       margin-top: 25px;
@@ -1450,10 +1556,58 @@ body {
       font-weight: 500;
       color: #fff;
       line-height: 3.125rem;
+      text-align: center;
       border-radius: 2px;
       background-color: #494949; }
       .contents.invest .invest-content .btn-submit[data-state=disabled] {
         background-color: #bbb; }
+    .contents.invest .invest-content .result-message {
+      padding-top: 11px;
+      padding-bottom: 43px;
+      text-align: center; }
+      .contents.invest .invest-content .result-message:before {
+        content: '';
+        display: block;
+        margin: 0 auto;
+        background-image: url(/assets/images/sprites.png);
+        background-position: -49px -144px;
+        width: 38px;
+        height: 42px; }
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+          .contents.invest .invest-content .result-message:before {
+            background-image: url(/assets/images/sprites@2x.png);
+            background-size: 231px 210px; } }
+      .contents.invest .invest-content .result-message > .title {
+        margin-top: 23px;
+        font-size: 1.063rem;
+        font-weight: 700;
+        color: #ac7f5e; }
+      .contents.invest .invest-content .result-message p {
+        margin-top: 10px;
+        font-size: 0.875rem;
+        font-weight: 400;
+        color: #888; }
+    .contents.invest .invest-content .list-application-results {
+      margin-top: 7px;
+      margin-bottom: 43px; }
+      .contents.invest .invest-content .list-application-results > li {
+        overflow: hidden;
+        padding-top: 9px;
+        border-bottom: 2px solid #ffde00; }
+        .contents.invest .invest-content .list-application-results > li .title {
+          float: left;
+          font-size: 0.938rem;
+          font-weight: 400;
+          color: #000;
+          line-height: 2.813rem; }
+        .contents.invest .invest-content .list-application-results > li .content {
+          float: right;
+          font-size: 1.250rem;
+          font-weight: 300;
+          color: #000;
+          line-height: 2.813rem; }
+          .contents.invest .invest-content .list-application-results > li .content strong {
+            font-weight: 700; }
 
 .is-hidden {
   display: none; }
@@ -1482,13 +1636,13 @@ body {
       margin-top: -7.5px;
       margin-left: -8.5px;
       background-image: url(/assets/images/sprites.png);
-      background-position: -144px -144px;
+      background-position: 0px -193px;
       width: 19px;
       height: 17px; }
       @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
         .shortcut-invest .btn-invest:before {
           background-image: url(/assets/images/sprites@2x.png);
-          background-size: 211px 208px; } }
+          background-size: 231px 210px; } }
     .shortcut-invest .btn-invest:after {
       content: attr(data-title);
       display: block;
@@ -1522,13 +1676,13 @@ body {
         margin-top: -7.5px;
         margin-left: -8.5px;
         background-image: url(/assets/images/sprites.png);
-        background-position: -168px -144px;
+        background-position: -187px -144px;
         width: 19px;
         height: 17px; }
         @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
           .shortcut-invest .btn-invest[data-state=disabled]:before {
             background-image: url(/assets/images/sprites@2x.png);
-            background-size: 211px 208px; } }
+            background-size: 231px 210px; } }
     .shortcut-invest .btn-invest[data-state=close] {
       opacity: 1; }
       .shortcut-invest .btn-invest[data-state=close]:before {
@@ -1536,13 +1690,13 @@ body {
         margin-top: -7.5px;
         margin-left: -8.5px;
         background-image: url(/assets/images/sprites.png);
-        background-position: -168px -144px;
+        background-position: -187px -144px;
         width: 19px;
         height: 17px; }
         @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
           .shortcut-invest .btn-invest[data-state=close]:before {
             background-image: url(/assets/images/sprites@2x.png);
-            background-size: 211px 208px; } }
+            background-size: 231px 210px; } }
 
 /* keyframes */
 /* 투자하기 버튼 */
