@@ -43,7 +43,8 @@ fieldset { appearance: none; }
 input[type=text],
 input[type=tel],
 input[type=number],
-input[type=submit] { appearance: none; cursor: pointer; border: 0px; border-radius: 0px; }
+input[type=submit],
+select { appearance: none; cursor: pointer; border: 0px; border-radius: 0px; background-color: transparent; }
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   font-size: 0.938rem; font-weight: 300; color: #bbb;

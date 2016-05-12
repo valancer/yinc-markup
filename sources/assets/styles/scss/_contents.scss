@@ -298,7 +298,6 @@
 			&:after { content: attr(data-txt); position: absolute; right: 0; font-size: 0.938rem; font-weight: 300; color: #000; line-height: 34px; }
 			input[type=text] { padding: 0; width: 100%; }
 		}
-
 	}
 
 	/* 중요 입력 */
@@ -451,15 +450,31 @@
 		}
 
 		/* 청약신청 정보 */
-		.list-application-results { margin-top: 7px; margin-bottom: 43px;
-			> li { overflow: hidden; padding-top: 9px; border-bottom: 2px solid #ffde00;
+		.list-invest-items { margin-top: 7px; margin-bottom: 43px;
+			> li { overflow: hidden; padding-top: 9px; border-bottom: 1px solid #dedede;
+				&.focus { border-bottom: 2px solid #ffde00; }
 				.title { float: left; font-size: 0.938rem; font-weight: 400; color: #000; line-height: 2.813rem; }
+
 				.content { float: right; font-size: 1.250rem; font-weight: 300; color: #000; line-height: 2.813rem; 
 					strong { font-weight: 700; }
+					select.bank { display: inline-block; padding-right: 24px; font-size: 0.938rem; line-height: 2.813rem; background: url('/assets/images/bg_select.png') right top no-repeat;
+						@include retina { background-image: url('/assets/images/bg_select@2x.png'); background-size: 9px 45px; }
+					}	
+				}
+
+				.with-txt { float: right; position: relative; box-sizing: border-box; padding-right: 25px; width: 72.41935483871%;
+					&:after { content: attr(data-txt); display: block; position: absolute; top: 0; right: 0; font-size: 1.250rem; font-weight: 300; color: #000; line-height: 2.813rem; }
+					input[type=text] { padding: 0; width: 100%; font-size: 1.250rem; font-weight: 700; color: #000; text-align: right; line-height: 2.813rem; }
 				}
 			}
-		}		
+		}
+	}
+
+
+	/* 입금 하기 */
+	&.deposit {
+		.list-invest-items { margin-bottom: 25px; }
+		.warning { margin-top: 40px; }
 	}
 }
-
 

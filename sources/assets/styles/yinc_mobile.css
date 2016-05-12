@@ -122,13 +122,15 @@ fieldset {
 input[type=text],
 input[type=tel],
 input[type=number],
-input[type=submit] {
+input[type=submit],
+select {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
   cursor: pointer;
   border: 0px;
-  border-radius: 0px; }
+  border-radius: 0px;
+  background-color: transparent; }
 
 ::-webkit-input-placeholder {
   /* Chrome/Opera/Safari */
@@ -1144,7 +1146,8 @@ body {
 /* 투자하기 */
 .contents.invest {
   /* 네비게이션 바 */
-  /* */ }
+  /* */
+  /* 입금 하기 */ }
   .contents.invest .navigation-bar {
     display: block;
     position: fixed;
@@ -1587,27 +1590,67 @@ body {
         font-size: 0.875rem;
         font-weight: 400;
         color: #888; }
-    .contents.invest .invest-content .list-application-results {
+    .contents.invest .invest-content .list-invest-items {
       margin-top: 7px;
       margin-bottom: 43px; }
-      .contents.invest .invest-content .list-application-results > li {
+      .contents.invest .invest-content .list-invest-items > li {
         overflow: hidden;
         padding-top: 9px;
-        border-bottom: 2px solid #ffde00; }
-        .contents.invest .invest-content .list-application-results > li .title {
+        border-bottom: 1px solid #dedede; }
+        .contents.invest .invest-content .list-invest-items > li.focus {
+          border-bottom: 2px solid #ffde00; }
+        .contents.invest .invest-content .list-invest-items > li .title {
           float: left;
           font-size: 0.938rem;
           font-weight: 400;
           color: #000;
           line-height: 2.813rem; }
-        .contents.invest .invest-content .list-application-results > li .content {
+        .contents.invest .invest-content .list-invest-items > li .content {
           float: right;
           font-size: 1.250rem;
           font-weight: 300;
           color: #000;
           line-height: 2.813rem; }
-          .contents.invest .invest-content .list-application-results > li .content strong {
+          .contents.invest .invest-content .list-invest-items > li .content strong {
             font-weight: 700; }
+          .contents.invest .invest-content .list-invest-items > li .content select.bank {
+            display: inline-block;
+            padding-right: 24px;
+            font-size: 0.938rem;
+            line-height: 2.813rem;
+            background: url("/assets/images/bg_select.png") right top no-repeat; }
+            @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+              .contents.invest .invest-content .list-invest-items > li .content select.bank {
+                background-image: url("/assets/images/bg_select@2x.png");
+                background-size: 9px 45px; } }
+        .contents.invest .invest-content .list-invest-items > li .with-txt {
+          float: right;
+          position: relative;
+          box-sizing: border-box;
+          padding-right: 25px;
+          width: 72.41935483871%; }
+          .contents.invest .invest-content .list-invest-items > li .with-txt:after {
+            content: attr(data-txt);
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            font-size: 1.250rem;
+            font-weight: 300;
+            color: #000;
+            line-height: 2.813rem; }
+          .contents.invest .invest-content .list-invest-items > li .with-txt input[type=text] {
+            padding: 0;
+            width: 100%;
+            font-size: 1.250rem;
+            font-weight: 700;
+            color: #000;
+            text-align: right;
+            line-height: 2.813rem; }
+  .contents.invest.deposit .list-invest-items {
+    margin-bottom: 25px; }
+  .contents.invest.deposit .warning {
+    margin-top: 40px; }
 
 .is-hidden {
   display: none; }
