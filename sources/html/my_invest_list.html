@@ -1,0 +1,72 @@
+include "head.html"
+	<script>
+	$(window.document).ready(function(){
+	});
+	</script>
+
+	<!-- 상단 영역 -->
+	include "header.html"
+
+
+	<!-- 본문 영역 -->
+	<main>
+		<article class="contents fundings">
+			<h1 class="hidden">투자 내역</h1>
+
+			<ul class="list-my-fundings">
+				<li>
+					<div class="my-funding-item">
+						<!-- 회사 정보 -->
+						<a href="#0" data-navigation="push" data-native-title="회사명" class="company-item" style="background-image: url('/assets/images/@temp/bg_company01.jpg');">
+							<span class="badge success">펀딩성공</span>
+
+							<time>17시 마감</time>
+							<strong class="title">인터넷을 위한 하이라이터 Liner</strong>
+
+							<div class="progress">
+								<p data-value="87.2" style="width: 87.2%"></p>
+								<progress max="100" value="87.2"></progress>
+							</div>
+						</a>
+
+						<!-- 나의 펀딩 정보 -->
+						<div class="funding-info">
+							<button type="button" value="" class="btn-cancel">취소하기</button>
+
+							<strong class="title">(주)어게인트웬티</strong>
+							<p class="desc">
+								<strong>80,000,000원</strong> (500주)를 투자하셨습니다.
+							</p>
+
+							<ol class="progress-funding">
+								<li>
+									<span class="title">청약</span>
+									<span class="tooltip">입금하시면 투자가 완료됩니다.</span>
+								</li>
+								<li class="selected">
+									<span class="title">입금</span>
+									<span class="tooltip">목표 금액의 80% 이상 모집 되면 증권이 배정됩니다.</span>
+								</li>
+								<li>
+									<span class="title">펀딩마감</span>
+									<span class="tooltip">모집 금액 미달로 투자하신 금액은 환불 처리됩니다.</span>
+								</li>
+								<li>
+									<span class="title">배정</span>
+									<span class="tooltip">30주가 배정되었습니다. 등록하신 증권 계좌로 입고됩니다.</span>
+								</li>
+							</ol>
+
+							<a href="#" data-navigation="modal" class="btn-deposit">입금하기</a>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</article>
+	</main>
+
+	<!-- 하단 영역 -->
+	include "footer.html"
+
+</body>
+</html>

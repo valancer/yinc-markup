@@ -1,0 +1,51 @@
+/* 펀딩 목록 & 투자 내역 */
+.contents.fundings {
+
+	// 나의 투자 내역 개별 아이템
+	.my-funding-item { padding-bottom: 19px; background-color: #fff; box-shadow: 0 1px 4px 1px rgba(0, 0, 0, 0.2);
+
+		/* 해당 상품 - 나의 투자 내역 */
+		.funding-info { position: relative; padding: 20px 4.941860465116% 0 4.941860465116%;
+			.btn-cancel { display: block; position: absolute; top: 20px; right: 4.941860465116%; font-size: 0.750rem; font-weight: 500; color: #262626; border-bottom: 1px solid #262626; }
+
+			> .title { font-size: 1.063rem; font-weight: 500; color: #000; }
+			> .desc { margin-top: 10px; font-size: 0.813rem; font-weight: 300; color: #000;
+				strong { font-weight: 700; }
+			}
+
+			.btn-deposit { display: block; margin-top: 19px; height: 2.125rem; font-size: 0.813rem; font-weight: 500; color: #262626; text-align: center; line-height: 2.125rem; border: 1px solid #edd400; border-radius: 2.125rem; background-color: #fde832; }
+		}
+
+		/* 펀딩 진행상황 */
+		.progress-funding { display: flex; position: relative; justify-content: space-between; align-items: flex-start; margin-top: 26px;
+			&:before { content: ''; display: block; position: absolute; top: 7px; right: 3%; left: 3%; z-index: z("default") - 1; height: 1px; background-color: #dedede; }
+			> li { padding-bottom: 30px;
+				.title { display: block; position: relative; z-index: z("default"); padding-top: 3px; font-size: 0.688rem; font-weight: 400; color: #000; text-align: center;
+					&:before { content: ''; display: block; margin: 0 auto 3px auto; height: 9px; width: 9px; border-radius: 9px; background-color: #666; }
+				}
+				.tooltip { display: none; position: absolute; bottom: 0; left: 0; padding: 0 8px; font-size: 0.688rem; font-weight: 400; color: #fff; line-height: 1.375rem; white-space: nowrap; border-radius: 2px; background-color: #bbb; }
+
+				&.selected {
+					.title { padding-top: 0px;
+						&:before { margin: 0 auto; border: 3px solid #888; background-color: #fff; }
+						&:after { content: ''; display: block; position: absolute; bottom: -8px; left: 50%; margin-left: -$s-bg-arrow-01-width/2; @include retina-sprite($s-bg-arrow-01-group); }
+					}
+					.tooltip { display: block; }
+				}
+
+				&:nth-child(3),
+				&:nth-child(4) {
+					.tooltip { right: 0; left: auto; }
+				}
+			}
+		}
+	}
+
+	// 투자 내역
+	.list-my-fundings {
+		> li { padding: 10px 2.222222222222%;
+			
+		}
+	}
+
+}

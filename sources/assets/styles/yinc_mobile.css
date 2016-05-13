@@ -545,6 +545,131 @@ body {
         background-image: url(/assets/images/sprites@2x.png);
         background-size: 231px 210px; } }
 
+/* 펀딩 목록 & 투자 내역 */
+.contents.fundings .my-funding-item {
+  padding-bottom: 19px;
+  background-color: #fff;
+  box-shadow: 0 1px 4px 1px rgba(0, 0, 0, 0.2);
+  /* 해당 상품 - 나의 투자 내역 */
+  /* 펀딩 진행상황 */ }
+  .contents.fundings .my-funding-item .funding-info {
+    position: relative;
+    padding: 20px 4.941860465116% 0 4.941860465116%; }
+    .contents.fundings .my-funding-item .funding-info .btn-cancel {
+      display: block;
+      position: absolute;
+      top: 20px;
+      right: 4.941860465116%;
+      font-size: 0.750rem;
+      font-weight: 500;
+      color: #262626;
+      border-bottom: 1px solid #262626; }
+    .contents.fundings .my-funding-item .funding-info > .title {
+      font-size: 1.063rem;
+      font-weight: 500;
+      color: #000; }
+    .contents.fundings .my-funding-item .funding-info > .desc {
+      margin-top: 10px;
+      font-size: 0.813rem;
+      font-weight: 300;
+      color: #000; }
+      .contents.fundings .my-funding-item .funding-info > .desc strong {
+        font-weight: 700; }
+    .contents.fundings .my-funding-item .funding-info .btn-deposit {
+      display: block;
+      margin-top: 19px;
+      height: 2.125rem;
+      font-size: 0.813rem;
+      font-weight: 500;
+      color: #262626;
+      text-align: center;
+      line-height: 2.125rem;
+      border: 1px solid #edd400;
+      border-radius: 2.125rem;
+      background-color: #fde832; }
+  .contents.fundings .my-funding-item .progress-funding {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    position: relative;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-align-items: flex-start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    margin-top: 26px; }
+    .contents.fundings .my-funding-item .progress-funding:before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 7px;
+      right: 3%;
+      left: 3%;
+      z-index: 0;
+      height: 1px;
+      background-color: #dedede; }
+    .contents.fundings .my-funding-item .progress-funding > li {
+      padding-bottom: 30px; }
+      .contents.fundings .my-funding-item .progress-funding > li .title {
+        display: block;
+        position: relative;
+        z-index: 1;
+        padding-top: 3px;
+        font-size: 0.688rem;
+        font-weight: 400;
+        color: #000;
+        text-align: center; }
+        .contents.fundings .my-funding-item .progress-funding > li .title:before {
+          content: '';
+          display: block;
+          margin: 0 auto 3px auto;
+          height: 9px;
+          width: 9px;
+          border-radius: 9px;
+          background-color: #666; }
+      .contents.fundings .my-funding-item .progress-funding > li .tooltip {
+        display: none;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        padding: 0 8px;
+        font-size: 0.688rem;
+        font-weight: 400;
+        color: #fff;
+        line-height: 1.375rem;
+        white-space: nowrap;
+        border-radius: 2px;
+        background-color: #bbb; }
+      .contents.fundings .my-funding-item .progress-funding > li.selected .title {
+        padding-top: 0px; }
+        .contents.fundings .my-funding-item .progress-funding > li.selected .title:before {
+          margin: 0 auto;
+          border: 3px solid #888;
+          background-color: #fff; }
+        .contents.fundings .my-funding-item .progress-funding > li.selected .title:after {
+          content: '';
+          display: block;
+          position: absolute;
+          bottom: -8px;
+          left: 50%;
+          margin-left: -4px;
+          background-image: url(/assets/images/sprites.png);
+          background-position: -216px -164px;
+          width: 8px;
+          height: 5px; }
+          @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+            .contents.fundings .my-funding-item .progress-funding > li.selected .title:after {
+              background-image: url(/assets/images/sprites@2x.png);
+              background-size: 231px 210px; } }
+      .contents.fundings .my-funding-item .progress-funding > li.selected .tooltip {
+        display: block; }
+      .contents.fundings .my-funding-item .progress-funding > li:nth-child(3) .tooltip, .contents.fundings .my-funding-item .progress-funding > li:nth-child(4) .tooltip {
+        right: 0;
+        left: auto; }
+.contents.fundings .list-my-fundings > li {
+  padding: 10px 2.222222222222%; }
+
 /* 기업 상세 */
 .contents.company {
   /* 회사 정보 삳단 */
@@ -1135,7 +1260,7 @@ body {
       margin-top: -2px;
       vertical-align: middle;
       background-image: url(/assets/images/sprites.png);
-      background-position: -216px -20px;
+      background-position: -216px 0px;
       width: 15px;
       height: 15px; }
       @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
@@ -1194,7 +1319,7 @@ body {
         margin: -4px 6px 0 0;
         vertical-align: middle;
         background-image: url(/assets/images/sprites.png);
-        background-position: 0px -193px;
+        background-position: -187px -144px;
         width: 19px;
         height: 17px; }
         @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
@@ -1252,7 +1377,7 @@ body {
           z-index: 2;
           margin-left: -5px;
           background-image: url(/assets/images/sprites.png);
-          background-position: -115px -193px;
+          background-position: -92px -193px;
           width: 18px;
           height: 13px; }
           @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
@@ -1312,7 +1437,7 @@ body {
           left: 20px;
           margin-top: -6.5px;
           background-image: url(/assets/images/sprites.png);
-          background-position: -92px -193px;
+          background-position: -69px -193px;
           width: 18px;
           height: 13px; }
           @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
@@ -1332,7 +1457,7 @@ body {
             background-color: #ffde00; }
           .contents.invest .invest-content .agreements .all-agreements input[type=checkbox]:checked {
             background-image: url(/assets/images/sprites.png);
-            background-position: -115px -193px;
+            background-position: -92px -193px;
             width: 18px;
             height: 13px;
             background-color: transparent; }
@@ -1358,7 +1483,7 @@ body {
             left: 0px;
             margin-top: -4.5px;
             background-image: url(/assets/images/sprites.png);
-            background-position: -216px -111px;
+            background-position: -216px -97px;
             width: 13px;
             height: 9px; }
             @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
@@ -1377,7 +1502,7 @@ body {
               line-height: 26px; }
             .contents.invest .invest-content .agreements .list-check-agreement > li input[type=checkbox]:checked {
               background-image: url(/assets/images/sprites.png);
-              background-position: -216px -97px;
+              background-position: -216px -111px;
               width: 13px;
               height: 9px;
               background-color: transparent; }
@@ -1413,7 +1538,7 @@ body {
           left: 20px;
           margin-top: -6.5px;
           background-image: url(/assets/images/sprites.png);
-          background-position: -69px -193px;
+          background-position: -115px -193px;
           width: 18px;
           height: 13px; }
           @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
@@ -1490,7 +1615,7 @@ body {
             left: 0px;
             margin-top: -4.5px;
             background-image: url(/assets/images/sprites.png);
-            background-position: -216px -111px;
+            background-position: -216px -97px;
             width: 13px;
             height: 9px; }
             @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
@@ -1508,7 +1633,7 @@ body {
               line-height: 26px; }
             .contents.invest .invest-content .enterprise .more-enterprise .checkbox input[type=checkbox]:checked {
               background-image: url(/assets/images/sprites.png);
-              background-position: -216px -97px;
+              background-position: -216px -111px;
               width: 13px;
               height: 9px;
               background-color: transparent; }
@@ -1543,7 +1668,7 @@ body {
         top: 2px;
         left: 0;
         background-image: url(/assets/images/sprites.png);
-        background-position: -216px 0px;
+        background-position: -216px -20px;
         width: 15px;
         height: 15px; }
         @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
@@ -1679,7 +1804,7 @@ body {
       margin-top: -7.5px;
       margin-left: -8.5px;
       background-image: url(/assets/images/sprites.png);
-      background-position: 0px -193px;
+      background-position: -187px -144px;
       width: 19px;
       height: 17px; }
       @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
@@ -1719,7 +1844,7 @@ body {
         margin-top: -7.5px;
         margin-left: -8.5px;
         background-image: url(/assets/images/sprites.png);
-        background-position: -187px -144px;
+        background-position: 0px -193px;
         width: 19px;
         height: 17px; }
         @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
@@ -1733,7 +1858,7 @@ body {
         margin-top: -7.5px;
         margin-left: -8.5px;
         background-image: url(/assets/images/sprites.png);
-        background-position: -187px -144px;
+        background-position: 0px -193px;
         width: 19px;
         height: 17px; }
         @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {

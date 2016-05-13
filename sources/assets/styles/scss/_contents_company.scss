@@ -1,0 +1,193 @@
+/* 기업 상세 */
+.contents.company {
+	/* 회사 정보 삳단 */
+	.company-info { display: block; box-sizing: border-box; position: relative; padding-top: 50px; height: 232px; background-position: center center; background-size: cover;
+		.inner { display: block; position: absolute; right: 0; bottom: 0; left: 0; z-index: z("default"); height: 146px; text-align: center; background-color: rgba(0, 0, 0, 0.5);
+			.thumb { display: block; overflow: hidden; margin: -34px auto 0 auto; height: 67px; width: 67px; text-align: center; border: 3px solid #fff; border-radius: 67px; background-color: #fff;
+				&:before { content: ''; display: inline-block; height: 100%;  vertical-align: middle; }
+				img { display: inline-block; vertical-align: middle; line-height: 67px; }
+			}
+
+			.title { margin-top: 11px; font-size: 0.938rem; font-weight: 500; color: #fff; }
+			.desc { margin-top: 4px; font-size: 0.750rem; font-weight: 400; color: #bdbdbd; }
+			.btn-play { display: block; margin: 12px auto 0 auto; text-indent: -9999px; @include retina-sprite($s-btn-play01-group); }
+
+			.badges { position: absolute; top: 15px; left: 4.444444444444%;
+				.btn-deductions { display: inline-block; margin-right: 1px; text-indent: -9999px; @include retina-sprite($s-icon-deductions-group); }
+				.icon-lead { display: inline-block; text-indent: -9999px; @include retina-sprite($s-icon-lead-group); }
+			}
+			.btn-favorite { display: block; position: absolute; top: 0px; right: 0px; text-indent: -9999px; @include retina-sprite($s-btn-favorite-group); 
+				&[value=true] { @include retina-sprite($s-btn-favorite-selected-group); }
+			}
+		}
+	}
+
+
+	/* 회사 정보 탭 */
+	.tabs { display: flex; position: sticky; top: 44px; z-index: z("modaless"); background-color: #fff; 
+		> a { display: block; position: relative; flex: 1; height: 43px; font-size: 0.750rem; font-weight: 400; color: #969696; text-align: center; line-height: 43px; border-bottom: 1px solid #dedede;
+			&[data-state=selected] { font-weight: 500; color: #000;
+				&:after { content: ''; display: block; position: absolute; right: 0; bottom: 0; left: 0; height: 3px; background-color: #fde832; }
+			}
+
+			+ a { border-left: 1px solid #dedede; }
+			&:hover { text-decoration: none; }
+		}
+
+		&.fixed { position: fixed; top: 0; right: 0; left: 0; }
+	}
+
+
+	.slider-container { overflow: hidden; position: relative; visibility: hidden;
+		.swipe-wrap { overflow: hidden; position: relative; }
+	}
+
+	/* 개별 탭 내용 */
+	.tab-contents { float: left; position: relative; min-height: 300px; width: 100%;
+
+		/* 테이블 뷰 형태 */
+		.header-table-view { padding: 0 6.944444444444%; height: 30px; font-size: 0.688rem; font-weight: 300; color: #888; line-height: 30px; border-top: 1px solid #dedede; background-color: #f1f1f1; }
+		.list-table-view { width: 100%;
+			> li { overflow: hidden; position: relative; padding: 0 6.944444444444%; height: 40px; border-top: 1px solid #dedede;
+
+				/* normal */
+				.title { float: left; font-size: 0.688rem; font-weight: 300; color: #888; line-height: 40px; }
+				.content { float: right; font-size: 0.813rem; font-weight: 300; color: #888; line-height: 40px;
+					.em { font-weight: 700; color: #000; }
+					.ci { height: 40px; width: auto; }
+				}
+
+				/* link */
+				a { display: block; position: absolute; top: 0; right: 0; bottom: 0; left: 0; padding: 0 6.944444444444%; height: 100%;
+					&:after { content: ''; display: block; position: absolute; top: 50%; right: 6.944444444444%; margin-top: -$s-icon-arrow01-height/2; @include retina-sprite($s-icon-arrow01-group); }
+					.title { font-size: 0.813rem; font-weight: 300; color: #010101; }
+
+					&:active,
+					&:hover { background-color: #fffacd; }
+				}
+			}
+
+			.btn-info { display: inline-block; margin-top: -2px; text-indent: -9999px; vertical-align: middle; @include retina-sprite($s-btn-info01-group); }
+		}
+
+
+		.tab-section {
+			.info-title { display: block; height: 90px; font-size: 0.875rem; font-weight: 400; color: #fff; text-align: center; line-height: 90px;
+				&:after { content: ''; display: inline-block; margin-top: -2px; margin-left: 5px; vertical-align: middle; }
+
+				&.company { background: url('/assets/images/bg_info_title01.jpg') center center no-repeat; background-size: cover;
+					&:after { @include retina-sprite($s-icon-company-group); }
+
+					@include retina { background-image: url('/assets/images/bg_info_title01@2x.jpg'); }
+				}
+				&.executives { background: url('/assets/images/bg_info_title02.jpg') center center no-repeat; background-size: cover;
+					&:after { @include retina-sprite($s-icon-executives-group); }
+
+					@include retina { background-image: url('/assets/images/bg_info_title02@2x.jpg'); }
+				}
+			}
+
+			.check-options { padding: 10px 0 0 0; background-color: #f4f4f4;
+				.options-title { padding: 0 6.944444444444%; font-size: 0.688rem; font-weight: 300; color: #888; }
+
+				.list-checks { overflow: hidden; padding: 0 6.944444444444% 25px 6.944444444444%; 
+					li { float: left; }
+					
+					.item-checks { display: block; box-sizing: border-box; position: relative; margin: 13px 11px 0 0; padding: 13px 10px 0 14px; height: 84px; width: 69px; font-size: 0.750rem; font-weight: 300; color: #000; line-height: 16px; text-decoration: none; word-break: keep-all; border-radius: 2px; background-color: #fff; box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2);
+						&:before { content: ''; display: block; position: absolute; top: -6px; left: 11px; @include retina-sprite($s-icon-yinc-group); }
+					}
+				}
+
+				&.scroll {
+					.inner { }
+					.list-checks {
+						.slick-list { overflow: visible; }
+						li { box-sizing: border-box; padding-right: 30px; }
+						.item-checks { display: block; padding-bottom: 13px; min-height: 94px; height: auto; min-width: 185px; width: 100%; }
+					}
+				}
+			}
+		}
+
+
+		/* 요약 탭 */
+		&.summary {
+			> header { display: block; box-sizing: border-box; overflow: hidden; padding: 20px 6.944444444444% 0 6.944444444444%; height: 160px; background-color: #f4f4f4;
+				
+				@include mobile-small { padding-right: 3%; padding-left: 3%; }
+
+				.progress { display: flex; position: relative; float: left; margin: 7px; padding-top: 10px; height: 95px; width: 105px; text-align: center; border-radius: 105px; background-color: #fff;
+					flex-direction: column; justify-content: center; align-items: center; 
+
+					&:before { content: ''; display: none; position: absolute; top: 0; right: 0; bottom: 0; left: 0; border-radius: 105px; }
+					.title { display: none; }
+
+					&[data-state=success] {
+						&:before { display: block; background-color: rgba(124, 175, 215, 0.4); }
+						.title { display: block; margin-left: -$s-bg-flag01-width/2; @include retina-sprite($s-bg-flag01-group);
+							&:before { content: '펀딩성공'; }
+						}
+					}
+					&[data-state=close] {
+						&:before { display: block; background-color: rgba(139, 139, 139, 0.4); }
+						.title { display: block; margin-left: -$s-bg-flag02-width/2; @include retina-sprite($s-bg-flag02-group);
+							&:before { content: '펀딩종료'; }
+						}
+					}
+
+					.title { display: none; position: absolute; top: -8px; left: 50%; z-index: z("default"); font-size: 0.750rem; font-weight: 700; color: #fff; }
+					.value { display: block; font-family: $font-sub-stack; font-size: 1.000rem; font-weight: 700; color: #000;
+						em { font-size: 1.625rem; }
+					}
+					.participation { margin-top: 5px; font-size: 0.750rem; font-weight: 300; color: #888;
+						em { font-weight: 700; color: #000; }
+					}
+
+					.circle { position: absolute; top: -7px; left: -7px; z-index: z("default") - 1; height: 119px; width: 119px;
+						@keyframes svg-load { 0% { stroke-dashoffset: 0 } }
+
+						svg { height: 119px; width: 119px;
+							&:nth-child(2) {
+								position: absolute; top: 0; left: 0;
+								transform: rotate(-90deg);
+							}
+							&:nth-child(2) path {
+								fill: none;
+								stroke-width: 7;
+								stroke-dasharray: 629;
+								stroke: #f4f4f4;
+								opacity: 1;
+								animation: svg-load 2s;
+							}
+						}
+					}
+				}
+
+
+				.summary-info { overflow: hidden; float: right; width: 51.935483870968%;
+					// @include mobile-small { width: 60%; }
+
+					> li { float: left; margin-top: 7px;
+						&:nth-child(odd) { clear: both; width: 60% }
+						&:nth-child(even) { text-align: right; width: 40% }
+
+						.title { font-size: 0.625rem; font-weight: 300; color: #888; }
+						.content { font-size: 1.000rem; font-weight: 300; color: #888;
+							time { color: #ac7f5e; }
+							strong { font-weight: 700; color: #000; }
+							sub { font-size: 0.625rem; vertical-align: middle; }
+						}
+					}
+				}
+			}
+		}
+
+
+		/* 상세정보 탭 */
+		&.detail {
+
+		}
+
+	}
+
+}

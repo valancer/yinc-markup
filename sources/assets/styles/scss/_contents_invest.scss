@@ -1,0 +1,196 @@
+.form-controls {
+	.input { overflow: hidden;
+		> label {  }
+		> input[type=text] { }
+	}
+
+	/* */
+	.week-write {
+		label { float: left; font-size: 0.750rem; font-weight: 300; color: #000; line-height: 34px; }
+		
+		input[type=text] { float: right; box-sizing: border-box; padding: 0 10px 0 0; height: 34px; width: 77.41935483871%; font-size: 0.938rem; font-weight: 300; color: #000; line-height: 34px; text-align: right; border: 0px; }
+
+		.with-txt { float: right; position: relative; box-sizing: border-box; padding-right: 16px; width: 77.41935483871%;
+			&:after { content: attr(data-txt); position: absolute; right: 0; font-size: 0.938rem; font-weight: 300; color: #000; line-height: 34px; }
+			input[type=text] { padding: 0; width: 100%; }
+		}
+	}
+
+	/* 중요 입력 */
+	.strong-write { overflow: hidden;
+		label { float: left; font-size: 0.938rem; color: #000; line-height: 50px; }
+		input[type=tel] { float: right; box-sizing: border-box; padding: 0 10px 0 0; height: 46px; width: 77.41935483871%; font-size: 1.250rem; font-weight: 700; color: #000; line-height: 46px; text-align: right; border: 2px solid #ffde00; }
+	}
+
+	.list-input {
+		> li { overflow: hidden; padding-top: 15px; border-bottom: 1px solid #dedede; }
+	}
+
+	/* validate message */
+	.validate-message { clear: both; display: block; font-size: 0.750rem; font-weight: 400; color: #e65c5c; text-align: right;
+		&:before { content: ''; display: inline-block; margin-top: -2px; vertical-align: middle; @include retina-sprite($s-icon-iks-group); }
+	}
+}
+
+
+
+
+/* 투자하기 */
+.contents.invest {
+
+	/* 네비게이션 바 */
+	.navigation-bar { display: block; position: fixed; top: 0; right: 0; left: 0; z-index: z("modaless"); height: 106px; background-color: #494949;
+		> .btn-close { display: block; position: absolute; top: 0; right: 0; height: 55px; width: 55px; text-indent: -9999px;
+			&:before { content: ''; display: block; position: absolute; top: 50%; left: 50%; margin-top: -$s-btn-close-height/2; margin-left: -$s-btn-close-width/2; @include retina-sprite($s-btn-close-group); }
+		}
+
+		> h1 { display: block; font-size: 1.125rem; font-weight: 400; color: #fff; text-align: center; line-height: 55px;
+			&:before { content: ''; display: inline-block; margin: -4px 6px 0 0; vertical-align: middle; @include retina-sprite($s-icon-yinc-02-group); }
+		}
+
+		> h2 { display: none; }
+
+		.progress-invest { display: flex; box-sizing: border-box; padding: 0 6.944444444444%; width: 100%; background-color: #494949;
+			> li { display: block; position: relative; flex: 1; padding: 5px 5% 17px 5%;
+				> span { display: block; position: relative; z-index: z("default"); width: 100%; font-size: 0.759rem; color: #6c6c6c; line-height: 27px; text-align: center; border: 1px solid #6c6c6c; border-radius: 27px; background-color: #494949; }
+
+				&:last-child {
+					&:before { content: ''; display: block; position: absolute; top: 19px; left: -150%; z-index: z("default") - 1; height: 1px; width: 200%; background-color: #6c6c6c; }
+				}
+				&.current { 
+					> span { color: #fff; border: 1px solid #acacac; }
+				}
+				&.confirm { 
+					&:before { content: ''; display: block; position: absolute; top: 0; left: 50%; z-index: z("default") + 1; margin-left: -5px; @include retina-sprite($s-checkbox-all-checked-group); }
+				}
+			}
+		}
+	}
+
+
+
+	/* */
+	.invest-content { margin-top: 106px; padding: 24px 6.944444444444% 24px 6.944444444444%;
+		> .title { position: relative; text-align: center;
+			&:before { content: ''; display: block; position: absolute; top: 50%; right: 0; left: 0; z-index: z("default") - 1; height: 1px; background-color: #999; }
+
+			> span { display: inline-block; position: relative; z-index: z("default"); overflow: hidden; padding: 0 13px; max-width: 200px; font-size: 1.063rem; font-weight: 500; color: #000; text-align: center; text-overflow: ellipsis; white-space: nowrap; background-color: #fff; }
+		}
+
+		.form-controls { margin-top: 30px; }
+		input[type=checkbox] { appearance: none; border: 0; border-radius: 0; }
+
+
+		/* 약관 동의 */
+		.agreements { margin-top: 32px;
+			.all-agreements { position: relative;
+				input[type=checkbox] { display: block; position: absolute; top: 50%; left: 20px; margin-top: -$s-checkbox-all-height/2; @include retina-sprite($s-checkbox-all-group);
+					+ label { display: block; box-sizing: border-box; padding: 0 0 0 54px; height: 40px; font-size: 0.875rem; font-weight: 400; color: #000; line-height: 38px; border: 1px solid #f1d200; background-color: #ffde00; }
+
+					&:checked { @include retina-sprite($s-checkbox-all-checked-group); background-color: transparent;
+						+ label { color: #ffde00; border: 1px solid #494949; background-color: #5c5c5c; }
+					}
+				}
+			}
+
+			.list-check-agreement { padding: 10px 22px 10px 25px; border: 1px solid #dedede; border-top: 0px;
+				> li { position: relative; height: 26px;
+					input[type=checkbox] { display: block; position: absolute; top: 50%; left: 0px; margin-top: -$s-checkbox-gray-height/2; @include retina-sprite($s-checkbox-gray-group);
+						+ label { display: block; float: left; box-sizing: border-box; padding: 0 0 0 30px; height: 26px; font-size: 0.813rem; font-weight: 400; color: #bbb; line-height: 26px; }
+
+						&:checked { @include retina-sprite($s-checkbox-gray-checked-group); background-color: transparent;
+							+ label { color: #000; }
+						}
+					}
+
+					.btn-more { display: block; position: absolute; top: 50%; right: 0; margin-top: -$s-btn-more-01-height/2; text-indent: -9999px; @include retina-sprite($s-btn-more-01-group); }
+				}
+			}
+		}
+
+		/* 기업 관계자 여부 */
+		.enterprise { margin-top: 25px;
+			.check-enterprise { position: relative;
+				input[type=checkbox] { display: block; position: absolute; top: 50%; left: 20px; margin-top: -$s-checkbox-enterprise-height/2; @include retina-sprite($s-checkbox-enterprise-group);
+					+ label { display: block; box-sizing: border-box; padding: 0 0 0 54px; height: 40px; font-size: 0.875rem; font-weight: 400; color: #000; line-height: 38px; border: 1px solid #dedede; background-color: #f4f4f4; }
+
+					&:checked { @include retina-sprite($s-checkbox-enterprise-checked-group); background-color: transparent;
+						+ label { }
+					}
+				}
+
+				.btn-toggle-enterprise { display: block; position: absolute; top: 50%; right: 6px; margin-top: -20px; height: 40px; width: 40px; text-indent: -9999px;
+					&:before { content: ''; display: block; position: absolute; top: 50%; left: 50%; margin-top: -$s-btn-down-01-height/2; margin-left: -$s-btn-down-01-width/2; @include retina-sprite($s-btn-down-01-group); }
+
+					&.isOpened {
+						&:before { @include retina-sprite($s-btn-up-01-group); }
+					}
+				}
+			}
+
+			.more-enterprise { display: none; padding: 12px 22px 17px 25px; border: 1px solid #dedede; border-top: 0px;
+				.checkbox { position: relative; height: 26px;
+					input[type=checkbox] { display: block; position: absolute; top: 50%; left: 0px; margin-top: -$s-checkbox-gray-height/2; @include retina-sprite($s-checkbox-gray-group);
+						+ label { display: block; box-sizing: border-box; padding: 0 0 0 30px; height: 26px; font-size: 0.813rem; font-weight: 400; color: #bbb; line-height: 26px; }
+
+						&:checked { @include retina-sprite($s-checkbox-gray-checked-group); background-color: transparent;
+							+ label { color: #000; }
+						}
+					}
+
+				}
+
+				p { margin-top: 5px; font-size: 0.750rem; font-weight: 400; color: #bbb; line-height: 1.063rem;
+					strong { font-weight: 400; color: #fcca00; }
+				}
+			}
+		}
+
+
+		.warning { clear: both; display: block; position: relative; padding-left: 21px; font-size: 0.750rem; font-weight: 400; color: #bbb; line-height: 1.063rem;
+			&:before { content: ''; display: block; position: absolute; top: 2px; left: 0; @include retina-sprite($s-icon-iks-02-group); }
+		}
+
+		.btn-submit { display: block; margin-top: 25px; height: 50px; width: 100%; font-size: 0.875rem; font-weight: 500; color: #fff; line-height: 3.125rem; text-align: center; border-radius: 2px; background-color: #494949;
+			&[data-state=disabled] { background-color: #bbb; }
+		}
+
+
+
+		/* 결과 메시지 */
+		.result-message { padding-top: 11px; padding-bottom: 43px; text-align: center;
+			&:before { content: ''; display: block; margin: 0 auto; @include retina-sprite($s-icon-message-01-group); }
+
+			> .title { margin-top: 23px; font-size: 1.063rem; font-weight: 700; color: #ac7f5e; }
+			p { margin-top: 10px; font-size: 0.875rem; font-weight: 400; color: #888; }
+		}
+
+		/* 청약신청 정보 */
+		.list-invest-items { margin-top: 7px; margin-bottom: 43px;
+			> li { overflow: hidden; padding-top: 9px; border-bottom: 1px solid #dedede;
+				&.focus { border-bottom: 2px solid #ffde00; }
+				.title { float: left; font-size: 0.938rem; font-weight: 400; color: #000; line-height: 2.813rem; }
+
+				.content { float: right; font-size: 1.250rem; font-weight: 300; color: #000; line-height: 2.813rem; 
+					strong { font-weight: 700; }
+					select.bank { display: inline-block; padding-right: 24px; font-size: 0.938rem; line-height: 2.813rem; background: url('/assets/images/bg_select.png') right top no-repeat;
+						@include retina { background-image: url('/assets/images/bg_select@2x.png'); background-size: 9px 45px; }
+					}	
+				}
+
+				.with-txt { float: right; position: relative; box-sizing: border-box; padding-right: 25px; width: 72.41935483871%;
+					&:after { content: attr(data-txt); display: block; position: absolute; top: 0; right: 0; font-size: 1.250rem; font-weight: 300; color: #000; line-height: 2.813rem; }
+					input[type=text] { padding: 0; width: 100%; font-size: 1.250rem; font-weight: 700; color: #000; text-align: right; line-height: 2.813rem; }
+				}
+			}
+		}
+	}
+
+
+	/* 입금 하기 */
+	&.deposit {
+		.list-invest-items { margin-bottom: 25px; }
+		.warning { margin-top: 40px; }
+	}
+}
+
