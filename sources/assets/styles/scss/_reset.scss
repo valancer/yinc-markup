@@ -44,7 +44,10 @@ input[type=text],
 input[type=tel],
 input[type=number],
 input[type=submit],
+textarea,
 select { appearance: none; cursor: pointer; border: 0px; border-radius: 0px; background-color: transparent; }
+
+textarea { background-color: #fff; }
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   font-size: 0.938rem; font-weight: 300; color: #bbb;
