@@ -322,6 +322,8 @@ var Company = (function ($) {
 		$tabContents,
 		$cpContainer,
 		$cpItems,
+		$toggleItems,
+		$lastToggleItem = null,
 		init = function () {
 			$companyContainer = $('.contents.company');
 			$companyHeader = $companyContainer.find('> .company-info');
@@ -331,6 +333,9 @@ var Company = (function ($) {
 			$tabContents = $companyContainer.find('.tab-contents');
 			$cpContainer = $companyContainer.find('.scroll .list-checks');
 			$cpItems = $cpContainer.find('.item-checks');
+
+			// communication
+			$toggleItems = $companyContainer.find('.list-folding dt');
 
 			if( $companyContainer.length <= 0 ) return;
 			initLayout();
@@ -398,6 +403,25 @@ var Company = (function ($) {
 		} else {
 			_slideToHash("#summary");
 		}
+
+
+		// communication - toggle
+		$toggleItems.on('click', function(e) {
+			e.preventDefault();
+
+			if( $(this).is($lastToggleItem) && $(this).hasClass("is-open") ) {
+				$(this).removeClass("is-open");
+				return;
+			}
+
+			if( $lastToggleItem !== null ) {
+				$lastToggleItem.removeClass("is-open");
+			}
+
+			$(this).addClass('is-open');
+			swipe.updateHeight();
+			$lastToggleItem = $(this);
+		});
 	}
 
 	function _updateTabLabel(index) {

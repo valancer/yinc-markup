@@ -71,7 +71,14 @@
 		}
 
 		/* faq & company news */
+		.none-message { padding: 11px 0 12px 0; font-size: 0.813rem; font-weight: 300; color: #000; line-height: 1.250rem; text-align: center; border-top: 1px solid #dedede; background-color: #fff; }
 		.list-folding { background-color: #fff;
+			.btns { padding: 0 4.444444444444% 20px 0; text-align: right;
+				.btn-inline { display: inline-block; min-width: 55px; font-size: 0.750rem; font-weight: 500; color: #000; text-align: center; line-height: 1.688rem; border: 1px solid #d5d5d5; border-radius: 1.688rem; background-color: #f4f4f4;
+					&.strong { color: #fff; border: 1px solid #ab8060; background-color: #b78c6c; }
+				}
+			}
+
 			dt { display: block; overflow: hidden; border-top: 1px solid #dedede;
 				> a { display: block; box-sizing: border-box; position: relative; padding: 13px 9.722222222222% 14px 6.944444444444%; color: #000; text-decoration: none;
 					&:after { content: ''; display: block; position: absolute; top: 19px; right: 4.444444444444%; @include retina-sprite($s-btn-down-01-group); }
@@ -83,18 +90,15 @@
 
 					.info { clear: both; overflow: hidden; margin-top: 16px; }
 				}
-
-				.btns { padding: 0 4.444444444444% 20px 0; text-align: right;
-					.btn-inline { display: inline-block; min-width: 55px; font-size: 0.750rem; font-weight: 500; color: #000; text-align: center; line-height: 1.688rem; border: 1px solid #d5d5d5; border-radius: 1.688rem; background-color: #f4f4f4;
-						&.strong { color: #fff; border: 1px solid #ab8060; background-color: #b78c6c; }
-					}
-				}
+				.btns { display: none; }
 
 				&.is-open {
 					> a {
 						&:after { @include retina-sprite($s-btn-up-01-group); }
 						.title { font-weight: 700; line-height: 0.938rem; text-oveflow: none; white-space: normal; }
 					}
+
+					.btns { display: block; }
 
 					+ dd { display: block; }
 				}

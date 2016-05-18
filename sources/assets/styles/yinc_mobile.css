@@ -947,8 +947,35 @@ body {
           .contents.company .tab-contents .list-table-view .btn-info {
             background-image: url(/assets/images/sprites@2x.png);
             background-size: 236px 208px; } }
+    .contents.company .tab-contents .none-message {
+      padding: 11px 0 12px 0;
+      font-size: 0.813rem;
+      font-weight: 300;
+      color: #000;
+      line-height: 1.250rem;
+      text-align: center;
+      border-top: 1px solid #dedede;
+      background-color: #fff; }
     .contents.company .tab-contents .list-folding {
       background-color: #fff; }
+      .contents.company .tab-contents .list-folding .btns {
+        padding: 0 4.444444444444% 20px 0;
+        text-align: right; }
+        .contents.company .tab-contents .list-folding .btns .btn-inline {
+          display: inline-block;
+          min-width: 55px;
+          font-size: 0.750rem;
+          font-weight: 500;
+          color: #000;
+          text-align: center;
+          line-height: 1.688rem;
+          border: 1px solid #d5d5d5;
+          border-radius: 1.688rem;
+          background-color: #f4f4f4; }
+          .contents.company .tab-contents .list-folding .btns .btn-inline.strong {
+            color: #fff;
+            border: 1px solid #ab8060;
+            background-color: #b78c6c; }
       .contents.company .tab-contents .list-folding dt {
         display: block;
         overflow: hidden;
@@ -1002,23 +1029,7 @@ body {
             overflow: hidden;
             margin-top: 16px; }
         .contents.company .tab-contents .list-folding dt .btns {
-          padding: 0 4.444444444444% 20px 0;
-          text-align: right; }
-          .contents.company .tab-contents .list-folding dt .btns .btn-inline {
-            display: inline-block;
-            min-width: 55px;
-            font-size: 0.750rem;
-            font-weight: 500;
-            color: #000;
-            text-align: center;
-            line-height: 1.688rem;
-            border: 1px solid #d5d5d5;
-            border-radius: 1.688rem;
-            background-color: #f4f4f4; }
-            .contents.company .tab-contents .list-folding dt .btns .btn-inline.strong {
-              color: #fff;
-              border: 1px solid #ab8060;
-              background-color: #b78c6c; }
+          display: none; }
         .contents.company .tab-contents .list-folding dt.is-open > a:after {
           background-image: url(/assets/images/sprites.png);
           background-position: -110px -175px;
@@ -1033,6 +1044,8 @@ body {
           line-height: 0.938rem;
           text-oveflow: none;
           white-space: normal; }
+        .contents.company .tab-contents .list-folding dt.is-open .btns {
+          display: block; }
         .contents.company .tab-contents .list-folding dt.is-open + dd {
           display: block; }
       .contents.company .tab-contents .list-folding dd {
