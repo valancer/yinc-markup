@@ -1,0 +1,189 @@
+include "head.html"
+	<script>
+	$(window.document).ready(function(){
+	});
+	</script>
+
+	<!-- 상단 영역 -->
+	include "header.html"
+
+
+	<!-- 본문 영역 -->
+	<main>
+		<article class="contents company">
+			
+			include "company_header.html"
+
+
+			<!-- 회사 정보 탭 -->
+			<p class="tabs">
+				<a href="#">요약</a>
+				<a href="#">상세정보</a>
+				<a href="#" data-state="selected">커뮤니케이션</a>
+			</p>
+
+
+			<!-- 회사 정보 탭 - 커뮤니케이션 -->
+			<section class="tab-contents communication">
+				
+				<!-- 기업소식 -->
+				<section class="tab-section">
+					<h2 class="header-table-view">기업소식</h2>
+
+					<dl class="list-folding">
+						<dt>
+							<a href="#">
+								<time datetime="">2016.4.22</time>
+								<span class="title">[펀딩종료] (주)시전소프트, 크라우드펀딩 종료 (주)시전소프트, 크라우드펀딩 종료</span>
+							</a>
+						</dt>
+						<dd>
+							<p class="desc">
+								유안타증권이 리드투자자로 참여한 (주)시전소프트의 크라우드펀딩이 모집률 100%를 달성하며 종료되었습니다.
+							</p>
+						</dd>
+
+						<dt>
+							<a href="#">
+								<time datetime="">2016.4.15</time>
+								<span class="title">[모집변경] ㈜시전소프트, 모집내용 변경</span>
+							</a>
+						</dt>
+						<dd>
+							<p class="desc">
+								㈜시전소프트가 내부 자금 계획 변화에 따라, 크라우드펀딩 진행 내용 (모집 주식의 수: 330주, 모집 금액: 3,003만원)이 변경 되었습니다.
+							</p>
+						</dd>
+
+						<dt>
+							<a href="#">
+								<time datetime="">2016.4.5</time>
+								<span class="title">[이벤트] (주)시전소프트, 3rd 인크데이 참가</span>
+							</a>
+						</dt>
+						<dd>
+							<p class="desc">
+								(주)시전소프트가 투자형 크라우드펀딩 플랫폼 인크의 주최로 진행된 인크데이(잠재투자자 대상 기업설명회)에 참가했습니다.
+							</p>
+						</dd>
+					</dl>
+
+				</section>
+				
+
+				<!-- 자주하는 질문 -->
+				<section class="tab-section">
+					<h2 class="header-table-view">자주하는 질문</h2>
+
+					<dl class="list-folding qna">
+						<dt>
+							<a href="#">
+								<span class="title">자료에 보면 인건비를 8명에 1억6천만원 책정하셨는데 그게 가능한가요?</span>
+							</a>
+						</dt>
+						<dd>
+							<p class="desc">
+								실제로 8명에 1.6억원이면 평균 2천만원의 연봉입니다.<br>
+								현재 대표이사의 경우 연봉이 1,440만원으로 월 120만원을 받으며 1년 넘게 일하고 있습니다.<br>
+								나머지 임직워들도 회사의 비전을 위해 연봉측면에서 일부 희생하고 있습니다.<br>
+								<br>
+								따라서 올해 연평균 인원 8명(평균인원 YOY 2명 증가)이 되더라도 책정한 인건비에서 크게 벗어나지 않을것으로 보고 있습니다.
+							</p>
+						</dd>
+
+						<dt>
+							<a href="#">
+								<span class="title">아이폰 앱스토어는 없나요? 아이폰에서는 어플지원이 안되나요?</span>
+							</a>
+						</dt>
+						<dd>
+							<p class="desc">
+								현재 아이폰 앱서비스는 지원되고 있지 않습니다.<br>
+								다만 웹사이트를 통해 아이폰 및 데스크탑에서도 이용할 수 있도록 하고 있습니다.<br>
+								www.flyerszone.co.kr에 접속하시면 아이폰으로도 전단지 만들기, 전단지 보기 등의 모든 기능을 사용할 수 있습니다.<br>
+								<br>
+								추후에 아이폰용도 개발될 예정입니다만<br>
+								현재 모든 기능을 웹으로 대처가 가능하기 때문에 투여개발비 대비<br>
+								성과가 크지 않을 수 있어 다운간은 웹사이트로 대처하여 시장반응을 살펴보고자 합니다.<br>
+							</p>
+						</dd>
+					</dl>
+
+				</section>
+				
+
+				<!-- 문의하기 -->
+				<section class="tab-section">
+					<h2 class="header-table-view">문의하기</h2>
+
+					<dl class="list-folding qna">
+						<dt>
+							<a href="#">
+								<span class="title">[펀딩종료] (주)시전소프트, 크라우드펀딩 종료</span>	
+								<p class="info">
+									<time datetime="">2016.4.22</time>
+									<span class="user">홍길동</span>
+								</p>
+							</a>	
+						</dt>
+						<dd>
+							<p class="desc">
+								유안타증권이 리드투자자로 참여한 (주)시전소프트의 크라우드펀딩이 모집률 100%를 달성하며 종료되었습니다.
+							</p>
+							<p class="info">
+								<time datetime="">2016.4.22</time>
+								<span class="user">(주)아우름플래닛</span>
+							</p>
+						</dd>
+
+						<dt>
+							<a href="#">
+								<span class="title">[모집변경] ㈜시전소프트, 모집내용 변경</span>	
+								<p class="info">
+									<time datetime="">2016.4.22</time>
+									<span class="user">홍길동</span>
+								</p>
+							</a>
+						</dt>
+						<dd>
+							<p>
+								㈜시전소프트가 내부 자금 계획 변화에 따라, 크라우드펀딩 진행 내용 (모집 주식의 수: 330주, 모집 금액: 3,003만원)이 변경 되었습니다.
+							</p>
+						</dd>
+
+						<dt>
+							<a href="#">
+								<span class="title">[이벤트] (주)시전소프트, 3rd 인크데이 참가</span>	
+								<p class="info">
+									<time datetime="">2016.4.22</time>
+									<span class="user">홍길동</span>
+								</p>
+							</a>
+						</dt>
+						<dd>
+							<p>
+								(주)시전소프트가 투자형 크라우드펀딩 플랫폼 인크의 주최로 진행된 인크데이(잠재투자자 대상 기업설명회)에 참가했습니다.
+							</p>
+						</dd>
+					</dl>
+
+				</section>
+
+
+				<p class="qna">
+					<a href="#" class="btn-qna">문의하기</a>
+				</p>
+			</section>
+
+
+			<!-- 투자하기 버튼 -->
+			include "btn_invest.html"
+
+		</article>
+	</main>
+
+	<!-- 하단 영역 -->
+	include "footer.html"
+
+</body>
+</html>

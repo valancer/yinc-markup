@@ -46,8 +46,8 @@
 	.tab-contents { float: left; position: relative; min-height: 300px; width: 100%;
 
 		/* 테이블 뷰 형태 */
-		.header-table-view { padding: 0 6.944444444444%; height: 30px; font-size: 0.688rem; font-weight: 300; color: #888; line-height: 30px; border-top: 1px solid #dedede; background-color: #f1f1f1; }
-		.list-table-view { width: 100%;
+		.header-table-view { padding: 0 6.944444444444%; font-size: 0.750rem; font-weight: 300; color: #888; line-height: 2.063rem; border-top: 1px solid #dedede; background-color: #f1f1f1; }
+		.list-table-view { width: 100%; background-color: #fff;
 			> li { overflow: hidden; position: relative; padding: 0 6.944444444444%; height: 40px; border-top: 1px solid #dedede;
 
 				/* normal */
@@ -70,6 +70,69 @@
 			.btn-info { display: inline-block; margin-top: -2px; text-indent: -9999px; vertical-align: middle; @include retina-sprite($s-btn-info01-group); }
 		}
 
+		/* faq & company news */
+		.none-message { padding: 11px 0 12px 0; font-size: 0.813rem; font-weight: 300; color: #000; line-height: 1.250rem; text-align: center; border-top: 1px solid #dedede; background-color: #fff; }
+		.list-folding { background-color: #fff;
+			.btns { padding: 0 4.444444444444% 20px 0; text-align: right;
+				.btn-inline { display: inline-block; min-width: 55px; font-size: 0.750rem; font-weight: 500; color: #000; text-align: center; line-height: 1.688rem; border: 1px solid #d5d5d5; border-radius: 1.688rem; background-color: #f4f4f4;
+					&.strong { color: #fff; border: 1px solid #ab8060; background-color: #b78c6c; }
+				}
+			}
+
+			dt { display: block; overflow: hidden; border-top: 1px solid #dedede;
+				> a { display: block; box-sizing: border-box; position: relative; padding: 13px 9.722222222222% 14px 6.944444444444%; color: #000; text-decoration: none;
+					&:after { content: ''; display: block; position: absolute; top: 19px; right: 4.444444444444%; @include retina-sprite($s-btn-down-01-group); }
+
+					.title { display: block; overflow: hidden; padding-right: 25px; font-size: 0.813rem; font-weight: 300; line-height: 0.938rem; text-overflow: ellipsis; white-space: nowrap; }
+
+					time { float: right; font-size: 0.688rem; font-weight: 300; color: #888; line-height: 0.938rem; vertical-align: middle; }
+					.user { float: left; font-size: 0.688rem; font-weight: 400; color: #000; line-height: 0.938rem; vertical-align: middle; }
+
+					.info { clear: both; overflow: hidden; margin-top: 16px; }
+				}
+				.btns { display: none; }
+
+				&.is-open {
+					> a {
+						&:after { @include retina-sprite($s-btn-up-01-group); }
+						.title { font-weight: 700; line-height: 0.938rem; text-oveflow: none; white-space: normal; }
+					}
+
+					.btns { display: block; }
+
+					+ dd { display: block; }
+				}
+			}
+			dd { display: none;
+				.desc { position: relative; padding: 0 9.722222222222% 13px 6.944444444444%; font-size: 0.750rem; font-weight: 400; color: #ac7f5e; line-height: 1.125rem; }
+			}
+
+
+			&.qna {
+				dt {
+					> a { padding-left: 15.277777777778%;
+						&:before { content: ''; display: block; position: absolute; top: 12px; left: 6.944444444444%; @include retina-sprite($s-icon-q-group); }
+					}
+				}
+
+				dd {
+					.desc { padding-left: 15.277777777778%;
+						&:before { content: ''; display: block; position: absolute; top: 0; left: 6.944444444444%; @include retina-sprite($s-icon-a-group); }
+					}
+					
+					.info { clear: both; overflow: hidden; padding: 0 9.722222222222% 15px 15.277777777778%;
+						time { float: right; font-size: 0.688rem; font-weight: 300; color: #888; line-height: 0.938rem; vertical-align: middle; }
+						.user { float: left; font-size: 0.688rem; font-weight: 400; color: #ac7f5e; line-height: 0.938rem; vertical-align: middle; }
+					}	
+				}
+			}
+		}
+
+
+		p.qna { padding: 15px 0 23px 0; border-top: 1px solid #dedede;
+			.btn-qna { display: block; margin: 0 auto; width: 150px; font-size: 0.813rem; font-weight: 500; color: #262626; text-align: center; line-height: 2.688rem; border: 1px solid #edd400; border-radius: 2.688rem; background-color: #fde832; }
+		}
+
 
 		.tab-section {
 			.info-title { display: block; height: 90px; font-size: 0.875rem; font-weight: 400; color: #fff; text-align: center; line-height: 90px;
@@ -87,7 +150,7 @@
 				}
 			}
 
-			.check-options { padding: 10px 0 0 0; background-color: #f4f4f4;
+			.check-options { padding: 10px 0 0 0; border-top: 1px solid #dedede;
 				.options-title { padding: 0 6.944444444444%; font-size: 0.688rem; font-weight: 300; color: #888; }
 
 				.list-checks { overflow: hidden; padding: 0 6.944444444444% 25px 6.944444444444%; 
