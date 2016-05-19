@@ -77,6 +77,41 @@ getStorage.prototype.FALLBACK_STORAGE = memoryStorage;
 
 
 
+/* yinc local storage */
+var yincLS = (function ($) {
+	var scope,
+		yinc,
+		storage,
+		init = function() {
+			yinc = {};
+			storage = getStorage(yinc);
+		};
+
+	function _setItem(key, value) {
+		storage.setItem(key, value);
+	}
+
+	function _getItem(key) {
+		return storage.getItem(key);
+	}
+
+	return {
+		init: function () {
+			scope = this;
+
+			init();
+		},
+		setItem: function(key, value) {
+			_setItem(key, value);
+		},
+		getItem: function(key) {
+			return _getItem(key);
+		}
+	};
+}(jQuery));
+
+
+
 /* native linker */
 var NativeLinker = (function ($) {
 	var scope,
@@ -85,7 +120,7 @@ var NativeLinker = (function ($) {
 		init = function() {
 			$linker = $('[data-navigation]');
 
-			_device = yincLS.getItem("device");
+			_device = $_GET('device');
 
 			initLayout();
 			initEvent();
@@ -198,6 +233,9 @@ var NativeLinker = (function ($) {
 	// token response
 	function _handleReloadWithCredential(token) {
 		console.log("token reload : " + token);
+		token = "4773-892c-65f070784f78";
+		yincLS.setItem("token", token);
+
 	}
 
 	function _handleRequestInitInfo() {
@@ -423,42 +461,6 @@ var Company = (function ($) {
 			scope = this;
 
 			init();
-		}
-	};
-}(jQuery));
-
-
-
-
-/* yinc local storage */
-var yincLS = (function ($) {
-	var scope,
-		yinc,
-		storage,
-		init = function() {
-			yinc = {};
-			storage = getStorage(yinc);
-		};
-
-	function _setItem(key, value) {
-		storage.setItem(key, value);
-	}
-
-	function _getItem(key) {
-		return storage.getItem(key);
-	}
-
-	return {
-		init: function () {
-			scope = this;
-
-			init();
-		},
-		setItem: function(key, value) {
-			_setItem(key, value);
-		},
-		getItem: function(key) {
-			return _getItem(key);
 		}
 	};
 }(jQuery));
