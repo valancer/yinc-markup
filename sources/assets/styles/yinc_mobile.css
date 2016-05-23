@@ -960,6 +960,7 @@ body {
         text-align: right; }
         .contents.company .tab-contents .list-folding .btns .btn-inline {
           display: inline-block;
+          margin-left: 4px;
           min-width: 55px;
           font-size: 0.750rem;
           font-weight: 500;
@@ -1381,6 +1382,11 @@ body {
               vertical-align: middle; }
   .contents.company .qna-write {
     padding-bottom: 97px; }
+    .contents.company .qna-write .question {
+      padding: 20px 6.944444444444% 20px 6.944444444444%;
+      font-size: 0.750rem;
+      font-weight: 300;
+      color: #000; }
     .contents.company .qna-write .list-qna-warning {
       padding: 9px 6.944444444444% 23px 6.944444444444%;
       border-bottom: 1px solid #dedede; }

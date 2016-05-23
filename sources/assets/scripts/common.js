@@ -238,6 +238,7 @@ var NativeLinker = (function ($) {
 			window.android.requestCredential({callback: "NativeLinker.reloadWithCredential"}); 
 		} else {
 			// temp
+			yincLS.setItem("userId", 3);
 			$.ajax({
 				url:"http://182.162.100.61:8070/api/mobile/auth/login?IsPersistent=true&email=1price@limited40.com&password=111qqq!",
 				// url:"http://amp.limited40.com:8060/api/mobile/auth/login?IsPersistent=true&email=1price@limited40.com&password=111qqq!",
@@ -402,7 +403,7 @@ var Company = (function ($) {
 			$cpItems = $cpContainer.find('.item-checks');
 
 			// communication
-			$toggleItems = $companyContainer.find('.list-folding dt');
+			$toggleItems = $companyContainer.find('.list-folding dt > a');
 
 			if( $companyContainer.length <= 0 ) return;
 			
@@ -479,8 +480,9 @@ var Company = (function ($) {
 		$toggleItems.on('click', function(e) {
 			e.preventDefault();
 
-			if( $(this).is($lastToggleItem) && $(this).hasClass("is-open") ) {
-				$(this).removeClass("is-open");
+			var $this = $(this).closest('dt');
+			if( $this.is($lastToggleItem) && $this.hasClass("is-open") ) {
+				$this.removeClass("is-open");
 				return;
 			}
 
@@ -488,9 +490,9 @@ var Company = (function ($) {
 				$lastToggleItem.removeClass("is-open");
 			}
 
-			$(this).addClass('is-open');
+			$this.addClass('is-open');
 			swipe.updateHeight();
-			$lastToggleItem = $(this);
+			$lastToggleItem = $this;
 		});
 	}
 

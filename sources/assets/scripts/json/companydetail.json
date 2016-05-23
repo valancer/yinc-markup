@@ -1,10 +1,8 @@
 {
     "message":"성공",
-    "now":1463713919040,
+    "now":1463814266391,
     "item":{
-        "id": 0,
         "logoURL": "https://yinc.kr/data/uploads/1/51/70a268edd875578e8ad0b5f5d40f671c.jpg",
-        "companyName": "(주)제이이랩",
         "companyImgURL": "https://yinc.kr/data/uploads/1/51/826c2749bdd73d451d106297e1e93a0a.png",
         "companySiteURL": "https://www.facebook.com/%EC%A0%9C%EC%9D%B4%EC%9D%B4%EB%9E%A9-JE-Lab-1501946580107846/",
         "investReasonShort": "제이랩 화이팅",
@@ -16,7 +14,8 @@
         "investCount": 8,
         "investStart": 1459798200000,
         "investEnd": 1462460400000,
-        "investYN": "N",
+        "investYN": "Y",
+        "companyOwnerId": 1,
         "requestAmount": 150167000,
         "collectedAmount": 122700000,
         "sharePrice": 227000,
