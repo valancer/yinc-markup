@@ -1,4 +1,5 @@
-http://amp.limited40.com:8060/api/mobile/auth/login?IsPersistent=false&email=1price@limited40.com&password=111qqq!
+http://amp.limited40.com:8060/api/mobile/auth/login?IsPersistent=true&email=1price@limited40.com&password=111qqq!
+
 
 http://amp.limited40.com:8060/api/mobile/invest/item/list?listType=01&sorting=01&token=1d9d3cb9-6b25-4773-892c-65f070784f78
 http://amp.limited40.com:8060/api/mobile/invest/item/list?listType=01&sorting=01&userId=1

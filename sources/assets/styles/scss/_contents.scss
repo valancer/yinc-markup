@@ -1,3 +1,9 @@
+/* buttons */
+.btn-submit { display: block; margin-top: 25px; height: 50px; width: 100%; font-size: 0.875rem; font-weight: 500; color: #fff; line-height: 3.125rem; text-align: center; border-radius: 2px !important; background-color: #494949 !important;
+	&[data-state=disabled] { background-color: #bbb; }
+}
+
+
 
 /* 투자 회사 */
 .company-item { display: block; overflow: hidden; position: relative; box-sizing: border-box; padding: 27px 6.944444444444% 0 6.944444444444%; height: 232px; background-position: center center; background-size: cover;
@@ -97,7 +103,3 @@
 .qna-update {
 	textarea { display: block; box-sizing: border-box; padding: 14px 6.944444444444%; width: 100%; font-size: 0.938rem; font-weight: 400; color: #000; line-height: 1.125rem; background-color: transparent; }
 }
-
-
-
-

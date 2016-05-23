@@ -1,0 +1,52 @@
+{
+    "message":"성공",
+    "now":1463713919040,
+    "items":[
+      {
+        "id": 0,
+        "companyName": "(주)제이이랩",
+        "companyImgURL": "https://yinc.kr/data/uploads/1/51/826c2749bdd73d451d106297e1e93a0a.png",
+        "investReasonShort": "제이이랩 화이팅",
+        "investStart": 1459798200000,
+        "investEnd": 1462957200000,
+        "investCount": 8,
+        "fundingStatus": "",
+        "taxfreeYN": "N",
+        "likeYN": "N",
+        "leaderId": 0,
+        "requestAmount": 150167000,
+        "collectedAmount": 122700000
+      },
+      {
+        "id": 1,
+        "companyName": "(주)시전소프트",
+        "companyImgURL": "https://yinc.kr/data/uploads/1/46/b6f79992137a7fdcf9feb0a75fbeac90.jpg",
+        "investReasonShort": "시전소프트 화이팅",
+        "investStart": 1458777600000,
+        "investEnd": 1463670000000,
+        "investCount": 22,
+        "fundingStatus": "",
+        "taxfreeYN": "Y",
+        "likeYN": "Y",
+        "leaderId": 0,
+        "requestAmount": 30030000,
+        "collectedAmount": 30030000
+      },
+      {
+        "id": 2,
+        "companyName": "(주)아우름플래닛",
+        "companyImgURL": "https://yinc.kr/data/uploads/1/50/826c2749bdd73d451d106297e1e93a0a.png",
+        "investReasonShort": "아우름플래닛 화이팅",
+        "investStart": 1459296000000,
+        "investEnd": 1460448000000,
+        "investCount": 30,
+        "fundingStatus": "",
+        "taxfreeYN": "Y",
+        "likeYN": "Y",
+        "leaderId": -1,
+        "requestAmount": 62280000,
+        "collectedAmount": 23491000
+      }
+    ],
+    "result":0
+}

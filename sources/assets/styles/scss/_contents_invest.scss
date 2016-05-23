@@ -151,11 +151,6 @@
 			&:before { content: ''; display: block; position: absolute; top: 2px; left: 0; @include retina-sprite($s-icon-iks-02-group); }
 		}
 
-		.btn-submit { display: block; margin-top: 25px; height: 50px; width: 100%; font-size: 0.875rem; font-weight: 500; color: #fff; line-height: 3.125rem; text-align: center; border-radius: 2px; background-color: #494949;
-			&[data-state=disabled] { background-color: #bbb; }
-		}
-
-
 
 		/* 결과 메시지 */
 		.result-message { padding-top: 11px; padding-bottom: 43px; text-align: center;
