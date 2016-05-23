@@ -567,7 +567,18 @@ body {
   font-size: 0.938rem;
   font-weight: 400;
   color: #000;
-  line-height: 2.250rem; }
+  line-height: 1.125rem; }
+
+.qna-update textarea {
+  display: block;
+  box-sizing: border-box;
+  padding: 14px 6.944444444444%;
+  width: 100%;
+  font-size: 0.938rem;
+  font-weight: 400;
+  color: #000;
+  line-height: 1.125rem;
+  background-color: transparent; }
 
 /* 펀딩 목록 & 투자 내역 */
 .contents.fundings .my-funding-item {

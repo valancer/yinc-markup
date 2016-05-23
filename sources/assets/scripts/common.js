@@ -109,6 +109,7 @@ var yincLS = (function ($) {
 		}
 	};
 }(jQuery));
+yincLS.init();
 
 
 
@@ -118,9 +119,7 @@ var NativeLinker = (function ($) {
 		$linker,
 		_device,
 		init = function() {
-			$linker = $('[data-navigation]');
-
-			_device = $_GET('device');
+			_init();
 
 			initLayout();
 			initEvent();
@@ -145,6 +144,15 @@ var NativeLinker = (function ($) {
 		});
 	}
 
+	function _init() {
+		$linker = $('[data-navigation]');
+		_device = $_GET('device');
+	}
+
+	function _reinit() {
+		_init();
+		initEvent();
+	}
 
 	function _openBrowser(url) {
 		if( _device == "ios" ) {
@@ -189,6 +197,9 @@ var NativeLinker = (function ($) {
 			window.webkit.messageHandlers.popNavigation.postMessage();
 		} else if( _device == "android" ) {
 			window.android.popNavigation();
+		} else {
+			alert("popnavigation");
+			// window.history.back(-2);
 		}
 	}
 
@@ -227,15 +238,30 @@ var NativeLinker = (function ($) {
 			window.webkit.messageHandlers.requestCredential.postMessage({callback: "NativeLinker.reloadWithCredential"});
 		} else if( _device == "android" ) {
 			window.android.requestCredential({callback: "NativeLinker.reloadWithCredential"}); 
+		} else {
+			// temp
+			yincLS.setItem("userId", 1);
+			$.ajax({
+				url:"http://182.162.100.61:8070/api/mobile/auth/login?IsPersistent=true&email=1price@limited40.com&password=111qqq!",
+				// url:"http://amp.limited40.com:8060/api/mobile/auth/login?IsPersistent=true&email=1price@limited40.com&password=111qqq!",
+				type:"POST",
+				async: false,
+				dataType: 'json',
+				timeout:5000,
+				cache: false,
+				success: function(result, status, xhr){
+					_handleReloadWithCredential(result);
+				}.bind(this),
+					error: function(xhr, status, err) {
+					alert('데이터를 로드할 수 없습니다.' + status +': '+ err);
+				}.bind(this)
+			});
 		}
 	}
 
 	// token response
-	function _handleReloadWithCredential(token) {
-		console.log("token reload : " + token);
-		token = "4773-892c-65f070784f78";
-		yincLS.setItem("token", token);
-
+	function _handleReloadWithCredential(data) {
+		yincLS.setItem("token", data.token);
 	}
 
 	function _handleRequestInitInfo() {
@@ -243,12 +269,14 @@ var NativeLinker = (function ($) {
 			window.webkit.messageHandlers.requestInitInfo.postMessage({callback: "NativeLinker.reloadWithInitInfo"});
 		} else if( _device == "android" ) {
 			window.android.requestInitInfo({callback: "NativeLinker.reloadWithInitInfo"}); 
+		} else {
+
 		}
 	}
 
 	function _handleReloadWithInitInfo(data) {
-		alert(data);
-		console.log("data reload : " + data);
+		console.log("_handleReloadWithInitInfo");
+		yincLS.setItem("navigationHeight", 44);
 	}
 
 	return {
@@ -256,6 +284,9 @@ var NativeLinker = (function ($) {
 			scope = this;
 
 			init();
+		},
+		reinit: function() {
+			_reinit();
 		},
 		requestCredential: function() {
 			_handleRequestCredential();
@@ -268,22 +299,54 @@ var NativeLinker = (function ($) {
 		},
 		reloadWithInitInfo: function(data) {
 			_handleReloadWithInitInfo(data);
+		},
+		popNavigation: function() {
+			_popNavigation();
 		}
 	};
 }(jQuery));
+NativeLinker.init();
 
+
+
+/* native Popup */
+var NativePopup = (function ($) {
+	var scope,
+		_device,
+		init = function() {
+		};
+
+	function _open(title, content) {
+		if( _device == "ios" ) {
+			window.webkit.messageHandlers.showAlert.postMessage({title: title, content: content});
+		} else if( _device == "android" ) {
+			window.android.showAlert('{title: ' + title + ', content: ' + content + '}');
+		} else {
+			window.alert(content);
+		}
+	}
+
+	return {
+		init: function () {
+			scope = this;
+
+			init();
+		},
+		open: function(title, content) {
+			_open(title, content);
+		}
+	};
+}(jQuery));
+NativePopup.init();
 
 
 
 $(document).ready(function (e) {
-	yincLS.init();
-	yincLS.setItem("navigationHeight", 44);
-
-
 	CompanyList.init();
 	Company.init();
-	NativeLinker.init();
+
 	Invest.init();
+	NativeLinker.reinit();
 });
 
 
@@ -342,6 +405,9 @@ var CompanyList = (function ($) {
 			scope = this;
 
 			init();
+		},
+		reinit: function() {
+			init();
 		}
 	};
 }(jQuery));
@@ -373,9 +439,10 @@ var Company = (function ($) {
 			$cpItems = $cpContainer.find('.item-checks');
 
 			// communication
-			$toggleItems = $companyContainer.find('.list-folding dt');
+			$toggleItems = $companyContainer.find('.list-folding dt > a');
 
 			if( $companyContainer.length <= 0 ) return;
+			
 			initLayout();
 			initEvent();
 		};//end init
@@ -425,15 +492,17 @@ var Company = (function ($) {
 		});
 
 		// check point slider
-		$cpContainer.slick({
-			infinite: false,
-			dots: false,
-			arrows: false,
-			slidesToShow: 1,
-			slidesToScroll: 1,
-			stopPropagation: true,
-			slide: 'li'
-		});
+		if( $cpContainer.length > 0 ) {
+			$cpContainer.slick({
+				infinite: false,
+				dots: false,
+				arrows: false,
+				slidesToShow: 1,
+				slidesToScroll: 1,
+				stopPropagation: true,
+				slide: 'li'
+			});
+		}
 
 		if( window.location.hash ) {
 			var hash = window.location.hash;
@@ -446,9 +515,11 @@ var Company = (function ($) {
 		// communication - toggle
 		$toggleItems.on('click', function(e) {
 			e.preventDefault();
+			e.stopPropagation();
 
-			if( $(this).is($lastToggleItem) && $(this).hasClass("is-open") ) {
-				$(this).removeClass("is-open");
+			var $this = $(this).closest('dt');
+			if( $this.is($lastToggleItem) && $this.hasClass("is-open") ) {
+				$this.removeClass("is-open");
 				return;
 			}
 
@@ -456,9 +527,9 @@ var Company = (function ($) {
 				$lastToggleItem.removeClass("is-open");
 			}
 
-			$(this).addClass('is-open');
+			$this.addClass('is-open');
 			swipe.updateHeight();
-			$lastToggleItem = $(this);
+			$lastToggleItem = $this;
 		});
 	}
 
@@ -470,6 +541,8 @@ var Company = (function ($) {
 	function _slideToHash(hash) {
 		var target = hash.split("#")[1];
 		var index = $('.tab-contents').index($('section[id="' + target + '"]'));
+
+		if( swipe === undefined ) return;
 		swipe.slide(index, 0);
 		_updateTabLabel(index);
 	}
@@ -485,9 +558,13 @@ var Company = (function ($) {
 			scope = this;
 
 			init();
+		},
+		reinit: function() {
+			init();
 		}
 	};
 }(jQuery));
+
 
 
 
