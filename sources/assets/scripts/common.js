@@ -237,7 +237,7 @@ var NativeLinker = (function ($) {
 		if( _device == "ios" ) {
 			window.webkit.messageHandlers.requestCredential.postMessage({callback: "NativeLinker.reloadWithCredential"});
 		} else if( _device == "android" ) {
-			window.android.requestCredential({callback: "NativeLinker.reloadWithCredential"}); 
+			window.android.requestCredential('{callback: "NativeLinker.reloadWithCredential"}'); 
 		} else {
 			// temp
 			yincLS.setItem("userId", 1);
@@ -268,7 +268,7 @@ var NativeLinker = (function ($) {
 		if( _device == "ios" ) {
 			window.webkit.messageHandlers.requestInitInfo.postMessage({callback: "NativeLinker.reloadWithInitInfo"});
 		} else if( _device == "android" ) {
-			window.android.requestInitInfo({callback: "NativeLinker.reloadWithInitInfo"}); 
+			window.android.requestInitInfo('{callback: "NativeLinker.reloadWithInitInfo"}'); 
 		} else {
 
 		}
