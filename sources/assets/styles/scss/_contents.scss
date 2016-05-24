@@ -4,6 +4,50 @@
 }
 
 
+/* 테이블 뷰 형태 */
+.header-table-view { padding: 0 6.944444444444%; font-size: 0.750rem; font-weight: 300; color: #888; line-height: 2.063rem; background-color: #f1f1f1; }
+.list-table-view { width: 100%; border-bottom: 1px solid #dedede; background-color: #fff;
+	> li { overflow: hidden; position: relative; padding: 0 6.944444444444%; height: 40px; border-top: 1px solid #dedede;
+
+		/* normal */
+		.title { float: left; font-size: 0.813rem; font-weight: 300; color: #010101; line-height: 40px; }
+		.content { float: right; font-size: 0.813rem; font-weight: 300; color: #888; line-height: 40px;
+			.version { font-weight: 500; color: #ac7f5e; }
+		}
+
+		/* link */
+		a { display: block; box-sizing: border-box; position: absolute; top: 0; right: 0; bottom: 0; left: 0; padding: 0 6.944444444444% 0 7.777777777778%; height: 100%; width: 100%;
+			&:after { content: ''; display: block; position: absolute; top: 50%; right: 6.944444444444%; margin-top: -$s-icon-arrow01-height/2; @include retina-sprite($s-icon-arrow01-group); }
+
+			&:active,
+			&:hover { background-color: #fffacd; }
+		}
+	}
+
+	.btn-info { display: inline-block; margin-top: -2px; text-indent: -9999px; vertical-align: middle; @include retina-sprite($s-btn-info01-group); }
+
+	&.detail {
+		> li {
+			.title { font-size: 0.688rem; color: #888; }
+			.content {
+				.em { font-weight: 700; color: #000; }
+				.ci { height: 40px; width: auto; }
+			}
+		}
+	}
+}
+
+
+/* 알림 목록 */
+.list-notification { background-color: #fff;
+	> li { padding: 19px 6.944444444444% 15px 6.944444444444%; border-bottom: 1px solid #d7d7d7;
+		.title { display: block; font-size: 0.875rem; font-weight: 300; color: #000; line-height: 1rem; }
+		time { display: block; margin-top: 12px; font-size: 0.688rem; font-weight: 300; color: #888; }
+
+		&.recent { background-color: #fffacd; }
+	}
+}
+
 
 /* 투자 회사 */
 .company-item { display: block; overflow: hidden; position: relative; box-sizing: border-box; padding: 27px 6.944444444444% 0 6.944444444444%; height: 232px; background-position: center center; background-size: cover;

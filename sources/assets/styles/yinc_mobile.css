@@ -311,6 +311,114 @@ body {
   .btn-submit[disabled] {
     background-color: #bbb !important; }
 
+/* 테이블 뷰 형태 */
+.header-table-view {
+  padding: 0 6.944444444444%;
+  font-size: 0.750rem;
+  font-weight: 300;
+  color: #888;
+  line-height: 2.063rem;
+  background-color: #f1f1f1; }
+
+.list-table-view {
+  width: 100%;
+  border-bottom: 1px solid #dedede;
+  background-color: #fff; }
+  .list-table-view > li {
+    overflow: hidden;
+    position: relative;
+    padding: 0 6.944444444444%;
+    height: 40px;
+    border-top: 1px solid #dedede;
+    /* normal */
+    /* link */ }
+    .list-table-view > li .title {
+      float: left;
+      font-size: 0.813rem;
+      font-weight: 300;
+      color: #010101;
+      line-height: 40px; }
+    .list-table-view > li .content {
+      float: right;
+      font-size: 0.813rem;
+      font-weight: 300;
+      color: #888;
+      line-height: 40px; }
+      .list-table-view > li .content .version {
+        font-weight: 500;
+        color: #ac7f5e; }
+    .list-table-view > li a {
+      display: block;
+      box-sizing: border-box;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      padding: 0 6.944444444444% 0 7.777777777778%;
+      height: 100%;
+      width: 100%; }
+      .list-table-view > li a:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 50%;
+        right: 6.944444444444%;
+        margin-top: -7px;
+        background-image: url(/assets/images/sprites.png);
+        background-position: -98px -193px;
+        width: 8px;
+        height: 14px; }
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+          .list-table-view > li a:after {
+            background-image: url(/assets/images/sprites@2x.png);
+            background-size: 236px 208px; } }
+      .list-table-view > li a:active, .list-table-view > li a:hover {
+        background-color: #fffacd; }
+  .list-table-view .btn-info {
+    display: inline-block;
+    margin-top: -2px;
+    text-indent: -9999px;
+    vertical-align: middle;
+    background-image: url(/assets/images/sprites.png);
+    background-position: -167px -98px;
+    width: 40px;
+    height: 40px; }
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+      .list-table-view .btn-info {
+        background-image: url(/assets/images/sprites@2x.png);
+        background-size: 236px 208px; } }
+  .list-table-view.detail > li .title {
+    font-size: 0.688rem;
+    color: #888; }
+  .list-table-view.detail > li .content .em {
+    font-weight: 700;
+    color: #000; }
+  .list-table-view.detail > li .content .ci {
+    height: 40px;
+    width: auto; }
+
+/* 알림 목록 */
+.list-notification {
+  background-color: #fff; }
+  .list-notification > li {
+    padding: 19px 6.944444444444% 15px 6.944444444444%;
+    border-bottom: 1px solid #d7d7d7; }
+    .list-notification > li .title {
+      display: block;
+      font-size: 0.875rem;
+      font-weight: 300;
+      color: #000;
+      line-height: 1rem; }
+    .list-notification > li time {
+      display: block;
+      margin-top: 12px;
+      font-size: 0.688rem;
+      font-weight: 300;
+      color: #888; }
+    .list-notification > li.recent {
+      background-color: #fffacd; }
+
 /* 투자 회사 */
 .company-item {
   display: block;
@@ -861,90 +969,9 @@ body {
     position: relative;
     min-height: 300px;
     width: 100%;
-    /* 테이블 뷰 형태 */
     /* faq & company news */
     /* 요약 탭 */
     /* 상세정보 탭 */ }
-    .contents.company .tab-contents .header-table-view {
-      padding: 0 6.944444444444%;
-      font-size: 0.750rem;
-      font-weight: 300;
-      color: #888;
-      line-height: 2.063rem;
-      border-top: 1px solid #dedede;
-      background-color: #f1f1f1; }
-    .contents.company .tab-contents .list-table-view {
-      width: 100%;
-      background-color: #fff; }
-      .contents.company .tab-contents .list-table-view > li {
-        overflow: hidden;
-        position: relative;
-        padding: 0 6.944444444444%;
-        height: 40px;
-        border-top: 1px solid #dedede;
-        /* normal */
-        /* link */ }
-        .contents.company .tab-contents .list-table-view > li .title {
-          float: left;
-          font-size: 0.688rem;
-          font-weight: 300;
-          color: #888;
-          line-height: 40px; }
-        .contents.company .tab-contents .list-table-view > li .content {
-          float: right;
-          font-size: 0.813rem;
-          font-weight: 300;
-          color: #888;
-          line-height: 40px; }
-          .contents.company .tab-contents .list-table-view > li .content .em {
-            font-weight: 700;
-            color: #000; }
-          .contents.company .tab-contents .list-table-view > li .content .ci {
-            height: 40px;
-            width: auto; }
-        .contents.company .tab-contents .list-table-view > li a {
-          display: block;
-          position: absolute;
-          top: 0;
-          right: 0;
-          bottom: 0;
-          left: 0;
-          padding: 0 6.944444444444%;
-          height: 100%; }
-          .contents.company .tab-contents .list-table-view > li a:after {
-            content: '';
-            display: block;
-            position: absolute;
-            top: 50%;
-            right: 6.944444444444%;
-            margin-top: -7px;
-            background-image: url(/assets/images/sprites.png);
-            background-position: -98px -193px;
-            width: 8px;
-            height: 14px; }
-            @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-              .contents.company .tab-contents .list-table-view > li a:after {
-                background-image: url(/assets/images/sprites@2x.png);
-                background-size: 236px 208px; } }
-          .contents.company .tab-contents .list-table-view > li a .title {
-            font-size: 0.813rem;
-            font-weight: 300;
-            color: #010101; }
-          .contents.company .tab-contents .list-table-view > li a:active, .contents.company .tab-contents .list-table-view > li a:hover {
-            background-color: #fffacd; }
-      .contents.company .tab-contents .list-table-view .btn-info {
-        display: inline-block;
-        margin-top: -2px;
-        text-indent: -9999px;
-        vertical-align: middle;
-        background-image: url(/assets/images/sprites.png);
-        background-position: -167px -98px;
-        width: 40px;
-        height: 40px; }
-        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-          .contents.company .tab-contents .list-table-view .btn-info {
-            background-image: url(/assets/images/sprites@2x.png);
-            background-size: 236px 208px; } }
     .contents.company .tab-contents .none-message {
       padding: 11px 0 12px 0;
       font-size: 0.813rem;
@@ -955,6 +982,7 @@ body {
       border-top: 1px solid #dedede;
       background-color: #fff; }
     .contents.company .tab-contents .list-folding {
+      border-bottom: 1px solid #dedede;
       background-color: #fff; }
       .contents.company .tab-contents .list-folding .btns {
         padding: 0 4.444444444444% 20px 0;
@@ -1166,8 +1194,7 @@ body {
           .contents.company .tab-contents .tab-section .info-title.executives {
             background-image: url("/assets/images/bg_info_title02@2x.jpg"); } }
     .contents.company .tab-contents .tab-section .check-options {
-      padding: 10px 0 0 0;
-      border-top: 1px solid #dedede; }
+      padding: 10px 0 0 0; }
       .contents.company .tab-contents .tab-section .check-options .options-title {
         padding: 0 6.944444444444%;
         font-size: 0.688rem;
@@ -2004,6 +2031,12 @@ body {
     margin-bottom: 25px; }
   .contents.invest.deposit .warning {
     margin-top: 40px; }
+
+/* 설정 */
+.contents.settings .header-table-view {
+  margin-top: 28px; }
+  .contents.settings .header-table-view:first-child {
+    margin-top: 0; }
 
 .is-hidden {
   display: none; }

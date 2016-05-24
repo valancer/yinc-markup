@@ -139,8 +139,9 @@ var NativeLinker = (function ($) {
 			var action = $linker.data("navigation");
 			var url = $linker.attr("href");
 			var title = $linker.data("native-title");
+			var barType = $linker.data("bar-type");
 
-			_handleNavigation(action, url, title);
+			_handleNavigation(action, url, title, barType);
 		});
 	}
 
@@ -164,11 +165,11 @@ var NativeLinker = (function ($) {
 		}
 	}
 
-	function _presentModal(url, title) {
+	function _presentModal(url, title, barType) {
 		if( _device == "ios" ) {
-			window.webkit.messageHandlers.presentModal.postMessage({url: url, title: title});
+			window.webkit.messageHandlers.presentModal.postMessage({url: url, title: title, barType: barType});
 		} else if( _device == "android" ) {
-			window.android.presentModal('{url: "' + url +'", title: ' + title + '}');
+			window.android.presentModal('{url: "' + url +'", title: ' + title + ', barType: ' + barType + '}');
 		} else {
 			window.location.href = url;
 		}
@@ -182,11 +183,11 @@ var NativeLinker = (function ($) {
 		}
 	}
 
-	function _pushNavigation(url, title) {
+	function _pushNavigation(url, title, barType) {
 		if( _device == "ios" ) {
-			window.webkit.messageHandlers.pushNavigation.postMessage({url: url, title: title});
+			window.webkit.messageHandlers.pushNavigation.postMessage({url: url, title: title, barType: barType});
 		} else if( _device == "android" ) {
-			window.android.pushNavigation('{url: "' + url +'", title: ' + title + '}');
+			window.android.pushNavigation('{url: "' + url +'", title: ' + title + ', barType: ' + barType + '}');
 		} else {
 			window.location.href = url;
 		}
@@ -199,13 +200,15 @@ var NativeLinker = (function ($) {
 			window.android.popNavigation();
 		} else {
 			alert("popnavigation");
-			// window.history.back(-2);
 		}
 	}
 
 
-	function _handleNavigation(action, url, title) {
-		console.log("action : " + action + ", url : " + url + ", title : " + title);
+	function _handleNavigation(action, url, title, barType) {
+		if( barType === undefined ) barType = 0;
+		
+		console.log("action : " + action + ", url : " + url + ", title : " + title + ", barType: " + barType);
+
 		switch(action) {
 			case "external":
 				// 디폴트 브라우져로 이동
@@ -213,7 +216,7 @@ var NativeLinker = (function ($) {
 				break;
 			case "modal":
 				// present modal view controller
-				_presentModal(url, title);
+				_presentModal(url, title, barType);
 				break;
 			case "close":
 				_dismissModal();
@@ -224,10 +227,10 @@ var NativeLinker = (function ($) {
 				break;
 			case "push":
 				// push view controller
-				_pushNavigation(url, title);
+				_pushNavigation(url, title, barType);
 				break;
 			default:
-				_pushNavigation(url, title);
+				_pushNavigation(url, title, barType);
 		}
 	}
 
@@ -241,27 +244,13 @@ var NativeLinker = (function ($) {
 		} else {
 			// temp
 			yincLS.setItem("userId", 1);
-			$.ajax({
-				url:"http://182.162.100.61:8070/api/mobile/auth/login?IsPersistent=true&email=1price@limited40.com&password=111qqq!",
-				// url:"http://amp.limited40.com:8060/api/mobile/auth/login?IsPersistent=true&email=1price@limited40.com&password=111qqq!",
-				type:"POST",
-				async: false,
-				dataType: 'json',
-				timeout:5000,
-				cache: false,
-				success: function(result, status, xhr){
-					_handleReloadWithCredential(result);
-				}.bind(this),
-					error: function(xhr, status, err) {
-					alert('데이터를 로드할 수 없습니다.' + status +': '+ err);
-				}.bind(this)
-			});
 		}
 	}
 
 	// token response
 	function _handleReloadWithCredential(data) {
 		yincLS.setItem("token", data.token);
+		yincLS.setItem("userId", 1);
 	}
 
 	function _handleRequestInitInfo() {
@@ -275,8 +264,7 @@ var NativeLinker = (function ($) {
 	}
 
 	function _handleReloadWithInitInfo(data) {
-		console.log("_handleReloadWithInitInfo");
-		yincLS.setItem("navigationHeight", 44);
+		yincLS.setItem("navigationHeight", data.navHeight);
 	}
 
 	return {
