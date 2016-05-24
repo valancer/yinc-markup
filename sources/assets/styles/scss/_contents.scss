@@ -1,6 +1,6 @@
 /* buttons */
 .btn-submit { display: block; margin-top: 25px; height: 50px; width: 100%; font-size: 0.875rem; font-weight: 500; color: #fff; line-height: 3.125rem; text-align: center; border-radius: 2px !important; background-color: #494949 !important;
-	&[data-state=disabled] { background-color: #bbb; }
+	&[disabled] { background-color: #bbb !important; }
 }
 
 
@@ -88,18 +88,3 @@
 	}
 }
 
-
-
-/* 기업 상세 - 문의하기 */
-.qna-write {
-	.list-qna-warning { padding: 9px 6.944444444444% 23px 6.944444444444%; border-bottom: 1px solid #dedede; 
-		> li { margin-top: 14px; font-size: 0.688rem; font-weight: 300; color: #000; line-height: 0.938rem; }
-	}
-
-	textarea { display: block; box-sizing: border-box; padding: 14px 6.944444444444%; width: 100%; font-size: 0.938rem; font-weight: 400; color: #000; line-height: 1.125rem; }
-}
-
-
-.qna-update {
-	textarea { display: block; box-sizing: border-box; padding: 14px 6.944444444444%; width: 100%; font-size: 0.938rem; font-weight: 400; color: #000; line-height: 1.125rem; background-color: transparent; }
-}

@@ -295,6 +295,22 @@ body {
 .slick-arrow.slick-hidden {
   display: none; }
 
+/* buttons */
+.btn-submit {
+  display: block;
+  margin-top: 25px;
+  height: 50px;
+  width: 100%;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #fff;
+  line-height: 3.125rem;
+  text-align: center;
+  border-radius: 2px !important;
+  background-color: #494949 !important; }
+  .btn-submit[disabled] {
+    background-color: #bbb !important; }
+
 /* 투자 회사 */
 .company-item {
   display: block;
@@ -549,37 +565,6 @@ body {
         background-image: url(/assets/images/sprites@2x.png);
         background-size: 236px 208px; } }
 
-/* 기업 상세 - 문의하기 */
-.qna-write .list-qna-warning {
-  padding: 9px 6.944444444444% 23px 6.944444444444%;
-  border-bottom: 1px solid #dedede; }
-  .qna-write .list-qna-warning > li {
-    margin-top: 14px;
-    font-size: 0.688rem;
-    font-weight: 300;
-    color: #000;
-    line-height: 0.938rem; }
-.qna-write textarea {
-  display: block;
-  box-sizing: border-box;
-  padding: 14px 6.944444444444%;
-  width: 100%;
-  font-size: 0.938rem;
-  font-weight: 400;
-  color: #000;
-  line-height: 1.125rem; }
-
-.qna-update textarea {
-  display: block;
-  box-sizing: border-box;
-  padding: 14px 6.944444444444%;
-  width: 100%;
-  font-size: 0.938rem;
-  font-weight: 400;
-  color: #000;
-  line-height: 1.125rem;
-  background-color: transparent; }
-
 /* 펀딩 목록 & 투자 내역 */
 .contents.fundings .my-funding-item {
   padding-bottom: 19px;
@@ -709,7 +694,9 @@ body {
 .contents.company {
   /* 회사 정보 삳단 */
   /* 회사 정보 탭 */
-  /* 개별 탭 내용 */ }
+  /* 개별 탭 내용 */
+  /* 기업 상세 - 문의하기 */
+  /* 기업 상세 - 편집하기 */ }
   .contents.company .company-info {
     display: block;
     box-sizing: border-box;
@@ -974,6 +961,7 @@ body {
         text-align: right; }
         .contents.company .tab-contents .list-folding .btns .btn-inline {
           display: inline-block;
+          margin-left: 4px;
           min-width: 55px;
           font-size: 0.750rem;
           font-weight: 500;
@@ -1393,6 +1381,49 @@ body {
             .contents.company .tab-contents.summary > header .summary-info > li .content sub {
               font-size: 0.625rem;
               vertical-align: middle; }
+  .contents.company .qna-write {
+    padding-bottom: 97px; }
+    .contents.company .qna-write .question {
+      padding: 20px 6.944444444444% 20px 6.944444444444%;
+      font-size: 0.750rem;
+      font-weight: 300;
+      color: #000; }
+    .contents.company .qna-write .list-qna-warning {
+      padding: 9px 6.944444444444% 23px 6.944444444444%;
+      border-bottom: 1px solid #dedede; }
+      .contents.company .qna-write .list-qna-warning > li {
+        margin-top: 14px;
+        font-size: 0.688rem;
+        font-weight: 300;
+        color: #000;
+        line-height: 0.938rem; }
+    .contents.company .qna-write textarea {
+      display: block;
+      box-sizing: border-box;
+      padding: 14px 6.944444444444%;
+      height: 170px;
+      width: 100%;
+      font-size: 0.938rem;
+      font-weight: 400;
+      color: #000;
+      line-height: 1.125rem; }
+    .contents.company .qna-write .btns {
+      padding: 0 6.944444444444% 22px 6.944444444444%; }
+  .contents.company .qna-update {
+    padding-bottom: 97px; }
+    .contents.company .qna-update textarea {
+      display: block;
+      box-sizing: border-box;
+      padding: 14px 6.944444444444%;
+      height: 170px;
+      width: 100%;
+      font-size: 0.938rem;
+      font-weight: 400;
+      color: #000;
+      line-height: 1.125rem;
+      background-color: transparent; }
+    .contents.company .qna-update .btns {
+      padding: 0 6.944444444444% 22px 6.944444444444%; }
 
 .form-controls {
   /* */
@@ -1886,20 +1917,6 @@ body {
           .contents.invest .invest-content .warning:before {
             background-image: url(/assets/images/sprites@2x.png);
             background-size: 236px 208px; } }
-    .contents.invest .invest-content .btn-submit {
-      display: block;
-      margin-top: 25px;
-      height: 50px;
-      width: 100%;
-      font-size: 0.875rem;
-      font-weight: 500;
-      color: #fff;
-      line-height: 3.125rem;
-      text-align: center;
-      border-radius: 2px;
-      background-color: #494949; }
-      .contents.invest .invest-content .btn-submit[data-state=disabled] {
-        background-color: #bbb; }
     .contents.invest .invest-content .result-message {
       padding-top: 11px;
       padding-bottom: 43px;

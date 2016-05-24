@@ -261,9 +261,17 @@
 			> li { margin-top: 14px; font-size: 0.688rem; font-weight: 300; color: #000; line-height: 0.938rem; }
 		}
 
-		textarea { display: block; box-sizing: border-box; padding: 14px 6.944444444444%; height: 235px; width: 100%; font-size: 0.938rem; font-weight: 400; color: #000; line-height: 2.250rem; }
+		textarea { display: block; box-sizing: border-box; padding: 14px 6.944444444444%; height: 170px; width: 100%; font-size: 0.938rem; font-weight: 400; color: #000; line-height: 1.125rem; }
 		
-		.btns { position: fixed; bottom: 0; right: 0; left: 0; padding: 0 6.944444444444% 22px 6.944444444444%; }
+		// .btns { position: fixed; bottom: 0; right: 0; left: 0; padding: 0 6.944444444444% 22px 6.944444444444%; }
+		.btns { padding: 0 6.944444444444% 22px 6.944444444444%; }
+	}
+
+	/* 기업 상세 - 편집하기 */
+	.qna-update { padding-bottom: 97px;
+		textarea { display: block; box-sizing: border-box; padding: 14px 6.944444444444%; height: 170px; width: 100%; font-size: 0.938rem; font-weight: 400; color: #000; line-height: 1.125rem; background-color: transparent; }
+
+		.btns { padding: 0 6.944444444444% 22px 6.944444444444%; }
 	}
 
 }
