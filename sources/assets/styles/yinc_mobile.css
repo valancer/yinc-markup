@@ -216,6 +216,9 @@ The `retina-sprites` mixin generates a CSS rule and media query for retina group
 body {
   background-color: #f4f4f4; }
 
+body.bg-white {
+  background-color: #fff; }
+
 /**
  * z-index
 **/
@@ -418,6 +421,200 @@ body {
       color: #888; }
     .list-notification > li.recent {
       background-color: #fffacd; }
+
+.form-controls {
+  /* */
+  /* 중요 입력 */
+  /* validate message */ }
+  .form-controls .input {
+    overflow: hidden; }
+  .form-controls input[type=checkbox] {
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    border: 0;
+    border-radius: 0; }
+  .form-controls .week-write label {
+    float: left;
+    font-size: 0.750rem;
+    font-weight: 300;
+    color: #000;
+    line-height: 34px; }
+  .form-controls .week-write input[type=text] {
+    float: right;
+    box-sizing: border-box;
+    padding: 0 10px 0 0;
+    height: 34px;
+    width: 77.41935483871%;
+    font-size: 0.938rem;
+    font-weight: 300;
+    color: #000;
+    line-height: 34px;
+    text-align: right;
+    border: 0px; }
+  .form-controls .week-write .with-txt {
+    float: right;
+    position: relative;
+    box-sizing: border-box;
+    padding-right: 16px;
+    width: 77.41935483871%; }
+    .form-controls .week-write .with-txt:after {
+      content: attr(data-txt);
+      position: absolute;
+      right: 0;
+      font-size: 0.938rem;
+      font-weight: 300;
+      color: #000;
+      line-height: 34px; }
+    .form-controls .week-write .with-txt input[type=text] {
+      padding: 0;
+      width: 100%; }
+  .form-controls .strong-write {
+    overflow: hidden; }
+    .form-controls .strong-write label {
+      float: left;
+      font-size: 0.938rem;
+      color: #000;
+      line-height: 50px; }
+    .form-controls .strong-write input[type=tel] {
+      float: right;
+      box-sizing: border-box;
+      padding: 0 10px 0 0;
+      height: 46px;
+      width: 77.41935483871%;
+      font-size: 1.250rem;
+      font-weight: 700;
+      color: #000;
+      line-height: 46px;
+      text-align: right;
+      border: 2px solid #ffde00; }
+  .form-controls .list-input > li {
+    overflow: hidden;
+    padding-top: 15px;
+    border-bottom: 1px solid #dedede; }
+  .form-controls .validate-message {
+    clear: both;
+    display: block;
+    font-size: 0.750rem;
+    font-weight: 400;
+    color: #e65c5c;
+    text-align: right; }
+    .form-controls .validate-message:before {
+      content: '';
+      display: inline-block;
+      margin-top: -2px;
+      vertical-align: middle;
+      background-image: url(/assets/images/sprites.png);
+      background-position: -20px -193px;
+      width: 15px;
+      height: 15px; }
+      @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+        .form-controls .validate-message:before {
+          background-image: url(/assets/images/sprites@2x.png);
+          background-size: 236px 208px; } }
+
+/* 약관 동의 */
+.agreements {
+  margin-top: 32px; }
+  .agreements .all-agreements {
+    position: relative; }
+    .agreements .all-agreements input[type=checkbox] {
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 20px;
+      margin-top: -6.5px;
+      background-image: url(/assets/images/sprites.png);
+      background-position: -216px -125px;
+      width: 18px;
+      height: 13px; }
+      @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+        .agreements .all-agreements input[type=checkbox] {
+          background-image: url(/assets/images/sprites@2x.png);
+          background-size: 236px 208px; } }
+      .agreements .all-agreements input[type=checkbox] + label {
+        display: block;
+        box-sizing: border-box;
+        padding: 0 0 0 54px;
+        height: 40px;
+        font-size: 0.875rem;
+        font-weight: 400;
+        color: #000;
+        line-height: 38px;
+        border: 1px solid #f1d200;
+        background-color: #ffde00; }
+      .agreements .all-agreements input[type=checkbox]:checked {
+        background-image: url(/assets/images/sprites.png);
+        background-position: -216px -143px;
+        width: 18px;
+        height: 13px;
+        background-color: transparent; }
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+          .agreements .all-agreements input[type=checkbox]:checked {
+            background-image: url(/assets/images/sprites@2x.png);
+            background-size: 236px 208px; } }
+        .agreements .all-agreements input[type=checkbox]:checked + label {
+          color: #ffde00;
+          border: 1px solid #494949;
+          background-color: #5c5c5c; }
+  .agreements .list-check-agreement {
+    padding: 10px 22px 10px 25px;
+    border: 1px solid #dedede;
+    border-top: 0px; }
+    .agreements .list-check-agreement > li {
+      position: relative;
+      height: 26px; }
+      .agreements .list-check-agreement > li input[type=checkbox] {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 0px;
+        margin-top: -4.5px;
+        background-image: url(/assets/images/sprites.png);
+        background-position: -216px -178px;
+        width: 13px;
+        height: 9px; }
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+          .agreements .list-check-agreement > li input[type=checkbox] {
+            background-image: url(/assets/images/sprites@2x.png);
+            background-size: 236px 208px; } }
+        .agreements .list-check-agreement > li input[type=checkbox] + label {
+          display: block;
+          float: left;
+          box-sizing: border-box;
+          padding: 0 0 0 30px;
+          height: 26px;
+          font-size: 0.813rem;
+          font-weight: 400;
+          color: #bbb;
+          line-height: 26px; }
+        .agreements .list-check-agreement > li input[type=checkbox]:checked {
+          background-image: url(/assets/images/sprites.png);
+          background-position: -92px -175px;
+          width: 13px;
+          height: 9px;
+          background-color: transparent; }
+          @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+            .agreements .list-check-agreement > li input[type=checkbox]:checked {
+              background-image: url(/assets/images/sprites@2x.png);
+              background-size: 236px 208px; } }
+          .agreements .list-check-agreement > li input[type=checkbox]:checked + label {
+            color: #000; }
+      .agreements .list-check-agreement > li .btn-more {
+        display: block;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        margin-top: -7px;
+        text-indent: -9999px;
+        background-image: url(/assets/images/sprites.png);
+        background-position: -60px -193px;
+        width: 14px;
+        height: 14px; }
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+          .agreements .list-check-agreement > li .btn-more {
+            background-image: url(/assets/images/sprites@2x.png);
+            background-size: 236px 208px; } }
 
 /* 투자 회사 */
 .company-item {
@@ -1452,91 +1649,6 @@ body {
     .contents.company .qna-update .btns {
       padding: 0 6.944444444444% 22px 6.944444444444%; }
 
-.form-controls {
-  /* */
-  /* 중요 입력 */
-  /* validate message */ }
-  .form-controls .input {
-    overflow: hidden; }
-  .form-controls .week-write label {
-    float: left;
-    font-size: 0.750rem;
-    font-weight: 300;
-    color: #000;
-    line-height: 34px; }
-  .form-controls .week-write input[type=text] {
-    float: right;
-    box-sizing: border-box;
-    padding: 0 10px 0 0;
-    height: 34px;
-    width: 77.41935483871%;
-    font-size: 0.938rem;
-    font-weight: 300;
-    color: #000;
-    line-height: 34px;
-    text-align: right;
-    border: 0px; }
-  .form-controls .week-write .with-txt {
-    float: right;
-    position: relative;
-    box-sizing: border-box;
-    padding-right: 16px;
-    width: 77.41935483871%; }
-    .form-controls .week-write .with-txt:after {
-      content: attr(data-txt);
-      position: absolute;
-      right: 0;
-      font-size: 0.938rem;
-      font-weight: 300;
-      color: #000;
-      line-height: 34px; }
-    .form-controls .week-write .with-txt input[type=text] {
-      padding: 0;
-      width: 100%; }
-  .form-controls .strong-write {
-    overflow: hidden; }
-    .form-controls .strong-write label {
-      float: left;
-      font-size: 0.938rem;
-      color: #000;
-      line-height: 50px; }
-    .form-controls .strong-write input[type=tel] {
-      float: right;
-      box-sizing: border-box;
-      padding: 0 10px 0 0;
-      height: 46px;
-      width: 77.41935483871%;
-      font-size: 1.250rem;
-      font-weight: 700;
-      color: #000;
-      line-height: 46px;
-      text-align: right;
-      border: 2px solid #ffde00; }
-  .form-controls .list-input > li {
-    overflow: hidden;
-    padding-top: 15px;
-    border-bottom: 1px solid #dedede; }
-  .form-controls .validate-message {
-    clear: both;
-    display: block;
-    font-size: 0.750rem;
-    font-weight: 400;
-    color: #e65c5c;
-    text-align: right; }
-    .form-controls .validate-message:before {
-      content: '';
-      display: inline-block;
-      margin-top: -2px;
-      vertical-align: middle;
-      background-image: url(/assets/images/sprites.png);
-      background-position: -20px -193px;
-      width: 15px;
-      height: 15px; }
-      @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-        .form-controls .validate-message:before {
-          background-image: url(/assets/images/sprites@2x.png);
-          background-size: 236px 208px; } }
-
 /* 투자하기 */
 .contents.invest {
   /* 네비게이션 바 */
@@ -1656,7 +1768,6 @@ body {
   .contents.invest .invest-content {
     margin-top: 106px;
     padding: 24px 6.944444444444% 24px 6.944444444444%;
-    /* 약관 동의 */
     /* 기업 관계자 여부 */
     /* 결과 메시지 */
     /* 청약신청 정보 */ }
@@ -1689,113 +1800,6 @@ body {
         background-color: #fff; }
     .contents.invest .invest-content .form-controls {
       margin-top: 30px; }
-    .contents.invest .invest-content input[type=checkbox] {
-      -webkit-appearance: none;
-         -moz-appearance: none;
-              appearance: none;
-      border: 0;
-      border-radius: 0; }
-    .contents.invest .invest-content .agreements {
-      margin-top: 32px; }
-      .contents.invest .invest-content .agreements .all-agreements {
-        position: relative; }
-        .contents.invest .invest-content .agreements .all-agreements input[type=checkbox] {
-          display: block;
-          position: absolute;
-          top: 50%;
-          left: 20px;
-          margin-top: -6.5px;
-          background-image: url(/assets/images/sprites.png);
-          background-position: -216px -125px;
-          width: 18px;
-          height: 13px; }
-          @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-            .contents.invest .invest-content .agreements .all-agreements input[type=checkbox] {
-              background-image: url(/assets/images/sprites@2x.png);
-              background-size: 236px 208px; } }
-          .contents.invest .invest-content .agreements .all-agreements input[type=checkbox] + label {
-            display: block;
-            box-sizing: border-box;
-            padding: 0 0 0 54px;
-            height: 40px;
-            font-size: 0.875rem;
-            font-weight: 400;
-            color: #000;
-            line-height: 38px;
-            border: 1px solid #f1d200;
-            background-color: #ffde00; }
-          .contents.invest .invest-content .agreements .all-agreements input[type=checkbox]:checked {
-            background-image: url(/assets/images/sprites.png);
-            background-position: -216px -143px;
-            width: 18px;
-            height: 13px;
-            background-color: transparent; }
-            @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-              .contents.invest .invest-content .agreements .all-agreements input[type=checkbox]:checked {
-                background-image: url(/assets/images/sprites@2x.png);
-                background-size: 236px 208px; } }
-            .contents.invest .invest-content .agreements .all-agreements input[type=checkbox]:checked + label {
-              color: #ffde00;
-              border: 1px solid #494949;
-              background-color: #5c5c5c; }
-      .contents.invest .invest-content .agreements .list-check-agreement {
-        padding: 10px 22px 10px 25px;
-        border: 1px solid #dedede;
-        border-top: 0px; }
-        .contents.invest .invest-content .agreements .list-check-agreement > li {
-          position: relative;
-          height: 26px; }
-          .contents.invest .invest-content .agreements .list-check-agreement > li input[type=checkbox] {
-            display: block;
-            position: absolute;
-            top: 50%;
-            left: 0px;
-            margin-top: -4.5px;
-            background-image: url(/assets/images/sprites.png);
-            background-position: -216px -178px;
-            width: 13px;
-            height: 9px; }
-            @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-              .contents.invest .invest-content .agreements .list-check-agreement > li input[type=checkbox] {
-                background-image: url(/assets/images/sprites@2x.png);
-                background-size: 236px 208px; } }
-            .contents.invest .invest-content .agreements .list-check-agreement > li input[type=checkbox] + label {
-              display: block;
-              float: left;
-              box-sizing: border-box;
-              padding: 0 0 0 30px;
-              height: 26px;
-              font-size: 0.813rem;
-              font-weight: 400;
-              color: #bbb;
-              line-height: 26px; }
-            .contents.invest .invest-content .agreements .list-check-agreement > li input[type=checkbox]:checked {
-              background-image: url(/assets/images/sprites.png);
-              background-position: -92px -175px;
-              width: 13px;
-              height: 9px;
-              background-color: transparent; }
-              @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-                .contents.invest .invest-content .agreements .list-check-agreement > li input[type=checkbox]:checked {
-                  background-image: url(/assets/images/sprites@2x.png);
-                  background-size: 236px 208px; } }
-              .contents.invest .invest-content .agreements .list-check-agreement > li input[type=checkbox]:checked + label {
-                color: #000; }
-          .contents.invest .invest-content .agreements .list-check-agreement > li .btn-more {
-            display: block;
-            position: absolute;
-            top: 50%;
-            right: 0;
-            margin-top: -7px;
-            text-indent: -9999px;
-            background-image: url(/assets/images/sprites.png);
-            background-position: -60px -193px;
-            width: 14px;
-            height: 14px; }
-            @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-              .contents.invest .invest-content .agreements .list-check-agreement > li .btn-more {
-                background-image: url(/assets/images/sprites@2x.png);
-                background-size: 236px 208px; } }
     .contents.invest .invest-content .enterprise {
       margin-top: 25px; }
       .contents.invest .invest-content .enterprise .check-enterprise {
@@ -2037,6 +2041,44 @@ body {
   margin-top: 28px; }
   .contents.settings .header-table-view:first-child {
     margin-top: 0; }
+
+/* 사용자 */
+.contents.user .agreement-content {
+  padding: 55px 6.944444444444% 24px 6.944444444444%; }
+  .contents.user .agreement-content > .title {
+    position: relative;
+    text-align: center; }
+    .contents.user .agreement-content > .title:before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 50%;
+      right: 0;
+      left: 0;
+      z-index: 0;
+      height: 1px;
+      background-color: #999; }
+    .contents.user .agreement-content > .title > span {
+      display: inline-block;
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+      padding: 0 13px;
+      max-width: 200px;
+      font-size: 1.063rem;
+      font-weight: 500;
+      color: #000;
+      text-align: center;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      background-color: #fff; }
+  .contents.user .agreement-content .message {
+    margin-top: 28px;
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: #888;
+    line-height: 1.250rem;
+    text-align: center; }
 
 .is-hidden {
   display: none; }

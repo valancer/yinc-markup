@@ -1,0 +1,12 @@
+/* 사용자 */
+.contents.user {
+	.agreement-content { padding: 55px 6.944444444444% 24px 6.944444444444%;
+		> .title { position: relative; text-align: center;
+			&:before { content: ''; display: block; position: absolute; top: 50%; right: 0; left: 0; z-index: z("default") - 1; height: 1px; background-color: #999; }
+
+			> span { display: inline-block; position: relative; z-index: z("default"); overflow: hidden; padding: 0 13px; max-width: 200px; font-size: 1.063rem; font-weight: 500; color: #000; text-align: center; text-overflow: ellipsis; white-space: nowrap; background-color: #fff; }
+		}
+
+		.message { margin-top: 28px; font-size: 0.875rem; font-weight: 400; color: #888; line-height: 1.250rem; text-align: center; }
+	}
+}

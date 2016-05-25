@@ -119,47 +119,44 @@ var NativeLinker = (function ($) {
 		$linker,
 		_device,
 		init = function() {
-			_init();
+			$linker = $('[data-navigation]');
+			_device = $_GET('device');
 
 			initLayout();
 			initEvent();
 		};
 
+	function _reinit() {
+		$linker = $('[data-navigation]');
+		_device = $_GET('device');
+
+		initEvent();
+	}
+
 	function initLayout() {
 		// 초기 데이터 요청
 		_handleRequestInitInfo();
-		_handleRequestCredential();
+		// _handleRequestCredential();
 	}
 
 	function initEvent() {
-		$linker.on('click', function(e) {
+		$linker.off('click').on('click', function(e) {
 			e.preventDefault();
 
-			var $linker = $(this);
-			var action = $linker.data("navigation");
-			var url = $linker.attr("href");
-			var title = $linker.data("native-title");
-			var barType = $linker.data("bar-type");
+			var action = $(this).data("navigation");
+			var url = $(this).attr("href");
+			var title = $(this).data("native-title");
+			var barType = $(this).data("bar-type");
 
 			_handleNavigation(action, url, title, barType);
 		});
-	}
-
-	function _init() {
-		$linker = $('[data-navigation]');
-		_device = $_GET('device');
-	}
-
-	function _reinit() {
-		_init();
-		initEvent();
 	}
 
 	function _openBrowser(url) {
 		if( _device == "ios" ) {
 			window.webkit.messageHandlers.presentModal.postMessage({url: url});
 		} else if( _device == "android" ) {
-			window.android.presentModal('{url: "' + url +'"}');
+			window.android.presentModal('{url: "' + url + '"}');
 		} else {
 			window.location.href = url;
 		}
@@ -169,7 +166,7 @@ var NativeLinker = (function ($) {
 		if( _device == "ios" ) {
 			window.webkit.messageHandlers.presentModal.postMessage({url: url, title: title, barType: barType});
 		} else if( _device == "android" ) {
-			window.android.presentModal('{url: "' + url +'", title: ' + title + ', barType: ' + barType + '}');
+			window.android.presentModal('{url: "' + url + '", title: "' + title + '", barType: "' + barType + '"}');
 		} else {
 			window.location.href = url;
 		}
@@ -187,7 +184,7 @@ var NativeLinker = (function ($) {
 		if( _device == "ios" ) {
 			window.webkit.messageHandlers.pushNavigation.postMessage({url: url, title: title, barType: barType});
 		} else if( _device == "android" ) {
-			window.android.pushNavigation('{url: "' + url +'", title: ' + title + ', barType: ' + barType + '}');
+			window.android.pushNavigation('{url: "' + url + '", title: "' + title + '", barType: "' + barType + '"}');
 		} else {
 			window.location.href = url;
 		}
@@ -206,8 +203,8 @@ var NativeLinker = (function ($) {
 
 	function _handleNavigation(action, url, title, barType) {
 		if( barType === undefined ) barType = 0;
-		
-		console.log("action : " + action + ", url : " + url + ", title : " + title + ", barType: " + barType);
+
+		url = "http://" + window.location.host + url;
 
 		switch(action) {
 			case "external":
@@ -240,7 +237,7 @@ var NativeLinker = (function ($) {
 		if( _device == "ios" ) {
 			window.webkit.messageHandlers.requestCredential.postMessage({callback: "NativeLinker.reloadWithCredential"});
 		} else if( _device == "android" ) {
-			window.android.requestCredential('{callback: "NativeLinker.reloadWithCredential"}'); 
+			window.android.requestCredential('{callback: "NativeLinker.reloadWithCredential"}');
 		} else {
 			// temp
 			yincLS.setItem("userId", 1);
@@ -257,7 +254,7 @@ var NativeLinker = (function ($) {
 		if( _device == "ios" ) {
 			window.webkit.messageHandlers.requestInitInfo.postMessage({callback: "NativeLinker.reloadWithInitInfo"});
 		} else if( _device == "android" ) {
-			window.android.requestInitInfo('{callback: "NativeLinker.reloadWithInitInfo"}'); 
+			window.android.requestInitInfo('{callback: "NativeLinker.reloadWithInitInfo"}');
 		} else {
 
 		}
