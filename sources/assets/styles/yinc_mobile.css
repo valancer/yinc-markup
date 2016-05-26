@@ -314,6 +314,15 @@ body.bg-white {
   .btn-submit[disabled] {
     background-color: #bbb !important; }
 
+/* tab slider */
+.slider-container {
+  overflow: hidden;
+  position: relative;
+  visibility: hidden; }
+  .slider-container .swipe-wrap {
+    overflow: hidden;
+    position: relative; }
+
 /* 테이블 뷰 형태 */
 .header-table-view {
   padding: 0 6.944444444444%;
@@ -369,13 +378,13 @@ body.bg-white {
         right: 6.944444444444%;
         margin-top: -7px;
         background-image: url(/assets/images/sprites.png);
-        background-position: -98px -193px;
+        background-position: -121px -255px;
         width: 8px;
         height: 14px; }
         @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
           .list-table-view > li a:after {
             background-image: url(/assets/images/sprites@2x.png);
-            background-size: 236px 208px; } }
+            background-size: 295px 277px; } }
       .list-table-view > li a:active, .list-table-view > li a:hover {
         background-color: #fffacd; }
   .list-table-view .btn-info {
@@ -384,13 +393,13 @@ body.bg-white {
     text-indent: -9999px;
     vertical-align: middle;
     background-image: url(/assets/images/sprites.png);
-    background-position: -167px -98px;
+    background-position: -251px -147px;
     width: 40px;
     height: 40px; }
     @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
       .list-table-view .btn-info {
         background-image: url(/assets/images/sprites@2x.png);
-        background-size: 236px 208px; } }
+        background-size: 295px 277px; } }
   .list-table-view.detail > li .title {
     font-size: 0.688rem;
     color: #888; }
@@ -422,6 +431,7 @@ body.bg-white {
     .list-notification > li.recent {
       background-color: #fffacd; }
 
+/* form controls */
 .form-controls {
   /* */
   /* 중요 입력 */
@@ -505,13 +515,13 @@ body.bg-white {
       margin-top: -2px;
       vertical-align: middle;
       background-image: url(/assets/images/sprites.png);
-      background-position: -20px -193px;
+      background-position: -43px -255px;
       width: 15px;
       height: 15px; }
       @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
         .form-controls .validate-message:before {
           background-image: url(/assets/images/sprites@2x.png);
-          background-size: 236px 208px; } }
+          background-size: 295px 277px; } }
 
 /* 약관 동의 */
 .agreements {
@@ -525,13 +535,13 @@ body.bg-white {
       left: 20px;
       margin-top: -6.5px;
       background-image: url(/assets/images/sprites.png);
-      background-position: -216px -125px;
+      background-position: -88px -235px;
       width: 18px;
       height: 13px; }
       @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
         .agreements .all-agreements input[type=checkbox] {
           background-image: url(/assets/images/sprites@2x.png);
-          background-size: 236px 208px; } }
+          background-size: 295px 277px; } }
       .agreements .all-agreements input[type=checkbox] + label {
         display: block;
         box-sizing: border-box;
@@ -545,14 +555,14 @@ body.bg-white {
         background-color: #ffde00; }
       .agreements .all-agreements input[type=checkbox]:checked {
         background-image: url(/assets/images/sprites.png);
-        background-position: -216px -143px;
+        background-position: -65px -235px;
         width: 18px;
         height: 13px;
         background-color: transparent; }
         @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
           .agreements .all-agreements input[type=checkbox]:checked {
             background-image: url(/assets/images/sprites@2x.png);
-            background-size: 236px 208px; } }
+            background-size: 295px 277px; } }
         .agreements .all-agreements input[type=checkbox]:checked + label {
           color: #ffde00;
           border: 1px solid #494949;
@@ -571,13 +581,13 @@ body.bg-white {
         left: 0px;
         margin-top: -4.5px;
         background-image: url(/assets/images/sprites.png);
-        background-position: -216px -178px;
+        background-position: -282px -192px;
         width: 13px;
         height: 9px; }
         @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
           .agreements .list-check-agreement > li input[type=checkbox] {
             background-image: url(/assets/images/sprites@2x.png);
-            background-size: 236px 208px; } }
+            background-size: 295px 277px; } }
         .agreements .list-check-agreement > li input[type=checkbox] + label {
           display: block;
           float: left;
@@ -590,14 +600,14 @@ body.bg-white {
           line-height: 26px; }
         .agreements .list-check-agreement > li input[type=checkbox]:checked {
           background-image: url(/assets/images/sprites.png);
-          background-position: -92px -175px;
+          background-position: -282px -206px;
           width: 13px;
           height: 9px;
           background-color: transparent; }
           @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
             .agreements .list-check-agreement > li input[type=checkbox]:checked {
               background-image: url(/assets/images/sprites@2x.png);
-              background-size: 236px 208px; } }
+              background-size: 295px 277px; } }
           .agreements .list-check-agreement > li input[type=checkbox]:checked + label {
             color: #000; }
       .agreements .list-check-agreement > li .btn-more {
@@ -608,13 +618,168 @@ body.bg-white {
         margin-top: -7px;
         text-indent: -9999px;
         background-image: url(/assets/images/sprites.png);
-        background-position: -60px -193px;
+        background-position: -102px -255px;
         width: 14px;
         height: 14px; }
         @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
           .agreements .list-check-agreement > li .btn-more {
             background-image: url(/assets/images/sprites@2x.png);
-            background-size: 236px 208px; } }
+            background-size: 295px 277px; } }
+
+/* toggle contents */
+.list-folding {
+  border-bottom: 1px solid #dedede;
+  background-color: #fff; }
+  .list-folding .btns {
+    padding: 0 4.444444444444% 20px 0;
+    text-align: right; }
+    .list-folding .btns .btn-inline {
+      display: inline-block;
+      margin-left: 4px;
+      min-width: 55px;
+      font-size: 0.750rem;
+      font-weight: 500;
+      color: #000;
+      text-align: center;
+      line-height: 1.688rem;
+      border: 1px solid #d5d5d5;
+      border-radius: 1.688rem;
+      background-color: #f4f4f4; }
+      .list-folding .btns .btn-inline.strong {
+        color: #fff;
+        border: 1px solid #ab8060;
+        background-color: #b78c6c; }
+  .list-folding dt {
+    display: block;
+    overflow: hidden;
+    border-top: 1px solid #dedede; }
+    .list-folding dt > a {
+      display: block;
+      box-sizing: border-box;
+      position: relative;
+      padding: 13px 9.722222222222% 14px 6.944444444444%;
+      color: #000;
+      text-decoration: none; }
+      .list-folding dt > a:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 19px;
+        right: 4.444444444444%;
+        background-image: url(/assets/images/sprites.png);
+        background-position: -265px -223px;
+        width: 9px;
+        height: 5px; }
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+          .list-folding dt > a:after {
+            background-image: url(/assets/images/sprites@2x.png);
+            background-size: 295px 277px; } }
+      .list-folding dt > a .title {
+        display: block;
+        overflow: hidden;
+        padding-right: 25px;
+        font-size: 0.813rem;
+        font-weight: 300;
+        line-height: 0.938rem;
+        text-overflow: ellipsis;
+        white-space: nowrap; }
+      .list-folding dt > a time {
+        float: right;
+        font-size: 0.688rem;
+        font-weight: 300;
+        color: #888;
+        line-height: 0.938rem;
+        vertical-align: middle; }
+      .list-folding dt > a .user {
+        float: left;
+        font-size: 0.688rem;
+        font-weight: 400;
+        color: #000;
+        line-height: 0.938rem;
+        vertical-align: middle; }
+      .list-folding dt > a .info {
+        clear: both;
+        overflow: hidden;
+        margin-top: 16px; }
+    .list-folding dt .btns {
+      display: none; }
+    .list-folding dt.is-open > a:after {
+      background-image: url(/assets/images/sprites.png);
+      background-position: -251px -223px;
+      width: 9px;
+      height: 5px; }
+      @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+        .list-folding dt.is-open > a:after {
+          background-image: url(/assets/images/sprites@2x.png);
+          background-size: 295px 277px; } }
+    .list-folding dt.is-open > a .title {
+      font-weight: 700;
+      line-height: 0.938rem;
+      text-oveflow: none;
+      white-space: normal; }
+    .list-folding dt.is-open .btns {
+      display: block; }
+    .list-folding dt.is-open + dd {
+      display: block; }
+  .list-folding dd {
+    display: none; }
+    .list-folding dd .desc {
+      position: relative;
+      padding: 0 9.722222222222% 13px 6.944444444444%;
+      font-size: 0.750rem;
+      font-weight: 400;
+      color: #ac7f5e;
+      line-height: 1.125rem; }
+  .list-folding.qna dt > a {
+    padding-left: 15.277777777778%; }
+    .list-folding.qna dt > a:before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 12px;
+      left: 6.944444444444%;
+      background-image: url(/assets/images/sprites.png);
+      background-position: -133px -200px;
+      width: 20px;
+      height: 20px; }
+      @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+        .list-folding.qna dt > a:before {
+          background-image: url(/assets/images/sprites@2x.png);
+          background-size: 295px 277px; } }
+  .list-folding.qna dd .desc {
+    padding-left: 15.277777777778%; }
+    .list-folding.qna dd .desc:before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 6.944444444444%;
+      background-image: url(/assets/images/sprites.png);
+      background-position: -158px -200px;
+      width: 20px;
+      height: 20px; }
+      @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+        .list-folding.qna dd .desc:before {
+          background-image: url(/assets/images/sprites@2x.png);
+          background-size: 295px 277px; } }
+  .list-folding.qna dd .info {
+    clear: both;
+    overflow: hidden;
+    padding: 0 9.722222222222% 15px 15.277777777778%; }
+    .list-folding.qna dd .info time {
+      float: right;
+      font-size: 0.688rem;
+      font-weight: 300;
+      color: #888;
+      line-height: 0.938rem;
+      vertical-align: middle; }
+    .list-folding.qna dd .info .user {
+      float: left;
+      font-size: 0.688rem;
+      font-weight: 400;
+      color: #ac7f5e;
+      line-height: 0.938rem;
+      vertical-align: middle; }
 
 /* 투자 회사 */
 .company-item {
@@ -658,13 +823,13 @@ body.bg-white {
     .company-item .badge.success {
       display: block;
       background-image: url(/assets/images/sprites.png);
-      background-position: 0px -75px;
+      background-position: 0px -166px;
       width: 64px;
       height: 64px; }
       @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
         .company-item .badge.success {
           background-image: url(/assets/images/sprites@2x.png);
-          background-size: 236px 208px; } }
+          background-size: 295px 277px; } }
   .company-item time {
     display: block;
     position: relative;
@@ -695,22 +860,22 @@ body.bg-white {
       text-indent: -9999px; }
     .company-item .badges .deductions {
       background-image: url(/assets/images/sprites.png);
-      background-position: -156px -144px;
+      background-position: -219px -166px;
       width: 26px;
       height: 26px; }
       @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
         .company-item .badges .deductions {
           background-image: url(/assets/images/sprites@2x.png);
-          background-size: 236px 208px; } }
+          background-size: 295px 277px; } }
     .company-item .badges .lead {
       background-image: url(/assets/images/sprites.png);
-      background-position: -133px -109px;
+      background-position: -251px -192px;
       width: 26px;
       height: 26px; }
       @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
         .company-item .badges .lead {
           background-image: url(/assets/images/sprites@2x.png);
-          background-size: 236px 208px; } }
+          background-size: 295px 277px; } }
   .company-item .btn-favorite {
     display: block;
     position: absolute;
@@ -720,13 +885,13 @@ body.bg-white {
     text-indent: -9999px; }
     .company-item .btn-favorite[value=true] {
       background-image: url(/assets/images/sprites.png);
-      background-position: -167px -49px;
+      background-position: -251px -49px;
       width: 44px;
       height: 44px; }
       @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
         .company-item .btn-favorite[value=true] {
           background-image: url(/assets/images/sprites@2x.png);
-          background-size: 236px 208px; } }
+          background-size: 295px 277px; } }
   .company-item .progress {
     display: block;
     position: absolute;
@@ -754,13 +919,13 @@ body.bg-white {
         top: -5px;
         right: -8px;
         background-image: url(/assets/images/sprites.png);
-        background-position: -216px -69px;
+        background-position: -43px -235px;
         width: 17px;
         height: 15px; }
         @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
           .company-item .progress p[data-value]:after {
             background-image: url(/assets/images/sprites@2x.png);
-            background-size: 236px 208px; } }
+            background-size: 295px 277px; } }
   .company-item progress[value] {
     position: relative;
     -webkit-appearance: none;
@@ -853,22 +1018,22 @@ body.bg-white {
       display: block;
       margin: 0 auto 24px auto;
       background-image: url(/assets/images/sprites.png);
-      background-position: 0px 0px;
+      background-position: -166px 0px;
       width: 80px;
       height: 70px; }
       @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
         .none-list-company > p:before {
           background-image: url(/assets/images/sprites@2x.png);
-          background-size: 236px 208px; } }
+          background-size: 295px 277px; } }
   .none-list-company.like > p:before {
     background-image: url(/assets/images/sprites.png);
-    background-position: -85px 0px;
+    background-position: -166px -75px;
     width: 77px;
     height: 70px; }
     @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
       .none-list-company.like > p:before {
         background-image: url(/assets/images/sprites@2x.png);
-        background-size: 236px 208px; } }
+        background-size: 295px 277px; } }
 
 /* 펀딩 목록 & 투자 내역 */
 .contents.fundings .my-funding-item {
@@ -980,13 +1145,13 @@ body.bg-white {
           left: 50%;
           margin-left: -4px;
           background-image: url(/assets/images/sprites.png);
-          background-position: -138px -175px;
+          background-position: -279px -223px;
           width: 8px;
           height: 5px; }
           @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
             .contents.fundings .my-funding-item .progress-funding > li.selected .title:after {
               background-image: url(/assets/images/sprites@2x.png);
-              background-size: 236px 208px; } }
+              background-size: 295px 277px; } }
       .contents.fundings .my-funding-item .progress-funding > li.selected .tooltip {
         display: block; }
       .contents.fundings .my-funding-item .progress-funding > li:nth-child(3) .tooltip, .contents.fundings .my-funding-item .progress-funding > li:nth-child(4) .tooltip {
@@ -1054,13 +1219,13 @@ body.bg-white {
         margin: 12px auto 0 auto;
         text-indent: -9999px;
         background-image: url(/assets/images/sprites.png);
-        background-position: -69px -75px;
+        background-position: -69px -166px;
         width: 81px;
         height: 29px; }
         @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
           .contents.company .company-info .inner .btn-play {
             background-image: url(/assets/images/sprites@2x.png);
-            background-size: 236px 208px; } }
+            background-size: 295px 277px; } }
       .contents.company .company-info .inner .badges {
         position: absolute;
         top: 15px;
@@ -1070,24 +1235,24 @@ body.bg-white {
           margin-right: 1px;
           text-indent: -9999px;
           background-image: url(/assets/images/sprites.png);
-          background-position: -156px -144px;
+          background-position: -219px -166px;
           width: 26px;
           height: 26px; }
           @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
             .contents.company .company-info .inner .badges .btn-deductions {
               background-image: url(/assets/images/sprites@2x.png);
-              background-size: 236px 208px; } }
+              background-size: 295px 277px; } }
         .contents.company .company-info .inner .badges .icon-lead {
           display: inline-block;
           text-indent: -9999px;
           background-image: url(/assets/images/sprites.png);
-          background-position: -133px -109px;
+          background-position: -251px -192px;
           width: 26px;
           height: 26px; }
           @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
             .contents.company .company-info .inner .badges .icon-lead {
               background-image: url(/assets/images/sprites@2x.png);
-              background-size: 236px 208px; } }
+              background-size: 295px 277px; } }
       .contents.company .company-info .inner .btn-favorite {
         display: block;
         position: absolute;
@@ -1095,22 +1260,22 @@ body.bg-white {
         right: 0px;
         text-indent: -9999px;
         background-image: url(/assets/images/sprites.png);
-        background-position: 0px -144px;
+        background-position: -251px -98px;
         width: 44px;
         height: 44px; }
         @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
           .contents.company .company-info .inner .btn-favorite {
             background-image: url(/assets/images/sprites@2x.png);
-            background-size: 236px 208px; } }
+            background-size: 295px 277px; } }
         .contents.company .company-info .inner .btn-favorite[value=true] {
           background-image: url(/assets/images/sprites.png);
-          background-position: -167px 0px;
+          background-position: -251px 0px;
           width: 44px;
           height: 44px; }
           @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
             .contents.company .company-info .inner .btn-favorite[value=true] {
               background-image: url(/assets/images/sprites@2x.png);
-              background-size: 236px 208px; } }
+              background-size: 295px 277px; } }
   .contents.company .tabs {
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1154,13 +1319,6 @@ body.bg-white {
       top: 0;
       right: 0;
       left: 0; }
-  .contents.company .slider-container {
-    overflow: hidden;
-    position: relative;
-    visibility: hidden; }
-    .contents.company .slider-container .swipe-wrap {
-      overflow: hidden;
-      position: relative; }
   .contents.company .tab-contents {
     float: left;
     position: relative;
@@ -1178,159 +1336,6 @@ body.bg-white {
       text-align: center;
       border-top: 1px solid #dedede;
       background-color: #fff; }
-    .contents.company .tab-contents .list-folding {
-      border-bottom: 1px solid #dedede;
-      background-color: #fff; }
-      .contents.company .tab-contents .list-folding .btns {
-        padding: 0 4.444444444444% 20px 0;
-        text-align: right; }
-        .contents.company .tab-contents .list-folding .btns .btn-inline {
-          display: inline-block;
-          margin-left: 4px;
-          min-width: 55px;
-          font-size: 0.750rem;
-          font-weight: 500;
-          color: #000;
-          text-align: center;
-          line-height: 1.688rem;
-          border: 1px solid #d5d5d5;
-          border-radius: 1.688rem;
-          background-color: #f4f4f4; }
-          .contents.company .tab-contents .list-folding .btns .btn-inline.strong {
-            color: #fff;
-            border: 1px solid #ab8060;
-            background-color: #b78c6c; }
-      .contents.company .tab-contents .list-folding dt {
-        display: block;
-        overflow: hidden;
-        border-top: 1px solid #dedede; }
-        .contents.company .tab-contents .list-folding dt > a {
-          display: block;
-          box-sizing: border-box;
-          position: relative;
-          padding: 13px 9.722222222222% 14px 6.944444444444%;
-          color: #000;
-          text-decoration: none; }
-          .contents.company .tab-contents .list-folding dt > a:after {
-            content: '';
-            display: block;
-            position: absolute;
-            top: 19px;
-            right: 4.444444444444%;
-            background-image: url(/assets/images/sprites.png);
-            background-position: -124px -175px;
-            width: 9px;
-            height: 5px; }
-            @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-              .contents.company .tab-contents .list-folding dt > a:after {
-                background-image: url(/assets/images/sprites@2x.png);
-                background-size: 236px 208px; } }
-          .contents.company .tab-contents .list-folding dt > a .title {
-            display: block;
-            overflow: hidden;
-            padding-right: 25px;
-            font-size: 0.813rem;
-            font-weight: 300;
-            line-height: 0.938rem;
-            text-overflow: ellipsis;
-            white-space: nowrap; }
-          .contents.company .tab-contents .list-folding dt > a time {
-            float: right;
-            font-size: 0.688rem;
-            font-weight: 300;
-            color: #888;
-            line-height: 0.938rem;
-            vertical-align: middle; }
-          .contents.company .tab-contents .list-folding dt > a .user {
-            float: left;
-            font-size: 0.688rem;
-            font-weight: 400;
-            color: #000;
-            line-height: 0.938rem;
-            vertical-align: middle; }
-          .contents.company .tab-contents .list-folding dt > a .info {
-            clear: both;
-            overflow: hidden;
-            margin-top: 16px; }
-        .contents.company .tab-contents .list-folding dt .btns {
-          display: none; }
-        .contents.company .tab-contents .list-folding dt.is-open > a:after {
-          background-image: url(/assets/images/sprites.png);
-          background-position: -110px -175px;
-          width: 9px;
-          height: 5px; }
-          @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-            .contents.company .tab-contents .list-folding dt.is-open > a:after {
-              background-image: url(/assets/images/sprites@2x.png);
-              background-size: 236px 208px; } }
-        .contents.company .tab-contents .list-folding dt.is-open > a .title {
-          font-weight: 700;
-          line-height: 0.938rem;
-          text-oveflow: none;
-          white-space: normal; }
-        .contents.company .tab-contents .list-folding dt.is-open .btns {
-          display: block; }
-        .contents.company .tab-contents .list-folding dt.is-open + dd {
-          display: block; }
-      .contents.company .tab-contents .list-folding dd {
-        display: none; }
-        .contents.company .tab-contents .list-folding dd .desc {
-          position: relative;
-          padding: 0 9.722222222222% 13px 6.944444444444%;
-          font-size: 0.750rem;
-          font-weight: 400;
-          color: #ac7f5e;
-          line-height: 1.125rem; }
-      .contents.company .tab-contents .list-folding.qna dt > a {
-        padding-left: 15.277777777778%; }
-        .contents.company .tab-contents .list-folding.qna dt > a:before {
-          content: '';
-          display: block;
-          position: absolute;
-          top: 12px;
-          left: 6.944444444444%;
-          background-image: url(/assets/images/sprites.png);
-          background-position: -187px -144px;
-          width: 20px;
-          height: 20px; }
-          @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-            .contents.company .tab-contents .list-folding.qna dt > a:before {
-              background-image: url(/assets/images/sprites@2x.png);
-              background-size: 236px 208px; } }
-      .contents.company .tab-contents .list-folding.qna dd .desc {
-        padding-left: 15.277777777778%; }
-        .contents.company .tab-contents .list-folding.qna dd .desc:before {
-          content: '';
-          display: block;
-          position: absolute;
-          top: 0;
-          left: 6.944444444444%;
-          background-image: url(/assets/images/sprites.png);
-          background-position: -216px 0px;
-          width: 20px;
-          height: 20px; }
-          @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-            .contents.company .tab-contents .list-folding.qna dd .desc:before {
-              background-image: url(/assets/images/sprites@2x.png);
-              background-size: 236px 208px; } }
-      .contents.company .tab-contents .list-folding.qna dd .info {
-        clear: both;
-        overflow: hidden;
-        padding: 0 9.722222222222% 15px 15.277777777778%; }
-        .contents.company .tab-contents .list-folding.qna dd .info time {
-          float: right;
-          font-size: 0.688rem;
-          font-weight: 300;
-          color: #888;
-          line-height: 0.938rem;
-          vertical-align: middle; }
-        .contents.company .tab-contents .list-folding.qna dd .info .user {
-          float: left;
-          font-size: 0.688rem;
-          font-weight: 400;
-          color: #ac7f5e;
-          line-height: 0.938rem;
-          vertical-align: middle; }
     .contents.company .tab-contents p.qna {
       padding: 15px 0 23px 0;
       border-top: 1px solid #dedede; }
@@ -1365,13 +1370,13 @@ body.bg-white {
         background-size: cover; }
         .contents.company .tab-contents .tab-section .info-title.company:after {
           background-image: url(/assets/images/sprites.png);
-          background-position: -40px -193px;
+          background-position: -63px -255px;
           width: 15px;
           height: 14px; }
           @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
             .contents.company .tab-contents .tab-section .info-title.company:after {
               background-image: url(/assets/images/sprites@2x.png);
-              background-size: 236px 208px; } }
+              background-size: 295px 277px; } }
         @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
           .contents.company .tab-contents .tab-section .info-title.company {
             background-image: url("/assets/images/bg_info_title01@2x.jpg"); } }
@@ -1380,13 +1385,13 @@ body.bg-white {
         background-size: cover; }
         .contents.company .tab-contents .tab-section .info-title.executives:after {
           background-image: url(/assets/images/sprites.png);
-          background-position: -216px -161px;
+          background-position: -157px -235px;
           width: 19px;
           height: 12px; }
           @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
             .contents.company .tab-contents .tab-section .info-title.executives:after {
               background-image: url(/assets/images/sprites@2x.png);
-              background-size: 236px 208px; } }
+              background-size: 295px 277px; } }
         @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
           .contents.company .tab-contents .tab-section .info-title.executives {
             background-image: url("/assets/images/bg_info_title02@2x.jpg"); } }
@@ -1426,13 +1431,13 @@ body.bg-white {
             top: -6px;
             left: 11px;
             background-image: url(/assets/images/sprites.png);
-            background-position: -216px -69px;
+            background-position: -43px -235px;
             width: 17px;
             height: 15px; }
             @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
               .contents.company .tab-contents .tab-section .check-options .list-checks .item-checks:before {
                 background-image: url(/assets/images/sprites@2x.png);
-                background-size: 236px 208px; } }
+                background-size: 295px 277px; } }
       .contents.company .tab-contents .tab-section .check-options.scroll .list-checks .slick-list {
         overflow: visible; }
       .contents.company .tab-contents .tab-section .check-options.scroll .list-checks li {
@@ -1496,13 +1501,13 @@ body.bg-white {
           display: block;
           margin-left: -29.5px;
           background-image: url(/assets/images/sprites.png);
-          background-position: -92px -144px;
+          background-position: -69px -200px;
           width: 59px;
           height: 26px; }
           @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
             .contents.company .tab-contents.summary > header .progress[data-state=success] .title {
               background-image: url(/assets/images/sprites@2x.png);
-              background-size: 236px 208px; } }
+              background-size: 295px 277px; } }
           .contents.company .tab-contents.summary > header .progress[data-state=success] .title:before {
             content: '펀딩성공'; }
         .contents.company .tab-contents.summary > header .progress[data-state=close]:before {
@@ -1512,13 +1517,13 @@ body.bg-white {
           display: block;
           margin-left: -29.5px;
           background-image: url(/assets/images/sprites.png);
-          background-position: -69px -109px;
+          background-position: -155px -166px;
           width: 59px;
           height: 26px; }
           @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
             .contents.company .tab-contents.summary > header .progress[data-state=close] .title {
               background-image: url(/assets/images/sprites@2x.png);
-              background-size: 236px 208px; } }
+              background-size: 295px 277px; } }
           .contents.company .tab-contents.summary > header .progress[data-state=close] .title:before {
             content: '펀딩종료'; }
         .contents.company .tab-contents.summary > header .progress .title {
@@ -1680,13 +1685,13 @@ body.bg-white {
         margin-top: -7px;
         margin-left: -7px;
         background-image: url(/assets/images/sprites.png);
-        background-position: -79px -193px;
+        background-position: -83px -255px;
         width: 14px;
         height: 14px; }
         @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
           .contents.invest .navigation-bar > .btn-close:before {
             background-image: url(/assets/images/sprites@2x.png);
-            background-size: 236px 208px; } }
+            background-size: 295px 277px; } }
     .contents.invest .navigation-bar > h1 {
       display: block;
       font-size: 1.125rem;
@@ -1700,13 +1705,13 @@ body.bg-white {
         margin: -4px 6px 0 0;
         vertical-align: middle;
         background-image: url(/assets/images/sprites.png);
-        background-position: -216px -25px;
+        background-position: -207px -200px;
         width: 19px;
         height: 17px; }
         @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
           .contents.invest .navigation-bar > h1:before {
             background-image: url(/assets/images/sprites@2x.png);
-            background-size: 236px 208px; } }
+            background-size: 295px 277px; } }
     .contents.invest .navigation-bar > h2 {
       display: none; }
     .contents.invest .navigation-bar .progress-invest {
@@ -1758,13 +1763,13 @@ body.bg-white {
           z-index: 2;
           margin-left: -5px;
           background-image: url(/assets/images/sprites.png);
-          background-position: -216px -143px;
+          background-position: -65px -235px;
           width: 18px;
           height: 13px; }
           @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
             .contents.invest .navigation-bar .progress-invest > li.confirm:before {
               background-image: url(/assets/images/sprites@2x.png);
-              background-size: 236px 208px; } }
+              background-size: 295px 277px; } }
   .contents.invest .invest-content {
     margin-top: 106px;
     padding: 24px 6.944444444444% 24px 6.944444444444%;
@@ -1811,13 +1816,13 @@ body.bg-white {
           left: 20px;
           margin-top: -6.5px;
           background-image: url(/assets/images/sprites.png);
-          background-position: -216px -89px;
+          background-position: -134px -235px;
           width: 18px;
           height: 13px; }
           @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
             .contents.invest .invest-content .enterprise .check-enterprise input[type=checkbox] {
               background-image: url(/assets/images/sprites@2x.png);
-              background-size: 236px 208px; } }
+              background-size: 295px 277px; } }
           .contents.invest .invest-content .enterprise .check-enterprise input[type=checkbox] + label {
             display: block;
             box-sizing: border-box;
@@ -1831,14 +1836,14 @@ body.bg-white {
             background-color: #f4f4f4; }
           .contents.invest .invest-content .enterprise .check-enterprise input[type=checkbox]:checked {
             background-image: url(/assets/images/sprites.png);
-            background-position: -216px -107px;
+            background-position: -111px -235px;
             width: 18px;
             height: 13px;
             background-color: transparent; }
             @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
               .contents.invest .invest-content .enterprise .check-enterprise input[type=checkbox]:checked {
                 background-image: url(/assets/images/sprites@2x.png);
-                background-size: 236px 208px; } }
+                background-size: 295px 277px; } }
         .contents.invest .invest-content .enterprise .check-enterprise .btn-toggle-enterprise {
           display: block;
           position: absolute;
@@ -1857,22 +1862,22 @@ body.bg-white {
             margin-top: -2.5px;
             margin-left: -4.5px;
             background-image: url(/assets/images/sprites.png);
-            background-position: -124px -175px;
+            background-position: -265px -223px;
             width: 9px;
             height: 5px; }
             @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
               .contents.invest .invest-content .enterprise .check-enterprise .btn-toggle-enterprise:before {
                 background-image: url(/assets/images/sprites@2x.png);
-                background-size: 236px 208px; } }
+                background-size: 295px 277px; } }
           .contents.invest .invest-content .enterprise .check-enterprise .btn-toggle-enterprise.isOpened:before {
             background-image: url(/assets/images/sprites.png);
-            background-position: -110px -175px;
+            background-position: -251px -223px;
             width: 9px;
             height: 5px; }
             @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
               .contents.invest .invest-content .enterprise .check-enterprise .btn-toggle-enterprise.isOpened:before {
                 background-image: url(/assets/images/sprites@2x.png);
-                background-size: 236px 208px; } }
+                background-size: 295px 277px; } }
       .contents.invest .invest-content .enterprise .more-enterprise {
         display: none;
         padding: 12px 22px 17px 25px;
@@ -1888,13 +1893,13 @@ body.bg-white {
             left: 0px;
             margin-top: -4.5px;
             background-image: url(/assets/images/sprites.png);
-            background-position: -216px -178px;
+            background-position: -282px -192px;
             width: 13px;
             height: 9px; }
             @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
               .contents.invest .invest-content .enterprise .more-enterprise .checkbox input[type=checkbox] {
                 background-image: url(/assets/images/sprites@2x.png);
-                background-size: 236px 208px; } }
+                background-size: 295px 277px; } }
             .contents.invest .invest-content .enterprise .more-enterprise .checkbox input[type=checkbox] + label {
               display: block;
               box-sizing: border-box;
@@ -1906,14 +1911,14 @@ body.bg-white {
               line-height: 26px; }
             .contents.invest .invest-content .enterprise .more-enterprise .checkbox input[type=checkbox]:checked {
               background-image: url(/assets/images/sprites.png);
-              background-position: -92px -175px;
+              background-position: -282px -206px;
               width: 13px;
               height: 9px;
               background-color: transparent; }
               @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
                 .contents.invest .invest-content .enterprise .more-enterprise .checkbox input[type=checkbox]:checked {
                   background-image: url(/assets/images/sprites@2x.png);
-                  background-size: 236px 208px; } }
+                  background-size: 295px 277px; } }
               .contents.invest .invest-content .enterprise .more-enterprise .checkbox input[type=checkbox]:checked + label {
                 color: #000; }
         .contents.invest .invest-content .enterprise .more-enterprise p {
@@ -1941,13 +1946,13 @@ body.bg-white {
         top: 2px;
         left: 0;
         background-image: url(/assets/images/sprites.png);
-        background-position: 0px -193px;
+        background-position: -231px -200px;
         width: 15px;
         height: 15px; }
         @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
           .contents.invest .invest-content .warning:before {
             background-image: url(/assets/images/sprites@2x.png);
-            background-size: 236px 208px; } }
+            background-size: 295px 277px; } }
     .contents.invest .invest-content .result-message {
       padding-top: 11px;
       padding-bottom: 43px;
@@ -1957,13 +1962,13 @@ body.bg-white {
         display: block;
         margin: 0 auto;
         background-image: url(/assets/images/sprites.png);
-        background-position: -49px -144px;
+        background-position: 0px -235px;
         width: 38px;
         height: 42px; }
         @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
           .contents.invest .invest-content .result-message:before {
             background-image: url(/assets/images/sprites@2x.png);
-            background-size: 236px 208px; } }
+            background-size: 295px 277px; } }
       .contents.invest .invest-content .result-message > .title {
         margin-top: 23px;
         font-size: 1.063rem;
@@ -2080,6 +2085,177 @@ body.bg-white {
     line-height: 1.250rem;
     text-align: center; }
 
+/* 고객센터 */
+.contents.cs {
+  /* 탭 */
+  /* 개별 탭 내용 */
+  /* 이용안내 */ }
+  .contents.cs .tabs {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    background-color: #fff; }
+    .contents.cs .tabs > a {
+      display: block;
+      position: relative;
+      -webkit-flex: 1;
+          -ms-flex: 1;
+              flex: 1;
+      height: 43px;
+      font-size: 0.750rem;
+      font-weight: 400;
+      color: #969696;
+      text-align: center;
+      line-height: 43px;
+      border-bottom: 1px solid #dedede; }
+      .contents.cs .tabs > a[data-state=selected] {
+        font-weight: 500;
+        color: #000; }
+        .contents.cs .tabs > a[data-state=selected]:after {
+          content: '';
+          display: block;
+          position: absolute;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          height: 3px;
+          background-color: #fde832; }
+      .contents.cs .tabs > a + a {
+        border-left: 1px solid #dedede; }
+      .contents.cs .tabs > a:hover {
+        text-decoration: none; }
+  .contents.cs .tab-contents {
+    float: left;
+    position: relative;
+    padding-top: 5px;
+    min-height: 300px;
+    width: 100%; }
+    .contents.cs .tab-contents > .title {
+      display: none; }
+  .contents.cs .guide-intro {
+    padding: 32px 0 0 0; }
+    .contents.cs .guide-intro > .title {
+      display: none; }
+    .contents.cs .guide-intro .yinc-message {
+      font-size: 0.750rem;
+      font-weight: 400;
+      color: #888;
+      line-height: 1.188rem;
+      text-align: center; }
+      .contents.cs .guide-intro .yinc-message > strong {
+        display: block;
+        margin-bottom: 16px;
+        font-size: 1.125rem;
+        font-weight: 700;
+        color: #000; }
+      .contents.cs .guide-intro .yinc-message > em {
+        font-size: 0.813rem;
+        font-weight: 400;
+        color: #000; }
+    .contents.cs .guide-intro .yinc-figure {
+      margin-top: 35px; }
+      .contents.cs .guide-intro .yinc-figure figcaption {
+        display: none; }
+    .contents.cs .guide-intro .crowdfunding {
+      margin-top: 47px;
+      padding: 36px 0 37px 0;
+      text-align: center;
+      background-color: #f4f4f4; }
+      .contents.cs .guide-intro .crowdfunding dt {
+        font-size: 1.000rem;
+        font-weight: 400;
+        color: #000; }
+        .contents.cs .guide-intro .crowdfunding dt:after {
+          content: '';
+          display: block;
+          margin: 20px auto 18px auto;
+          height: 2px;
+          width: 25px;
+          background-color: #aa754d; }
+      .contents.cs .guide-intro .crowdfunding dd {
+        font-size: 0.750rem;
+        font-weight: 400;
+        color: #888;
+        line-height: 1.125rem; }
+    .contents.cs .guide-intro .crowdfunding-step {
+      padding: 47px 4.444% 0 4.444%; }
+      .contents.cs .guide-intro .crowdfunding-step > li {
+        position: relative;
+        padding-left: 31.707317073171%;
+        padding-bottom: 18px; }
+        .contents.cs .guide-intro .crowdfunding-step > li:before {
+          content: '';
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 5px; }
+        .contents.cs .guide-intro .crowdfunding-step > li:nth-child(1):before {
+          background-image: url(/assets/images/sprites.png);
+          background-position: 0px 0px;
+          width: 78px;
+          height: 78px; }
+          @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+            .contents.cs .guide-intro .crowdfunding-step > li:nth-child(1):before {
+              background-image: url(/assets/images/sprites@2x.png);
+              background-size: 295px 277px; } }
+        .contents.cs .guide-intro .crowdfunding-step > li:nth-child(2):before {
+          background-image: url(/assets/images/sprites.png);
+          background-position: -83px -83px;
+          width: 78px;
+          height: 78px; }
+          @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+            .contents.cs .guide-intro .crowdfunding-step > li:nth-child(2):before {
+              background-image: url(/assets/images/sprites@2x.png);
+              background-size: 295px 277px; } }
+        .contents.cs .guide-intro .crowdfunding-step > li:nth-child(3):before {
+          background-image: url(/assets/images/sprites.png);
+          background-position: 0px -83px;
+          width: 78px;
+          height: 78px; }
+          @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+            .contents.cs .guide-intro .crowdfunding-step > li:nth-child(3):before {
+              background-image: url(/assets/images/sprites@2x.png);
+              background-size: 295px 277px; } }
+        .contents.cs .guide-intro .crowdfunding-step > li:nth-child(4):before {
+          background-image: url(/assets/images/sprites.png);
+          background-position: -83px 0px;
+          width: 78px;
+          height: 78px; }
+          @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+            .contents.cs .guide-intro .crowdfunding-step > li:nth-child(4):before {
+              background-image: url(/assets/images/sprites@2x.png);
+              background-size: 295px 277px; } }
+        .contents.cs .guide-intro .crowdfunding-step > li:after {
+          content: '';
+          display: block;
+          position: absolute;
+          top: 81px;
+          bottom: 3px;
+          left: 43px;
+          width: 2px;
+          background: url("/assets/images/bg_dot01.png") lef top repeat-y; }
+          @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+            .contents.cs .guide-intro .crowdfunding-step > li:after {
+              background-image: url("/assets/images/bg_dot01@2x.png");
+              background-size: 2px auto; } }
+        .contents.cs .guide-intro .crowdfunding-step > li:last-child:after {
+          content: none; }
+        .contents.cs .guide-intro .crowdfunding-step > li .title {
+          display: block;
+          font-size: 0.875rem;
+          font-weight: 400;
+          color: #000; }
+          .contents.cs .guide-intro .crowdfunding-step > li .title:before {
+            content: attr(data-step);
+            display: block;
+            font-size: 0.625rem; }
+        .contents.cs .guide-intro .crowdfunding-step > li p {
+          margin-top: 8px;
+          font-size: 0.688rem;
+          font-weight: 400;
+          color: #888;
+          line-height: 0.938rem; }
+
 .is-hidden {
   display: none; }
 
@@ -2108,13 +2284,13 @@ body.bg-white {
       margin-top: -7.5px;
       margin-left: -8.5px;
       background-image: url(/assets/images/sprites.png);
-      background-position: -216px -25px;
+      background-position: -207px -200px;
       width: 19px;
       height: 17px; }
       @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
         .shortcut-invest .btn-invest:before {
           background-image: url(/assets/images/sprites@2x.png);
-          background-size: 236px 208px; } }
+          background-size: 295px 277px; } }
     .shortcut-invest .btn-invest:after {
       content: attr(data-title);
       display: block;
@@ -2148,13 +2324,13 @@ body.bg-white {
         margin-top: -7.5px;
         margin-left: -8.5px;
         background-image: url(/assets/images/sprites.png);
-        background-position: -216px -47px;
+        background-position: -183px -200px;
         width: 19px;
         height: 17px; }
         @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
           .shortcut-invest .btn-invest[data-state=disabled]:before {
             background-image: url(/assets/images/sprites@2x.png);
-            background-size: 236px 208px; } }
+            background-size: 295px 277px; } }
     .shortcut-invest .btn-invest[data-state=close] {
       opacity: 1; }
       .shortcut-invest .btn-invest[data-state=close]:before {
@@ -2162,13 +2338,13 @@ body.bg-white {
         margin-top: -7.5px;
         margin-left: -8.5px;
         background-image: url(/assets/images/sprites.png);
-        background-position: -216px -47px;
+        background-position: -183px -200px;
         width: 19px;
         height: 17px; }
         @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
           .shortcut-invest .btn-invest[data-state=close]:before {
             background-image: url(/assets/images/sprites@2x.png);
-            background-size: 236px 208px; } }
+            background-size: 295px 277px; } }
 
 /* keyframes */
 /* 투자하기 버튼 */

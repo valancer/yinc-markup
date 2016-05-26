@@ -332,6 +332,7 @@ $(document).ready(function (e) {
 
 	Invest.init();
 	NativeLinker.reinit();
+	CS.init();
 });
 
 
@@ -618,4 +619,100 @@ var Invest = (function ($) {
 	};
 }(jQuery));
 
+
+
+/* Company info */
+var CS = (function ($) {
+	var scope,
+		$csContainer,
+		$tabs,
+		swipe,
+		$toggleItems,
+		$lastToggleItem = null,
+		init = function () {
+			$csContainer = $('.contents.cs');
+			$tabs = $csContainer.find('.tabs');
+			$tabItems = $tabs.find('a');
+			$sliderContainer = $csContainer.find('.slider-container');
+			$tabContents = $csContainer.find('.tab-contents');
+
+			// communication
+			$toggleItems = $csContainer.find('.list-folding dt > a');
+
+			if( $csContainer.length <= 0 ) return;
+			
+			initLayout();
+			initEvent();
+		};//end init
+
+	function initLayout() {
+	}
+
+	function initEvent() {
+		/* tab slider */
+		swipe = Swipe($("#swipe").get(0), {
+			continuous: false,
+			callback: function(index, element) {
+				var target = $(element).attr("id");
+				swipe.updateHeight();
+			},
+			transitionEnd: function(index, element) {
+				var target = $(element).attr("id");
+				_updateTabLabel(index);
+			}
+		});
+
+		$tabItems.on('click', function(e) {
+			e.preventDefault();
+
+			_slideToHash($(this).attr("href"));
+		});
+
+
+		// communication - toggle
+		$toggleItems.off('click').on('click', function(e) {
+			e.preventDefault();
+			e.stopPropagation();
+
+			var $this = $(this).closest('dt');
+			if( $this.is($lastToggleItem) && $this.hasClass("is-open") ) {
+				$this.removeClass("is-open");
+				return;
+			}
+
+			if( $lastToggleItem !== null ) {
+				$lastToggleItem.removeClass("is-open");
+			}
+
+			$this.addClass('is-open');
+			if( swipe !== undefined ) swipe.updateHeight();
+			$lastToggleItem = $this;
+		});
+	}
+
+	function _updateTabLabel(index) {
+		$tabItems.attr("data-state", "");
+		$tabItems.eq(index).attr("data-state", "selected");
+	}
+
+	function _slideToHash(hash) {
+		var target = hash.split("#")[1];
+		var index = $('.tab-contents').index($('section[id="' + target + '"]'));
+
+		if( swipe === undefined ) return;
+		swipe.slide(index, 0);
+		_updateTabLabel(index);
+	}
+
+	return {
+		init: function () {
+			scope = this;
+
+			init();
+		},
+		reinit: function() {
+			init();
+		}
+	};
+}(jQuery));
 

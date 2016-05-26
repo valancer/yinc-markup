@@ -1,0 +1,66 @@
+/* 고객센터 */
+.contents.cs {
+	/* 탭 */
+	.tabs { display: flex; background-color: #fff; 
+		> a { display: block; position: relative; flex: 1; height: 43px; font-size: 0.750rem; font-weight: 400; color: #969696; text-align: center; line-height: 43px; border-bottom: 1px solid #dedede;
+			&[data-state=selected] { font-weight: 500; color: #000;
+				&:after { content: ''; display: block; position: absolute; right: 0; bottom: 0; left: 0; height: 3px; background-color: #fde832; }
+			}
+
+			+ a { border-left: 1px solid #dedede; }
+			&:hover { text-decoration: none; }
+		}
+
+	}
+
+	/* 개별 탭 내용 */
+	.tab-contents { float: left; position: relative; padding-top: 5px; min-height: 300px; width: 100%;
+		> .title { display: none; }
+	}
+
+
+
+	/* 이용안내 */
+	.guide-intro { padding: 32px 0 0 0;
+		> .title { display: none; }
+		.yinc-message { font-size: 0.750rem; font-weight: 400; color: #888; line-height: 1.188rem; text-align: center;
+			> strong { display: block; margin-bottom: 16px; font-size: 1.125rem; font-weight: 700; color: #000; }
+			> em { font-size: 0.813rem; font-weight: 400; color: #000; }
+		}
+
+		.yinc-figure { margin-top: 35px;
+			figcaption { display: none; }
+		}
+
+
+		.crowdfunding { margin-top: 47px; padding: 36px 0 37px 0; text-align: center; background-color: #f4f4f4;
+			dt { font-size: 1.000rem; font-weight: 400; color: #000;
+				&:after { content: ''; display: block; margin: 20px auto 18px auto; height: 2px; width: 25px; background-color: #aa754d; }
+			}
+			dd { font-size: 0.750rem; font-weight: 400; color: #888; line-height: 1.125rem; }
+		}
+
+		.crowdfunding-step { padding: 47px 4.444% 0 4.444%;
+			> li { position: relative; padding-left: 31.707317073171%; padding-bottom: 18px;	
+				&:before { content: ''; display: block; position: absolute; top: 0; left: 5px; }
+				&:nth-child(1):before { @include retina-sprite($s-step-01-group); }
+				&:nth-child(2):before { @include retina-sprite($s-step-02-group); }
+				&:nth-child(3):before { @include retina-sprite($s-step-03-group); }
+				&:nth-child(4):before { @include retina-sprite($s-step-04-group); }
+				&:after { content: ''; display: block; position: absolute; top: 81px; bottom: 3px; left: 43px; width: 2px; background: url('/assets/images/bg_dot01.png') lef top repeat-y;
+					@include retina {
+						background-image: url('/assets/images/bg_dot01@2x.png'); background-size: 2px auto;
+					}
+				}
+				&:last-child:after { content: none; }
+
+				.title { display: block; font-size: 0.875rem; font-weight: 400; color: #000;
+					&:before { content: attr(data-step); display: block; font-size: 0.625rem; }
+				}
+				p { margin-top: 8px; font-size: 0.688rem; font-weight: 400; color: #888; line-height: 0.938rem; }
+
+			}
+		}
+	}
+
+}

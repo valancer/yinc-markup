@@ -4,6 +4,11 @@
 }
 
 
+/* tab slider */
+.slider-container { overflow: hidden; position: relative; visibility: hidden;
+	.swipe-wrap { overflow: hidden; position: relative; }
+}
+
 /* 테이블 뷰 형태 */
 .header-table-view { padding: 0 6.944444444444%; font-size: 0.750rem; font-weight: 300; color: #888; line-height: 2.063rem; background-color: #f1f1f1; }
 .list-table-view { width: 100%; border-bottom: 1px solid #dedede; background-color: #fff;
@@ -49,7 +54,7 @@
 }
 
 
-
+/* form controls */
 .form-controls {
 	.input { overflow: hidden;
 		> label {  }
@@ -115,6 +120,62 @@
 }
 
 
+/* toggle contents */
+.list-folding { border-bottom: 1px solid #dedede; background-color: #fff;
+	.btns { padding: 0 4.444444444444% 20px 0; text-align: right;
+		.btn-inline { display: inline-block; margin-left: 4px; min-width: 55px; font-size: 0.750rem; font-weight: 500; color: #000; text-align: center; line-height: 1.688rem; border: 1px solid #d5d5d5; border-radius: 1.688rem; background-color: #f4f4f4;
+			&.strong { color: #fff; border: 1px solid #ab8060; background-color: #b78c6c; }
+		}
+	}
+
+	dt { display: block; overflow: hidden; border-top: 1px solid #dedede;
+		> a { display: block; box-sizing: border-box; position: relative; padding: 13px 9.722222222222% 14px 6.944444444444%; color: #000; text-decoration: none;
+			&:after { content: ''; display: block; position: absolute; top: 19px; right: 4.444444444444%; @include retina-sprite($s-btn-down-01-group); }
+
+			.title { display: block; overflow: hidden; padding-right: 25px; font-size: 0.813rem; font-weight: 300; line-height: 0.938rem; text-overflow: ellipsis; white-space: nowrap; }
+
+			time { float: right; font-size: 0.688rem; font-weight: 300; color: #888; line-height: 0.938rem; vertical-align: middle; }
+			.user { float: left; font-size: 0.688rem; font-weight: 400; color: #000; line-height: 0.938rem; vertical-align: middle; }
+
+			.info { clear: both; overflow: hidden; margin-top: 16px; }
+		}
+		.btns { display: none; }
+
+		&.is-open {
+			> a {
+				&:after { @include retina-sprite($s-btn-up-01-group); }
+				.title { font-weight: 700; line-height: 0.938rem; text-oveflow: none; white-space: normal; }
+			}
+
+			.btns { display: block; }
+
+			+ dd { display: block; }
+		}
+	}
+	dd { display: none;
+		.desc { position: relative; padding: 0 9.722222222222% 13px 6.944444444444%; font-size: 0.750rem; font-weight: 400; color: #ac7f5e; line-height: 1.125rem; }
+	}
+
+
+	&.qna {
+		dt {
+			> a { padding-left: 15.277777777778%;
+				&:before { content: ''; display: block; position: absolute; top: 12px; left: 6.944444444444%; @include retina-sprite($s-icon-q-group); }
+			}
+		}
+
+		dd {
+			.desc { padding-left: 15.277777777778%;
+				&:before { content: ''; display: block; position: absolute; top: 0; left: 6.944444444444%; @include retina-sprite($s-icon-a-group); }
+			}
+			
+			.info { clear: both; overflow: hidden; padding: 0 9.722222222222% 15px 15.277777777778%;
+				time { float: right; font-size: 0.688rem; font-weight: 300; color: #888; line-height: 0.938rem; vertical-align: middle; }
+				.user { float: left; font-size: 0.688rem; font-weight: 400; color: #ac7f5e; line-height: 0.938rem; vertical-align: middle; }
+			}	
+		}
+	}
+}
 
 
 
