@@ -1,0 +1,50 @@
+include "head.html"
+<body>
+	<script>
+	$(window.document).ready(function(){
+	});
+	</script>
+
+	<!-- 상단 영역 -->
+	include "header.html"
+
+
+	<!-- 본문 영역 -->
+	<main>
+		<article class="contents cs">
+
+			<fieldset class="qna-write">
+				<legend>문의하기</legend>
+
+				<div class="kakao">
+					<a href="#" data-navigation="exteranl" class="btn-kpf">카카오톡 플러스친구로 문의하기</a>
+					<p>
+						문의사항에 대한 답변은 고객님의 메일로 발송될 예정입니다.
+					</p>
+				</div>
+
+				<select name="" id="">
+					<option default selected>상담 분류를 선택하세요.</option>
+					<option value="00">투자하기</option>
+					<option value="01">투자받기</option>
+					<option value="02">시스템</option>
+					<option value="03">기타</option>
+				</select>
+
+				<textarea name="" id="" cols="30" rows="10" placeholder="문의사항을 작성해주세요."></textarea>
+
+				<p class="btns">
+					<input type="submit" value="문의하기" class="btn-submit" disabled="disabled" />
+				</p>
+
+			</fieldset>
+
+
+		</article>
+	</main>
+
+	<!-- 하단 영역 -->
+	include "footer.html"
+
+</body>
+</html>

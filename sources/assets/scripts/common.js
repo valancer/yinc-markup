@@ -693,6 +693,13 @@ var CS = (function ($) {
 	function _updateTabLabel(index) {
 		$tabItems.attr("data-state", "");
 		$tabItems.eq(index).attr("data-state", "selected");
+
+		var $this = $tabItems.eq(index);
+		var offsetX = $this.offset().left - $tabs.offset().left;
+		if( !$tabItems.eq(index).visible(false, false, 'horizontal') ) {
+			$tabs.animate({scrollLeft: offsetX}, 300);
+		}
+
 	}
 
 	function _slideToHash(hash) {

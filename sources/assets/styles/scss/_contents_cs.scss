@@ -11,6 +11,9 @@
 			&:hover { text-decoration: none; }
 		}
 
+		&.fixed { overflow: scroll;
+			> a { min-width: 99px; }
+		}
 	}
 
 	/* 개별 탭 내용 */
@@ -63,4 +66,19 @@
 		}
 	}
 
+	/* YINC - 문의하기 */
+	.qna-write { padding-bottom: 97px;
+
+		.kakao { padding: 22px 6.944444444444%;
+			.btn-kpf { display: block; font-size: 0.813rem; font-weight: 500; color: #262626; line-height: 2.688rem; text-align: center; border: 1px solid #edd400; border-radius: 2.688rem; background-color: #fde832;
+				&:before { content: ''; display: inline-block; margin: -1px 8px 0 0; vertical-align: middle; @include retina-sprite($s-icon-kakao-group); }
+			}
+			p { margin-top: 21px; font-size: 0.750rem; font-weight: 300; color: #000; line-height: 1.000rem; }
+		}
+
+		select { display: block; box-sizing: border-box; padding: 0 6.944444444444%; height: 45px; width: 100%; font-size: 0.938rem; font-weight: 400; color: #000; border-top: 1px solid #dedede; border-bottom: 1px solid #dedede; background-color: #fff; }
+		textarea { display: block; box-sizing: border-box; margin-top: 6px; padding: 14px 6.944444444444%; height: 170px; width: 100%; font-size: 0.938rem; font-weight: 400; color: #000; line-height: 1.125rem; border-top: 1px solid #dedede; border-bottom: 1px solid #dedede; }
+		
+		.btns { padding: 0 6.944444444444% 22px 6.944444444444%; }
+	}
 }
