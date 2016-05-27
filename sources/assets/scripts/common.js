@@ -204,7 +204,9 @@ var NativeLinker = (function ($) {
 	function _handleNavigation(action, url, title, barType) {
 		if( barType === undefined ) barType = 0;
 
-		url = "http://" + window.location.host + url;
+		if( url.indexOf("https://") < 0 ) {
+			url = "http://" + window.location.host + url;
+		}
 
 		switch(action) {
 			case "external":
@@ -299,6 +301,7 @@ var NativePopup = (function ($) {
 	var scope,
 		_device,
 		init = function() {
+			_device = $_GET('device');
 		};
 
 	function _open(title, content) {
@@ -307,7 +310,7 @@ var NativePopup = (function ($) {
 		} else if( _device == "android" ) {
 			window.android.showAlert('{title: ' + title + ', content: ' + content + '}');
 		} else {
-			window.alert(content);
+			// window.alert(content);
 		}
 	}
 
@@ -494,7 +497,7 @@ var Company = (function ($) {
 			var hash = window.location.hash;
 			_slideToHash(hash);
 		} else {
-			_slideToHash("#summary");
+			_slideToIndex(0);
 		}
 
 
@@ -528,6 +531,12 @@ var Company = (function ($) {
 		var target = hash.split("#")[1];
 		var index = $('.tab-contents').index($('section[id="' + target + '"]'));
 
+		if( swipe === undefined ) return;
+		swipe.slide(index, 0);
+		_updateTabLabel(index);
+	}
+
+	function _slideToIndex(index) {
 		if( swipe === undefined ) return;
 		swipe.slide(index, 0);
 		_updateTabLabel(index);
@@ -650,19 +659,22 @@ var CS = (function ($) {
 
 	function initEvent() {
 		/* tab slider */
-		swipe = Swipe($("#swipe").get(0), {
-			continuous: false,
-			callback: function(index, element) {
-				var target = $(element).attr("id");
-				swipe.updateHeight();
-			},
-			transitionEnd: function(index, element) {
-				var target = $(element).attr("id");
-				_updateTabLabel(index);
-			}
-		});
+		if( swipe === undefined ) {
+			swipe = Swipe($("#swipe").get(0), {
+				continuous: false,
+				callback: function(index, element) {
+					var target = $(element).attr("id");
+					swipe.updateHeight();
+				},
+				transitionEnd: function(index, element) {
+					var target = $(element).attr("id");
+					_updateTabLabel(index);
+				}
+			});
+		}
 
-		$tabItems.on('click', function(e) {
+		$tabItems.off('click').on('click', function(e) {
+			if( swipe === undefined ) return;
 			e.preventDefault();
 
 			_slideToHash($(this).attr("href"));
@@ -688,24 +700,39 @@ var CS = (function ($) {
 			if( swipe !== undefined ) swipe.updateHeight();
 			$lastToggleItem = $this;
 		});
+
+
+		if( window.location.hash ) {
+			var hash = window.location.hash;
+			_slideToHash(hash);
+		} else {
+			_slideToIndex(0);
+		}
 	}
 
 	function _updateTabLabel(index) {
 		$tabItems.attr("data-state", "");
 		$tabItems.eq(index).attr("data-state", "selected");
 
-		var $this = $tabItems.eq(index);
-		var offsetX = $this.offset().left - $tabs.offset().left;
-		if( !$tabItems.eq(index).visible(false, false, 'horizontal') ) {
-			$tabs.animate({scrollLeft: offsetX}, 300);
+		if( $tabs.hasClass("fixed") ) {
+			var $this = $tabItems.eq(index);
+			var offsetX = $this.offset().left - $tabs.offset().left;
+			if( !$tabItems.eq(index).visible(false, false, 'horizontal') ) {
+				$tabs.animate({scrollLeft: offsetX}, 300);
+			}
 		}
-
 	}
 
 	function _slideToHash(hash) {
 		var target = hash.split("#")[1];
 		var index = $('.tab-contents').index($('section[id="' + target + '"]'));
 
+		if( swipe === undefined ) return;
+		swipe.slide(index, 0);
+		_updateTabLabel(index);
+	}
+
+	function _slideToIndex(index) {
 		if( swipe === undefined ) return;
 		swipe.slide(index, 0);
 		_updateTabLabel(index);

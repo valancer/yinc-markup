@@ -732,6 +732,8 @@ body.bg-white {
       line-height: 1.125rem; }
   .list-folding.qna dt > a {
     padding-left: 15.277777777778%; }
+    .list-folding.qna dt > a > time {
+      display: none; }
     .list-folding.qna dt > a:before {
       content: '';
       display: block;
@@ -2137,6 +2139,15 @@ body.bg-white {
     width: 100%; }
     .contents.cs .tab-contents > .title {
       display: none; }
+    .contents.cs .tab-contents .none-message {
+      padding: 11px 0 12px 0;
+      font-size: 0.813rem;
+      font-weight: 300;
+      color: #000;
+      line-height: 1.250rem;
+      text-align: center;
+      border-top: 1px solid #dedede;
+      background-color: #fff; }
   .contents.cs .guide-intro {
     padding: 32px 0 0 0; }
     .contents.cs .guide-intro > .title {
@@ -2301,10 +2312,12 @@ body.bg-white {
       width: 100%;
       font-size: 0.938rem;
       font-weight: 400;
-      color: #000;
+      color: #bbb;
       border-top: 1px solid #dedede;
       border-bottom: 1px solid #dedede;
       background-color: #fff; }
+      .contents.cs .qna-write select.selected {
+        color: #000; }
     .contents.cs .qna-write textarea {
       display: block;
       box-sizing: border-box;

@@ -19,6 +19,8 @@
 	/* 개별 탭 내용 */
 	.tab-contents { float: left; position: relative; padding-top: 5px; min-height: 300px; width: 100%;
 		> .title { display: none; }
+
+		.none-message { padding: 11px 0 12px 0; font-size: 0.813rem; font-weight: 300; color: #000; line-height: 1.250rem; text-align: center; border-top: 1px solid #dedede; background-color: #fff; }
 	}
 
 
@@ -76,7 +78,9 @@
 			p { margin-top: 21px; font-size: 0.750rem; font-weight: 300; color: #000; line-height: 1.000rem; }
 		}
 
-		select { display: block; box-sizing: border-box; padding: 0 6.944444444444%; height: 45px; width: 100%; font-size: 0.938rem; font-weight: 400; color: #000; border-top: 1px solid #dedede; border-bottom: 1px solid #dedede; background-color: #fff; }
+		select { display: block; box-sizing: border-box; padding: 0 6.944444444444%; height: 45px; width: 100%; font-size: 0.938rem; font-weight: 400; color: #bbb; border-top: 1px solid #dedede; border-bottom: 1px solid #dedede; background-color: #fff;
+			&.selected { color: #000; }
+		}
 		textarea { display: block; box-sizing: border-box; margin-top: 6px; padding: 14px 6.944444444444%; height: 170px; width: 100%; font-size: 0.938rem; font-weight: 400; color: #000; line-height: 1.125rem; border-top: 1px solid #dedede; border-bottom: 1px solid #dedede; }
 		
 		.btns { padding: 0 6.944444444444% 22px 6.944444444444%; }

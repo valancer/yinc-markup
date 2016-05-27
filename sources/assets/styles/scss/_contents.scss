@@ -160,6 +160,7 @@
 	&.qna {
 		dt {
 			> a { padding-left: 15.277777777778%;
+				> time { display: none; }
 				&:before { content: ''; display: block; position: absolute; top: 12px; left: 6.944444444444%; @include retina-sprite($s-icon-q-group); }
 			}
 		}
