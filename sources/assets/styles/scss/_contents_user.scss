@@ -9,4 +9,22 @@
 
 		.message { margin-top: 28px; font-size: 0.875rem; font-weight: 400; color: #888; line-height: 1.250rem; text-align: center; }
 	}
+
+	/* 유저 프로필 상단 */
+	.profile { padding: 16px 0 15px 0;
+		.thumb { display: block; overflow: hidden; margin: 0 auto; height: 64px; width: 64px; text-align: center; border: 3px solid #fff; box-shadow: inset 0 0 1px 0 rgba(0, 0, 0, 0.15); border-radius: 64px; background-color: #fde832;
+			&:before { content: ''; display: inline-block; height: 100%; vertical-align: middle; }
+			img { display: inline-block; vertical-align: middle; line-height: 64px; }
+		}
+		figcaption { padding-top: 4px; font-size: 0.875rem; font-weight: 400; color: #000; text-align: center; }
+
+		+ .header-table-view { margin-top: 0px; }
+	}
+
+	.header-table-view { margin-top: 28px; }
+
+	/* 탈퇴 */
+	.secession { padding: 35px 4.444444444444%; font-size: 0.750rem; font-weight: 300; color: #000;
+		.btn-secession { float: right; font-size: 0.750rem; font-weight: 300; color: #000; text-decoration: underline; }
+	}
 }

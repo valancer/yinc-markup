@@ -65,6 +65,16 @@
 				}
 			}
 
+			.header-table-view { padding: 0 6.944444444444%; }
+			.list-table-view {
+				> li { padding: 0 6.944444444444%;
+					/* link */
+					a { right: -8.064516129032%; left: -8.064516129032%; padding: 0 8.064516129032%;
+						&:after { right: 6.944444444444%; }
+					}
+				}
+			}
+
 			.check-options { padding: 10px 0 0 0;
 				.options-title { padding: 0 6.944444444444%; font-size: 0.688rem; font-weight: 300; color: #888; }
 

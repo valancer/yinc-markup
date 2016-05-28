@@ -10,27 +10,45 @@
 }
 
 /* 테이블 뷰 형태 */
-.header-table-view { padding: 0 6.944444444444%; font-size: 0.750rem; font-weight: 300; color: #888; line-height: 2.063rem; background-color: #f1f1f1; }
+.header-table-view { padding: 0 4.444444444444%; font-size: 0.750rem; font-weight: 300; color: #888; line-height: 2.063rem;
+	.message { float: right; font-size: 0.750rem;
+		&.required { color: #e65c5c; }
+		&.pending { color: #fdbe00; }
+		&.confirm { color: #3787f8; }
+	}
+}
 .list-table-view { width: 100%; border-bottom: 1px solid #dedede; background-color: #fff;
-	> li { overflow: hidden; position: relative; padding: 0 6.944444444444%; height: 40px; border-top: 1px solid #dedede;
+	> li { overflow: hidden; position: relative; padding: 0 4.444444444444%; height: auto; border-top: 1px solid #dedede;
 
 		/* normal */
-		.title { float: left; font-size: 0.813rem; font-weight: 300; color: #010101; line-height: 40px; }
-		.content { float: right; font-size: 0.813rem; font-weight: 300; color: #888; line-height: 40px;
-			.version { font-weight: 500; color: #ac7f5e; }
+		.item { clear: both; overflow: hidden;
+			.title { line-height: 1.750rem; }
+			.content { line-height: 1.750rem; }
+
+			&:first-child { padding-top: 6px; }
+			&:last-child { padding-bottom: 6px; }
+		}
+
+		.title { float: left; font-size: 0.813rem; font-weight: 300; color: #010101; line-height: 2.500rem; }
+		.content { float: right; font-size: 0.813rem; font-weight: 300; color: #888; line-height: 2.500rem;
+			.strong { font-weight: 500; color: #ac7f5e; }
+			.required { font-weight: 500; color: #e65c5c; }
 		}
 
 		/* link */
-		a { display: block; box-sizing: border-box; position: absolute; top: 0; right: 0; bottom: 0; left: 0; padding: 0 6.944444444444% 0 7.777777777778%; height: 100%; width: 100%;
-			&:after { content: ''; display: block; position: absolute; top: 50%; right: 6.944444444444%; margin-top: -$s-icon-arrow01-height/2; @include retina-sprite($s-icon-arrow01-group); }
+		a { display: block; position: relative; right: -4.878048780488%; left: -4.878048780488%; padding: 0 4.878048780488%; min-height: 40px; height: 100%; width: 100%;
+			&:after { content: ''; display: block; position: absolute; top: 0.813rem; right: 4.444444444444%; @include retina-sprite($s-icon-arrow01-group); }
 
 			&:active,
 			&:hover { background-color: #fffacd; }
+
+			.content { margin-right: 18px; }
 		}
 	}
 
 	.btn-info { display: inline-block; margin-top: -2px; text-indent: -9999px; vertical-align: middle; @include retina-sprite($s-btn-info01-group); }
 
+	/* 기업 상세 폰트 사이즈 작음 */
 	&.detail {
 		> li {
 			.title { font-size: 0.688rem; color: #888; }

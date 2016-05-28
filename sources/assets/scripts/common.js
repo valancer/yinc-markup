@@ -121,6 +121,7 @@ var NativeLinker = (function ($) {
 		init = function() {
 			$linker = $('[data-navigation]');
 			_device = $_GET('device');
+			yincLS.setItem("device", _device);
 
 			initLayout();
 			initEvent();
@@ -129,6 +130,7 @@ var NativeLinker = (function ($) {
 	function _reinit() {
 		$linker = $('[data-navigation]');
 		_device = $_GET('device');
+		yincLS.setItem("device", _device);
 
 		initEvent();
 	}
@@ -196,7 +198,7 @@ var NativeLinker = (function ($) {
 		} else if( _device == "android" ) {
 			window.android.popNavigation();
 		} else {
-			alert("popnavigation");
+			// alert("popnavigation");
 		}
 	}
 
@@ -242,14 +244,14 @@ var NativeLinker = (function ($) {
 			window.android.requestCredential('{callback: "NativeLinker.reloadWithCredential"}');
 		} else {
 			// temp
-			yincLS.setItem("userId", 1);
+			// yincLS.setItem("userId", 1);
 		}
 	}
 
 	// token response
 	function _handleReloadWithCredential(data) {
 		yincLS.setItem("token", data.token);
-		yincLS.setItem("userId", 1);
+		yincLS.setItem("userId", data.userId);
 	}
 
 	function _handleRequestInitInfo() {
@@ -258,12 +260,30 @@ var NativeLinker = (function ($) {
 		} else if( _device == "android" ) {
 			window.android.requestInitInfo('{callback: "NativeLinker.reloadWithInitInfo"}');
 		} else {
-
+			$.ajax({
+				url:"http://182.162.100.61:8070/api/mobile/auth/login?IsPersistent=true&email=1price@limited40.com&password=111qqq!",
+				// url:"http://amp.limited40.com:8060/api/mobile/auth/login?IsPersistent=true&email=1price@limited40.com&password=111qqq!",
+				type:"POST",
+				// async: false,
+				dataType: 'json',
+				timeout:5000,
+				cache: false,
+				success: function(result, status, xhr){
+					console.log(result);
+					_handleReloadWithCredential(result);
+				}.bind(this),
+					error: function(xhr, status, err) {
+					alert('데이터를 로드할 수 없습니다.' + status +': '+ err);
+				}.bind(this)
+			});
 		}
 	}
 
 	function _handleReloadWithInitInfo(data) {
+		yincLS.setItem("token", data.token);
+		yincLS.setItem("userId", data.userId);
 		yincLS.setItem("navigationHeight", data.navHeight);
+		yincLS.setItem("appVersion", data.appVersion);
 	}
 
 	return {
@@ -336,6 +356,9 @@ $(document).ready(function (e) {
 	Invest.init();
 	NativeLinker.reinit();
 	CS.init();
+
+	// set body background color
+	$('body').addClass($('article.contents').data("bg"));
 });
 
 
@@ -442,9 +465,7 @@ var Company = (function ($) {
 
 	function initEvent() {
 		$(window).on('scroll', function(e) {
-			if( $('body').hasClass('safari') ) {
-				return;
-			}
+			if( yincLS.getItem("device") != "android" ) return;
 
 			var scrollTop = $(this).scrollTop() + parseInt(yincLS.getItem("navigationHeight"));
 			var headerHeight = $companyHeader.outerHeight();
@@ -454,9 +475,11 @@ var Company = (function ($) {
 				$tabs.addClass("fixed");
 				$tabs.css('top', parseInt(yincLS.getItem("navigationHeight")));
 				$tabContents.css('marginTop', $tabs.outerHeight());
+				 window.android.setTitleVisible('{visible: "true"}');
 			} else {
 				$tabs.removeClass("fixed");
 				$tabContents.css('marginTop', 0);
+				 window.android.setTitleVisible('{visible: "false"}');
 			}
 		});
 

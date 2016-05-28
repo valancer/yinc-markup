@@ -216,7 +216,7 @@ The `retina-sprites` mixin generates a CSS rule and media query for retina group
 body {
   background-color: #f4f4f4; }
 
-body.bg-white {
+.bg-white {
   background-color: #fff; }
 
 /**
@@ -325,58 +325,78 @@ body.bg-white {
 
 /* 테이블 뷰 형태 */
 .header-table-view {
-  padding: 0 6.944444444444%;
+  padding: 0 4.444444444444%;
   font-size: 0.750rem;
   font-weight: 300;
   color: #888;
-  line-height: 2.063rem;
-  background-color: #f1f1f1; }
+  line-height: 2.063rem; }
+  .header-table-view .message {
+    float: right;
+    font-size: 0.750rem; }
+    .header-table-view .message.required {
+      color: #e65c5c; }
+    .header-table-view .message.pending {
+      color: #fdbe00; }
+    .header-table-view .message.confirm {
+      color: #3787f8; }
 
 .list-table-view {
   width: 100%;
   border-bottom: 1px solid #dedede;
-  background-color: #fff; }
+  background-color: #fff;
+  /* 기업 상세 폰트 사이즈 작음 */ }
   .list-table-view > li {
     overflow: hidden;
     position: relative;
-    padding: 0 6.944444444444%;
-    height: 40px;
+    padding: 0 4.444444444444%;
+    height: auto;
     border-top: 1px solid #dedede;
     /* normal */
     /* link */ }
+    .list-table-view > li .item {
+      clear: both;
+      overflow: hidden; }
+      .list-table-view > li .item .title {
+        line-height: 1.750rem; }
+      .list-table-view > li .item .content {
+        line-height: 1.750rem; }
+      .list-table-view > li .item:first-child {
+        padding-top: 6px; }
+      .list-table-view > li .item:last-child {
+        padding-bottom: 6px; }
     .list-table-view > li .title {
       float: left;
       font-size: 0.813rem;
       font-weight: 300;
       color: #010101;
-      line-height: 40px; }
+      line-height: 2.500rem; }
     .list-table-view > li .content {
       float: right;
       font-size: 0.813rem;
       font-weight: 300;
       color: #888;
-      line-height: 40px; }
-      .list-table-view > li .content .version {
+      line-height: 2.500rem; }
+      .list-table-view > li .content .strong {
         font-weight: 500;
         color: #ac7f5e; }
+      .list-table-view > li .content .required {
+        font-weight: 500;
+        color: #e65c5c; }
     .list-table-view > li a {
       display: block;
-      box-sizing: border-box;
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      padding: 0 6.944444444444% 0 7.777777777778%;
+      position: relative;
+      right: -4.878048780488%;
+      left: -4.878048780488%;
+      padding: 0 4.878048780488%;
+      min-height: 40px;
       height: 100%;
       width: 100%; }
       .list-table-view > li a:after {
         content: '';
         display: block;
         position: absolute;
-        top: 50%;
-        right: 6.944444444444%;
-        margin-top: -7px;
+        top: 0.813rem;
+        right: 4.444444444444%;
         background-image: url(/assets/images/sprites.png);
         background-position: -236px -200px;
         width: 8px;
@@ -387,6 +407,8 @@ body.bg-white {
             background-size: 295px 277px; } }
       .list-table-view > li a:active, .list-table-view > li a:hover {
         background-color: #fffacd; }
+      .list-table-view > li a .content {
+        margin-right: 18px; }
   .list-table-view .btn-info {
     display: inline-block;
     margin-top: -2px;
@@ -1397,6 +1419,17 @@ body.bg-white {
         @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
           .contents.company .tab-contents .tab-section .info-title.executives {
             background-image: url("/assets/images/bg_info_title02@2x.jpg"); } }
+    .contents.company .tab-contents .tab-section .header-table-view {
+      padding: 0 6.944444444444%; }
+    .contents.company .tab-contents .tab-section .list-table-view > li {
+      padding: 0 6.944444444444%;
+      /* link */ }
+      .contents.company .tab-contents .tab-section .list-table-view > li a {
+        right: -8.064516129032%;
+        left: -8.064516129032%;
+        padding: 0 8.064516129032%; }
+        .contents.company .tab-contents .tab-section .list-table-view > li a:after {
+          right: 6.944444444444%; }
     .contents.company .tab-contents .tab-section .check-options {
       padding: 10px 0 0 0; }
       .contents.company .tab-contents .tab-section .check-options .options-title {
@@ -2050,42 +2083,88 @@ body.bg-white {
     margin-top: 0; }
 
 /* 사용자 */
-.contents.user .agreement-content {
-  padding: 55px 6.944444444444% 24px 6.944444444444%; }
-  .contents.user .agreement-content > .title {
-    position: relative;
-    text-align: center; }
-    .contents.user .agreement-content > .title:before {
-      content: '';
-      display: block;
-      position: absolute;
-      top: 50%;
-      right: 0;
-      left: 0;
-      z-index: 0;
-      height: 1px;
-      background-color: #999; }
-    .contents.user .agreement-content > .title > span {
-      display: inline-block;
+.contents.user {
+  /* 유저 프로필 상단 */
+  /* 탈퇴 */ }
+  .contents.user .agreement-content {
+    padding: 55px 6.944444444444% 24px 6.944444444444%; }
+    .contents.user .agreement-content > .title {
       position: relative;
-      z-index: 1;
+      text-align: center; }
+      .contents.user .agreement-content > .title:before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        left: 0;
+        z-index: 0;
+        height: 1px;
+        background-color: #999; }
+      .contents.user .agreement-content > .title > span {
+        display: inline-block;
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+        padding: 0 13px;
+        max-width: 200px;
+        font-size: 1.063rem;
+        font-weight: 500;
+        color: #000;
+        text-align: center;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        background-color: #fff; }
+    .contents.user .agreement-content .message {
+      margin-top: 28px;
+      font-size: 0.875rem;
+      font-weight: 400;
+      color: #888;
+      line-height: 1.250rem;
+      text-align: center; }
+  .contents.user .profile {
+    padding: 16px 0 15px 0; }
+    .contents.user .profile .thumb {
+      display: block;
       overflow: hidden;
-      padding: 0 13px;
-      max-width: 200px;
-      font-size: 1.063rem;
-      font-weight: 500;
-      color: #000;
+      margin: 0 auto;
+      height: 64px;
+      width: 64px;
       text-align: center;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      background-color: #fff; }
-  .contents.user .agreement-content .message {
-    margin-top: 28px;
-    font-size: 0.875rem;
-    font-weight: 400;
-    color: #888;
-    line-height: 1.250rem;
-    text-align: center; }
+      border: 3px solid #fff;
+      box-shadow: inset 0 0 1px 0 rgba(0, 0, 0, 0.15);
+      border-radius: 64px;
+      background-color: #fde832; }
+      .contents.user .profile .thumb:before {
+        content: '';
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle; }
+      .contents.user .profile .thumb img {
+        display: inline-block;
+        vertical-align: middle;
+        line-height: 64px; }
+    .contents.user .profile figcaption {
+      padding-top: 4px;
+      font-size: 0.875rem;
+      font-weight: 400;
+      color: #000;
+      text-align: center; }
+    .contents.user .profile + .header-table-view {
+      margin-top: 0px; }
+  .contents.user .header-table-view {
+    margin-top: 28px; }
+  .contents.user .secession {
+    padding: 35px 4.444444444444%;
+    font-size: 0.750rem;
+    font-weight: 300;
+    color: #000; }
+    .contents.user .secession .btn-secession {
+      float: right;
+      font-size: 0.750rem;
+      font-weight: 300;
+      color: #000;
+      text-decoration: underline; }
 
 /* 고객센터 */
 .contents.cs {
