@@ -1,0 +1,46 @@
+include "head.html"
+<body>
+	<script>
+	$(window.document).ready(function(){
+	});
+	</script>
+
+	<!-- 상단 영역 -->
+	include "header.html"
+
+
+	<!-- 본문 영역 -->
+	<main>
+		<article class="contents user">
+
+			<div class="user-content">
+					
+				<fieldset class="form-controls">
+
+					<ul class="list-user-items">
+						<li>
+							<label for="">변경할 휴대폰 번호</label>
+							<input type="tel" name="" id="" placeholder="변경할 휴대폰 번호">
+						</li>
+					</ul>
+					
+					<input type="submit" id="" name="" disabled="disabled" class="btn-submit" value="인증번호 요청" style="margin-top: 25px;">
+
+					<p class="sms-auth">
+						<label for="">휴대폰으로 받으신 인증번호를 입력해주세요.</label>
+						<input type="tel" id="" name="" placeholder="인증번호 입력">
+						<button type="button" class="btn-inner">확인</button>
+					</p>
+
+				</fieldset>
+
+			</div>
+			
+		</article>
+	</main>
+
+	<!-- 하단 영역 -->
+	include "footer.html"
+
+</body>
+</html>

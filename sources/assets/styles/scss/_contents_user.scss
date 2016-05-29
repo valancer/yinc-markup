@@ -36,7 +36,8 @@
 				label { display: none; }
 
 				input[type=text],
-				input[type=password] { display: block; width: 100%; font-size: 0.938rem; font-weight: 400; color: #000; line-height: 1.938rem; border-bottom: 1px solid #c4c6c9; background-color: transparent;
+				input[type=password],
+				input[type=tel] { display: block; width: 100%; font-size: 0.938rem; font-weight: 400; color: #000; line-height: 1.938rem; border-bottom: 1px solid #c4c6c9; background-color: transparent;
 					&:focus { box-shadow: inset 0 -1px 0 0 #ffde00; border-bottom: 1px solid #ffde00; }
 
 					&[disabled] { color: #000; opacity: 1; }
@@ -50,5 +51,33 @@
 				.add-info { clear: both; font-size: 0.750rem; font-weight: 300; color: #bbb; }
 			}
 		}
+
+		.sms-auth { position: relative; overflow: hidden; margin-top: 43px;
+			label { display: block; margin-bottom: 22px; font-size: 0.875rem; font-weight: 400; color: #666; text-align: center; }
+			input[type=tel] { float: left; display: block; box-sizing: border-box; padding-left: 13px; width: 74.193548387097%; font-size: 0.938rem; font-weight: 400; color: #000; text-align: left; line-height: 2.875rem; border: 2px solid #ffde00; background-color: #fff; }
+			.btn-inner { display: block; float: right; height: 50px; width: 20.967741935484%; font-size: 0.813rem; font-weight: 500; color: #fff; text-align: center; line-height: 3.125rem; border-radius: 1px; background-color: #494949; }
+		}
+
+		.list-invest-items { margin-top: 7px; margin-bottom: 43px;
+			> li { overflow: hidden; padding-top: 9px; border-bottom: 1px solid #dedede;
+				&.focus { border-bottom: 2px solid #ffde00; }
+				.title { float: left; font-size: 0.938rem; font-weight: 400; color: #000; line-height: 2.813rem; }
+
+				.content { float: right; font-size: 0.938rem; font-weight: 300; color: #000; line-height: 2.813rem; 
+					strong { font-weight: 700; }
+					select.bank { display: inline-block; padding-right: 24px; font-size: 0.938rem; line-height: 2.813rem; background: url('/assets/images/bg_select.png') right top no-repeat;
+						@include retina { background-image: url('/assets/images/bg_select@2x.png'); background-size: 9px 45px; }
+					}	
+				}
+
+				.with-txt { float: right; position: relative; box-sizing: border-box; width: 72.41935483871%;
+					input[type=text] { padding: 0; width: 100%; font-size: 0.938rem; font-weight: 400; color: #000; text-align: right; line-height: 2.813rem; }
+				}
+			}
+		}
+
+		
+		.btn-submit { margin-top: 45px; }
+		.warning { margin-top: 38px; color: #888; }
 	}
 }

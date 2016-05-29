@@ -287,4 +287,12 @@
 /* 하단 문구 */
 .warning { clear: both; display: block; position: relative; padding-left: 21px; font-size: 0.750rem; font-weight: 400; color: #bbb; line-height: 1.063rem;
 	&:before { content: ''; display: block; position: absolute; top: 2px; left: 0; @include retina-sprite($s-icon-iks-02-group); }
+
+	.em { color: #e65c5c; }
+	
+	.list-hyphen { margin-top: 6px;
+		> li { position: relative; padding-left: 7px; font-size: 0.750rem; font-weight: 400; line-height: 1.063rem;
+			&:before { content: '-'; display: block; position: absolute; top: 0; left: 0; }
+		}
+	}
 }
