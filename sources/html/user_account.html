@@ -1,0 +1,75 @@
+include "head.html"
+<body>
+	<script>
+	$(window.document).ready(function(){
+	});
+	</script>
+
+	<!-- 상단 영역 -->
+	include "header.html"
+
+
+	<!-- 본문 영역 -->
+	<main>
+		<article class="contents user">
+
+			<div class="user-content">
+					
+				<fieldset class="form-controls">
+
+					<ul class="list-invest-items">
+						<li>
+							<label class="title">입금 금액</label>
+
+							<p data-txt="원" class="with-txt">
+								<input type="text" id="" name="" value="6,020,000" readonly="readonly">
+							</p>
+						</li>
+						<li class="focus">
+							<span class="title">입금할 금액</span>
+
+							<p class="content">
+								<select name="" id="" class="bank">
+									<option value="">은행 선택</option>
+									<option value="">우리 은행</option>
+									<option value="">기업 은행</option>
+									<option value="">국민 은행</option>
+								</select>
+							</p>
+						</li>
+					</ul>
+
+					<p class="strong-write">
+						<label for="">계좌번호</label>
+						<input type="tel" id="" name="" placeholder="하이픈'-' 없이 입력하세요">
+						<span class="validate-message" style="display: none;">
+							validate message
+						</span>
+					</p>
+					
+					<input type="submit" id="" name="" data-state="disabled" class="btn-submit" value="등록하기">
+
+					<div class="warning">
+						증권(주식) 계좌만 이용 가능하며, 은행계좌 또는 CMA 계좌는 이용이 불가합니다.<br>
+						<br>
+						이용 불가능한 증권사:<br>
+						부국증권, 한화증권, 하나대투증권, KTB투자증권, 유안타증권, BNK증권, 이베스트투자증권<br>
+
+						<ul>
+							<li>정보 입력 또는 수정일로부터 1년간 변경이 없을 경우 금융 정보 보호 정책에 따라 계좌 정보는 삭제됩니다.</li>
+							<li>청약활동을 위해 증권사, 계좌번호, 예금주, 연락처 등의 회원정보가 수집되며, 해당 정보는 관련 법령에 따라 보관기간 이후 폐기됩니다.</li>
+							<li>회원정보 입력 또는 변경 이후 1년 간 활동내역이 없을 경우 금융정보 보호 정책에 따라 계좌정보는 삭제됩니다.</li>
+						</ul>
+					</div>
+				</fieldset>
+
+			</div>
+			
+		</article>
+	</main>
+
+	<!-- 하단 영역 -->
+	include "footer.html"
+
+</body>
+</html>

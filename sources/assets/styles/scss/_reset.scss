@@ -41,13 +41,17 @@ a:hover { text-decoration: underline; }
 /* forms */
 fieldset { appearance: none; }
 input[type=text],
+input[type=password],
 input[type=tel],
 input[type=number],
 input[type=submit],
+input[type=file],
 textarea,
 select { appearance: none; cursor: pointer; border: 0px; border-radius: 0px; background-color: transparent; }
 
 textarea { background-color: #fff; }
+
+*:focus { outline: none; }
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   font-size: 0.938rem; font-weight: 300; color: #bbb;

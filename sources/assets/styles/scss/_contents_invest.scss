@@ -82,11 +82,6 @@
 		}
 
 
-		.warning { clear: both; display: block; position: relative; padding-left: 21px; font-size: 0.750rem; font-weight: 400; color: #bbb; line-height: 1.063rem;
-			&:before { content: ''; display: block; position: absolute; top: 2px; left: 0; @include retina-sprite($s-icon-iks-02-group); }
-		}
-
-
 		/* 결과 메시지 */
 		.result-message { padding-top: 11px; padding-bottom: 43px; text-align: center;
 			&:before { content: ''; display: block; margin: 0 auto; @include retina-sprite($s-icon-message-01-group); }

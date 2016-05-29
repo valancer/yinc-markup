@@ -283,3 +283,8 @@
 	}
 }
 
+
+/* 하단 문구 */
+.warning { clear: both; display: block; position: relative; padding-left: 21px; font-size: 0.750rem; font-weight: 400; color: #bbb; line-height: 1.063rem;
+	&:before { content: ''; display: block; position: absolute; top: 2px; left: 0; @include retina-sprite($s-icon-iks-02-group); }
+}
