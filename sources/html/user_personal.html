@@ -1,0 +1,93 @@
+include "head.html"
+<body>
+	<script>
+	$(window.document).ready(function(){
+	});
+	</script>
+
+	<!-- 상단 영역 -->
+	include "header.html"
+
+
+	<!-- 본문 영역 -->
+	<main>
+		<article class="contents user">
+			<form>
+				<div class="user-content">
+					
+					<p class="type-message">홍길동님, 회원유형을 선택하세요.</p>
+
+					<p class="type-tab">
+						<a href="#" class="is-selected">개인 회원</a>
+						<a href="#">법인 회원</a>
+					</p>
+
+					<ul class="list-type">
+						<li>
+							<input type="radio" name="ptype" id="ptype01">
+							<label for="ptype01">
+								<span class="title">일반회원</span>
+								<p class="desc">일반 투자자(연간 총 투자한도 500만원) 및 투자받기를 원하는 기업</p>
+							</label>
+							<ul class="list-inner hidden">
+								<li>
+									<input type="radio" name="personal" id="personal01" value="01">
+									<label for="personal01">일반투자자</label>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<input type="radio" name="ptype" id="ptype02" value="">
+							<label for="ptype02">
+								<span class="title">소득요건구비투자자</span>
+								<p class="desc">연간 총 투자한도 2,000만원</p>
+							</label>
+							<ul class="list-inner">
+								<li>
+									<input type="radio" name="personal" id="personal90" value="90">
+									<label for="personal90">금융소득종합과세대상자</label>
+								</li>
+								<li>
+									<input type="radio" name="personal" id="personal91" value="91">
+									<label for="personal91">종합소득 연 1억원 이상자</label>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<input type="radio" name="ptype" id="ptype03" value="">
+							<label for="ptype03">
+								<span class="title">전문투자자</span>
+								<p class="desc">연간 총 투자한도 제한 없음</p>
+							</label>
+							<ul class="list-inner">
+								<li>
+									<input type="radio" name="personal" id="personal92" value="92">
+									<label for="personal92">공인회계사, 변호사, 변리사, 세무사 등</label>
+								</li>
+								<li>
+									<input type="radio" name="personal" id="personal93" value="93">
+									<label for="personal93">금융투자상품잔고 50억원 이상인 개인</label>
+								</li>
+								<li>
+									<input type="radio" name="personal" id="personal94" value="94">
+									<label for="personal94">개인투자조합 및 전문엔젤투자자</label>
+								</li>
+								<li>
+									<input type="radio" name="personal" id="personal95" value="95">
+									<label for="personal95">적격엔젤투자자</label>
+								</li>
+							</ul>
+						</li>
+					</ul>
+
+					<input type="submit" id="" name="" disabled="disabled" class="btn-submit" value="다음">
+				</div>
+			</form>
+		</article>
+	</main>
+
+	<!-- 하단 영역 -->
+	include "footer.html"
+
+</body>
+</html>

@@ -52,12 +52,15 @@
 			}
 		}
 
+		/* 휴대폰번호 변경 */
 		.sms-auth { position: relative; overflow: hidden; margin-top: 43px;
 			label { display: block; margin-bottom: 22px; font-size: 0.875rem; font-weight: 400; color: #666; text-align: center; }
 			input[type=tel] { float: left; display: block; box-sizing: border-box; padding-left: 13px; width: 74.193548387097%; font-size: 0.938rem; font-weight: 400; color: #000; text-align: left; line-height: 2.875rem; border: 2px solid #ffde00; background-color: #fff; }
 			.btn-inner { display: block; float: right; height: 50px; width: 20.967741935484%; font-size: 0.813rem; font-weight: 500; color: #fff; text-align: center; line-height: 3.125rem; border-radius: 1px; background-color: #494949; }
 		}
 
+
+		/* 증권계좌 변경 */
 		.list-invest-items { margin-top: 7px; margin-bottom: 43px;
 			> li { overflow: hidden; padding-top: 9px; border-bottom: 1px solid #dedede;
 				&.focus { border-bottom: 2px solid #ffde00; }
@@ -72,6 +75,61 @@
 
 				.with-txt { float: right; position: relative; box-sizing: border-box; width: 72.41935483871%;
 					input[type=text] { padding: 0; width: 100%; font-size: 0.938rem; font-weight: 400; color: #000; text-align: right; line-height: 2.813rem; }
+				}
+			}
+		}
+
+		
+		/* 회원 유형 */
+		.type-message { padding-top: 12px; font-size: 0.875rem; font-weight: 400; color: #000; text-align: center; }
+		.type-tab { overflow: hidden; margin-top: 37px;
+			a { display: block; height: 63px; width: 48.387096774194%; font-size: 1.063rem; font-weight: 500; color: #fff; text-align: center; line-height: 63px; border: 1px solid #bababa; border-radius: 1px; background-color: #c7c7c7;
+				&:first-child { float: left; }
+				&:last-child { float: right; }
+
+				&.is-selected {
+					&:first-child { border: 1px solid #a87f5f; background-color: #b78c6c; }
+					&:last-child { border: 1px solid #5e92a7; background-color: #72a1b3; }
+				}
+			}
+		}
+
+		.list-type { margin-top: -1px; border: 1px solid #d3d3d3; background-color: #fff;
+			> li { position: relative; border-top: 1px solid #d3d3d3;
+				&:first-child { border-top: 0; }
+				
+				input[type=radio] { position: absolute; left: -9999px;
+					&:checked {
+						+ label {
+							&:before { content: ''; display: block; position: absolute; top: 52%; right: 8.116883116883%; z-index: z("default"); margin-top: -$s-checkbox-all-height/2; margin-right: 20px; @include retina-sprite($s-checkbox-all-group); }
+							&:after { content: ''; border: 1px solid #aa8061; background-color: #b68c6d; }
+						}
+
+						~ .list-inner { display: block; }
+					}
+				}
+
+				> label { display: flex; flex-direction: column; justify-content: center; position: relative; padding: 0 32.467532467532% 0 7.954545454545%; min-height: 83px;
+					.title { display: block; font-size: 0.938rem; font-weight: 500; color: #9a6b4c; }
+					.desc { margin-top: 4px; font-size: 0.688rem; font-weight: 400; color: #888; line-height: 0.938rem; }
+
+					&:after { content: '선택'; display: block; position: absolute; top: 50%; right: 8.116883116883%; margin-top: -13px; height: 1.688rem; width: 55px; font-size: 0.750rem; font-weight: 500; color: #000; line-height: 27px; text-align: center; border: 1px solid #d5d5d5; border-radius: 1.688rem; background-color: #f4f4f4; }
+				}
+			}
+		}
+
+		.list-inner { display: block; margin: 0 4.87012987013%; padding: 3px 0 19px 3.597122302158%; border-top: 1px dashed #c8c8c8;
+			> li { position: relative;
+				input[type=radio] { position: absolute; left: -9999px;
+					&:checked {
+						+ label {
+							&:before { top: 3px; margin-top: 0; @include retina-sprite($s-checkbox-gray-checked-group); }
+							&:after { content: none; }
+						}
+					}
+				}
+				> label { display: block; position: relative; margin-top: 15px; padding-left: 10.431654676259%; font-size: 0.813rem; font-weight: 400; color: #bbb; line-height: 0.938rem;
+					&:before { content: ''; display: block; position: absolute; top: 3px; left: 0; margin-top: 0; @include retina-sprite($s-checkbox-gray-group); }
 				}
 			}
 		}

@@ -2190,7 +2190,10 @@ body {
       color: #000;
       text-decoration: underline; }
   .contents.user .user-content {
-    padding: 24px 6.944444444444% 24px 6.944444444444%; }
+    padding: 24px 6.944444444444% 24px 6.944444444444%;
+    /* 휴대폰번호 변경 */
+    /* 증권계좌 변경 */
+    /* 회원 유형 */ }
     .contents.user .user-content .list-user-items > li {
       overflow: hidden;
       padding-top: 17px; }
@@ -2330,6 +2333,160 @@ body {
             color: #000;
             text-align: right;
             line-height: 2.813rem; }
+    .contents.user .user-content .type-message {
+      padding-top: 12px;
+      font-size: 0.875rem;
+      font-weight: 400;
+      color: #000;
+      text-align: center; }
+    .contents.user .user-content .type-tab {
+      overflow: hidden;
+      margin-top: 37px; }
+      .contents.user .user-content .type-tab a {
+        display: block;
+        height: 63px;
+        width: 48.387096774194%;
+        font-size: 1.063rem;
+        font-weight: 500;
+        color: #fff;
+        text-align: center;
+        line-height: 63px;
+        border: 1px solid #bababa;
+        border-radius: 1px;
+        background-color: #c7c7c7; }
+        .contents.user .user-content .type-tab a:first-child {
+          float: left; }
+        .contents.user .user-content .type-tab a:last-child {
+          float: right; }
+        .contents.user .user-content .type-tab a.is-selected:first-child {
+          border: 1px solid #a87f5f;
+          background-color: #b78c6c; }
+        .contents.user .user-content .type-tab a.is-selected:last-child {
+          border: 1px solid #5e92a7;
+          background-color: #72a1b3; }
+    .contents.user .user-content .list-type {
+      margin-top: -1px;
+      border: 1px solid #d3d3d3;
+      background-color: #fff; }
+      .contents.user .user-content .list-type > li {
+        position: relative;
+        border-top: 1px solid #d3d3d3; }
+        .contents.user .user-content .list-type > li:first-child {
+          border-top: 0; }
+        .contents.user .user-content .list-type > li input[type=radio] {
+          position: absolute;
+          left: -9999px; }
+          .contents.user .user-content .list-type > li input[type=radio]:checked + label:before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 52%;
+            right: 8.116883116883%;
+            z-index: 1;
+            margin-top: -6.5px;
+            margin-right: 20px;
+            background-image: url(/assets/images/sprites.png);
+            background-position: -135px -235px;
+            width: 18px;
+            height: 13px; }
+            @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+              .contents.user .user-content .list-type > li input[type=radio]:checked + label:before {
+                background-image: url(/assets/images/sprites@2x.png);
+                background-size: 295px 277px; } }
+          .contents.user .user-content .list-type > li input[type=radio]:checked + label:after {
+            content: '';
+            border: 1px solid #aa8061;
+            background-color: #b68c6d; }
+          .contents.user .user-content .list-type > li input[type=radio]:checked ~ .list-inner {
+            display: block; }
+        .contents.user .user-content .list-type > li > label {
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-flex-direction: column;
+              -ms-flex-direction: column;
+                  flex-direction: column;
+          -webkit-justify-content: center;
+              -ms-flex-pack: center;
+                  justify-content: center;
+          position: relative;
+          padding: 0 32.467532467532% 0 7.954545454545%;
+          min-height: 83px; }
+          .contents.user .user-content .list-type > li > label .title {
+            display: block;
+            font-size: 0.938rem;
+            font-weight: 500;
+            color: #9a6b4c; }
+          .contents.user .user-content .list-type > li > label .desc {
+            margin-top: 4px;
+            font-size: 0.688rem;
+            font-weight: 400;
+            color: #888;
+            line-height: 0.938rem; }
+          .contents.user .user-content .list-type > li > label:after {
+            content: '선택';
+            display: block;
+            position: absolute;
+            top: 50%;
+            right: 8.116883116883%;
+            margin-top: -13px;
+            height: 1.688rem;
+            width: 55px;
+            font-size: 0.750rem;
+            font-weight: 500;
+            color: #000;
+            line-height: 27px;
+            text-align: center;
+            border: 1px solid #d5d5d5;
+            border-radius: 1.688rem;
+            background-color: #f4f4f4; }
+    .contents.user .user-content .list-inner {
+      display: block;
+      margin: 0 4.87012987013%;
+      padding: 3px 0 19px 3.597122302158%;
+      border-top: 1px dashed #c8c8c8; }
+      .contents.user .user-content .list-inner > li {
+        position: relative; }
+        .contents.user .user-content .list-inner > li input[type=radio] {
+          position: absolute;
+          left: -9999px; }
+          .contents.user .user-content .list-inner > li input[type=radio]:checked + label:before {
+            top: 3px;
+            margin-top: 0;
+            background-image: url(/assets/images/sprites.png);
+            background-position: -282px -192px;
+            width: 13px;
+            height: 9px; }
+            @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+              .contents.user .user-content .list-inner > li input[type=radio]:checked + label:before {
+                background-image: url(/assets/images/sprites@2x.png);
+                background-size: 295px 277px; } }
+          .contents.user .user-content .list-inner > li input[type=radio]:checked + label:after {
+            content: none; }
+        .contents.user .user-content .list-inner > li > label {
+          display: block;
+          position: relative;
+          margin-top: 15px;
+          padding-left: 10.431654676259%;
+          font-size: 0.813rem;
+          font-weight: 400;
+          color: #bbb;
+          line-height: 0.938rem; }
+          .contents.user .user-content .list-inner > li > label:before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 3px;
+            left: 0;
+            margin-top: 0;
+            background-image: url(/assets/images/sprites.png);
+            background-position: -282px -206px;
+            width: 13px;
+            height: 9px; }
+            @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+              .contents.user .user-content .list-inner > li > label:before {
+                background-image: url(/assets/images/sprites@2x.png);
+                background-size: 295px 277px; } }
     .contents.user .user-content .btn-submit {
       margin-top: 45px; }
     .contents.user .user-content .warning {

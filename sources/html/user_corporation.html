@@ -1,0 +1,89 @@
+include "head.html"
+<body>
+	<script>
+	$(window.document).ready(function(){
+	});
+	</script>
+
+	<!-- 상단 영역 -->
+	include "header.html"
+
+
+	<!-- 본문 영역 -->
+	<main>
+		<article class="contents user">
+			<form>
+				<div class="user-content">
+					
+					<p class="type-message">홍길동님, 회원유형을 선택하세요.</p>
+
+					<p class="type-tab">
+						<a href="#">개인 회원</a>
+						<a href="#" class="is-selected">법인 회원</a>
+					</p>
+
+					<ul class="list-type">
+						<li>
+							<input type="radio" name="ctype" id="ctype01" value="">
+							<label for="ctype01">
+								<span class="title">일반회원</span>
+								<p class="desc">일반 투자자(연간 총 투자한도 500만원) 및 투자받기를 원하는 기업</p>
+							</label>
+							<ul class="list-inner hidden">
+								<li>
+									<input type="radio" name="personal" id="corporation01" value="01">
+									<label for="corporation01">일반투자자</label>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<input type="radio" name="ctype" id="ctype02" value="">
+							<label for="ctype02">
+								<span class="title">소득요건구비투자자</span>
+								<p class="desc">연간 총 투자한도 2,000만원</p>
+							</label>
+							<ul class="list-inner hidden">
+								<li>
+									<input type="radio" name="corporation" id="corporation91" value="91">
+									<label for="corporation91">소득요건구비투자자</label>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<input type="radio" name="ctype" id="ctype03" value="">
+							<label for="ctype03">
+								<span class="title">전문투자자</span>
+								<p class="desc">연간 총 투자한도 제한 없음</p>
+							</label>
+							<ul class="list-inner">
+								<li>
+									<input type="radio" name="corporation" id="corporation92" value="92">
+									<label for="corporation92">자본시장법 상 당연전문투자자</label>
+								</li>
+								<li>
+									<input type="radio" name="corporation" id="corporation93" value="93">
+									<label for="corporation93">지정 전문투자자</label>
+								</li>
+								<li>
+									<input type="radio" name="corporation" id="corporation94" value="94">
+									<label for="corporation94">창업투자조합, 신기사투자조합, 벤처투자조합</label>
+								</li>
+								<li>
+									<input type="radio" name="corporation" id="corporation95" value="95">
+									<label for="corporation95">회계법인, 신용평가회사, 중소기업창업투자회사</label>
+								</li>
+							</ul>
+						</li>
+					</ul>
+
+					<input type="submit" id="" name="" disabled="disabled" class="btn-submit" value="다음">
+				</div>
+			</form>
+		</article>
+	</main>
+
+	<!-- 하단 영역 -->
+	include "footer.html"
+
+</body>
+</html>
