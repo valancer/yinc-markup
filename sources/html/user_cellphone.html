@@ -21,10 +21,11 @@ include "head.html"
 						<li>
 							<label for="">변경할 휴대폰 번호</label>
 							<input type="tel" name="" id="" placeholder="변경할 휴대폰 번호">
+							<span class="validate-message">최대 10000주까지만 투자가 가능합니다.</span>
 						</li>
 					</ul>
 					
-					<input type="submit" id="" name="" disabled="disabled" class="btn-submit" value="인증번호 요청" style="margin-top: 25px;">
+					<button type="button" data-state="disabled" class="btn-submit" style="margin-top: 25px;">인증번호 요청</button>
 
 					<p class="sms-auth">
 						<label for="">휴대폰으로 받으신 인증번호를 입력해주세요.</label>
