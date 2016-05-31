@@ -124,6 +124,7 @@ input[type=password],
 input[type=tel],
 input[type=number],
 input[type=submit],
+input[type=button],
 input[type=file],
 textarea,
 select {
@@ -316,7 +317,7 @@ body {
   text-align: center;
   border-radius: 2px !important;
   background-color: #494949 !important; }
-  .btn-submit[disabled] {
+  .btn-submit[disabled], .btn-submit[data-state=disabled] {
     background-color: #bbb !important; }
 
 /* tab slider */
@@ -532,6 +533,7 @@ body {
   .form-controls .validate-message {
     clear: both;
     display: block;
+    margin-top: 3px;
     font-size: 0.750rem;
     font-weight: 400;
     color: #e65c5c;
@@ -540,6 +542,7 @@ body {
       content: '';
       display: inline-block;
       margin-top: -2px;
+      margin-right: 4px;
       vertical-align: middle;
       background-image: url(/assets/images/sprites.png);
       background-position: -63px -257px;
