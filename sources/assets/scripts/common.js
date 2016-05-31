@@ -142,6 +142,8 @@ var NativeLinker = (function ($) {
 	}
 
 	function initEvent() {
+//		if( !_device ) alert("device 값이 설정되지 않았습니다. 네이티브에서 확인 부탁드립니다.");
+
 		$linker.off('click').on('click', function(e) {
 			e.preventDefault();
 
@@ -284,6 +286,8 @@ var NativeLinker = (function ($) {
 		yincLS.setItem("userId", data.userId);
 		yincLS.setItem("navigationHeight", data.navHeight);
 		yincLS.setItem("appVersion", data.appVersion);
+		
+		// $('#logging').append("<p>" + data + "</p>");
 	}
 
 	return {
@@ -330,7 +334,7 @@ var NativePopup = (function ($) {
 		} else if( _device == "android" ) {
 			window.android.showAlert('{title: ' + title + ', content: ' + content + '}');
 		} else {
-			// window.alert(content);
+			window.alert(title + " : " + content);
 		}
 	}
 
@@ -465,21 +469,31 @@ var Company = (function ($) {
 
 	function initEvent() {
 		$(window).on('scroll', function(e) {
-			if( yincLS.getItem("device") != "android" ) return;
-
+			var device = yincLS.getItem("device");
 			var scrollTop = $(this).scrollTop() + parseInt(yincLS.getItem("navigationHeight"));
 			var headerHeight = $companyHeader.outerHeight();
 			
 			// console.log('scrollTop : ' + scrollTop + ', headerHeight : ' + headerHeight);
 			if( scrollTop > headerHeight ) {
-				$tabs.addClass("fixed");
-				$tabs.css('top', parseInt(yincLS.getItem("navigationHeight")));
-				$tabContents.css('marginTop', $tabs.outerHeight());
-				 window.android.setTitleVisible('{visible: "true"}');
+				if( device == "android" ) {
+					$tabs.addClass("fixed");
+					$tabs.css('top', parseInt(yincLS.getItem("navigationHeight")));
+					$tabContents.css('marginTop', $tabs.outerHeight());
+					window.android.setTitleVisible('{visible: "true"}');
+				}
+
+				if( device == "ios" ) {
+					$tabs.css('top', parseInt(yincLS.getItem("navigationHeight")));
+				}
 			} else {
-				$tabs.removeClass("fixed");
-				$tabContents.css('marginTop', 0);
-				 window.android.setTitleVisible('{visible: "false"}');
+				if( device == "android" ) {
+					$tabs.removeClass("fixed");
+					$tabContents.css('marginTop', 0);
+					window.android.setTitleVisible('{visible: "false"}');
+				}
+				if( device == "ios" ) {
+					$tabs.css('top', 0);
+				}
 			}
 		});
 
