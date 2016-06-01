@@ -118,7 +118,7 @@
 			}
 		}
 
-		.list-inner { display: block; margin: 0 4.87012987013%; padding: 3px 0 19px 3.597122302158%; border-top: 1px dashed #c8c8c8;
+		.list-inner { display: none; margin: 0 4.87012987013%; padding: 3px 0 19px 3.597122302158%; border-top: 1px dashed #c8c8c8;
 			> li { position: relative;
 				input[type=radio] { position: absolute; left: -9999px;
 					&:checked {

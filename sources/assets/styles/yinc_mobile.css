@@ -2444,7 +2444,7 @@ body {
             border-radius: 1.688rem;
             background-color: #f4f4f4; }
     .contents.user .user-content .list-inner {
-      display: block;
+      display: none;
       margin: 0 4.87012987013%;
       padding: 3px 0 19px 3.597122302158%;
       border-top: 1px dashed #c8c8c8; }
