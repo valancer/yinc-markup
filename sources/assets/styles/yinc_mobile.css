@@ -2295,10 +2295,13 @@ body {
       margin-bottom: 43px; }
       .contents.user .user-content .list-invest-items > li {
         overflow: hidden;
-        padding-top: 9px;
-        border-bottom: 1px solid #dedede; }
-        .contents.user .user-content .list-invest-items > li.focus {
+        padding-top: 9px; }
+        .contents.user .user-content .list-invest-items > li.focus .item {
           border-bottom: 2px solid #ffde00; }
+        .contents.user .user-content .list-invest-items > li .item {
+          display: block;
+          overflow: hidden;
+          border-bottom: 1px solid #dedede; }
         .contents.user .user-content .list-invest-items > li .title {
           float: left;
           font-size: 0.938rem;
