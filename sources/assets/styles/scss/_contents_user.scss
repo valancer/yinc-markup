@@ -137,6 +137,28 @@
 			}
 		}
 
+		/* 회원유형 신청 완료 */
+		.usertype-complete { margin-top: 27px;
+			h2 { display: block; height: 48px; font-size: 1.063rem; font-weight: 500; color: #fff; text-align: center; line-height: 48px; border: 1px solid #bababa; border-radius: 1px; background-color: #c7c7c7; }
+			.info { margin-top: -1px; padding: 0 4.838709677419%; border: 1px solid #d3d3d3; background-color: #fff;
+				dt { padding-top: 22px; padding-left: 3.571428571429%; font-size: 0.938rem; font-weight: 500; color: #9a6b4c; }
+				dd { padding-top: 7px; padding-bottom: 19px; padding-left: 3.571428571429%; font-size: 0.813rem; font-weight: 400; color: #888; }
+
+				dt.documents { font-size: 0.813rem; font-weight: 700; color: #000; border-top: 1px dashed #c8c8c8; }
+				dd.documents { fonts-ize: 0.750rem; font-weight: 400; color: #000; line-height: 1.125rem;
+					> em { font-weight: 700; }
+				}
+			}
+
+			&.personal {
+				h2 { border: 1px solid #a87f5f; background-color: #b78c6c; }
+			}
+			&.corporation {
+				h2 { border: 1px solid #5e92a7; background-color: #72a1b3; }
+			}
+
+			.warning { color: #000; }
+		}
 		
 		.btn-submit { margin-top: 45px; }
 		.warning { margin-top: 38px; color: #888; }

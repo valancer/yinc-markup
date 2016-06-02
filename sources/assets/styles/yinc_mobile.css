@@ -2196,7 +2196,8 @@ body {
     padding: 24px 6.944444444444% 24px 6.944444444444%;
     /* 휴대폰번호 변경 */
     /* 증권계좌 변경 */
-    /* 회원 유형 */ }
+    /* 회원 유형 */
+    /* 회원유형 신청 완료 */ }
     .contents.user .user-content .list-user-items > li {
       overflow: hidden;
       padding-top: 17px; }
@@ -2493,6 +2494,57 @@ body {
               .contents.user .user-content .list-inner > li > label:before {
                 background-image: url(/assets/images/sprites@2x.png);
                 background-size: 295px 277px; } }
+    .contents.user .user-content .usertype-complete {
+      margin-top: 27px; }
+      .contents.user .user-content .usertype-complete h2 {
+        display: block;
+        height: 48px;
+        font-size: 1.063rem;
+        font-weight: 500;
+        color: #fff;
+        text-align: center;
+        line-height: 48px;
+        border: 1px solid #bababa;
+        border-radius: 1px;
+        background-color: #c7c7c7; }
+      .contents.user .user-content .usertype-complete .info {
+        margin-top: -1px;
+        padding: 0 4.838709677419%;
+        border: 1px solid #d3d3d3;
+        background-color: #fff; }
+        .contents.user .user-content .usertype-complete .info dt {
+          padding-top: 22px;
+          padding-left: 3.571428571429%;
+          font-size: 0.938rem;
+          font-weight: 500;
+          color: #9a6b4c; }
+        .contents.user .user-content .usertype-complete .info dd {
+          padding-top: 7px;
+          padding-bottom: 19px;
+          padding-left: 3.571428571429%;
+          font-size: 0.813rem;
+          font-weight: 400;
+          color: #888; }
+        .contents.user .user-content .usertype-complete .info dt.documents {
+          font-size: 0.813rem;
+          font-weight: 700;
+          color: #000;
+          border-top: 1px dashed #c8c8c8; }
+        .contents.user .user-content .usertype-complete .info dd.documents {
+          fonts-ize: 0.750rem;
+          font-weight: 400;
+          color: #000;
+          line-height: 1.125rem; }
+          .contents.user .user-content .usertype-complete .info dd.documents > em {
+            font-weight: 700; }
+      .contents.user .user-content .usertype-complete.personal h2 {
+        border: 1px solid #a87f5f;
+        background-color: #b78c6c; }
+      .contents.user .user-content .usertype-complete.corporation h2 {
+        border: 1px solid #5e92a7;
+        background-color: #72a1b3; }
+      .contents.user .user-content .usertype-complete .warning {
+        color: #000; }
     .contents.user .user-content .btn-submit {
       margin-top: 45px; }
     .contents.user .user-content .warning {
