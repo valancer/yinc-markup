@@ -21,6 +21,13 @@
 	}
 }
 
+body {
+	opacity: 1;
+	transition: opacity 0.3s ease-in-out;
+}
+body.loading {
+	opacity: 0;
+}
 
 /* keyframes */
 /* 투자하기 버튼 */

@@ -2888,6 +2888,13 @@ body {
             background-image: url(/assets/images/sprites@2x.png);
             background-size: 295px 277px; } }
 
+body {
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out; }
+
+body.loading {
+  opacity: 0; }
+
 /* keyframes */
 /* 투자하기 버튼 */
 @-webkit-keyframes invet-txt {

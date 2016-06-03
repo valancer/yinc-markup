@@ -507,7 +507,6 @@ var Company = (function ($) {
 			},
 			transitionEnd: function(index, element) {
 				var target = $(element).attr("id");
-				_updateTabLabel(index);
 			}
 		});
 
@@ -705,7 +704,6 @@ var CS = (function ($) {
 				},
 				transitionEnd: function(index, element) {
 					var target = $(element).attr("id");
-					_updateTabLabel(index);
 				}
 			});
 		}
