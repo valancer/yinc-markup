@@ -263,7 +263,7 @@ var NativeLinker = (function ($) {
 			window.android.requestInitInfo('{callback: "NativeLinker.reloadWithInitInfo"}');
 		} else {
 			$.ajax({
-				url:"http://182.162.100.61:8070/api/mobile/auth/login?IsPersistent=true&email=1price@limited40.com&password=111qqq!",
+				url:"http://182.162.100.61:8070/api/mobile/auth/login?IsPersistent=true&email=atclones@naver.com&password=111qqq!",
 				// url:"http://amp.limited40.com:8060/api/mobile/auth/login?IsPersistent=true&email=1price@limited40.com&password=111qqq!",
 				type:"POST",
 				// async: false,
@@ -458,7 +458,7 @@ var Company = (function ($) {
 			$toggleItems = $companyContainer.find('.list-folding dt > a');
 
 			if( $companyContainer.length <= 0 ) return;
-			
+
 			initLayout();
 			initEvent();
 		};//end init
@@ -468,7 +468,7 @@ var Company = (function ($) {
 	}
 
 	function initEvent() {
-		$(window).on('scroll', function(e) {
+		$(window).off('scroll').on('scroll', function(e) {
 			var device = yincLS.getItem("device");
 			var scrollTop = $(this).scrollTop() + parseInt(yincLS.getItem("navigationHeight"));
 			var headerHeight = $companyHeader.outerHeight();
@@ -499,18 +499,16 @@ var Company = (function ($) {
 
 
 		/* tab slider */
+		if( swipe ) { swipe = null; }
 		swipe = Swipe($("#swipe").get(0), {
-			continuous: true,
+			continuous: false,
 			callback: function(index, element) {
 				var target = $(element).attr("id");
 				swipe.updateHeight();
-			},
-			transitionEnd: function(index, element) {
-				var target = $(element).attr("id");
 			}
 		});
 
-		$tabItems.on('click', function(e) {
+		$tabItems.off('click').on('click', function(e) {
 			e.preventDefault();
 
 			_slideToHash($(this).attr("href"));
@@ -538,7 +536,7 @@ var Company = (function ($) {
 
 
 		// communication - toggle
-		$toggleItems.on('click', function(e) {
+		$toggleItems.off('click').on('click', function(e) {
 			e.preventDefault();
 			e.stopPropagation();
 
@@ -587,7 +585,7 @@ var Company = (function ($) {
 	return {
 		init: function () {
 			scope = this;
-
+			
 			init();
 		},
 		reinit: function() {

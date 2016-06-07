@@ -1700,6 +1700,8 @@ body {
             .contents.company .tab-contents.summary > header .summary-info > li .content sub {
               font-size: 0.625rem;
               vertical-align: middle; }
+    .contents.company .tab-contents.detail .check-options .options-title {
+      font-size: 0.750rem; }
   .contents.company .qna-write {
     padding-bottom: 97px; }
     .contents.company .qna-write .question {
