@@ -96,6 +96,12 @@ a:link, a:visited, a:active, a:focus {
 a:hover {
   text-decoration: underline; }
 
+*:not(input):not(textarea) {
+  -webkit-user-select: none;
+  /* disable selection/Copy of UIWebView */
+  -webkit-touch-callout: none;
+  /* disable the IOS popup when long-press on a link */ }
+
 .bold {
   font-weight: 700 !important; }
 
