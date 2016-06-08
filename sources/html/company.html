@@ -355,11 +355,24 @@ include "head.html"
 								</a>
 
 								<div class="btns">
-									<button type="button" class="btn-inline">삭제</button>
+									<button type="button" id="delete-qna" class="btn-inline">삭제</button>
 									<a href="#" class="btn-inline">편집</a>
 								</div>
-
-							</dt>
+								<script>
+								$('#delete-qna').on('click', function() {
+									$.alert({
+										animation: 'zoom',
+										closeAnimation: 'scale',
+										animationBounce: 1,
+										backgroundDismiss: true,
+										opacity: 1,
+										title: '투자하기는 실명인증 후 이용 가능합니다.',
+										content: false,
+										confirmButton: '확인'
+									});
+								});
+								</script>
+								</dt>
 							<dd>
 								<p class="desc">
 									유안타증권이 리드투자자로 참여한 (주)시전소프트의 크라우드펀딩이 모집률 100%를 달성하며 종료되었습니다.

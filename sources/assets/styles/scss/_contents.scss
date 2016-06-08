@@ -151,7 +151,7 @@
 		> a { display: block; box-sizing: border-box; position: relative; padding: 13px 9.722222222222% 14px 6.944444444444%; color: #000; text-decoration: none;
 			&:after { content: ''; display: block; position: absolute; top: 19px; right: 4.444444444444%; @include retina-sprite($s-btn-down-01-group); }
 
-			.title { display: block; overflow: hidden; padding-right: 25px; font-size: 0.813rem; font-weight: 300; line-height: 0.938rem; text-overflow: ellipsis; white-space: nowrap; }
+			.title { display: block; overflow: hidden; padding-right: 25px; max-height: 0.938rem; font-size: 0.813rem; font-weight: 300; line-height: 0.938rem; text-overflow: ellipsis; white-space: nowrap; }
 
 			time { float: right; font-size: 0.688rem; font-weight: 300; color: #888; line-height: 0.938rem; vertical-align: middle; }
 			.user { float: left; font-size: 0.688rem; font-weight: 400; color: #000; line-height: 0.938rem; vertical-align: middle; }
@@ -163,7 +163,7 @@
 		&.is-open {
 			> a {
 				&:after { @include retina-sprite($s-btn-up-01-group); }
-				.title { font-weight: 700; line-height: 0.938rem; text-oveflow: none; white-space: normal; }
+				.title { max-height: 100%; font-weight: 700; line-height: 0.938rem; text-oveflow: none; white-space: normal; }
 			}
 
 			.btns { display: block; }
