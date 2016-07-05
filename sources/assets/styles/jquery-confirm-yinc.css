@@ -213,6 +213,7 @@ body.jconfirm-noscroll {
   text-align: center;
 }
 .jconfirm.jconfirm-white .jconfirm-box .buttons button {
+  padding-right: 10px; padding-left: 10px;
   min-width: 68px;
   background-image: none;
   text-transform: uppercase;

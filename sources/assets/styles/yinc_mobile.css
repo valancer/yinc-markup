@@ -1,5 +1,4 @@
 @charset "UTF-8";
-@import url(notosanskr.css);
 @import url(jquery-confirm-yinc.css);
 /**
  * variable
@@ -1241,6 +1240,32 @@ body {
         left: auto; }
 .contents.fundings .list-my-fundings > li {
   padding: 10px 2.222222222222%; }
+.contents.fundings .banner {
+  display: block;
+  position: relative;
+  position: relative; }
+  .contents.fundings .banner:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: 64.72222%; }
+  .contents.fundings .banner > .inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; }
+  .contents.fundings .banner > a {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-indent: -9999px;
+    background: url("/assets/images/main_page_banner.png") center top no-repeat;
+    background-size: auto 100%; }
 
 /* 기업 상세 */
 .contents.company {
@@ -2118,6 +2143,24 @@ body {
   margin-top: 28px; }
   .contents.settings .header-table-view:first-child {
     margin-top: 0; }
+.contents.settings .cont01 {
+  padding: 4.444444444444%; }
+  .contents.settings .cont01 li {
+    font-size: 0.750rem;
+    font-weight: 300;
+    color: #888;
+    line-height: 1.125rem; }
+  .contents.settings .cont01 .Btxt {
+    font-size: 0.813rem;
+    font-weight: 500;
+    color: #000; }
+  .contents.settings .cont01 .clrBrown {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: #ac7f5e; }
+.contents.settings .file {
+  display: block;
+  width: 100%; }
 
 /* 사용자 */
 .contents.user {
@@ -2198,11 +2241,13 @@ body {
     font-weight: 300;
     color: #000; }
     .contents.user .secession .btn-secession {
-      float: right;
+      margin-left: 5px;
       font-size: 0.750rem;
       font-weight: 300;
       color: #000;
       text-decoration: underline; }
+    .contents.user .secession .float-right {
+      float: right; }
   .contents.user .user-content {
     padding: 24px 6.944444444444% 24px 6.944444444444%;
     /* 휴대폰번호 변경 */

@@ -3,4 +3,12 @@
 	.header-table-view { margin-top: 28px;
 		&:first-child { margin-top: 0; }
 	}
+
+	.cont01 { padding: 4.444444444444%;
+		li { font-size: 0.750rem; font-weight: 300; color: #888; line-height: 1.125rem; }
+		.Btxt { font-size: 0.813rem; font-weight: 500; color: #000; }
+		.clrBrown { font-size: 0.875rem; font-weight: 700; color: #ac7f5e; }
+	}
+
+	.file { display: block; width: 100%; }
 }

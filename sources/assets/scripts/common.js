@@ -208,7 +208,7 @@ var NativeLinker = (function ($) {
 	function _handleNavigation(action, url, title, barType) {
 		if( barType === undefined ) barType = 0;
 
-		if( url.indexOf("https://") < 0 ) {
+		if( url.indexOf("http") < 0 ) {
 			url = "http://" + window.location.host + url;
 		}
 
@@ -262,6 +262,8 @@ var NativeLinker = (function ($) {
 		} else if( _device == "android" ) {
 			window.android.requestInitInfo('{callback: "NativeLinker.reloadWithInitInfo"}');
 		} else {
+			_handleReloadWithInitInfo({token: -1, userId: -1, navHeight: 44, appVersion: 1.0});
+/*
 			$.ajax({
 				url:"http://182.162.100.61:8070/api/mobile/auth/login?IsPersistent=true&email=atclones@naver.com&password=111qqq!",
 				// url:"http://amp.limited40.com:8060/api/mobile/auth/login?IsPersistent=true&email=1price@limited40.com&password=111qqq!",
@@ -278,6 +280,7 @@ var NativeLinker = (function ($) {
 					alert('데이터를 로드할 수 없습니다.' + status +': '+ err);
 				}.bind(this)
 			});
+*/
 		}
 	}
 
@@ -475,22 +478,24 @@ var Company = (function ($) {
 			
 			// console.log('scrollTop : ' + scrollTop + ', headerHeight : ' + headerHeight);
 			if( scrollTop > headerHeight ) {
-				if( device == "android" ) {
+				// if( device == "android" ) {
 					$tabs.addClass("fixed");
 					$tabs.css('top', parseInt(yincLS.getItem("navigationHeight")));
-					$tabContents.css('marginTop', $tabs.outerHeight());
-					window.android.setTitleVisible('{visible: "true"}');
-				}
+					$tabContents.css('paddingTop', $tabs.outerHeight());
+					// window.android.setTitleVisible('{visible: "true"}');
+					swipe.updateHeight();
+				// }
 
 				if( device == "ios" ) {
 					$tabs.css('top', parseInt(yincLS.getItem("navigationHeight")));
 				}
 			} else {
-				if( device == "android" ) {
+				// if( device == "android" ) {
 					$tabs.removeClass("fixed");
-					$tabContents.css('marginTop', 0);
-					window.android.setTitleVisible('{visible: "false"}');
-				}
+					$tabContents.css('paddingTop', 0);
+					// window.android.setTitleVisible('{visible: "false"}');
+					swipe.updateHeight();
+				// }
 				if( device == "ios" ) {
 					$tabs.css('top', 0);
 				}

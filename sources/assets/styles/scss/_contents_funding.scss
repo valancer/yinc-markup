@@ -48,4 +48,10 @@
 		}
 	}
 
+	// 배너
+	.banner { display: block; position: relative; @include aspect-ratio(720, 466);
+		> a { display: block; position: absolute; top: 0; right: 0; bottom: 0; left: 0; width: 100%; text-indent: -9999px;
+			background: url('/assets/images/main_page_banner.png') center top no-repeat; background-size: auto 100%;
+		}
+	}
 }

@@ -25,7 +25,8 @@
 
 	/* 탈퇴 */
 	.secession { padding: 35px 4.444444444444%; font-size: 0.750rem; font-weight: 300; color: #000;
-		.btn-secession { float: right; font-size: 0.750rem; font-weight: 300; color: #000; text-decoration: underline; }
+		.btn-secession { margin-left: 5px; font-size: 0.750rem; font-weight: 300; color: #000; text-decoration: underline; }
+		.float-right { float: right; }
 	}
 
 
