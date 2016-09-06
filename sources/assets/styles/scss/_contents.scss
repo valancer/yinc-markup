@@ -264,6 +264,14 @@
 }
 
 
+/* banner */
+.banner-item { display: flex; align-items: center; justify-content: center; box-sizing: border-box; position: relative; z-index: z("default"); padding: 5px 5% 0; height: 70px; width: 100%; font-size: 1.000rem; color: #fff; text-align: center; text-indent: 0px; background-position: right center; background-repeat: no-repeat;
+	&.type00 { background-color: #cb8055; background-image: url('/assets/images/mobile_0.png'); }
+	&.type01 { background-color: #156fab; background-image: url('/assets/images/mobile_1.png'); }
+	&.type02 { background-color: #782017; background-image: url('/assets/images/mobile_2.png'); }
+	&.type03 { background-color: #f3c105; background-image: url('/assets/images/mobile_3.png'); }
+	&.type05 { background-color: #2d8f62; background-image: url('/assets/images/mobile_5.png'); }
+}
 
 
 /* 투자 목록 */

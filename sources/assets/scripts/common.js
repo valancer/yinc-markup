@@ -366,6 +366,32 @@ $(document).ready(function (e) {
 
 	// set body background color
 	$('body').addClass($('article.contents').data("bg"));
+
+/*
+	var data = ['a', 'b', 'c', 'd', 'e'];
+	var banner = [0, 1, 2];
+	var combined = [];
+	var index = 0;
+
+    for( var i=0; i<data.length; i++ ) {
+    	if( i%2 == 1 ) {
+	  		combined.push(data[i]);
+	      	if( banner.length > index ) {
+		  		combined.push(banner[index]);
+		  		index++;
+	      	}
+    	} else {
+	      	combined.push(data[i]);
+    	}
+    }
+
+    if( index < banner.length ) {
+    	var last = banner.length;
+    	var slide = banner.slice(index, last);
+    	combined = combined.concat(slide);
+    }
+    console.log(combined);
+*/
 });
 
 
