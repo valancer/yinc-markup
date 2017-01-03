@@ -269,7 +269,6 @@ body {
 
 .slick-slider .slick-track,
 .slick-slider .slick-list {
-  -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0); }
 
 .slick-track {
@@ -1003,10 +1002,8 @@ body {
     padding: 11px 6.944444444444% 0 6.944444444444%;
     height: 70px;
     background-color: rgba(0, 0, 0, 0.45);
-    -webkit-animation: slideDown 0.7s ease-in-out;
-            animation: slideDown 0.7s ease-in-out;
-    -webkit-animation-fill-mode: both;
-            animation-fill-mode: both; }
+    animation: slideDown 0.7s ease-in-out;
+    animation-fill-mode: both; }
     .company-item .add-info .current {
       float: left; }
     .company-item .add-info .goal {
@@ -1027,20 +1024,16 @@ body {
         font-weight: 700; }
   .company-item.is-opened .add-info {
     bottom: 0;
-    -webkit-animation-name: slideUp;
-            animation-name: slideUp; }
+    animation-name: slideUp; }
 
 /* banner */
 .banner-item {
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
   box-sizing: border-box;
   position: relative;
   z-index: 1;
@@ -1075,7 +1068,6 @@ body {
 
 /* 목록 없음 */
 .none-list-company {
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   position: fixed;
@@ -1083,12 +1075,10 @@ body {
   right: 0;
   bottom: 0;
   left: 0;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
   font-size: 1.000rem;
   font-weight: 700;
   background-color: #f4f4f4;
@@ -1202,16 +1192,13 @@ body {
       border-radius: 2.125rem;
       background-color: #fde832; }
   .contents.fundings .my-funding-item .progress-funding {
-    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     position: relative;
-    -webkit-justify-content: space-between;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-align-items: flex-start;
-        -ms-flex-align: start;
-            align-items: flex-start;
+    -ms-flex-pack: justify;
+        justify-content: space-between;
+    -ms-flex-align: start;
+        align-items: flex-start;
     margin-top: 26px; }
     .contents.fundings .my-funding-item .progress-funding:before {
       content: '';
@@ -1427,7 +1414,6 @@ body {
               background-image: url(/assets/images/sprites@2x.png);
               background-size: 295px 277px; } }
   .contents.company .tabs {
-    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     position: -webkit-sticky;
@@ -1438,9 +1424,8 @@ body {
     .contents.company .tabs > a {
       display: block;
       position: relative;
-      -webkit-flex: 1;
-          -ms-flex: 1;
-              flex: 1;
+      -ms-flex: 1;
+          flex: 1;
       height: 43px;
       font-size: 0.750rem;
       font-weight: 400;
@@ -1623,7 +1608,6 @@ body {
           padding-right: 3%;
           padding-left: 3%; } }
       .contents.company .tab-contents.summary > header .progress {
-        display: -webkit-flex;
         display: -ms-flexbox;
         display: flex;
         position: relative;
@@ -1635,15 +1619,12 @@ body {
         text-align: center;
         border-radius: 105px;
         background-color: #fff;
-        -webkit-flex-direction: column;
-            -ms-flex-direction: column;
-                flex-direction: column;
-        -webkit-justify-content: center;
-            -ms-flex-pack: center;
-                justify-content: center;
-        -webkit-align-items: center;
-            -ms-flex-align: center;
-                align-items: center; }
+        -ms-flex-direction: column;
+            flex-direction: column;
+        -ms-flex-pack: center;
+            justify-content: center;
+        -ms-flex-align: center;
+            align-items: center; }
         .contents.company .tab-contents.summary > header .progress:before {
           content: '';
           display: none;
@@ -1719,9 +1700,6 @@ body {
           z-index: 0;
           height: 119px;
           width: 119px; }
-@-webkit-keyframes svg-load {
-  0% {
-    stroke-dashoffset: 0; } }
 @keyframes svg-load {
   0% {
     stroke-dashoffset: 0; } }
@@ -1732,16 +1710,14 @@ body {
               position: absolute;
               top: 0;
               left: 0;
-              -webkit-transform: rotate(-90deg);
-                      transform: rotate(-90deg); }
+              transform: rotate(-90deg); }
             .contents.company .tab-contents.summary > header .progress .circle svg:nth-child(2) path {
               fill: none;
               stroke-width: 7;
               stroke-dasharray: 629;
               stroke: #f4f4f4;
               opacity: 1;
-              -webkit-animation: svg-load 2s;
-                      animation: svg-load 2s; }
+              animation: svg-load 2s; }
       .contents.company .tab-contents.summary > header .summary-info {
         overflow: hidden;
         float: right;
@@ -1878,7 +1854,6 @@ body {
     .contents.invest .navigation-bar > h2 {
       display: none; }
     .contents.invest .navigation-bar .progress-invest {
-      display: -webkit-flex;
       display: -ms-flexbox;
       display: flex;
       box-sizing: border-box;
@@ -1888,9 +1863,8 @@ body {
       .contents.invest .navigation-bar .progress-invest > li {
         display: block;
         position: relative;
-        -webkit-flex: 1;
-            -ms-flex: 1;
-                flex: 1;
+        -ms-flex: 1;
+            flex: 1;
         padding: 5px 5% 17px 5%; }
         .contents.invest .navigation-bar .progress-invest > li > span {
           display: block;
@@ -2506,15 +2480,12 @@ body {
           .contents.user .user-content .list-type > li input[type=radio]:checked ~ .list-inner {
             display: block; }
         .contents.user .user-content .list-type > li > label {
-          display: -webkit-flex;
           display: -ms-flexbox;
           display: flex;
-          -webkit-flex-direction: column;
-              -ms-flex-direction: column;
-                  flex-direction: column;
-          -webkit-justify-content: center;
-              -ms-flex-pack: center;
-                  justify-content: center;
+          -ms-flex-direction: column;
+              flex-direction: column;
+          -ms-flex-pack: center;
+              justify-content: center;
           position: relative;
           padding: 0 32.467532467532% 0 7.954545454545%;
           min-height: 83px; }
@@ -2657,16 +2628,14 @@ body {
   /* 이용안내 */
   /* YINC - 문의하기 */ }
   .contents.cs .tabs {
-    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     background-color: #fff; }
     .contents.cs .tabs > a {
       display: block;
       position: relative;
-      -webkit-flex: 1;
-          -ms-flex: 1;
-              flex: 1;
+      -ms-flex: 1;
+          flex: 1;
       height: 43px;
       font-size: 0.750rem;
       font-weight: 400;
@@ -2950,14 +2919,10 @@ body {
       text-indent: 0px;
       border-radius: 57px 0 0 57px;
       background-color: rgba(73, 73, 73, 0.9);
-      -webkit-animation-duration: 3s;
-              animation-duration: 3s;
-      -webkit-animation-name: invet-txt;
-              animation-name: invet-txt;
-      -webkit-animation-fill-mode: both;
-              animation-fill-mode: both;
-      -webkit-animation-delay: 1s;
-              animation-delay: 1s; }
+      animation-duration: 3s;
+      animation-name: invet-txt;
+      animation-fill-mode: both;
+      animation-delay: 1s; }
     .shortcut-invest .btn-invest[data-state=disabled] {
       opacity: 0.7; }
       .shortcut-invest .btn-invest[data-state=disabled]:before {
@@ -2996,23 +2961,6 @@ body.loading {
 
 /* keyframes */
 /* 투자하기 버튼 */
-@-webkit-keyframes invet-txt {
-  0% {
-    left: 26px;
-    width: 0px;
-    opacity: 0; }
-  10% {
-    left: -74px;
-    width: 104px;
-    opacity: 1; }
-  90% {
-    left: -74px;
-    width: 104px;
-    opacity: 1; }
-  100% {
-    left: 26px;
-    width: 0px;
-    opacity: 0; } }
 @keyframes invet-txt {
   0% {
     left: 26px;
@@ -3031,37 +2979,16 @@ body.loading {
     width: 0px;
     opacity: 0; } }
 /* 슬라이드 up/down */
-@-webkit-keyframes slideUp {
-  from {
-    -webkit-transform: translateY(100%);
-            transform: translateY(100%);
-    opacity: 0; }
-  to {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-    opacity: 1; } }
 @keyframes slideUp {
   from {
-    -webkit-transform: translateY(100%);
-            transform: translateY(100%);
+    transform: translateY(100%);
     opacity: 0; }
   to {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
+    transform: translateY(0);
     opacity: 1; } }
-@-webkit-keyframes slideDown {
-  from {
-    -webkit-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0);
-    visibility: visible; }
-  to {
-    -webkit-transform: translate3d(0, -100%, 0);
-            transform: translate3d(0, -100%, 0); } }
 @keyframes slideDown {
   from {
-    -webkit-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
     visibility: visible; }
   to {
-    -webkit-transform: translate3d(0, -100%, 0);
-            transform: translate3d(0, -100%, 0); } }
+    transform: translate3d(0, -100%, 0); } }
